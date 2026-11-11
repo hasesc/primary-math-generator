@@ -26,6 +26,6 @@
 - 自动化测试：`prototype/smoke-test.mjs`、`prototype/coverage-test.mjs`、`prototype/correctness-test.mjs`、`prototype/daily-practice-test.mjs`、`prototype/difficulty-gradient-test.mjs`、`prototype/rotation-test.mjs`、`prototype/regression-test.mjs`
 
 ## 4. 下一步待办
-1. 在 `admin.html` 看板指引下，分批为剩余“固定考法/仅数值梯度”单元补充 `easy / medium / hard` 阶梯考法。
+1. 先按 `UNIT_COVERAGE_AUDIT.md` 确认目标教材版次，关闭折扣/满减与难度边界P0；详细考点状态只维护在该表。
 2. 将 `prototype/` 出题引擎与页面移植到微信小程序骨架 `repos/skeleton/`。
 3. 编写闲鱼/小红书 PDF 题卡包批量生成脚本（带小程序码导流）。
