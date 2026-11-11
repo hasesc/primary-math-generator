@@ -72,7 +72,7 @@ function rectProblems(difficulty, count, cfg) {
     if (seen.has(q)) continue;
     seen.add(q);
     const format = mode === 'fill' || mode === 'choice' ? mode : undefined;
-    out.push({ question: q, answer: ans, subtype: 'unit-rect', format });
+    out.push({ question: q, answer: ans, subtype: 'unit-rect', subtemplateId: mode, format });
   }
   return out;
 }
@@ -84,8 +84,14 @@ function elapsedProblems(difficulty, count, cfg = {}) {
   const out = [];
   const seen = new Set();
   const span = { easy: [10, 30], medium: [20, 90], hard: [35, 180] }[difficulty];
-  // 一二年级只学 12 时制，题目不出现 13 时以后的时间
   const lowGrade = ['1', '2'].includes(String(cfg.grade || ''));
+  const modes = lowGrade
+    ? ['find-end']
+    : difficulty === 'easy'
+      ? ['find-end', 'find-start', 'find-duration']
+      : difficulty === 'medium'
+        ? ['find-end', 'find-start', 'find-duration', 'sec-convert']
+        : ['find-start', 'find-duration', 'train-delay', 'bell-intervals'];
   let guard = 0;
   while (out.length < count && guard < count * 30) {
     guard++;
@@ -98,15 +104,38 @@ function elapsedProblems(difficulty, count, cfg = {}) {
     if (lowGrade && (h2 > 12 || h2 < 7)) continue;
     const start = `${h1}时${m1 ? `${m1}分` : ''}`;
     const end = `${h2}时${m2 ? `${m2}分` : ''}`;
-    const mode = lowGrade ? 0 : out.length % 3;
-    const [q, answer, format] = [
-      [`小明${start}开始写作业，写了${add}分钟，写完时是几时几分？`, end],
-      [`小明写了${add}分钟作业，在${end}写完。他开始写作业的时间是______。`, start, 'fill'],
-      [`小明从${start}写作业到${end}，一共写了多少分钟？`, `${add}分钟`],
-    ][mode];
+    const mode = pickCycle(modes, out.length);
+    let q, answer, format;
+    if (mode === 'find-end') {
+      q = `小明${start}开始写作业，写了${add}分钟，写完时是几时几分？`;
+      answer = end;
+    } else if (mode === 'find-start') {
+      q = `小明写了${add}分钟作业，在${end}写完。他开始写作业的时间是______。`;
+      answer = start;
+      format = 'fill';
+    } else if (mode === 'find-duration') {
+      q = `小明从${start}写作业到${end}，一共写了多少分钟？`;
+      answer = `${add}分钟`;
+    } else if (mode === 'sec-convert') {
+      const mins = ri(2, 9);
+      const secs = ri(5, 55);
+      q = `${mins}分${secs}秒 = ______秒。`;
+      answer = `${mins * 60 + secs}秒`;
+      format = 'fill';
+    } else if (mode === 'train-delay') {
+      q = `一列动车原定${start}到站，因故晚点${add}分钟，实际几时几分到站？`;
+      answer = end;
+    } else {
+      const k = ri(3, 6);
+      const gap = ri(2, 5);
+      const k2 = k + ri(2, 4);
+      q = `时钟敲${k}下需要${(k - 1) * gap}秒（间隔耗时第${m1}组），那么敲${k2}下需要______秒。`;
+      answer = `${(k2 - 1) * gap}秒`;
+      format = 'fill';
+    }
     if (seen.has(q)) continue;
     seen.add(q);
-    out.push({ question: q, answer, subtype: 'unit-elapsed', format });
+    out.push({ question: q, answer, subtype: 'unit-elapsed', subtemplateId: mode, format });
   }
   return out;
 }
@@ -123,27 +152,43 @@ function unitLenProblems(difficulty, count, cfg) {
     { big: '千米', small: '米', k: 1000 },
   ];
   const usable = String(cfg.grade) === '2' ? pairs.slice(0, 1) : pairs;
+  const modes = difficulty === 'easy'
+    ? ['len-big-to-small', 'len-small-to-big', 'len-compare']
+    : difficulty === 'medium'
+      ? ['len-big-to-small', 'len-compound', 'len-compare']
+      : ['len-compound', 'len-compare', 'len-cut-story'];
   let guard = 0;
   while (out.length < count && guard < count * 30) {
     guard++;
     const p = pick(usable);
-    const n = difficulty === 'hard' ? ri(2, 9) : ri(1, 9);
-    let q, ans;
-    const mode = guard % 3;
-    if (mode === 0) {
+    const n = difficulty === 'hard' ? ri(2, 15) : ri(1, 9);
+    const extra = ri(1, p.k - 1);
+    let q, ans, format;
+    const mode = pickCycle(modes, guard);
+    if (mode === 'len-big-to-small') {
       q = `${n}${p.big} = （　）${p.small}`;
       ans = `${n * p.k}${p.small}`;
-    } else if (mode === 1) {
+      format = 'fill';
+    } else if (mode === 'len-small-to-big') {
       q = `${n * p.k}${p.small} = （　）${p.big}`;
       ans = `${n}${p.big}`;
-    } else {
+      format = 'fill';
+    } else if (mode === 'len-compound') {
+      q = `${n}${p.big}${extra}${p.small} = （　）${p.small}`;
+      ans = `${n * p.k + extra}${p.small}`;
+      format = 'fill';
+    } else if (mode === 'len-compare') {
       const delta = ri(-5, 5);
       q = `在括号里填 >、< 或 =：${n}${p.big}（　）${n * p.k + delta}${p.small}。`;
       ans = delta === 0 ? '=' : delta > 0 ? '<' : '>';
+      format = 'compare';
+    } else {
+      q = `一根木料长${n}${p.big}，锯下${extra}${p.small}后，还剩多少${p.small}？`;
+      ans = `${n * p.k - extra}${p.small}`;
     }
     if (seen.has(q)) continue;
     seen.add(q);
-    out.push({ question: q, answer: ans, subtype: 'unit-len', format: mode === 2 ? 'compare' : 'fill' });
+    out.push({ question: q, answer: ans, subtype: 'unit-len', subtemplateId: mode, format });
   }
   return out;
 }
@@ -152,28 +197,46 @@ function unitLenProblems(difficulty, count, cfg) {
 function unitWeightProblems(difficulty, count) {
   const out = [];
   const seen = new Set();
+  const modes = difficulty === 'easy'
+    ? ['kg-to-g', 'g-to-kg', 'weight-compare']
+    : difficulty === 'medium'
+      ? ['kg-g-compound', 'weight-compare', 'weight-sub-story']
+      : ['kg-g-compound', 'weight-compare', 'weight-multi-bags'];
   let guard = 0;
   while (out.length < count && guard < count * 30) {
     guard++;
-    const n = ri(1, difficulty === 'hard' ? 9 : 6);
+    const n = ri(1, difficulty === 'hard' ? 12 : 8);
     const extra = ri(1, 9) * 100;
-    const mode = guard % 3;
-    let q, ans;
-    if (mode === 0) {
-      q = `${n}千克${difficulty === 'easy' ? '' : `${extra}克`} = （　）克`;
-      ans = `${n * 1000 + (difficulty === 'easy' ? 0 : extra)}克`;
-    } else if (mode === 1) {
+    const mode = pickCycle(modes, guard);
+    let q, ans, format;
+    if (mode === 'kg-to-g') {
+      q = `${n}千克 = （　）克`;
+      ans = `${n * 1000}克`;
+      format = 'fill';
+    } else if (mode === 'g-to-kg') {
+      q = `${n * 1000}克 = （　）千克`;
+      ans = `${n}千克`;
+      format = 'fill';
+    } else if (mode === 'kg-g-compound') {
+      q = `${n}千克${extra}克 = （　）克`;
+      ans = `${n * 1000 + extra}克`;
+      format = 'fill';
+    } else if (mode === 'weight-compare') {
       const grams = n * 1000 + ri(-9, 9) * 100;
       q = `在括号里填 >、< 或 =：${n}千克（　）${grams}克。`;
       ans = grams === n * 1000 ? '=' : grams > n * 1000 ? '<' : '>';
-    } else {
+      format = 'compare';
+    } else if (mode === 'weight-sub-story') {
       q = `一袋米重${n}千克，取出${extra}克后，还剩多少克？`;
       ans = `${n * 1000 - extra}克`;
+    } else {
+      const bags = ri(2, 5);
+      q = `每袋杂粮重${extra}克，买${bags}袋一共重多少克？比${n + 5}千克少多少克？`;
+      ans = `${extra * bags}克，少${(n + 5) * 1000 - extra * bags}克`;
     }
     if (seen.has(q)) continue;
     seen.add(q);
-    const format = ['fill', 'compare', undefined][mode];
-    out.push({ question: q, answer: ans, subtype: 'unit-weight', format });
+    out.push({ question: q, answer: ans, subtype: 'unit-weight', subtemplateId: mode, format });
   }
   return out;
 }
@@ -201,7 +264,7 @@ function quadAreaProblems(difficulty, count) {
     }
     if (seen.has(q)) continue;
     seen.add(q);
-    out.push({ question: q, answer: ans, subtype: 'unit-quad' });
+    out.push({ question: q, answer: ans, subtype: 'unit-quad', subtemplateId: mode === 0 ? 'quad-para' : 'quad-trapezoid' });
   }
   return out;
 }
@@ -216,19 +279,21 @@ function triangleProblems(difficulty, count) {
     guard++;
     const a = ri(range[0], range[1]);
     const h = (ri(range[0], range[1]) * 2) || 2; // 保证面积是整数
-    let q, ans;
+    let q, ans, subId;
     if (ri(0, 2) !== 0) {
       q = `一个三角形的底是${a}厘米，高是${h}厘米，它的面积是多少平方厘米？`;
       ans = `${(a * h) / 2}平方厘米`;
+      subId = 'triangle-area';
     } else {
       const x = ri(30, 100);
       const y = ri(30, 140 - x);
       q = `一个三角形中，两个角分别是${x}°和${y}°，第三个角是多少度？`;
       ans = `${180 - x - y}°`;
+      subId = 'triangle-angle';
     }
     if (seen.has(q)) continue;
     seen.add(q);
-    out.push({ question: q, answer: ans, subtype: 'unit-triangle' });
+    out.push({ question: q, answer: ans, subtype: 'unit-triangle', subtemplateId: subId });
   }
   return out;
 }
@@ -266,7 +331,7 @@ function circleProblems(difficulty, count) {
     }
     if (seen.has(q)) continue;
     seen.add(q);
-    out.push({ question: q, answer: ans, subtype: 'unit-circle', format: mode === 'diameter' || mode === 'radius' ? 'fill' : undefined });
+    out.push({ question: q, answer: ans, subtype: 'unit-circle', subtemplateId: mode, format: mode === 'diameter' || mode === 'radius' ? 'fill' : undefined });
   }
   return out;
 }
@@ -299,7 +364,7 @@ function solidProblems(difficulty, count) {
     }
     if (seen.has(q)) continue;
     seen.add(q);
-    out.push({ question: q, answer: ans, subtype: 'unit-solid' });
+    out.push({ question: q, answer: ans, subtype: 'unit-solid', subtemplateId: mode });
   }
   return out;
 }
@@ -333,7 +398,7 @@ function cylinderProblems(difficulty, count) {
     }
     if (seen.has(q)) continue;
     seen.add(q);
-    out.push({ question: q, answer: ans, subtype: 'unit-cylinder' });
+    out.push({ question: q, answer: ans, subtype: 'unit-cylinder', subtemplateId: mode });
   }
   return out;
 }
@@ -342,92 +407,168 @@ function cylinderProblems(difficulty, count) {
 function equationProblems(difficulty, count) {
   const out = [];
   const seen = new Set();
-  const range = { easy: [1, 20], medium: [2, 60], hard: [5, 120] }[difficulty];
+  const range = { easy: [2, 25], medium: [3, 50], hard: [4, 80] }[difficulty];
+  const modes = difficulty === 'easy'
+    ? ['eq-plus', 'eq-minus', 'eq-times', 'eq-divide']
+    : difficulty === 'medium'
+      ? ['eq-two-add', 'eq-two-sub', 'eq-bracket', 'eq-eval']
+      : ['eq-combine-like', 'eq-reverse-sub', 'eq-sum-multiple', 'eq-diff-multiple'];
   let guard = 0;
-  while (out.length < count && guard < count * 30) {
+  while (out.length < count && guard < count * 40) {
     guard++;
     const x = ri(range[0], range[1]);
-    const a = ri(1, Math.max(2, Math.round(range[1] / 2)));
+    const a = ri(2, 9);
+    const b = ri(2, 25);
     let q, ans;
-    const mode = pickCycle(['plus', 'minus', 'times', 'divide'], guard);
-    if (mode === 'plus') {
-      q = `解方程：x + ${a} = ${x + a}`;
+    const mode = pickCycle(modes, guard);
+    if (mode === 'eq-plus') {
+      q = `解方程：x + ${b} = ${x + b}`;
       ans = `x = ${x}`;
-    } else if (mode === 'minus') {
-      const sub = ri(1, Math.max(1, x - 1));
-      q = `解方程：x - ${sub} = ${x - sub}`;
-      ans = `x = ${x}`;
-    } else if (mode === 'times') {
+    } else if (mode === 'eq-minus') {
+      q = `解方程：x − ${b} = ${x}`;
+      ans = `x = ${x + b}`;
+    } else if (mode === 'eq-times') {
       q = `解方程：${a}x = ${a * x}`;
       ans = `x = ${x}`;
-    } else {
+    } else if (mode === 'eq-divide') {
       q = `解方程：x ÷ ${a} = ${x}`;
       ans = `x = ${a * x}`;
+    } else if (mode === 'eq-two-add') {
+      q = `解方程：${a}x + ${b} = ${a * x + b}`;
+      ans = `x = ${x}`;
+    } else if (mode === 'eq-two-sub') {
+      q = `解方程：${a}x − ${b} = ${a * x - b}`;
+      ans = `x = ${x}`;
+    } else if (mode === 'eq-bracket') {
+      q = `解方程：${a}（x + ${b}）= ${a * (x + b)}`;
+      ans = `x = ${x}`;
+    } else if (mode === 'eq-eval') {
+      q = `当 x = ${x} 时，代数式 ${a}x + ${b} 的值是多少？`;
+      ans = `${a * x + b}`;
+    } else if (mode === 'eq-combine-like') {
+      const k = ri(2, 6);
+      q = `解方程：${a + k}x − ${a}x = ${k * x}`;
+      ans = `x = ${x}`;
+    } else if (mode === 'eq-reverse-sub') {
+      q = `解方程：${a * x + b} − ${a}x = ${b}`;
+      ans = `x = ${x}`;
+    } else if (mode === 'eq-sum-multiple') {
+      q = `果园里桃树和梨树共有 ${(a + 1) * x} 棵，桃树棵数是梨树的 ${a} 倍。列方程求得梨树有多少棵？`;
+      ans = `${x}棵`;
+    } else {
+      q = `甲数是乙数的 ${a} 倍，甲数比乙数多 ${(a - 1) * x}。列方程求得乙数是多少？`;
+      ans = `${x}`;
     }
     if (seen.has(q)) continue;
     seen.add(q);
-    out.push({ question: q, answer: ans, subtype: 'unit-equation' });
+    out.push({ question: q, answer: ans, subtype: 'unit-equation', subtemplateId: mode });
   }
   return out;
 }
 
-/* ── 百分数（一）：求百分率 / 求部分量 ── */
+/* ── 百分数（一）（二）：求百分率 / 折扣成数税率 ── */
 function percentProblems(difficulty, count) {
   const out = [];
   const seen = new Set();
   const base = { easy: [10, 100], medium: [20, 200], hard: [40, 500] }[difficulty];
+  const modes = difficulty === 'easy'
+    ? ['pct-of-num', 'pct-to-dec', 'find-pct-basic']
+    : difficulty === 'medium'
+      ? ['pct-of-num', 'find-pct', 'find-total']
+      : ['pct-discount', 'pct-growth', 'pct-interest'];
   let guard = 0;
   while (out.length < count && guard < count * 30) {
     guard++;
     const b = ri(base[0] / 10, base[1] / 10) * 10;
     const pct = b % 4 === 0 ? pick([10, 20, 25, 40, 50, 60, 75, 80]) : pick([10, 20, 40, 50, 60, 80]);
     const part = (b * pct) / 100;
-    const mode = guard % 3;
-    let q, ans;
-    if (mode === 0) {
+    const mode = pickCycle(modes, guard);
+    let q, ans, format;
+    if (mode === 'pct-of-num') {
       q = `${b}的${pct}%是______。`;
       ans = `${part}`;
-    } else if (mode === 1) {
+      format = 'fill';
+    } else if (mode === 'pct-to-dec') {
+      const p2 = ri(1, 99);
+      q = `把百分数 ${p2}% 化成小数是______。`;
+      ans = `${p2 / 100}`;
+      format = 'fill';
+    } else if (mode === 'find-pct-basic' || mode === 'find-pct') {
       q = `一次问卷共收到${b}份答卷，其中${part}份选择了步行出行。选择步行的答卷占总数的百分之几？`;
       ans = `${pct}%`;
-    } else {
+    } else if (mode === 'find-total') {
       q = `一次问卷中，有${part}份答卷选择步行，占总数的${pct}%。一共收到多少份答卷？`;
       ans = `${b}份`;
+    } else if (mode === 'pct-discount') {
+      const disc = pick([6, 7, 8, 9]);
+      q = `一件外套原价${b}元，商场促销打${disc}折出售，现价是______元。`;
+      ans = `${(b * disc) / 10}元`;
+      format = 'fill';
+    } else if (mode === 'pct-growth') {
+      q = `某果园去年产苹果${b}吨，今年产苹果${b + part}吨，今年比去年增产了百分之几？`;
+      ans = `${pct}%`;
+    } else {
+      const years = pick([1, 2, 3]);
+      q = `王叔叔把${b * 10}元存入银行，年利率是2%，存期${years}年，到期时一共可取回本息多少元？`;
+      ans = `${b * 10 + (b * 10 * 2 * years) / 100}元`;
     }
     if (seen.has(q)) continue;
     seen.add(q);
-    out.push({ question: q, answer: ans, subtype: 'unit-percent', format: mode === 0 ? 'fill' : undefined });
+    out.push({ question: q, answer: ans, subtype: 'unit-percent', subtemplateId: mode, format });
   }
   return out;
 }
 
-/* ── 负数：温度比较与简单加减 ── */
+/* ── 负数：温度比较与数轴正负加减 ── */
 function negativeProblems(difficulty, count) {
   const out = [];
   const seen = new Set();
+  const modes = difficulty === 'easy'
+    ? ['neg-write', 'pos-neg-meaning', 'compare-basic']
+    : difficulty === 'medium'
+      ? ['compare', 'rise', 'diff']
+      : ['number-line-dist', 'std-weight-offset', 'multi-step-move'];
   let guard = 0;
   while (out.length < count && guard < count * 30) {
     guard++;
-    const a = ri(1, difficulty === 'hard' ? 20 : 10);
+    const a = ri(1, difficulty === 'hard' ? 25 : 15);
+    const b = ri(1, difficulty === 'hard' ? 25 : 15);
     let q, ans;
-    const mode = pickCycle(['compare', 'rise', 'diff'], guard);
-    if (mode === 'compare') {
-      const b = ri(1, difficulty === 'hard' ? 25 : 12);
+    const mode = pickCycle(modes, guard);
+    if (mode === 'neg-write') {
+      q = `零下${a}摄氏度记作______℃，零上${b}摄氏度记作+${b}℃。`;
+      ans = `-${a}`;
+    } else if (mode === 'pos-neg-meaning') {
+      q = `如果向东走${a}米记作+${a}米，那么向西走${b}米应记作______米。`;
+      ans = `-${b}`;
+    } else if (mode === 'compare-basic' || mode === 'compare') {
       if (a === b) continue;
       q = `比较大小：-${a} 和 -${b}，哪个数更大？`;
       ans = `-${Math.min(a, b)}`;
     } else if (mode === 'rise') {
-      const up = ri(1, 12);
+      const up = ri(1, 15);
       q = `早上气温是-${a}℃，中午比早上升高了${up}℃，中午的气温是多少？`;
-      ans = `${up - a > 0 ? up - a : up - a}℃`;
-    } else {
-      const b = ri(1, a + 8);
+      ans = `${up - a}℃`;
+    } else if (mode === 'diff') {
       q = `某地某天最高气温${b}℃，最低气温-${a}℃，这天的温差是多少？`;
       ans = `${a + b}℃`;
+    } else if (mode === 'number-line-dist') {
+      q = `在数轴上，表示-${a}的点与表示+${b}的点之间相距多少个单位长度？`;
+      ans = `${a + b}`;
+    } else if (mode === 'std-weight-offset') {
+      const std = ri(10, 50) * 10;
+      q = `一袋饼干标准净重为${std}克，超过标准记为正，不足记为负。质检记作-${a}克，这袋饼干实际重多少克？`;
+      ans = `${std - a}克`;
+    } else {
+      const depth = ri(10, 40) * 10;
+      const up = ri(2, 9) * 10;
+      const down = ri(2, 9) * 10;
+      q = `潜水艇在海平面以下${depth}米处（记作-${depth}米），先上升${up}米，又下潜${down}米，现在位置记作多少米？`;
+      ans = `-${depth - up + down}米`;
     }
     if (seen.has(q)) continue;
     seen.add(q);
-    out.push({ question: q, answer: ans, subtype: 'unit-negative' });
+    out.push({ question: q, answer: ans, subtype: 'unit-negative', subtemplateId: mode });
   }
   return out;
 }
@@ -484,7 +625,7 @@ function decimalDivProblems(difficulty, count) {
     const q = `${dividend} ÷ ${b} = ______`;
     if (seen.has(q)) continue;
     seen.add(q);
-    out.push({ question: q, answer: String(quotient), subtype: 'unit-dec-div' });
+    out.push({ question: q, answer: String(quotient), subtype: 'unit-dec-div', subtemplateId: 'dec-div' });
   }
   return out;
 }
@@ -570,7 +711,7 @@ function unitAreaProblems(difficulty, count) {
     }
     if (seen.has(q)) continue;
     seen.add(q);
-    out.push({ question: q, answer: ans, subtype: 'unit-area', format: mode === 2 ? 'compare' : 'fill' });
+    out.push({ question: q, answer: ans, subtype: 'unit-area', subtemplateId: ['area-big-to-small', 'area-small-to-big', 'area-compare'][mode], format: mode === 2 ? 'compare' : 'fill' });
   }
   return out;
 }

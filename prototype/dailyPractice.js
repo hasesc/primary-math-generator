@@ -35,7 +35,7 @@ export function generateDailyPractice(config) {
     const candidates = generator(difficulty, 40, { plugin: rangeId });
     if (rangeId === 'table-times-2') candidates.push(...SCOPE_PLUGINS['table-times-1'](difficulty, 40, { plugin: 'table-times-1' }));
     for (const item of candidates) {
-      if (item.subtemplateId && item.subtemplateId !== 'calculate') continue;
+      if (item.subtemplateId && item.subtemplateId !== 'calculate' && !item.subtype?.startsWith('unit-dec-')) continue;
       const question = item.question.replace(/^(口算：|列竖式计算：)/, '').replace(/ - /g, ' − ');
       if (seen.has(question)) continue;
       seen.add(question);

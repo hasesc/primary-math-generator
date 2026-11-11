@@ -1,7 +1,7 @@
 // 自动生成文件（请勿手改）：由 node scripts/manage.mjs 生成
 export const PROJECT_STATUS = {
   "summary": {
-    "generatedAt": "2026/11/11 15:42:43",
+    "generatedAt": "2026/11/11 16:18:04",
     "totalUnits": 93,
     "dedicatedUnits": 92,
     "reviewUnits": 1,
@@ -10,10 +10,10 @@ export const PROJECT_STATUS = {
     "testsPassed": 5,
     "testsTotal": 5,
     "byGradient": {
-      "tiered-skills": 35,
-      "three-tier-range": 32,
+      "tiered-skills": 42,
+      "three-tier-range": 26,
       "two-tier-range": 0,
-      "fixed-range": 26
+      "fixed-range": 25
     },
     "byModule": {
       "scope": 41,
@@ -31,7 +31,7 @@ export const PROJECT_STATUS = {
       "name": "整卷生成冒烟测试 (6年级×3难度)",
       "file": "prototype/smoke-test.mjs",
       "passed": true,
-      "durationMs": 118,
+      "durationMs": 113,
       "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 1ms, 分布={\"arithmetic\":15,\"application\":7,\"olympiad\":8} | 结果: 18 通过 / 0 未达标"
     },
     {
@@ -39,7 +39,7 @@ export const PROJECT_STATUS = {
       "name": "93单元全量联动与756配置覆盖测试",
       "file": "prototype/coverage-test.mjs",
       "passed": true,
-      "durationMs": 179,
+      "durationMs": 168,
       "summary": "总计 93 单元：联动通过 92，无专属出题映射（含整理与复习）1，不合格 0 | 已检查 756 种难度与题量组合。至少一组配置只有一个卷面分类的单元（分类数不等于考法数）共 81 个：1上 准备课、1上 位置、1上 1~5的认识和加减法、1上 认识图形（一）、1上 6~10的认识和加减法、1上 11~20各数的认识、1上 20以内的进位加法、1下 20以内的退位减法、1下 100以内数的认识、1下 100以内的加法和减法（一）、1下 认识图形（二）、1下 100以内的加法和减法（二）、1下 找规律、2上 100以内的加法和减法（二）、2上 角的初步认识、2上 表内乘法（一）、2上 观察物体（一）、2上 表内乘法（二）、2上 数学广角——搭配（一）、2下 数据收集整理、2下 表内除法（一）、2下 图形的运动（一）、2下 表内除法（二）、2下 混合运算、2下 有余数的除法、2下 万以内数的认识、2下 数学广角——推理、3上 万以内的加法和减法（一）、3上 万以内的加法和减法（二）、3上 倍的认识、3上 多位数乘一位数、3上 长方形和正方形、3上 分数的初步认识、3下 位置与方向（一）、3下 除数是一位数的除法、3下 复式统计表、3下 两位数乘两位数、3下 面积、3下 年月日、3下 小数的初步认识、3下 数学广角——搭配（二）、4上 大数的认识、4上 角的度量、4上 三位数乘两位数、4上 平行四边形和梯形、4上 除数是两位数的除法、4上 条形统计图、4上 数学广角——优化、4下 四则运算、4下 观察物体（二）、4下 运算定律、4下 小数的意义和性质、4下 三角形、4下 小数的加法和减法、4下 图形的运动（二）、4下 平均数与条形统计图、4下 数学广角——鸡兔同笼、5上 位置、5上 可能性、5上 简易方程、5上 多边形的面积、5上 数学广角——植树问题、5下 观察物体（三）、5下 因数与倍数、5下 长方体和正方体、5下 分数的意义和性质、5下 图形的运动（三）、5下 分数的加法和减法、5下 折线统计图、5下 数学广角——找次品、6上 位置与方向（二）、6上 分数除法、6上 比、6上 圆、6上 扇形统计图、6上 数学广角——数与形、6下 负数、6下 百分数（二）、6下 圆柱与圆锥、6下 比例、6下 数学广角——鸽巢问题"
     },
     {
@@ -47,7 +47,7 @@ export const PROJECT_STATUS = {
       "name": "数学答案独立逆向复算测试 (160轮)",
       "file": "prototype/correctness-test.mjs",
       "passed": true,
-      "durationMs": 88,
+      "durationMs": 81,
       "summary": "鸡兔同笼、植树、统计图并列和小数乘法的独立复算通过"
     },
     {
@@ -55,7 +55,7 @@ export const PROJECT_STATUS = {
       "name": "口算/竖式每日一练专项测试 (123配置)",
       "file": "prototype/daily-practice-test.mjs",
       "passed": true,
-      "durationMs": 77,
+      "durationMs": 74,
       "summary": "123 种每日一练配置通过，题量、去重、答案复算和年级限制正常"
     },
     {
@@ -63,7 +63,7 @@ export const PROJECT_STATUS = {
       "name": "三档难度阶梯考法与答案测试",
       "file": "prototype/difficulty-gradient-test.mjs",
       "passed": true,
-      "durationMs": 88,
+      "durationMs": 84,
       "summary": "✅ 25 个专项插件（18 个全独立三档考法 + 7 个进阶分支插件）的难度梯度、题量和提高题答案复算全部通过！"
     }
   ],
@@ -71,7 +71,12 @@ export const PROJECT_STATUS = {
     "initialized": true,
     "commits": [
       {
-        "hash": "6409339",
+        "hash": "8fe7e72",
+        "date": "2026-11-11 16:18",
+        "message": "feat: 前端UI界面全面精装升级 + 通用插件考法补全 (阶梯考法达42单元，v0.8.0)"
+      },
+      {
+        "hash": "8475fb3",
         "date": "2026-11-11 15:42",
         "message": "feat: 完成全部34个待升级单元的三档难度梯度改造（v0.7.0，两档待升级清零）"
       },
@@ -146,6 +151,23 @@ export const PROJECT_STATUS = {
     }
   ],
   "changelog": [
+    {
+      "version": "v0.8.0",
+      "date": "2026-11-11",
+      "title": "前端UI界面全面精装升级 + 通用插件考法补全 (阶梯考法达42单元)",
+      "bullets": [
+        "**前端工作台 UI 全面精装升级（彻底告别毛坯房）**（[prototype/style.css](prototype/style.css) / [prototype/index.html](prototype/index.html) / [prototype/app.js](prototype/app.js)）：",
+        "**现代设计语言体系**：引入教育科技蓝主色调（#2563eb）搭配翡翠绿与轻奢紫，采用多层次柔和弥散阴影、毛玻璃悬浮顶栏（backdrop-filter）与精巧的步骤胶囊指示器。",
+        "**模式与年级卡片化**：模式选择大卡片化（单元同步练·主打推荐 / 口算每日一练·分级速算 / 竖式每日一练·规范排版），年级与学期采用动态双态药丸组件。",
+        "**单元选择即时搜索与精致卡片**：新增单元实时过滤搜索框，单元卡片展示 Unit XX 序号、考法特征标签（✨ 阶梯考法、📐 图形作图、⏱️ 钟表时间）与题量建议。",
+        "**难度三档教学化情境**：以 🟢 基础巩固（夯实算理/课后查漏）、🔵 标准通关（校内自测/常规达标）、🟣 培优挑战（逆推思维/培优拔高）三色生动卡片呈现。",
+        "**拟真 A4 试卷工作台**：悬浮毛玻璃快捷操作栏（打印/PDF导出、查看答案、一键换一套、调整配置）；试卷正文采用标准人教版名校同步练规范抬头（学校、班级、姓名、学号、用时、得分考评框）；大题自动科学归类（一、直接写出得数；二、列竖式计算；三、填空比较；四、动手操作与作图；五、走进生活解决问题带作答留白与“答：”引导）。",
+        "**通用插件深度补齐考法标识与梯度**（[prototype/unitPlugins.js](prototype/unitPlugins.js)）：",
+        "补齐 elapsed（时分秒：时钟敲响间隔/列车延误）、unit-len（木料剪切）、unit-weight（复合装袋重量差）、equation（两步方程/列方程解和倍差倍）、percent（折扣成数/银行年利率本息）、negative（数轴单位距离/质检偏差）等三档独立考法。",
+        "补全 rect / rect-area、quad-area、triangle、circle、solid、cylinder、unit-area 的 subtemplateId 映射，全书阶梯考法单元总数从 35 个大幅提升至 **42 个**。",
+        "**5 大测试套件 100% 通过**：冒烟、93单元全覆盖、独立数学复算、每日一练、难度梯度全部绿灯。"
+      ]
+    },
     {
       "version": "v0.7.0",
       "date": "2026-11-11",
@@ -3115,14 +3137,14 @@ export const PROJECT_STATUS = {
       "moduleKey": "unitPlugin",
       "moduleLabel": "通用单元插件 (unitPlugins)",
       "moduleFile": "prototype/unitPlugins.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
-        "easy": 1,
-        "medium": 1,
-        "hard": 1
+        "easy": 3,
+        "medium": 3,
+        "hard": 3
       },
       "hasDiagram": false,
       "byDifficulty": {
@@ -3130,7 +3152,9 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-len"
+            "len-small-to-big",
+            "len-compare",
+            "len-big-to-small"
           ],
           "formats": [
             "fill",
@@ -3140,34 +3164,34 @@ export const PROJECT_STATUS = {
             {
               "question": "800厘米 = （　）米",
               "answer": "8米",
-              "skill": "unit-len",
+              "skill": "len-small-to-big",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "在括号里填 >、< 或 =：6米（　）596厘米。",
+              "question": "在括号里填 >、< 或 =：2米（　）197厘米。",
               "answer": ">",
-              "skill": "unit-len",
+              "skill": "len-compare",
               "format": "compare",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "3米 = （　）厘米",
-              "answer": "300厘米",
-              "skill": "unit-len",
+              "question": "9米 = （　）厘米",
+              "answer": "900厘米",
+              "skill": "len-big-to-small",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "900厘米 = （　）米",
-              "answer": "9米",
-              "skill": "unit-len",
+              "question": "500厘米 = （　）米",
+              "answer": "5米",
+              "skill": "len-small-to-big",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
@@ -3179,7 +3203,9 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-len"
+            "len-compound",
+            "len-compare",
+            "len-big-to-small"
           ],
           "formats": [
             "fill",
@@ -3187,37 +3213,37 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "500厘米 = （　）米",
-              "answer": "5米",
-              "skill": "unit-len",
+              "question": "5米25厘米 = （　）厘米",
+              "answer": "525厘米",
+              "skill": "len-compound",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "在括号里填 >、< 或 =：8米（　）804厘米。",
-              "answer": "<",
-              "skill": "unit-len",
-              "format": "compare",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "3米 = （　）厘米",
-              "answer": "300厘米",
-              "skill": "unit-len",
-              "format": "fill",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "在括号里填 >、< 或 =：3米（　）298厘米。",
+              "question": "在括号里填 >、< 或 =：8米（　）797厘米。",
               "answer": ">",
-              "skill": "unit-len",
+              "skill": "len-compare",
               "format": "compare",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "5米 = （　）厘米",
+              "answer": "500厘米",
+              "skill": "len-big-to-small",
+              "format": "fill",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "4米57厘米 = （　）厘米",
+              "answer": "457厘米",
+              "skill": "len-compound",
+              "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
@@ -3228,45 +3254,48 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-len"
+            "len-compare",
+            "len-cut-story",
+            "len-compound"
           ],
           "formats": [
-            "fill",
-            "compare"
+            "compare",
+            "application",
+            "fill"
           ],
           "samples": [
             {
-              "question": "300厘米 = （　）米",
-              "answer": "3米",
-              "skill": "unit-len",
-              "format": "fill",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "在括号里填 >、< 或 =：2米（　）200厘米。",
-              "answer": "=",
-              "skill": "unit-len",
+              "question": "在括号里填 >、< 或 =：3米（　）295厘米。",
+              "answer": ">",
+              "skill": "len-compare",
               "format": "compare",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "4米 = （　）厘米",
-              "answer": "400厘米",
-              "skill": "unit-len",
+              "question": "一根木料长7米，锯下26厘米后，还剩多少厘米？",
+              "answer": "674厘米",
+              "skill": "len-cut-story",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "2米22厘米 = （　）厘米",
+              "answer": "222厘米",
+              "skill": "len-compound",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "200厘米 = （　）米",
-              "answer": "2米",
-              "skill": "unit-len",
-              "format": "fill",
+              "question": "在括号里填 >、< 或 =：3米（　）298厘米。",
+              "answer": ">",
+              "skill": "len-compare",
+              "format": "compare",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
@@ -5808,14 +5837,14 @@ export const PROJECT_STATUS = {
       "moduleKey": "unitPlugin",
       "moduleLabel": "通用单元插件 (unitPlugins)",
       "moduleFile": "prototype/unitPlugins.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
-        "easy": 1,
-        "medium": 1,
-        "hard": 1
+        "easy": 3,
+        "medium": 3,
+        "hard": 3
       },
       "hasDiagram": false,
       "byDifficulty": {
@@ -5823,28 +5852,29 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-weight"
+            "g-to-kg",
+            "weight-compare",
+            "kg-to-g"
           ],
           "formats": [
-            "compare",
-            "application",
-            "fill"
+            "fill",
+            "compare"
           ],
           "samples": [
             {
-              "question": "在括号里填 >、< 或 =：6千克（　）6600克。",
-              "answer": "<",
-              "skill": "unit-weight",
-              "format": "compare",
+              "question": "8000克 = （　）千克",
+              "answer": "8千克",
+              "skill": "g-to-kg",
+              "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "一袋米重4千克，取出900克后，还剩多少克？",
-              "answer": "3100克",
-              "skill": "unit-weight",
-              "format": "application",
+              "question": "在括号里填 >、< 或 =：7千克（　）7800克。",
+              "answer": "<",
+              "skill": "weight-compare",
+              "format": "compare",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
@@ -5852,17 +5882,17 @@ export const PROJECT_STATUS = {
             {
               "question": "3千克 = （　）克",
               "answer": "3000克",
-              "skill": "unit-weight",
+              "skill": "kg-to-g",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "在括号里填 >、< 或 =：1千克（　）1900克。",
-              "answer": "<",
-              "skill": "unit-weight",
-              "format": "compare",
+              "question": "2000克 = （　）千克",
+              "answer": "2千克",
+              "skill": "g-to-kg",
+              "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
@@ -5873,7 +5903,9 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-weight"
+            "weight-compare",
+            "weight-sub-story",
+            "kg-g-compound"
           ],
           "formats": [
             "compare",
@@ -5882,36 +5914,36 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "在括号里填 >、< 或 =：6千克（　）6200克。",
+              "question": "在括号里填 >、< 或 =：8千克（　）8200克。",
               "answer": "<",
-              "skill": "unit-weight",
+              "skill": "weight-compare",
               "format": "compare",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "一袋米重5千克，取出600克后，还剩多少克？",
-              "answer": "4400克",
-              "skill": "unit-weight",
+              "question": "一袋米重7千克，取出600克后，还剩多少克？",
+              "answer": "6400克",
+              "skill": "weight-sub-story",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "4千克200克 = （　）克",
-              "answer": "4200克",
-              "skill": "unit-weight",
+              "question": "5千克200克 = （　）克",
+              "answer": "5200克",
+              "skill": "kg-g-compound",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "在括号里填 >、< 或 =：4千克（　）3800克。",
+              "question": "在括号里填 >、< 或 =：5千克（　）4800克。",
               "answer": ">",
-              "skill": "unit-weight",
+              "skill": "weight-compare",
               "format": "compare",
               "responseKind": null,
               "hasDiagram": false,
@@ -5923,7 +5955,9 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-weight"
+            "weight-compare",
+            "weight-multi-bags",
+            "kg-g-compound"
           ],
           "formats": [
             "compare",
@@ -5932,36 +5966,36 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "在括号里填 >、< 或 =：9千克（　）8800克。",
+              "question": "在括号里填 >、< 或 =：12千克（　）11800克。",
               "answer": ">",
-              "skill": "unit-weight",
+              "skill": "weight-compare",
               "format": "compare",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "一袋米重1千克，取出300克后，还剩多少克？",
-              "answer": "700克",
-              "skill": "unit-weight",
+              "question": "每袋杂粮重300克，买5袋一共重多少克？比6千克少多少克？",
+              "answer": "1500克，少4500克",
+              "skill": "weight-multi-bags",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "8千克200克 = （　）克",
-              "answer": "8200克",
-              "skill": "unit-weight",
+              "question": "2千克900克 = （　）克",
+              "answer": "2900克",
+              "skill": "kg-g-compound",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "在括号里填 >、< 或 =：9千克（　）9500克。",
+              "question": "在括号里填 >、< 或 =：10千克（　）10900克。",
               "answer": "<",
-              "skill": "unit-weight",
+              "skill": "weight-compare",
               "format": "compare",
               "responseKind": null,
               "hasDiagram": false,
@@ -6158,14 +6192,14 @@ export const PROJECT_STATUS = {
       "moduleKey": "unitPlugin",
       "moduleLabel": "通用单元插件 (unitPlugins)",
       "moduleFile": "prototype/unitPlugins.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
-        "easy": 1,
-        "medium": 1,
-        "hard": 1
+        "easy": 3,
+        "medium": 4,
+        "hard": 4
       },
       "hasDiagram": false,
       "byDifficulty": {
@@ -6173,7 +6207,9 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-elapsed"
+            "find-end",
+            "find-start",
+            "find-duration"
           ],
           "formats": [
             "application",
@@ -6183,7 +6219,7 @@ export const PROJECT_STATUS = {
             {
               "question": "小明10时50分开始写作业，写了21分钟，写完时是几时几分？",
               "answer": "11时11分",
-              "skill": "unit-elapsed",
+              "skill": "find-end",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -6192,7 +6228,7 @@ export const PROJECT_STATUS = {
             {
               "question": "小明写了11分钟作业，在17时57分写完。他开始写作业的时间是______。",
               "answer": "17时46分",
-              "skill": "unit-elapsed",
+              "skill": "find-start",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
@@ -6201,7 +6237,7 @@ export const PROJECT_STATUS = {
             {
               "question": "小明从15时48分写作业到15时58分，一共写了多少分钟？",
               "answer": "10分钟",
-              "skill": "unit-elapsed",
+              "skill": "find-duration",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -6210,7 +6246,7 @@ export const PROJECT_STATUS = {
             {
               "question": "小明19时19分开始写作业，写了24分钟，写完时是几时几分？",
               "answer": "19时43分",
-              "skill": "unit-elapsed",
+              "skill": "find-end",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -6222,7 +6258,10 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-elapsed"
+            "find-end",
+            "find-start",
+            "find-duration",
+            "sec-convert"
           ],
           "formats": [
             "application",
@@ -6232,7 +6271,7 @@ export const PROJECT_STATUS = {
             {
               "question": "小明10时30分开始写作业，写了43分钟，写完时是几时几分？",
               "answer": "11时13分",
-              "skill": "unit-elapsed",
+              "skill": "find-end",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -6241,7 +6280,7 @@ export const PROJECT_STATUS = {
             {
               "question": "小明写了41分钟作业，在21时8分写完。他开始写作业的时间是______。",
               "answer": "20时27分",
-              "skill": "unit-elapsed",
+              "skill": "find-start",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
@@ -6250,17 +6289,17 @@ export const PROJECT_STATUS = {
             {
               "question": "小明从15时15分写作业到16时17分，一共写了多少分钟？",
               "answer": "62分钟",
-              "skill": "unit-elapsed",
+              "skill": "find-duration",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "小明11时29分开始写作业，写了53分钟，写完时是几时几分？",
-              "answer": "12时22分",
-              "skill": "unit-elapsed",
-              "format": "application",
+              "question": "3分49秒 = ______秒。",
+              "answer": "229秒",
+              "skill": "sec-convert",
+              "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
@@ -6271,45 +6310,48 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-elapsed"
+            "find-start",
+            "find-duration",
+            "train-delay",
+            "bell-intervals"
           ],
           "formats": [
-            "application",
-            "fill"
+            "fill",
+            "application"
           ],
           "samples": [
             {
-              "question": "小明10时9分开始写作业，写了52分钟，写完时是几时几分？",
-              "answer": "11时1分",
-              "skill": "unit-elapsed",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "小明写了112分钟作业，在12时写完。他开始写作业的时间是______。",
-              "answer": "10时8分",
-              "skill": "unit-elapsed",
+              "question": "小明写了52分钟作业，在11时1分写完。他开始写作业的时间是______。",
+              "answer": "10时9分",
+              "skill": "find-start",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "小明从15时38分写作业到16时37分，一共写了多少分钟？",
-              "answer": "59分钟",
-              "skill": "unit-elapsed",
+              "question": "小明从10时8分写作业到12时，一共写了多少分钟？",
+              "answer": "112分钟",
+              "skill": "find-duration",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "小明16时39分开始写作业，写了73分钟，写完时是几时几分？",
-              "answer": "17时52分",
-              "skill": "unit-elapsed",
+              "question": "一列动车原定15时38分到站，因故晚点59分钟，实际几时几分到站？",
+              "answer": "16时37分",
+              "skill": "train-delay",
               "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "时钟敲3下需要8秒（间隔耗时第39组），那么敲7下需要______秒。",
+              "answer": "24秒",
+              "skill": "bell-intervals",
+              "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
@@ -6512,14 +6554,14 @@ export const PROJECT_STATUS = {
       "moduleKey": "unitPlugin",
       "moduleLabel": "通用单元插件 (unitPlugins)",
       "moduleFile": "prototype/unitPlugins.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
-        "easy": 1,
-        "medium": 1,
-        "hard": 1
+        "easy": 3,
+        "medium": 3,
+        "hard": 3
       },
       "hasDiagram": false,
       "byDifficulty": {
@@ -6527,7 +6569,9 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-len"
+            "len-small-to-big",
+            "len-compare",
+            "len-big-to-small"
           ],
           "formats": [
             "fill",
@@ -6537,34 +6581,34 @@ export const PROJECT_STATUS = {
             {
               "question": "90分米 = （　）米",
               "answer": "9米",
-              "skill": "unit-len",
+              "skill": "len-small-to-big",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "在括号里填 >、< 或 =：4米（　）400厘米。",
-              "answer": "=",
-              "skill": "unit-len",
+              "question": "在括号里填 >、< 或 =：5分米（　）52厘米。",
+              "answer": "<",
+              "skill": "len-compare",
               "format": "compare",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "7千米 = （　）米",
-              "answer": "7000米",
-              "skill": "unit-len",
+              "question": "9分米 = （　）厘米",
+              "answer": "90厘米",
+              "skill": "len-big-to-small",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "90厘米 = （　）分米",
-              "answer": "9分米",
-              "skill": "unit-len",
+              "question": "20毫米 = （　）厘米",
+              "answer": "2厘米",
+              "skill": "len-small-to-big",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
@@ -6576,7 +6620,9 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-len"
+            "len-compound",
+            "len-compare",
+            "len-big-to-small"
           ],
           "formats": [
             "fill",
@@ -6584,36 +6630,36 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "60分米 = （　）米",
-              "answer": "6米",
-              "skill": "unit-len",
+              "question": "6米8分米 = （　）分米",
+              "answer": "68分米",
+              "skill": "len-compound",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "在括号里填 >、< 或 =：7厘米（　）66毫米。",
-              "answer": ">",
-              "skill": "unit-len",
+              "question": "在括号里填 >、< 或 =：2厘米（　）22毫米。",
+              "answer": "<",
+              "skill": "len-compare",
               "format": "compare",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "7米 = （　）厘米",
-              "answer": "700厘米",
-              "skill": "unit-len",
+              "question": "5千米 = （　）米",
+              "answer": "5000米",
+              "skill": "len-big-to-small",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "5000米 = （　）千米",
-              "answer": "5千米",
-              "skill": "unit-len",
+              "question": "9千米864米 = （　）米",
+              "answer": "9864米",
+              "skill": "len-compound",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
@@ -6625,45 +6671,48 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-len"
+            "len-compare",
+            "len-cut-story",
+            "len-compound"
           ],
           "formats": [
-            "fill",
-            "compare"
+            "compare",
+            "application",
+            "fill"
           ],
           "samples": [
             {
-              "question": "30分米 = （　）米",
-              "answer": "3米",
-              "skill": "unit-len",
-              "format": "fill",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "在括号里填 >、< 或 =：9分米（　）93厘米。",
+              "question": "在括号里填 >、< 或 =：5米（　）55分米。",
               "answer": "<",
-              "skill": "unit-len",
+              "skill": "len-compare",
               "format": "compare",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "7米 = （　）分米",
-              "answer": "70分米",
-              "skill": "unit-len",
+              "question": "一根木料长6千米，锯下733米后，还剩多少米？",
+              "answer": "5267米",
+              "skill": "len-cut-story",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "2米5分米 = （　）分米",
+              "answer": "25分米",
+              "skill": "len-compound",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "20分米 = （　）米",
-              "answer": "2米",
-              "skill": "unit-len",
-              "format": "fill",
+              "question": "在括号里填 >、< 或 =：12米（　）1202厘米。",
+              "answer": "<",
+              "skill": "len-compare",
+              "format": "compare",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
@@ -9213,9 +9262,9 @@ export const PROJECT_STATUS = {
       "gradientBadge": "info",
       "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
       "skillCount": {
-        "easy": 1,
-        "medium": 1,
-        "hard": 1
+        "easy": 3,
+        "medium": 3,
+        "hard": 3
       },
       "hasDiagram": false,
       "byDifficulty": {
@@ -9223,7 +9272,9 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-area"
+            "area-small-to-big",
+            "area-compare",
+            "area-big-to-small"
           ],
           "formats": [
             "fill",
@@ -9233,7 +9284,7 @@ export const PROJECT_STATUS = {
             {
               "question": "50000平方米 = （　）公顷",
               "answer": "5公顷",
-              "skill": "unit-area",
+              "skill": "area-small-to-big",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
@@ -9242,7 +9293,7 @@ export const PROJECT_STATUS = {
             {
               "question": "在括号里填 >、< 或 =：7平方千米（　）720公顷。",
               "answer": "<",
-              "skill": "unit-area",
+              "skill": "area-compare",
               "format": "compare",
               "responseKind": null,
               "hasDiagram": false,
@@ -9251,7 +9302,7 @@ export const PROJECT_STATUS = {
             {
               "question": "5平方千米 = （　）公顷",
               "answer": "500公顷",
-              "skill": "unit-area",
+              "skill": "area-big-to-small",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
@@ -9260,7 +9311,7 @@ export const PROJECT_STATUS = {
             {
               "question": "60000平方米 = （　）公顷",
               "answer": "6公顷",
-              "skill": "unit-area",
+              "skill": "area-small-to-big",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
@@ -9272,7 +9323,9 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-area"
+            "area-small-to-big",
+            "area-compare",
+            "area-big-to-small"
           ],
           "formats": [
             "fill",
@@ -9282,7 +9335,7 @@ export const PROJECT_STATUS = {
             {
               "question": "30000平方米 = （　）公顷",
               "answer": "3公顷",
-              "skill": "unit-area",
+              "skill": "area-small-to-big",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
@@ -9291,7 +9344,7 @@ export const PROJECT_STATUS = {
             {
               "question": "在括号里填 >、< 或 =：1平方千米（　）100公顷。",
               "answer": "=",
-              "skill": "unit-area",
+              "skill": "area-compare",
               "format": "compare",
               "responseKind": null,
               "hasDiagram": false,
@@ -9300,7 +9353,7 @@ export const PROJECT_STATUS = {
             {
               "question": "11平方千米 = （　）平方米",
               "answer": "11000000平方米",
-              "skill": "unit-area",
+              "skill": "area-big-to-small",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
@@ -9309,7 +9362,7 @@ export const PROJECT_STATUS = {
             {
               "question": "400公顷 = （　）平方千米",
               "answer": "4平方千米",
-              "skill": "unit-area",
+              "skill": "area-small-to-big",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
@@ -9321,7 +9374,9 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-area"
+            "area-small-to-big",
+            "area-compare",
+            "area-big-to-small"
           ],
           "formats": [
             "fill",
@@ -9331,7 +9386,7 @@ export const PROJECT_STATUS = {
             {
               "question": "380000平方米 = （　）公顷",
               "answer": "38公顷",
-              "skill": "unit-area",
+              "skill": "area-small-to-big",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
@@ -9340,7 +9395,7 @@ export const PROJECT_STATUS = {
             {
               "question": "在括号里填 >、< 或 =：14平方千米（　）1380公顷。",
               "answer": ">",
-              "skill": "unit-area",
+              "skill": "area-compare",
               "format": "compare",
               "responseKind": null,
               "hasDiagram": false,
@@ -9349,7 +9404,7 @@ export const PROJECT_STATUS = {
             {
               "question": "28公顷 = （　）平方米",
               "answer": "280000平方米",
-              "skill": "unit-area",
+              "skill": "area-big-to-small",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
@@ -9358,7 +9413,7 @@ export const PROJECT_STATUS = {
             {
               "question": "在括号里填 >、< 或 =：33公顷（　）331000平方米。",
               "answer": "<",
-              "skill": "unit-area",
+              "skill": "area-compare",
               "format": "compare",
               "responseKind": null,
               "hasDiagram": false,
@@ -12478,7 +12533,7 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-dec-div",
+            "dec-div",
             "unit-word"
           ],
           "formats": [
@@ -12489,7 +12544,7 @@ export const PROJECT_STATUS = {
             {
               "question": "3 ÷ 2 = ______",
               "answer": "1.5",
-              "skill": "unit-dec-div",
+              "skill": "dec-div",
               "format": "arithmetic",
               "responseKind": null,
               "hasDiagram": false,
@@ -12528,7 +12583,7 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-dec-div",
+            "dec-div",
             "unit-word"
           ],
           "formats": [
@@ -12539,7 +12594,7 @@ export const PROJECT_STATUS = {
             {
               "question": "14.4 ÷ 2 = ______",
               "answer": "7.2",
-              "skill": "unit-dec-div",
+              "skill": "dec-div",
               "format": "arithmetic",
               "responseKind": null,
               "hasDiagram": false,
@@ -12578,7 +12633,7 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-dec-div",
+            "dec-div",
             "unit-word"
           ],
           "formats": [
@@ -12589,7 +12644,7 @@ export const PROJECT_STATUS = {
             {
               "question": "21.3 ÷ 3 = ______",
               "answer": "7.1",
-              "skill": "unit-dec-div",
+              "skill": "dec-div",
               "format": "arithmetic",
               "responseKind": null,
               "hasDiagram": false,
@@ -12820,14 +12875,14 @@ export const PROJECT_STATUS = {
       "moduleKey": "unitPlugin",
       "moduleLabel": "通用单元插件 (unitPlugins)",
       "moduleFile": "prototype/unitPlugins.js",
-      "gradientTier": "fixed-range",
-      "gradientLabel": "课标定界",
-      "gradientBadge": "neutral",
-      "gradientNote": "按教材单元固定算理/图形范围出题（三档考法与数值区间一致）",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
-        "easy": 1,
-        "medium": 1,
-        "hard": 1
+        "easy": 4,
+        "medium": 4,
+        "hard": 4
       },
       "hasDiagram": false,
       "byDifficulty": {
@@ -12835,43 +12890,46 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-equation"
+            "eq-minus",
+            "eq-times",
+            "eq-divide",
+            "eq-plus"
           ],
           "formats": [
             "application"
           ],
           "samples": [
             {
-              "question": "解方程：x - 1 = 1",
-              "answer": "x = 2",
-              "skill": "unit-equation",
+              "question": "解方程：x − 17 = 4",
+              "answer": "x = 21",
+              "skill": "eq-minus",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "解方程：5x = 50",
+              "question": "解方程：5x = 65",
+              "answer": "x = 13",
+              "skill": "eq-times",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "解方程：x ÷ 3 = 15",
+              "answer": "x = 45",
+              "skill": "eq-divide",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "解方程：x + 23 = 33",
               "answer": "x = 10",
-              "skill": "unit-equation",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "解方程：x ÷ 6 = 17",
-              "answer": "x = 102",
-              "skill": "unit-equation",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "解方程：x + 1 = 5",
-              "answer": "x = 4",
-              "skill": "unit-equation",
+              "skill": "eq-plus",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -12883,43 +12941,46 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-equation"
+            "eq-two-sub",
+            "eq-bracket",
+            "eq-eval",
+            "eq-two-add"
           ],
           "formats": [
             "application"
           ],
           "samples": [
             {
-              "question": "解方程：x - 3 = 4",
+              "question": "解方程：8x − 12 = 44",
               "answer": "x = 7",
-              "skill": "unit-equation",
+              "skill": "eq-two-sub",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "解方程：4x = 176",
-              "answer": "x = 44",
-              "skill": "unit-equation",
+              "question": "解方程：2（x + 3）= 80",
+              "answer": "x = 37",
+              "skill": "eq-bracket",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "解方程：x ÷ 17 = 5",
-              "answer": "x = 85",
-              "skill": "unit-equation",
+              "question": "当 x = 29 时，代数式 6x + 17 的值是多少？",
+              "answer": "191",
+              "skill": "eq-eval",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "解方程：x + 20 = 55",
-              "answer": "x = 35",
-              "skill": "unit-equation",
+              "question": "解方程：8x + 18 = 330",
+              "answer": "x = 39",
+              "skill": "eq-two-add",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -12931,43 +12992,46 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-equation"
+            "eq-reverse-sub",
+            "eq-sum-multiple",
+            "eq-diff-multiple",
+            "eq-combine-like"
           ],
           "formats": [
             "application"
           ],
           "samples": [
             {
-              "question": "解方程：x - 4 = 12",
+              "question": "解方程：62 − 5x = 7",
+              "answer": "x = 11",
+              "skill": "eq-reverse-sub",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "果园里桃树和梨树共有 711 棵，桃树棵数是梨树的 8 倍。列方程求得梨树有多少棵？",
+              "answer": "79棵",
+              "skill": "eq-sum-multiple",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "甲数是乙数的 9 倍，甲数比乙数多 384。列方程求得乙数是多少？",
+              "answer": "48",
+              "skill": "eq-diff-multiple",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "解方程：14x − 9x = 80",
               "answer": "x = 16",
-              "skill": "unit-equation",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "解方程：47x = 5546",
-              "answer": "x = 118",
-              "skill": "unit-equation",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "解方程：x ÷ 35 = 38",
-              "answer": "x = 1330",
-              "skill": "unit-equation",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "解方程：x + 13 = 131",
-              "answer": "x = 118",
-              "skill": "unit-equation",
+              "skill": "eq-combine-like",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -15683,14 +15747,14 @@ export const PROJECT_STATUS = {
       "moduleKey": "unitPlugin",
       "moduleLabel": "通用单元插件 (unitPlugins)",
       "moduleFile": "prototype/unitPlugins.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
-        "easy": 1,
-        "medium": 1,
-        "hard": 1
+        "easy": 3,
+        "medium": 3,
+        "hard": 3
       },
       "hasDiagram": false,
       "byDifficulty": {
@@ -15698,35 +15762,19 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-percent"
+            "pct-to-dec",
+            "find-pct-basic",
+            "pct-of-num"
           ],
           "formats": [
-            "application",
-            "fill"
+            "fill",
+            "application"
           ],
           "samples": [
             {
-              "question": "一次问卷共收到100份答卷，其中60份选择了步行出行。选择步行的答卷占总数的百分之几？",
-              "answer": "60%",
-              "skill": "unit-percent",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "一次问卷中，有40份答卷选择步行，占总数的40%。一共收到多少份答卷？",
-              "answer": "100份",
-              "skill": "unit-percent",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "50的20%是______。",
-              "answer": "10",
-              "skill": "unit-percent",
+              "question": "把百分数 95% 化成小数是______。",
+              "answer": "0.95",
+              "skill": "pct-to-dec",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
@@ -15735,8 +15783,26 @@ export const PROJECT_STATUS = {
             {
               "question": "一次问卷共收到50份答卷，其中20份选择了步行出行。选择步行的答卷占总数的百分之几？",
               "answer": "40%",
-              "skill": "unit-percent",
+              "skill": "find-pct-basic",
               "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "40的40%是______。",
+              "answer": "16",
+              "skill": "pct-of-num",
+              "format": "fill",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "把百分数 71% 化成小数是______。",
+              "answer": "0.71",
+              "skill": "pct-to-dec",
+              "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
@@ -15747,7 +15813,9 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-percent"
+            "find-pct",
+            "find-total",
+            "pct-of-num"
           ],
           "formats": [
             "application",
@@ -15757,7 +15825,7 @@ export const PROJECT_STATUS = {
             {
               "question": "一次问卷共收到200份答卷，其中50份选择了步行出行。选择步行的答卷占总数的百分之几？",
               "answer": "25%",
-              "skill": "unit-percent",
+              "skill": "find-pct",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -15766,7 +15834,7 @@ export const PROJECT_STATUS = {
             {
               "question": "一次问卷中，有96份答卷选择步行，占总数的60%。一共收到多少份答卷？",
               "answer": "160份",
-              "skill": "unit-percent",
+              "skill": "find-total",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -15775,7 +15843,7 @@ export const PROJECT_STATUS = {
             {
               "question": "30的50%是______。",
               "answer": "15",
-              "skill": "unit-percent",
+              "skill": "pct-of-num",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
@@ -15784,7 +15852,7 @@ export const PROJECT_STATUS = {
             {
               "question": "一次问卷共收到110份答卷，其中88份选择了步行出行。选择步行的答卷占总数的百分之几？",
               "answer": "80%",
-              "skill": "unit-percent",
+              "skill": "find-pct",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -15796,7 +15864,9 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-percent"
+            "pct-growth",
+            "pct-interest",
+            "pct-discount"
           ],
           "formats": [
             "application",
@@ -15804,36 +15874,36 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "一次问卷共收到500份答卷，其中400份选择了步行出行。选择步行的答卷占总数的百分之几？",
+              "question": "某果园去年产苹果500吨，今年产苹果900吨，今年比去年增产了百分之几？",
               "answer": "80%",
-              "skill": "unit-percent",
+              "skill": "pct-growth",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "一次问卷中，有232份答卷选择步行，占总数的80%。一共收到多少份答卷？",
-              "answer": "290份",
-              "skill": "unit-percent",
+              "question": "王叔叔把2900元存入银行，年利率是2%，存期3年，到期时一共可取回本息多少元？",
+              "answer": "3074元",
+              "skill": "pct-interest",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "390的60%是______。",
-              "answer": "234",
-              "skill": "unit-percent",
+              "question": "一件外套原价400元，商场促销打7折出售，现价是______元。",
+              "answer": "280元",
+              "skill": "pct-discount",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "一次问卷共收到270份答卷，其中54份选择了步行出行。选择步行的答卷占总数的百分之几？",
-              "answer": "20%",
-              "skill": "unit-percent",
+              "question": "某果园去年产苹果410吨，今年产苹果615吨，今年比去年增产了百分之几？",
+              "answer": "50%",
+              "skill": "pct-growth",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -16235,14 +16305,14 @@ export const PROJECT_STATUS = {
       "moduleKey": "unitPlugin",
       "moduleLabel": "通用单元插件 (unitPlugins)",
       "moduleFile": "prototype/unitPlugins.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
-        "easy": 1,
-        "medium": 1,
-        "hard": 1
+        "easy": 3,
+        "medium": 3,
+        "hard": 3
       },
       "hasDiagram": false,
       "byDifficulty": {
@@ -16250,43 +16320,45 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-negative"
+            "pos-neg-meaning",
+            "compare-basic",
+            "neg-write"
           ],
           "formats": [
             "application"
           ],
           "samples": [
             {
-              "question": "早上气温是-3℃，中午比早上升高了9℃，中午的气温是多少？",
-              "answer": "6℃",
-              "skill": "unit-negative",
+              "question": "如果向东走5米记作+5米，那么向西走11米应记作______米。",
+              "answer": "-11",
+              "skill": "pos-neg-meaning",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "某地某天最高气温4℃，最低气温-5℃，这天的温差是多少？",
-              "answer": "9℃",
-              "skill": "unit-negative",
+              "question": "比较大小：-8 和 -4，哪个数更大？",
+              "answer": "-4",
+              "skill": "compare-basic",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "比较大小：-3 和 -2，哪个数更大？",
-              "answer": "-2",
-              "skill": "unit-negative",
+              "question": "零下5摄氏度记作______℃，零上2摄氏度记作+2℃。",
+              "answer": "-5",
+              "skill": "neg-write",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "早上气温是-8℃，中午比早上升高了8℃，中午的气温是多少？",
-              "answer": "0℃",
-              "skill": "unit-negative",
+              "question": "如果向东走12米记作+12米，那么向西走10米应记作______米。",
+              "answer": "-10",
+              "skill": "pos-neg-meaning",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -16298,43 +16370,45 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-negative"
+            "rise",
+            "diff",
+            "compare"
           ],
           "formats": [
             "application"
           ],
           "samples": [
             {
-              "question": "早上气温是-3℃，中午比早上升高了5℃，中午的气温是多少？",
-              "answer": "2℃",
-              "skill": "unit-negative",
+              "question": "早上气温是-5℃，中午比早上升高了5℃，中午的气温是多少？",
+              "answer": "0℃",
+              "skill": "rise",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "某地某天最高气温6℃，最低气温-3℃，这天的温差是多少？",
-              "answer": "9℃",
-              "skill": "unit-negative",
+              "question": "某地某天最高气温15℃，最低气温-8℃，这天的温差是多少？",
+              "answer": "23℃",
+              "skill": "diff",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "比较大小：-10 和 -5，哪个数更大？",
-              "answer": "-5",
-              "skill": "unit-negative",
+              "question": "比较大小：-6 和 -12，哪个数更大？",
+              "answer": "-6",
+              "skill": "compare",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "早上气温是-8℃，中午比早上升高了1℃，中午的气温是多少？",
-              "answer": "-7℃",
-              "skill": "unit-negative",
+              "question": "早上气温是-1℃，中午比早上升高了4℃，中午的气温是多少？",
+              "answer": "3℃",
+              "skill": "rise",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -16346,43 +16420,45 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-negative"
+            "std-weight-offset",
+            "multi-step-move",
+            "number-line-dist"
           ],
           "formats": [
             "application"
           ],
           "samples": [
             {
-              "question": "早上气温是-6℃，中午比早上升高了12℃，中午的气温是多少？",
-              "answer": "6℃",
-              "skill": "unit-negative",
+              "question": "一袋饼干标准净重为130克，超过标准记为正，不足记为负。质检记作-8克，这袋饼干实际重多少克？",
+              "answer": "122克",
+              "skill": "std-weight-offset",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "某地某天最高气温8℃，最低气温-2℃，这天的温差是多少？",
-              "answer": "10℃",
-              "skill": "unit-negative",
+              "question": "潜水艇在海平面以下270米处（记作-270米），先上升80米，又下潜50米，现在位置记作多少米？",
+              "answer": "-240米",
+              "skill": "multi-step-move",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "比较大小：-13 和 -15，哪个数更大？",
-              "answer": "-13",
-              "skill": "unit-negative",
+              "question": "在数轴上，表示-9的点与表示+16的点之间相距多少个单位长度？",
+              "answer": "25",
+              "skill": "number-line-dist",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "早上气温是-16℃，中午比早上升高了6℃，中午的气温是多少？",
-              "answer": "-10℃",
-              "skill": "unit-negative",
+              "question": "一袋饼干标准净重为390克，超过标准记为正，不足记为负。质检记作-5克，这袋饼干实际重多少克？",
+              "answer": "385克",
+              "skill": "std-weight-offset",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,

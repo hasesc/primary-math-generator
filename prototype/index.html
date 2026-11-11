@@ -3,120 +3,220 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>小学数学 · 单元同步练生成器（原型 v0.1）</title>
-<link rel="stylesheet" href="style.css?v=20261111b">
+<title>小学数学 · 单元同步练习生成器</title>
+<link rel="stylesheet" href="style.css?v=20261111c">
 </head>
 <body>
+
+<!-- 顶栏导航 -->
 <header class="topbar no-print">
   <div class="brand">
-    <strong>小学数学 · 单元同步练</strong>
-    <span class="tag">原型 v0.6 · 实时生成 · 无题目存储</span>
+    <div class="brand-icon">📐</div>
+    <div class="brand-text">
+      <h1>小学数学 · 单元同步练</h1>
+      <span class="tag">人教版 1~6 年级 · 实时算法生成 · 无题库存储</span>
+    </div>
   </div>
-  <nav class="steps no-print">
-    <span class="step active" data-step="1">1 选教材</span>
-    <span class="step" data-step="2">2 选单元</span>
-    <span class="step" data-step="3">3 选难度</span>
-    <span class="step" data-step="4">4 出卷</span>
-    <a href="admin.html" class="step" style="text-decoration:none;margin-left:8px;background:#eef2ff;color:#3730a3;border:1px solid #c7d2fe">📊 项目管理看板</a>
-  </nav>
+
+  <div class="top-nav">
+    <nav class="steps">
+      <div class="step active" data-step="1">
+        <span class="step-num">1</span>
+        <span>选教材年级</span>
+      </div>
+      <div class="step" data-step="2">
+        <span class="step-num">2</span>
+        <span>选单元范围</span>
+      </div>
+      <div class="step" data-step="3">
+        <span class="step-num">3</span>
+        <span>难度与题量</span>
+      </div>
+      <div class="step" data-step="4">
+        <span class="step-num">4</span>
+        <span>预览与导出</span>
+      </div>
+    </nav>
+    <a href="admin.html" class="btn-admin-link">📊 管理看板</a>
+  </div>
 </header>
 
 <main class="container no-print">
-  <!-- 第一步：教材版本 + 年级 + 学期 -->
+  <!-- 第一步：练习方式 + 教材版本 + 年级 + 学期 -->
   <section class="panel" id="panel-1">
-    <h2>① 选择教材与年级</h2>
+    <div class="panel-header">
+      <h2><span>①</span> 选择教材与年级</h2>
+      <span class="subtext">请选择孩子的就读年级与学期，系统将自动匹配课标与单元</span>
+    </div>
+
     <div class="field">
       <label>练习方式</label>
-      <div class="options" id="mode-options">
-        <button class="opt selected" data-mode="unit">单元同步练</button>
-        <button class="opt" data-mode="oral">口算每日一练</button>
-        <button class="opt" data-mode="vertical">竖式每日一练</button>
+      <div class="mode-grid" id="mode-options">
+        <div class="mode-card selected" data-mode="unit">
+          <div class="mode-title">
+            <span>📘 单元同步练</span>
+            <span class="badge-tag hot">主打推荐</span>
+          </div>
+          <div class="mode-desc">紧扣教材 93 单元进度，支持基础/标准/提高三档阶梯考法与图形作图卷</div>
+        </div>
+        <div class="mode-card" data-mode="oral">
+          <div class="mode-title">
+            <span>⚡ 口算每日一练</span>
+            <span class="badge-tag">分级速算</span>
+          </div>
+          <div class="mode-desc">涵盖 10/20/100 以内加减法与表内乘除，夯实每日计算基本功</div>
+        </div>
+        <div class="mode-card" data-mode="vertical">
+          <div class="mode-title">
+            <span>📝 竖式每日一练</span>
+            <span class="badge-tag">规范排版</span>
+          </div>
+          <div class="mode-desc">支持加减乘除与小数对齐竖式框，带规范除法框与作答进位留白</div>
+        </div>
       </div>
     </div>
-    <div class="field">
+
+    <div class="field" id="textbook-field">
       <label>教材版本</label>
       <div class="options" id="textbook-options"></div>
     </div>
+
     <div class="field">
       <label>年级</label>
       <div class="options" id="grade-options"></div>
     </div>
-    <div class="field">
+
+    <div class="field" id="semester-field">
       <label>学期</label>
       <div class="options" id="semester-options"></div>
     </div>
-    <button class="btn primary" id="btn-next-1" disabled>下一步：选单元 →</button>
+
+    <div class="row-actions">
+      <div></div>
+      <button class="btn primary" id="btn-next-1" disabled>下一步：选单元范围 →</button>
+    </div>
   </section>
 
-  <!-- 第二步：单元 -->
+  <!-- 第二步：单元选择 -->
   <section class="panel hidden" id="panel-2">
-    <h2 id="range-heading">② 选择单元</h2>
+    <div class="panel-header">
+      <h2 id="range-heading"><span>②</span> 选择单元</h2>
+      <span class="subtext">点击卡片即可直接进入出卷配置</span>
+    </div>
+
+    <div class="search-bar">
+      <span class="search-icon">🔍</span>
+      <input type="search" class="search-input" id="unit-search" placeholder="搜索单元名称或考法知识点（如：有余数、倍的认识、面积、折线统计图...）">
+    </div>
+
     <div class="unit-grid" id="unit-list"></div>
+
     <div class="row-actions">
-      <button class="btn ghost" data-back="1">← 返回</button>
+      <button class="btn secondary" data-back="1">← 返回重选年级</button>
+      <div></div>
     </div>
   </section>
 
   <!-- 第三步：难度与题量 -->
   <section class="panel hidden" id="panel-3">
-    <h2>③ 难度与题量</h2>
+    <div class="panel-header">
+      <h2><span>③</span> 难度档位与卷面题量</h2>
+      <span class="subtext" id="selected-unit-badge">已选：人教版三年级上册 · 倍的认识</span>
+    </div>
+
     <div class="field">
-      <label>难度</label>
-      <div class="options" id="difficulty-options">
-        <button class="opt" data-v="easy">基础</button>
-        <button class="opt" data-v="medium">标准</button>
-        <button class="opt" data-v="hard">提高</button>
+      <label>难度梯度（三档阶梯考法）</label>
+      <div class="difficulty-cards" id="difficulty-options">
+        <div class="diff-card" data-v="easy">
+          <div class="diff-title-row">
+            <span class="diff-name">🌱 基础巩固</span>
+            <span class="badge-tag">夯实算理</span>
+          </div>
+          <div class="diff-desc">贴近课本例题与基本概念，以直接计算、求倍数与基础辨析为主，适合同步预习与错题补漏。</div>
+        </div>
+
+        <div class="diff-card selected" data-v="medium">
+          <div class="diff-title-row">
+            <span class="diff-name">🚀 标准通关</span>
+            <span class="badge-tag">校内自测</span>
+          </div>
+          <div class="diff-desc">对齐校内单元练习卷难度，覆盖变式填空、常规两步解决问题与综合应用，检验本单元达标情况。</div>
+        </div>
+
+        <div class="diff-card" data-v="hard">
+          <div class="diff-title-row">
+            <span class="diff-name">🏆 培优挑战</span>
+            <span class="badge-tag">思维拓展</span>
+          </div>
+          <div class="diff-desc">引入逆推算式、最不利原则、和倍差倍、进阶几何作图与多步推理，拉开思维梯度。</div>
+        </div>
       </div>
     </div>
+
     <div class="field">
-      <label>题量</label>
-      <div class="options" id="count-options">
-        <button class="opt" data-v="3" hidden>3 题</button>
-        <button class="opt" data-v="6" hidden>6 题</button>
-        <button class="opt" data-v="20">20 题</button>
-        <button class="opt" data-v="30">30 题</button>
-        <button class="opt" data-v="40">40 题</button>
+      <label>卷面题量</label>
+      <div class="count-grid" id="count-options">
+        <button class="count-chip" data-v="3" hidden>3 题</button>
+        <button class="count-chip" data-v="6" hidden>6 题（图形卷）</button>
+        <button class="count-chip" data-v="20">20 题（速练卷）</button>
+        <button class="count-chip selected" data-v="30">30 题（标准卷）</button>
+        <button class="count-chip" data-v="40">40 题（全真测试卷）</button>
       </div>
     </div>
+
     <div class="row-actions">
-      <button class="btn ghost" data-back="2">← 返回</button>
-      <button class="btn primary" id="btn-generate" disabled>⚡ 实时生成整卷</button>
+      <button class="btn secondary" data-back="2">← 返回选单元</button>
+      <button class="btn primary" id="btn-generate">⚡ 实时生成练习卷</button>
     </div>
     <p class="hint" id="gen-status"></p>
   </section>
 </main>
 
-<!-- 试卷视图 -->
+<!-- 试卷仿真工作台 -->
 <section class="paper-wrap hidden" id="paper-view">
-  <div class="paper-actions no-print">
-    <button class="btn primary" id="btn-print">🖨️ 打印 / 导出 PDF</button>
-    <button class="btn" id="btn-toggle-answers">显示答案页</button>
-    <button class="btn" id="btn-regenerate">🔄 换一套（重新生成）</button>
-    <button class="btn ghost" id="btn-back-config">← 重新配置</button>
+  <!-- 悬浮操作栏 -->
+  <div class="paper-workbench-bar no-print">
+    <div class="workbench-left">
+      <button class="btn primary" id="btn-print">🖨️ 打印 / 导出 PDF</button>
+      <button class="btn secondary" id="btn-toggle-answers">👁️ 显示答案页</button>
+      <button class="btn secondary" id="btn-regenerate">🔄 换一套新题</button>
+    </div>
+    <div class="workbench-right">
+      <button class="btn ghost" id="btn-back-config">⚙️ 调整配置</button>
+    </div>
   </div>
 
-  <div class="paper" id="paper-sheet">
+  <!-- A4 练习卷纸张 -->
+  <article class="paper" id="paper-sheet">
     <div class="paper-head">
-      <div class="paper-title" id="p-title">单元同步练</div>
+      <div class="paper-badge">HUMAN EDUCATION PRESS · PRIMARY MATHEMATICS</div>
+      <h1 class="paper-title" id="p-title">单元同步练</h1>
       <div class="paper-sub" id="p-sub"></div>
-      <div class="paper-meta">
-        姓名：<span class="blank-line name-line"></span>
-        日期：<span class="blank-line date-line"></span>
-        得分：<span class="blank-line score-line"></span>
+      <div class="paper-meta-grid">
+        <div>学校：<span class="blank-line" style="min-width:110px"></span></div>
+        <div>班级：<span class="blank-line"></span></div>
+        <div>姓名：<span class="blank-line"></span></div>
+        <div>学号：<span class="blank-line" style="min-width:60px"></span></div>
+        <div>用时：<span class="blank-line" style="min-width:50px"></span> 分钟</div>
+        <div>得分：<span class="score-box">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
       </div>
     </div>
-    <div id="paper-sections"></div>
-  </div>
 
-  <div class="paper answers hidden" id="answer-sheet">
-    <div class="paper-head">
-      <div class="paper-title">参考答案</div>
+    <!-- 试卷大题区域 -->
+    <div id="paper-sections"></div>
+  </article>
+
+  <!-- 参考答案纸张 -->
+  <article class="paper answers hidden" id="answer-sheet">
+    <div class="paper-head" style="border-bottom:1.5px solid #22c55e">
+      <div class="paper-badge" style="color:#16a34a">REFERENCE ANSWERS</div>
+      <h2 class="paper-title" style="color:#15803d">参考答案与评分要点</h2>
       <div class="paper-sub" id="a-sub"></div>
     </div>
     <div id="answer-sections"></div>
-  </div>
+  </article>
 </section>
 
-<script type="module" src="app.js?v=20261111b"></script>
+<script type="module" src="app.js?v=20261111c"></script>
 </body>
 </html>
