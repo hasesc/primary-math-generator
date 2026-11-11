@@ -79,16 +79,18 @@ function startServer(port = 3000) {
     console.log('======================================================\n');
     console.log('💡 正在为您自动在默认浏览器中打开页面...');
 
-    // Windows 自动调用默认浏览器
-    const openCmd = process.platform === 'win32'
-      ? `start "" "${targetUrl}"`
-      : process.platform === 'darwin'
-        ? `open "${targetUrl}"`
-        : `xdg-open "${targetUrl}"`;
-
-    exec(openCmd, (err) => {
-      if (err) console.log(`（请在浏览器地址栏手动输入：${targetUrl}）`);
-    });
+    // 跨平台自动拉起浏览器，Windows 下使用 PowerShell Start-Process 避免 ShellExecute 协议弹窗
+    if (process.platform === 'win32') {
+      exec(`powershell -NoProfile -Command "Start-Process '${targetUrl}'"`, (err) => {
+        if (err) {
+          exec(`start msedge "${targetUrl}"`, () => {});
+        }
+      });
+    } else if (process.platform === 'darwin') {
+      exec(`open "${targetUrl}"`);
+    } else {
+      exec(`xdg-open "${targetUrl}"`);
+    }
   });
 }
 
