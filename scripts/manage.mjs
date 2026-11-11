@@ -413,7 +413,11 @@ function main() {
       const status = execFileSync('git', ['status', '--porcelain'], { cwd: ROOT, encoding: 'utf8' });
       if (status.trim()) {
         execFileSync('git', ['commit', '-m', msg], { cwd: ROOT, stdio: 'inherit' });
-        writeStatusFile(getGitHistory());
+        const gitInfo = getGitHistory();
+        gitInfo.dirtyFiles = 0;
+        writeStatusFile(gitInfo);
+        execFileSync('git', ['add', 'prototype/projectStatus.js'], { cwd: ROOT, stdio: 'ignore' });
+        execFileSync('git', ['commit', '--amend', '--no-edit'], { cwd: ROOT, stdio: 'ignore' });
       } else {
         console.log('   ℹ️ 工作区无新增改动，跳过 commit。');
       }

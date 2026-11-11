@@ -1,7 +1,7 @@
 // 自动生成文件（请勿手改）：由 node scripts/manage.mjs 生成
 export const PROJECT_STATUS = {
   "summary": {
-    "generatedAt": "2026/11/11 15:01:23",
+    "generatedAt": "2026/11/11 15:03:12",
     "totalUnits": 93,
     "dedicatedUnits": 92,
     "reviewUnits": 1,
@@ -31,7 +31,7 @@ export const PROJECT_STATUS = {
       "name": "整卷生成冒烟测试 (6年级×3难度)",
       "file": "prototype/smoke-test.mjs",
       "passed": true,
-      "durationMs": 123,
+      "durationMs": 114,
       "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 1ms, 分布={\"arithmetic\":15,\"application\":7,\"olympiad\":8} | 结果: 18 通过 / 0 未达标"
     },
     {
@@ -47,7 +47,7 @@ export const PROJECT_STATUS = {
       "name": "数学答案独立逆向复算测试 (160轮)",
       "file": "prototype/correctness-test.mjs",
       "passed": true,
-      "durationMs": 88,
+      "durationMs": 92,
       "summary": "鸡兔同笼、植树、统计图并列和小数乘法的独立复算通过"
     },
     {
@@ -63,13 +63,24 @@ export const PROJECT_STATUS = {
       "name": "三档难度阶梯考法与答案测试",
       "file": "prototype/difficulty-gradient-test.mjs",
       "passed": true,
-      "durationMs": 53,
+      "durationMs": 49,
       "summary": "三个单元的难度梯度、题量和提高题答案检查通过"
     }
   ],
   "git": {
-    "initialized": false,
-    "commits": [],
+    "initialized": true,
+    "commits": [
+      {
+        "hash": "81459b0",
+        "date": "2026-11-11 15:03",
+        "message": "chore: 同步看板最新 Git 快照状态并保持工作区干净"
+      },
+      {
+        "hash": "64c8a25",
+        "date": "2026-11-11 15:01",
+        "message": "feat: 上线项目管理系统 v0.6.0（可视化看板 + 自动巡检 + Git 版本台账）"
+      }
+    ],
     "dirtyFiles": 0
   },
   "roadmap": [
