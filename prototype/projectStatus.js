@@ -1,7 +1,7 @@
 // 自动生成文件（请勿手改）：由 node scripts/manage.mjs 生成
 export const PROJECT_STATUS = {
   "summary": {
-    "generatedAt": "2026/11/11 16:18:04",
+    "generatedAt": "2026/11/11 16:30:09",
     "totalUnits": 93,
     "dedicatedUnits": 92,
     "reviewUnits": 1,
@@ -31,7 +31,7 @@ export const PROJECT_STATUS = {
       "name": "整卷生成冒烟测试 (6年级×3难度)",
       "file": "prototype/smoke-test.mjs",
       "passed": true,
-      "durationMs": 113,
+      "durationMs": 117,
       "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 1ms, 分布={\"arithmetic\":15,\"application\":7,\"olympiad\":8} | 结果: 18 通过 / 0 未达标"
     },
     {
@@ -39,7 +39,7 @@ export const PROJECT_STATUS = {
       "name": "93单元全量联动与756配置覆盖测试",
       "file": "prototype/coverage-test.mjs",
       "passed": true,
-      "durationMs": 168,
+      "durationMs": 169,
       "summary": "总计 93 单元：联动通过 92，无专属出题映射（含整理与复习）1，不合格 0 | 已检查 756 种难度与题量组合。至少一组配置只有一个卷面分类的单元（分类数不等于考法数）共 81 个：1上 准备课、1上 位置、1上 1~5的认识和加减法、1上 认识图形（一）、1上 6~10的认识和加减法、1上 11~20各数的认识、1上 20以内的进位加法、1下 20以内的退位减法、1下 100以内数的认识、1下 100以内的加法和减法（一）、1下 认识图形（二）、1下 100以内的加法和减法（二）、1下 找规律、2上 100以内的加法和减法（二）、2上 角的初步认识、2上 表内乘法（一）、2上 观察物体（一）、2上 表内乘法（二）、2上 数学广角——搭配（一）、2下 数据收集整理、2下 表内除法（一）、2下 图形的运动（一）、2下 表内除法（二）、2下 混合运算、2下 有余数的除法、2下 万以内数的认识、2下 数学广角——推理、3上 万以内的加法和减法（一）、3上 万以内的加法和减法（二）、3上 倍的认识、3上 多位数乘一位数、3上 长方形和正方形、3上 分数的初步认识、3下 位置与方向（一）、3下 除数是一位数的除法、3下 复式统计表、3下 两位数乘两位数、3下 面积、3下 年月日、3下 小数的初步认识、3下 数学广角——搭配（二）、4上 大数的认识、4上 角的度量、4上 三位数乘两位数、4上 平行四边形和梯形、4上 除数是两位数的除法、4上 条形统计图、4上 数学广角——优化、4下 四则运算、4下 观察物体（二）、4下 运算定律、4下 小数的意义和性质、4下 三角形、4下 小数的加法和减法、4下 图形的运动（二）、4下 平均数与条形统计图、4下 数学广角——鸡兔同笼、5上 位置、5上 可能性、5上 简易方程、5上 多边形的面积、5上 数学广角——植树问题、5下 观察物体（三）、5下 因数与倍数、5下 长方体和正方体、5下 分数的意义和性质、5下 图形的运动（三）、5下 分数的加法和减法、5下 折线统计图、5下 数学广角——找次品、6上 位置与方向（二）、6上 分数除法、6上 比、6上 圆、6上 扇形统计图、6上 数学广角——数与形、6下 负数、6下 百分数（二）、6下 圆柱与圆锥、6下 比例、6下 数学广角——鸽巢问题"
     },
     {
@@ -47,7 +47,7 @@ export const PROJECT_STATUS = {
       "name": "数学答案独立逆向复算测试 (160轮)",
       "file": "prototype/correctness-test.mjs",
       "passed": true,
-      "durationMs": 81,
+      "durationMs": 87,
       "summary": "鸡兔同笼、植树、统计图并列和小数乘法的独立复算通过"
     },
     {
@@ -55,7 +55,7 @@ export const PROJECT_STATUS = {
       "name": "口算/竖式每日一练专项测试 (123配置)",
       "file": "prototype/daily-practice-test.mjs",
       "passed": true,
-      "durationMs": 74,
+      "durationMs": 75,
       "summary": "123 种每日一练配置通过，题量、去重、答案复算和年级限制正常"
     },
     {
@@ -63,7 +63,7 @@ export const PROJECT_STATUS = {
       "name": "三档难度阶梯考法与答案测试",
       "file": "prototype/difficulty-gradient-test.mjs",
       "passed": true,
-      "durationMs": 84,
+      "durationMs": 85,
       "summary": "✅ 25 个专项插件（18 个全独立三档考法 + 7 个进阶分支插件）的难度梯度、题量和提高题答案复算全部通过！"
     }
   ],
@@ -71,7 +71,12 @@ export const PROJECT_STATUS = {
     "initialized": true,
     "commits": [
       {
-        "hash": "8fe7e72",
+        "hash": "210dbb5",
+        "date": "2026-11-11 16:30",
+        "message": "fix: 彻底解决本地浏览器file协议下按钮无反应问题，新增一键双击启动器与智能引导"
+      },
+      {
+        "hash": "8638a4b",
         "date": "2026-11-11 16:18",
         "message": "feat: 前端UI界面全面精装升级 + 通用插件考法补全 (阶梯考法达42单元，v0.8.0)"
       },
@@ -151,6 +156,19 @@ export const PROJECT_STATUS = {
     }
   ],
   "changelog": [
+    {
+      "version": "v0.8.1",
+      "date": "2026-11-11",
+      "title": "解决本地浏览器file协议限制 + 新增一键运行启动器与智能引导",
+      "bullets": [
+        "**解决本地直接打开 HTML 按钮无反应问题**：",
+        "排查确认原因：现代主流浏览器（Chrome/Edge）因严格的 CORS/Module 同源安全策略，默认在本地 file:/// 协议下阻止加载 <script type=\"module\" src=\"app.js\">，导致 JS 未被执行。",
+        "**提供零依赖本地静态 HTTP 服务器**（[scripts/serve.mjs](scripts/serve.mjs)）：Node.js 原生内置 http 模块实现，自动搜寻可用端口，启动即自动在用户默认浏览器中唤起 http://127.0.0.1:3000/prototype/index.html。",
+        "**提供一键双击运行启动器**（[双击启动出题器.bat](双击启动出题器.bat)）：根目录下 Windows 用户仅需在文件管理器中双击即可一秒直达前端出卷工作台。",
+        "**增加网页端智能异常探测与提示**（[prototype/index.html](prototype/index.html)）：底部加入非模块原生行内脚本探测，若用户误以 file:// 双击打开且未初始化，自动弹出醒目的友好黄色指引横幅。",
+        "**5 大自动化测试套件持续 100% 绿灯**：冒烟、覆盖率、独立数学逆向复算、每日一练、难度梯度全部通过。"
+      ]
+    },
     {
       "version": "v0.8.0",
       "date": "2026-11-11",

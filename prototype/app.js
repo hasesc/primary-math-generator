@@ -473,3 +473,5 @@ if (params.get('grade')) {
     if (params.get('autogen') === '1') doGenerate();
   }
 }
+
+window.__APP_INITIALIZED__ = true;

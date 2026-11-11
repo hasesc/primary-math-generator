@@ -4,6 +4,16 @@
 
 ---
 
+## [v0.8.1] - 2026-11-11 · 解决本地浏览器file协议限制 + 新增一键运行启动器与智能引导
+- **解决本地直接打开 HTML 按钮无反应问题**：
+  - 排查确认原因：现代主流浏览器（Chrome/Edge）因严格的 CORS/Module 同源安全策略，默认在本地 `file:///` 协议下阻止加载 `<script type="module" src="app.js">`，导致 JS 未被执行。
+  - **提供零依赖本地静态 HTTP 服务器**（[`scripts/serve.mjs`](scripts/serve.mjs)）：Node.js 原生内置 `http` 模块实现，自动搜寻可用端口，启动即自动在用户默认浏览器中唤起 `http://127.0.0.1:3000/prototype/index.html`。
+  - **提供一键双击运行启动器**（[`双击启动出题器.bat`](双击启动出题器.bat)）：根目录下 Windows 用户仅需在文件管理器中双击即可一秒直达前端出卷工作台。
+  - **增加网页端智能异常探测与提示**（[`prototype/index.html`](prototype/index.html)）：底部加入非模块原生行内脚本探测，若用户误以 `file://` 双击打开且未初始化，自动弹出醒目的友好黄色指引横幅。
+- **5 大自动化测试套件持续 100% 绿灯**：冒烟、覆盖率、独立数学逆向复算、每日一练、难度梯度全部通过。
+
+---
+
 ## [v0.8.0] - 2026-11-11 · 前端UI界面全面精装升级 + 通用插件考法补全 (阶梯考法达42单元)
 - **前端工作台 UI 全面精装升级（彻底告别毛坯房）**（[`prototype/style.css`](prototype/style.css) / [`prototype/index.html`](prototype/index.html) / [`prototype/app.js`](prototype/app.js)）：
   - **现代设计语言体系**：引入教育科技蓝主色调（`#2563eb`）搭配翡翠绿与轻奢紫，采用多层次柔和弥散阴影、毛玻璃悬浮顶栏（`backdrop-filter`）与精巧的步骤胶囊指示器。
