@@ -1,0 +1,10 @@
+# 临时目录与日志
+tmp/
+logs/
+__pycache__/
+*.pyc
+node_modules/
+.DS_Store
+
+# 上游参考克隆仓库（各自含独立 .git，核心逻辑已移植至 prototype/engine/）
+repos/

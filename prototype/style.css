@@ -1,0 +1,197 @@
+/* 原型 v0.1 —— 屏幕界面 + 打印样式分离 */
+:root {
+  --brand: #2f6fed;
+  --brand-dark: #1e4fc0;
+  --ink: #1f2329;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --bg: #f5f7fa;
+  --panel: #ffffff;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+/* ── 顶栏 ── */
+.topbar {
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.brand strong { font-size: 18px; }
+.brand .tag {
+  margin-left: 10px;
+  font-size: 12px;
+  color: var(--brand);
+  background: #eef3fe;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+.steps { display: flex; gap: 8px; }
+.step {
+  font-size: 13px;
+  color: var(--muted);
+  padding: 4px 12px;
+  border-radius: 14px;
+  background: var(--bg);
+}
+.step.active { color: #fff; background: var(--brand); }
+
+/* ── 配置面板 ── */
+.container { max-width: 860px; margin: 24px auto; padding: 0 16px; }
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.panel h2 { font-size: 17px; margin-bottom: 18px; }
+.field { margin-bottom: 18px; }
+.field > label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+.options { display: flex; flex-wrap: wrap; gap: 8px; }
+.opt {
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all .15s;
+}
+.opt:hover { border-color: var(--brand); }
+.opt.selected { background: var(--brand); border-color: var(--brand); color: #fff; }
+.opt:disabled { opacity: .45; cursor: not-allowed; }
+
+.unit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 10px;
+}
+.unit-item {
+  text-align: left;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all .15s;
+}
+.unit-item:not(:disabled):hover { border-color: var(--brand); box-shadow: 0 2px 8px rgba(47,111,237,.1); }
+.unit-item:disabled { color: var(--muted); background: #f8f9fb; cursor: not-allowed; }
+.unit-item.selected { border-color: var(--brand); background: #eef3fe; }
+
+.btn {
+  padding: 10px 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+.btn.primary {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+.btn.primary:hover { background: var(--brand-dark); }
+.btn.primary:disabled { opacity: .5; cursor: not-allowed; }
+.btn.ghost { border: none; background: none; color: var(--muted); }
+.row-actions { display: flex; gap: 12px; margin-top: 8px; }
+.hint { font-size: 12px; color: var(--muted); margin-top: 10px; min-height: 16px; }
+.hidden { display: none !important; }
+
+/* ── 试卷 ── */
+.paper-wrap { max-width: 900px; margin: 20px auto 60px; padding: 0 16px; }
+.paper-actions { display: flex; gap: 10px; margin-bottom: 18px; flex-wrap: wrap; }
+.paper {
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 52px 56px;
+  min-height: 1100px;
+  line-height: 1.9;
+}
+.paper.answers { min-height: auto; }
+.paper-title { font-size: 22px; font-weight: 700; text-align: center; letter-spacing: 2px; }
+.paper-sub { text-align: center; color: var(--muted); font-size: 13px; margin-top: 8px; }
+.paper-meta { margin: 22px 0 8px; font-size: 14px; }
+.blank-line { display: inline-block; border-bottom: 1px solid #999; min-width: 90px; }
+.score-line { min-width: 60px; }
+
+.section-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 30px 0 18px;
+}
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px 40px;
+  font-size: 16px;
+}
+.calc-grid .q { white-space: normal; }
+.app-list { display: flex; flex-direction: column; gap: 26px; font-size: 15.5px; line-height: 1.9; }
+.app-list .q { margin-bottom: 8px; }
+.question-diagram { display: block; max-width: 100%; height: auto; color: #111; }
+.vertical-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 30px; }
+.vertical-grid > div { min-height: 220px; break-inside: avoid; }
+.vertical-problem { margin: 16px 0 0 24px; width: max-content; font: 20px/1.7 Consolas, monospace; white-space: pre; }
+.vertical-stack { text-align: right; border-bottom: 1px solid #222; min-width: 100px; }
+.division-setup { display: flex; align-items: start; gap: 7px; padding-top: 20px; }
+.dividend { border-top: 1px solid #222; border-left: 1px solid #222; border-radius: 6px 0 0 0; padding: 0 6px 0 10px; }
+@media (max-width: 600px) {
+  .paper { padding: 24px 16px; }
+  .calc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+}
+.question-table { border-collapse: collapse; text-align: center; margin-bottom: 8px; }
+.question-table th, .question-table td { border: 1px solid #555; padding: 2px 10px; }
+/* 应用题/思维题下方的书写空间 */
+.write-space {
+  border-bottom: 1px dashed #bbb;
+  height: 56px;
+}
+.write-space.tall { height: 72px; }
+.ans-list { font-size: 14px; line-height: 1.7; }
+.ans-list .ans-item { margin-bottom: 8px; }
+.ans-diagrams { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 24px; font-size: 14px; }
+.ans-cols { columns: 3; column-gap: 28px; font-size: 14px; line-height: 1.9; }
+.ans-cols .ans-item { break-inside: avoid; }
+
+/* ── 打印样式：A4 干净输出 ── */
+@media print {
+  @page {
+    size: A4; margin: 14mm;
+    @bottom-center { content: counter(page); font-size: 9pt; color: #555; }
+  }
+  body { background: #fff; }
+  .no-print { display: none !important; }
+  .paper-wrap { margin: 0; padding: 0; max-width: none; }
+  .paper { border: none; padding: 0; min-height: auto; }
+  .hidden { display: none !important; }
+  #answer-sheet { page-break-before: always; }
+  .section-title { margin-top: 22px; }
+  .calc-grid { gap: 22px 32px; }
+  .app-list { gap: 22px; }
+  .diagram-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 24px; }
+  .diagram-list .question-diagram[data-kind="grid"] { width: 200px; }
+  .ans-list { columns: 2; column-gap: 28px; }
+  .ans-diagrams .question-diagram { max-width: 210px; }
+  .section-title { break-after: avoid; }
+  .calc-grid .q { break-inside: avoid; }
+  .app-list > div, .ans-item { break-inside: avoid; }
+  .vertical-grid > div { break-inside: avoid; min-height: 52mm; }
+  .write-space { height: 48px; }
+  .write-space.tall { height: 64px; }
+}
+@media screen {
+  #answer-sheet.answers:not(.hidden) { margin-top: 24px; border-color: #d9e2f5; background: #fbfcff; }
+}

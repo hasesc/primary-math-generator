@@ -1,0 +1,30 @@
+# 出题小程序 · 项目长期备忘 (MEMORY)
+
+> **重要提示**：本项目已启用全链路管理系统（`GEMINI.md` + `PROJECT_STATUS.md` + `CHANGELOG.md` + `prototype/admin.html` 看板 + `scripts/manage.mjs` 自动巡检与 Git 快照）。每次改动后必须运行 `node scripts/manage.mjs snapshot "说明"`。
+
+## 1. 项目定位
+- **产品**：小学数学出题工具小程序（个人主体，免费 + 广告 IAA → 后续叠加“虚拟支付:个人”会员制）
+- **v1.0 核心卖点**：按教材版本×年级×单元×难度实时生成整卷+答案页；同时内置“口算每日一练”与“竖式每日一练”模块
+- **红线**：① 纯算法实时生成，绝不做题库/存储 ② 命名只叫“单元同步练”，绝不碰“真题/试卷/小升初/课程/讲解” ③ 名称/Logo 完全自起
+
+## 2. 最新开发状态（2026-11-11 v0.6.0）
+- **93 单元 100% 覆盖完成**：人教版 1~6 年级上下册 93 个单元中，92 个已接入专属插件/模板（含 `scopeProblems.js` 39个课标专项、`geometryProblems.js` 16个几何图形、`gridProblems.js` 6个方格作图、`diagramProblems.js` 7个钟表与统计图表、`unitPlugins.js` 通用专项），仅 6下《整理与复习》为全科综合复习卷。
+- **内置模块已就绪**：`dailyPractice.js` 覆盖 17 个口算/竖式专项（按年级解锁，支持加减乘小数竖式对齐与除法竖式框渲染）。
+- **三档难度梯度升级进行中**：`有余数的除法`、`倍的认识`、`因数与倍数` 等单元已完成 `easy / medium / hard` 独立考法分支（见 `difficulty-gradient-test.mjs`），其余单元状态可在 `prototype/admin.html` 看板实时查看。
+- **打印与 PDF 样张已验证**：`output/pdf/` 下已生成 8 类典型题型 A4 PDF 样张及合并审阅卷 `print-review-samples.pdf`，通过无溢出、题号完整性校验。
+- **项目管理系统已上线**：
+  - 网页管理看板：`prototype/admin.html`（93 单元矩阵、三档难度样题对比、待办、变更日志、测试与 Git 状态）
+  - 自动化巡检与快照 CLI：`node scripts/manage.mjs` / `node scripts/manage.mjs snapshot "说明"`
+
+## 3. 核心文件索引
+- 状态与路线图：`PROJECT_STATUS.md`
+- 变更日志：`CHANGELOG.md`
+- AI 强制规范：`GEMINI.md`
+- 原型前端与看板：`prototype/index.html`、`prototype/admin.html`
+- 出题核心：`prototype/units.js`、`prototype/paper.js`、`prototype/scopeProblems.js`、`prototype/unitPlugins.js`、`prototype/geometryProblems.js`、`prototype/gridProblems.js`、`prototype/diagramProblems.js`、`prototype/renderDiagram.js`、`prototype/dailyPractice.js`
+- 自动化测试：`prototype/smoke-test.mjs`、`prototype/coverage-test.mjs`、`prototype/correctness-test.mjs`、`prototype/daily-practice-test.mjs`、`prototype/difficulty-gradient-test.mjs`
+
+## 4. 下一步待办
+1. 在 `admin.html` 看板指引下，分批为剩余“固定考法/仅数值梯度”单元补充 `easy / medium / hard` 阶梯考法。
+2. 将 `prototype/` 出题引擎与页面移植到微信小程序骨架 `repos/skeleton/`。
+3. 编写闲鱼/小红书 PDF 题卡包批量生成脚本（带小程序码导流）。

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小学数学出题小程序 · 项目管理与93单元全景看板</title>
+<style>
+  :root {
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --muted: #64748b;
+    --primary: #2563eb;
+    --primary-bg: #eff6ff;
+    --success: #16a34a;
+    --success-bg: #f0fdf4;
+    --info: #0284c7;
+    --info-bg: #f0f9ff;
+    --warning: #d97706;
+    --warning-bg: #fffbeb;
+    --neutral: #475569;
+    --neutral-bg: #f1f5f9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand h1 {
+    font-size: 18px;
+    margin: 0;
+    font-weight: 700;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .badge.success { background: var(--success-bg); color: var(--success); border: 1px solid #bbf7d0; }
+  .badge.info { background: var(--info-bg); color: var(--info); border: 1px solid #bae6fd; }
+  .badge.warning { background: var(--warning-bg); color: var(--warning); border: 1px solid #fde68a; }
+  .badge.neutral { background: var(--neutral-bg); color: var(--neutral); border: 1px solid #cbd5e1; }
+  .badge.primary { background: var(--primary-bg); color: var(--primary); border: 1px solid #bfdbfe; }
+
+  .top-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .cmd-pill {
+    font-family: Consolas, Monaco, monospace;
+    font-size: 12px;
+    background: #1e293b;
+    color: #f8fafc;
+    padding: 5px 10px;
+    border-radius: 6px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--text);
+  }
+  .btn.primary {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+  }
+  .btn:hover { opacity: 0.92; }
+
+  .wrap {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px 24px 48px;
+  }
+
+  /* KPI 卡片 */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .kpi-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .kpi-label {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .kpi-val {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .kpi-sub {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* 导航页签 */
+  .tabs {
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+  .tab-btn {
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+  }
+  .tab-btn.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+  }
+  .tab-pane { display: none; }
+  .tab-pane.active { display: block; }
+
+  /* 筛选栏 */
+  .filters {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .filter-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+  }
+  .filter-group label {
+    color: var(--muted);
+    font-weight: 600;
+  }
+  select, input[type="search"] {
+    padding: 6px 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 13px;
+    background: #fff;
+  }
+
+  /* 单元主布局：左表右详情 */
+  .unit-workspace {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  @media (max-width: 1100px) {
+    .unit-workspace { grid-template-columns: 1fr; }
+  }
+  .panel-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .panel-head {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8fafc;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .unit-table-wrap {
+    max-height: 74vh;
+    overflow-y: auto;
+  }
+  table.unit-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  table.unit-table th, table.unit-table td {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+  }
+  table.unit-table th {
+    position: sticky;
+    top: 0;
+    background: #f1f5f9;
+    font-weight: 600;
+    color: #334155;
+    z-index: 2;
+  }
+  table.unit-table tr {
+    cursor: pointer;
+    transition: background 0.12s;
+  }
+  table.unit-table tr:hover { background: #f8fafc; }
+  table.unit-table tr.active { background: #eff6ff; }
+
+  .mono {
+    font-family: Consolas, Monaco, monospace;
+    font-size: 12px;
+    color: #475569;
+  }
+
+  /* 右侧详情对比 */
+  .detail-body {
+    padding: 16px;
+  }
+  .detail-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 8px 0 12px;
+  }
+  .diff-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 12px;
+  }
+  @media (max-width: 720px) {
+    .diff-cols { grid-template-columns: 1fr; }
+  }
+  .diff-col {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px;
+    background: #fcfdff;
+  }
+  .diff-col h4 {
+    margin: 0 0 8px;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 10px;
+  }
+  .skill-tag {
+    font-size: 11px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: #e2e8f0;
+    color: #1e293b;
+    font-family: Consolas, monospace;
+  }
+  .skill-tag.unique {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #86efac;
+    font-weight: 600;
+  }
+  .sample-item {
+    font-size: 12px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 6px;
+  }
+  .sample-q { color: #0f172a; margin-bottom: 3px; word-break: break-word; }
+  .sample-a { color: #16a34a; font-weight: 600; font-size: 11px; }
+
+  /* 两列信息面板 */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 960px) {
+    .two-col { grid-template-columns: 1fr; }
+  }
+  .list-block {
+    padding: 14px 16px;
+  }
+  .task-group h4 {
+    margin: 10px 0 6px;
+    font-size: 13px;
+    color: #334155;
+  }
+  .task-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+    padding: 4px 0;
+  }
+  .task-item.done { color: var(--muted); text-decoration: line-through; }
+  .log-entry {
+    border-left: 3px solid var(--primary);
+    padding-left: 12px;
+    margin-bottom: 16px;
+  }
+  .log-entry h4 { margin: 0 0 6px; font-size: 14px; }
+  .log-entry ul { margin: 0; padding-left: 18px; font-size: 13px; color: #334155; }
+  .daily-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 14px;
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <h1>📊 小学数学出题小程序 · 项目管理看板</h1>
+    <span class="badge primary" id="status-time">加载中...</span>
+  </div>
+  <div class="top-actions">
+    <span class="cmd-pill" title="每次改动代码后在终端执行此命令刷新看板并保存快照">node scripts/manage.mjs snapshot "说明"</span>
+    <a class="btn primary" href="index.html">⚡ 打开出题器 (index.html)</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <!-- KPI 概览 -->
+  <div class="kpi-grid" id="kpi-grid"></div>
+
+  <!-- 页签导航 -->
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="units">📚 93单元全景矩阵 & 三档难度对比</button>
+    <button class="tab-btn" data-tab="daily">🔢 口算/竖式每日一练 (17个专项)</button>
+    <button class="tab-btn" data-tab="roadmap">🗺️ 路线图 · 测试防线 · 变更台账</button>
+    <button class="tab-btn" data-tab="rules">🛡️ 架构地图与防失忆规范</button>
+  </div>
+
+  <!-- Tab 1: 93单元矩阵 -->
+  <section class="tab-pane active" id="tab-units">
+    <div class="filters">
+      <div class="filter-group">
+        <label>年级</label>
+        <select id="f-grade">
+          <option value="all">全部年级 (1~6)</option>
+          <option value="1">一年级</option>
+          <option value="2">二年级</option>
+          <option value="3">三年级</option>
+          <option value="4">四年级</option>
+          <option value="5">五年级</option>
+          <option value="6">六年级</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>学期</label>
+        <select id="f-sem">
+          <option value="all">上+下册</option>
+          <option value="上">上册</option>
+          <option value="下">下册</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>难度梯度状态</label>
+        <select id="f-grad">
+          <option value="all">全部状态</option>
+          <option value="tiered-skills">✅ 阶梯考法 (三档考法独立)</option>
+          <option value="three-tier-range">🔹 三档数值 (递进区间)</option>
+          <option value="two-tier-range">⚠️ 两档数值 (待拉开梯度)</option>
+          <option value="fixed-range">⚪ 课标定界 (固定范围)</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>所属模块</label>
+        <select id="f-mod">
+          <option value="all">全部模块</option>
+          <option value="scope">课标范围专项 (scopeProblems)</option>
+          <option value="unitPlugin">通用单元插件 (unitPlugins)</option>
+          <option value="geometry">几何与视图 (geometryProblems)</option>
+          <option value="diagram">钟表与统计图表 (diagramProblems)</option>
+          <option value="grid">方格与坐标作图 (gridProblems)</option>
+          <option value="engineTopic">引擎题材模板 (problemTemplates)</option>
+          <option value="review">全科综合复习</option>
+        </select>
+      </div>
+      <div class="filter-group" style="flex:1;min-width:180px">
+        <input type="search" id="f-search" placeholder="搜索单元名称、插件ID或考法..." style="width:100%">
+      </div>
+    </div>
+
+    <div class="unit-workspace">
+      <div class="panel-card">
+        <div class="panel-head">
+          <span id="unit-count-label">单元列表</span>
+          <span style="font-size:12px;color:var(--muted);font-weight:400">点击任意行在右侧并排对比「基础 / 标准 / 提高」样题</span>
+        </div>
+        <div class="unit-table-wrap">
+          <table class="unit-table">
+            <thead>
+              <tr>
+                <th>编号</th>
+                <th>单元名称</th>
+                <th>插件/模块</th>
+                <th>考法数(基/标/提)</th>
+                <th>难度梯度</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody id="unit-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel-card" id="unit-detail">
+        <div class="panel-head">
+          <span id="detail-title">单元三档难度对比</span>
+          <div id="detail-links"></div>
+        </div>
+        <div class="detail-body" id="detail-body">
+          <p style="color:var(--muted)">请从左侧点击任意教材单元查看详情。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tab 2: 每日一练 -->
+  <section class="tab-pane" id="tab-daily">
+    <div class="daily-grid" id="daily-grid"></div>
+  </section>
+
+  <!-- Tab 3: 路线图与台账 -->
+  <section class="tab-pane" id="tab-roadmap">
+    <div class="two-col">
+      <div>
+        <div class="panel-card" style="margin-bottom:16px">
+          <div class="panel-head"><span>🎯 路线图与待办事项 (PROJECT_STATUS.md)</span></div>
+          <div class="list-block" id="roadmap-box"></div>
+        </div>
+        <div class="panel-card" style="margin-bottom:16px">
+          <div class="panel-head"><span>🧪 5大自动化测试防线</span></div>
+          <div class="list-block" id="tests-box"></div>
+        </div>
+        <div class="panel-card">
+          <div class="panel-head"><span>📦 Git 版本快照记录</span></div>
+          <div class="list-block" id="git-box"></div>
+        </div>
+      </div>
+      <div class="panel-card">
+        <div class="panel-head"><span>📜 变更日志台账 (CHANGELOG.md)</span></div>
+        <div class="list-block" id="changelog-box"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tab 4: 架构与防失忆规范 -->
+  <section class="tab-pane" id="tab-rules">
+    <div class="two-col">
+      <div class="panel-card">
+        <div class="panel-head"><span>🗺️ 核心代码文件地图</span></div>
+        <div class="list-block">
+          <table class="unit-table">
+            <thead><tr><th>文件</th><th>职责说明</th></tr></thead>
+            <tbody>
+              <tr><td class="mono">prototype/units.js</td><td>人教版 1~6 年级 93 个单元映射定义与默认配置</td></tr>
+              <tr><td class="mono">prototype/paper.js</td><td>generatePaper(config) 纯函数组卷总调度入口</td></tr>
+              <tr><td class="mono">prototype/scopeProblems.js</td><td>39 个课标专项插件（有余数除法、倍的认识、因数倍数、分小数等）</td></tr>
+              <tr><td class="mono">prototype/unitPlugins.js</td><td>UNIT_PLUGINS 汇总表及单位换算、方程、百分数、负数、植树、鸡兔等</td></tr>
+              <tr><td class="mono">prototype/geometryProblems.js</td><td>16 个几何与观察物体三视图插件（默认 maxCount: 6）</td></tr>
+              <tr><td class="mono">prototype/gridProblems.js</td><td>6 个方格纸作图与方向位置插件（含答案参考图 answerDiagram）</td></tr>
+              <tr><td class="mono">prototype/diagramProblems.js</td><td>7 个钟表与统计图表插件（条形/折线/扇形/复式表）</td></tr>
+              <tr><td class="mono">prototype/renderDiagram.js</td><td>高分辨率打印级 SVG 图形渲染器</td></tr>
+              <tr><td class="mono">prototype/dailyPractice.js</td><td>17 个口算/竖式每日一练生成器与竖式 DOM 渲染</td></tr>
+              <tr><td class="mono">scripts/manage.mjs</td><td>全链路自动测试、93单元难度体检、看板生成与 Git 快照 CLI</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="panel-card">
+        <div class="panel-head"><span>🚨 产品红线与防失忆工作流 (GEMINI.md)</span></div>
+        <div class="list-block" style="font-size:13px">
+          <h4 style="margin-top:0">一、每次修改代码后的强制三步曲</h4>
+          <ol>
+            <li>运行 <code>node scripts/manage.mjs snapshot "改动说明"</code>：自动跑通 5 大测试套件、更新本看板数据并提交 Git 快照。</li>
+            <li>在 <code>CHANGELOG.md</code> 记录本次新增或修改的单元考法，同步更新 <code>PROJECT_STATUS.md</code> 待办勾选。</li>
+            <li>若修改了前端 JS/CSS，递增 <code>index.html</code> / <code>admin.html</code> 中的 <code>?v=</code> 版本号防缓存。</li>
+          </ol>
+          <h4>二、绝对不可触碰的合规与技术红线</h4>
+          <ul>
+            <li><strong>绝不做题库、不存题目</strong>：个人主体按微信小程序“工具”类目申报，纯算法实时生成，无任何题目持久化存储。</li>
+            <li><strong>合规文案红线</strong>：界面与导出物只用“单元同步练 / 练习卷 / 实时生成 / 导出打印”，严禁出现“真题 / 试卷 / 小升初 / 名校 / 提分 / 课程 / 讲解 / 辅导”。</li>
+            <li><strong>引擎参数铁律</strong>：<code>config.digits</code> 四键（add/subtract/multiply/divide）必须齐全，<code>termCount</code> 必传。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script type="module" src="admin.js?v=20261111a"></script>
+</body>
+</html>

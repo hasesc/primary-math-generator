@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小学数学 · 单元同步练生成器（原型 v0.1）</title>
+<link rel="stylesheet" href="style.css?v=20261111a">
+</head>
+<body>
+<header class="topbar no-print">
+  <div class="brand">
+    <strong>小学数学 · 单元同步练</strong>
+    <span class="tag">原型 v0.6 · 实时生成 · 无题目存储</span>
+  </div>
+  <nav class="steps no-print">
+    <span class="step active" data-step="1">1 选教材</span>
+    <span class="step" data-step="2">2 选单元</span>
+    <span class="step" data-step="3">3 选难度</span>
+    <span class="step" data-step="4">4 出卷</span>
+    <a href="admin.html" class="step" style="text-decoration:none;margin-left:8px;background:#eef2ff;color:#3730a3;border:1px solid #c7d2fe">📊 项目管理看板</a>
+  </nav>
+</header>
+
+<main class="container no-print">
+  <!-- 第一步：教材版本 + 年级 + 学期 -->
+  <section class="panel" id="panel-1">
+    <h2>① 选择教材与年级</h2>
+    <div class="field">
+      <label>练习方式</label>
+      <div class="options" id="mode-options">
+        <button class="opt selected" data-mode="unit">单元同步练</button>
+        <button class="opt" data-mode="oral">口算每日一练</button>
+        <button class="opt" data-mode="vertical">竖式每日一练</button>
+      </div>
+    </div>
+    <div class="field">
+      <label>教材版本</label>
+      <div class="options" id="textbook-options"></div>
+    </div>
+    <div class="field">
+      <label>年级</label>
+      <div class="options" id="grade-options"></div>
+    </div>
+    <div class="field">
+      <label>学期</label>
+      <div class="options" id="semester-options"></div>
+    </div>
+    <button class="btn primary" id="btn-next-1" disabled>下一步：选单元 →</button>
+  </section>
+
+  <!-- 第二步：单元 -->
+  <section class="panel hidden" id="panel-2">
+    <h2 id="range-heading">② 选择单元</h2>
+    <div class="unit-grid" id="unit-list"></div>
+    <div class="row-actions">
+      <button class="btn ghost" data-back="1">← 返回</button>
+    </div>
+  </section>
+
+  <!-- 第三步：难度与题量 -->
+  <section class="panel hidden" id="panel-3">
+    <h2>③ 难度与题量</h2>
+    <div class="field">
+      <label>难度</label>
+      <div class="options" id="difficulty-options">
+        <button class="opt" data-v="easy">基础</button>
+        <button class="opt" data-v="medium">标准</button>
+        <button class="opt" data-v="hard">提高</button>
+      </div>
+    </div>
+    <div class="field">
+      <label>题量</label>
+      <div class="options" id="count-options">
+        <button class="opt" data-v="3" hidden>3 题</button>
+        <button class="opt" data-v="6" hidden>6 题</button>
+        <button class="opt" data-v="20">20 题</button>
+        <button class="opt" data-v="30">30 题</button>
+        <button class="opt" data-v="40">40 题</button>
+      </div>
+    </div>
+    <div class="row-actions">
+      <button class="btn ghost" data-back="2">← 返回</button>
+      <button class="btn primary" id="btn-generate" disabled>⚡ 实时生成整卷</button>
+    </div>
+    <p class="hint" id="gen-status"></p>
+  </section>
+</main>
+
+<!-- 试卷视图 -->
+<section class="paper-wrap hidden" id="paper-view">
+  <div class="paper-actions no-print">
+    <button class="btn primary" id="btn-print">🖨️ 打印 / 导出 PDF</button>
+    <button class="btn" id="btn-toggle-answers">显示答案页</button>
+    <button class="btn" id="btn-regenerate">🔄 换一套（重新生成）</button>
+    <button class="btn ghost" id="btn-back-config">← 重新配置</button>
+  </div>
+
+  <div class="paper" id="paper-sheet">
+    <div class="paper-head">
+      <div class="paper-title" id="p-title">单元同步练</div>
+      <div class="paper-sub" id="p-sub"></div>
+      <div class="paper-meta">
+        姓名：<span class="blank-line name-line"></span>
+        日期：<span class="blank-line date-line"></span>
+        得分：<span class="blank-line score-line"></span>
+      </div>
+    </div>
+    <div id="paper-sections"></div>
+  </div>
+
+  <div class="paper answers hidden" id="answer-sheet">
+    <div class="paper-head">
+      <div class="paper-title">参考答案</div>
+      <div class="paper-sub" id="a-sub"></div>
+    </div>
+    <div id="answer-sections"></div>
+  </div>
+</section>
+
+<script type="module" src="app.js?v=20261111a"></script>
+</body>
+</html>
