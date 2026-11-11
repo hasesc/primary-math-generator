@@ -4,6 +4,18 @@
 
 ---
 
+## [v0.7.0] - 2026-11-11 · 全面完成 34 个单元的三档难度梯度升级（两档待升级清零）
+- **课标专项单元三档阶梯考法全面升级**（[`prototype/scopeProblems.js`](prototype/scopeProblems.js)）：
+  - 新增 **15 个概念/应用专项插件** 的全独立三档考法（`easy / medium / hard` 每档 4 种考法，提高档与标准档考法完全不重叠）：`calendar`（年月日：平闰年/季度 → 跨午夜时长/日期周期推算星期）、`operation-laws`（运算律：交换结合律 → 分配律拆项/凑整百简算）、`mixed-order`（混合运算：同级/乘加 → 综合算式合并/括号差值比较）、`fraction-intro`（分数初步：读写比大小 → 按份数求具体量/逆推总量）、`fraction-properties`（分数性质：分数单位/约分通分 → 分子加几分母怎么变/按和反求原分数）、`fraction-addsub`（分数加减：同分母/异分母 → 分数方程/凑整简算/超额完成）、`decimal-intro`（小数初步：读写换算 → 进退位加减/两步绳长与质量差倍）、`decimal-properties`（小数性质：数位化简/移位 → 移位差倍还原/四舍五入最大最小两位小数）、`decimal-addsub`（小数加减：基本加减 → 满减优惠/错看加数还原/连筐去皮重/木条重叠）、`fraction-division`（分数除法：倒数与基本除 → 比多比少逆推单位1/工程合做/和倍比例）、`optimize`（优化：同时做/烙饼 → 三人接水总等待最短/田忌赛马策略/多工序并行沏茶）、`possibility`（可能性：一定可能不可能 → 补球实现公平/最不利保证摸出/转盘改色公平）、`counterfeit`（找次品：3个称1次 → 已知次数求最大可测数/首次不平衡剩余范围/二次三分最大份）、`number-shape`（数与形：点阵层数 → 方桌拼排正逆推/数形平方差/空心方阵）、`proportion`（比例：比例判定与解比例 → 图形按比例放大面积变化/影长测树高/反比例铺砖与齿轮咬合）。
+  - 升级 **6 个数感与计算专项插件** 的进阶考法与三档数值梯度：`four-operations`（四则运算：新增中括号逆推填数与租船费用计算）、`number-10000` 与 `large-number`（万以内数/大数：三档数值区间 + 含零组最大四位数）、`multi-times-one` / `two-times-two` / `three-times-two` / `sum-10000-oral`（三档乘数/口算区间 + 逆推因数、整十整百估算与两步应用）。
+- **通用插件与几何插件三档梯度升级**（[`prototype/unitPlugins.js`](prototype/unitPlugins.js)、[`prototype/geometryProblems.js`](prototype/geometryProblems.js)）：
+  - `pattern`（找规律：递增递减 → 二级等差、中间缺项逆推、周期穿珠求第N颗）、`combine`（搭配：基础配对 → 含0组两位数、固定排头照相、单循环赛场次、三段路线乘法原理）、`reasoning`（推理：2人→3人→4人排除推理）、`pigeonhole`（鸽巢问题：基础抽屉 → 至少k个同色、逆推最少准备球数、扑克牌花色保证）。
+  - `geo-angle-intro`（新增数图形中直角个数）、`geo-angle-measure`（三档角度池 + 平角补角计算）、`geo-cuboid`（三档棱长 + 12条棱总长）、`geo-cylinder`（三档尺寸 + 圆柱侧面积）、`geo-view-1/2/3`（三档叠放层数），以及 `frac-mul` / `frac-div` / `dec-mul` / `dec-addsub` 三档算术梯度。
+- **扩展难度梯度与独立复算测试**（[`prototype/difficulty-gradient-test.mjs`](prototype/difficulty-gradient-test.mjs)）：
+  - 覆盖全部 **33 个阶梯考法插件**（18 个全独立三档插件 + 15 个进阶分支插件），并对 18 个核心插件的 72 种提高档考法执行 60 轮（共 4320 道随机题）独立数学逆向复算，通过率 100%。
+
+---
+
 ## [v0.6.0] - 2026-11-11 · 项目管理系统上线（看板 + 自动巡检 + Git + 记忆规范）
 - **新增可视化管理看板**（[`prototype/admin.html`](prototype/admin.html) / [`prototype/admin.js`](prototype/admin.js)）：
   - 93 个教材单元全景矩阵：支持按年级、模块类型、难度梯度状态过滤，支持点击单元并排对比 `基础 / 标准 / 提高` 三档难度的考法与样题。

@@ -29,16 +29,11 @@ const THREE_TIER_PLUGINS = new Set([
   'data-table', 'double-table', 'bar-chart', 'bar-average', 'line-chart', 'pie-chart',
   'grid-motion-1', 'grid-motion-2', 'grid-motion-3', 'grid-direction', 'grid-pairs', 'grid-bearing',
   'geo-perimeter', 'geo-area', 'geo-quad', 'geo-triangle', 'geo-composite', 'geo-circle',
+  'geo-view-1', 'geo-view-2', 'geo-view-3', 'geo-angle-intro', 'geo-angle-measure', 'geo-cuboid', 'geo-cylinder',
+  'dec-mul', 'dec-addsub', 'frac-mul', 'frac-div',
 ]);
 
-const TWO_TIER_PLUGINS = new Set([
-  'number-10000', 'large-number', 'multi-times-one', 'two-times-two', 'three-times-two', 'sum-10000-oral',
-  'geo-angle-intro', 'geo-angle-measure', 'geo-view-1', 'geo-view-2', 'geo-view-3', 'geo-cuboid', 'geo-cylinder',
-  'calendar', 'operation-laws', 'mixed-order', 'four-operations', 'fraction-intro', 'fraction-properties',
-  'fraction-addsub', 'decimal-intro', 'decimal-properties', 'decimal-addsub', 'fraction-division',
-  'optimize', 'possibility', 'counterfeit', 'number-shape', 'proportion',
-  'pattern', 'combine', 'reasoning', 'pigeonhole',
-]);
+const TWO_TIER_PLUGINS = new Set([]);
 
 function detectModule(u) {
   if (u.review) return { key: 'review', label: '全科综合复习 (Engine)', file: 'prototype/paper.js' };

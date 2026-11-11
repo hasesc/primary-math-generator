@@ -496,16 +496,18 @@ function fractionMulProblems(difficulty, count) {
   while (out.length < count && guard < count * 30) {
     guard++;
     const an = ri(1, 5), ad = ri(an + 1, 9);
-    const useInt = ri(0, 1) === 0;
-    let q, ans;
+    const useInt = difficulty === 'easy' ? true : difficulty === 'hard' ? false : ri(0, 1) === 0;
+    let q, ans, subId;
     if (useInt) {
-      const k = ri(2, difficulty === 'hard' ? 12 : 6);
+      const k = ri(2, difficulty === 'easy' ? 6 : 12);
       q = `${an}/${ad} × ${k} = ______`;
       ans = frac(an * k, ad);
+      subId = 'frac-mul-int';
     } else {
-      const bn = ri(1, 5), bd = ri(bn + 1, 9);
+      const bn = ri(1, difficulty === 'hard' ? 7 : 5), bd = ri(bn + 1, difficulty === 'hard' ? 12 : 9);
       q = `${an}/${ad} × ${bn}/${bd} = ______`;
       ans = frac(an * bn, ad * bd);
+      subId = difficulty === 'hard' ? 'frac-mul-frac-hard' : 'frac-mul-frac';
     }
     if (seen.has(q)) continue;
     seen.add(q);
@@ -521,14 +523,14 @@ function fractionDivProblems(difficulty, count) {
   while (out.length < count && guard < count * 30) {
     guard++;
     const an = ri(1, 5), ad = ri(an + 1, 9);
-    const useInt = ri(0, 1) === 0;
+    const useInt = difficulty === 'easy' ? true : difficulty === 'hard' ? false : ri(0, 1) === 0;
     let q, ans;
     if (useInt) {
-      const k = ri(2, difficulty === 'hard' ? 9 : 5);
+      const k = ri(2, difficulty === 'easy' ? 6 : 9);
       q = `${an}/${ad} ÷ ${k} = ______`;
       ans = frac(an, ad * k);
     } else {
-      const bn = ri(1, 4), bd = ri(bn + 1, 7);
+      const bn = ri(1, difficulty === 'hard' ? 6 : 4), bd = ri(bn + 1, difficulty === 'hard' ? 11 : 7);
       q = `${an}/${ad} ÷ ${bn}/${bd} = ______`;
       ans = frac(an * bd, ad * bn);
     }
@@ -580,11 +582,13 @@ function decimalMulProblems(difficulty, count) {
   let guard = 0;
   while (out.length < count && guard < count * 30) {
     guard++;
-    const tenths = ri(11, difficulty === 'hard' ? 99 : 49);
+    const maxTenth = difficulty === 'easy' ? 39 : difficulty === 'medium' ? 69 : 99;
+    const tenths = ri(11, maxTenth);
     if (tenths % 10 === 0) continue;
     const a = tenths / 10;
-    const useInt = ri(0, 1) === 0;
+    const useInt = difficulty === 'easy' ? true : difficulty === 'hard' ? false : ri(0, 1) === 0;
     const b = useInt ? ri(2, 9) : ri(11, 49) / 10;
+    if (!useInt && Math.round(b * 10) % 10 === 0) continue;
     const ans = Number((a * b).toFixed(2));
     const q = `${a} × ${b} = ______`;
     if (seen.has(q)) continue;
@@ -598,11 +602,12 @@ function decimalMulProblems(difficulty, count) {
 function decimalAddSubProblems(difficulty, count) {
   const out = [];
   const seen = new Set();
+  const maxVal = difficulty === 'easy' ? 59 : difficulty === 'medium' ? 99 : 199;
   let guard = 0;
   while (out.length < count && guard < count * 30) {
     guard++;
-    const a = ri(11, difficulty === 'hard' ? 199 : 99) / 10;
-    const b = ri(11, difficulty === 'hard' ? 199 : 99) / 10;
+    const a = ri(11, maxVal) / 10;
+    const b = ri(11, maxVal) / 10;
     const isAdd = ri(0, 1) === 0;
     const hi = Math.max(a, b);
     const lo = Math.min(a, b);
@@ -715,30 +720,69 @@ function wordProblems(difficulty, count, cfg = {}) {
 function patternProblems(difficulty, count) {
   const out = [];
   const seen = new Set();
+  const modesByDiff = {
+    easy: ['arith-up', 'arith-down', 'repeat-2'],
+    medium: ['arith-two', 'double', 'repeat-3'],
+    hard: ['growing-diff', 'missing-middle', 'bead-cycle'],
+  };
+  const modes = modesByDiff[difficulty] || modesByDiff.medium;
   let guard = 0;
-  while (out.length < count && guard < count * 40) {
+  while (out.length < count && guard < count * 50) {
     guard++;
     let q, ans;
-    const mode = pickCycle(['arith', 'double', 'repeat'], guard);
-    if (mode === 'arith') {
-      const start = ri(1, 9);
-      const step = ri(2, difficulty === 'hard' ? 9 : 5);
+    const mode = pickCycle(modes, guard);
+    if (mode === 'arith-up') {
+      const start = ri(1, 15);
+      const step = ri(2, 5);
+      const seq = [0, 1, 2, 3].map((i) => start + i * step);
+      q = `找规律填数：${seq.join('，')}，（　）`;
+      ans = `${seq[3] + step}`;
+    } else if (mode === 'arith-down') {
+      const step = ri(2, 5);
+      const start = ri(25, 45);
+      const seq = [0, 1, 2, 3].map((i) => start - i * step);
+      q = `找规律填数：${seq.join('，')}，（　）`;
+      ans = `${seq[3] - step}`;
+    } else if (mode === 'repeat-2') {
+      const unit = pick([['△', '○'], ['□', '☆'], ['●', '▲'], ['★', '◇']]);
+      const k = ri(2, 4);
+      q = `按规律接着画（第${guard}题）：${Array(k).fill(unit.join('')).join('')}（　）（　）`;
+      ans = `${unit[0]}${unit[1]}`;
+    } else if (mode === 'arith-two') {
+      const start = ri(1, 12);
+      const step = ri(2, 7);
       const seq = [0, 1, 2, 3].map((i) => start + i * step);
       q = `找规律填数：${seq.join('，')}，（　），（　）`;
       ans = `${seq[3] + step}，${seq[3] + 2 * step}`;
     } else if (mode === 'double') {
-      const start = ri(1, 4);
+      const start = ri(1, 9);
       const seq = [0, 1, 2, 3].map((i) => start * Math.pow(2, i));
       q = `找规律填数：${seq.join('，')}，（　）`;
       ans = `${seq[3] * 2}`;
+    } else if (mode === 'repeat-3') {
+      const unit = pick([['△', '○', '□'], ['☆', '●', '▲'], ['★', '◇', '○']]);
+      q = `按规律填第 ${guard % 9 + 10} 组后面的图形：${Array(3).fill(unit.join('')).join('')}（　）`;
+      ans = `${unit[0]}`;
+    } else if (mode === 'growing-diff') {
+      const a0 = ri(1, 15);
+      const d = ri(1, 3);
+      const seq = [a0, a0 + d, a0 + 3 * d, a0 + 6 * d, a0 + 10 * d];
+      q = `找规律填数：${seq.join('，')}，（　）`;
+      ans = `${a0 + 15 * d}`;
+    } else if (mode === 'missing-middle') {
+      const start = ri(2, 18);
+      const step = ri(3, 9);
+      const seq = [0, 1, 2, 3, 4].map((i) => start + i * step);
+      q = `找规律填空缺的数：${seq[0]}，${seq[1]}，（　），${seq[3]}，${seq[4]}`;
+      ans = `${seq[2]}`;
     } else {
-      const unit = pick([['△', '○'], ['□', '☆'], ['●', '▲']]);
-      q = `按规律接着画：${Array(3).fill(unit.join('')).join('')}（　）（　）`;
-      ans = `${unit[0]}${unit[1]}`;
+      const n = ri(11, 29);
+      q = `珠子按“1颗红、2颗黄”的规律依次穿成一串，第 ${n} 颗珠子是什么颜色？`;
+      ans = n % 3 === 1 ? '红' : '黄';
     }
     if (seen.has(q)) continue;
     seen.add(q);
-    out.push({ question: q, answer: ans, subtype: 'unit-pattern' });
+    out.push({ question: q, answer: ans, subtype: 'unit-pattern', subtemplateId: mode });
   }
   return out;
 }
@@ -747,36 +791,68 @@ function patternProblems(difficulty, count) {
 function combineProblems(difficulty, count) {
   const out = [];
   const seen = new Set();
+  const modesByDiff = {
+    easy: ['clothes-basic', 'digits-two', 'path-basic'],
+    medium: ['clothes', 'digits', 'path', 'handshake'],
+    hard: ['digits-with-zero', 'photo-fixed', 'round-robin', 'path-three-stops'],
+  };
+  const modes = modesByDiff[difficulty] || modesByDiff.medium;
   let guard = 0;
-  while (out.length < count && guard < count * 40) {
+  while (out.length < count && guard < count * 50) {
     guard++;
     let q, ans;
-    const mode = pickCycle(['clothes', 'digits', 'path', 'handshake'], guard);
-    if (mode === 'clothes') {
-      const a = ri(2, 4);
-      const b = ri(2, 5);
-      q = `有${a}件上衣和${b}条裤子，一件上衣配一条裤子，一共有多少种不同的搭配？`;
+    const mode = pickCycle(modes, guard);
+    if (mode === 'clothes-basic' || mode === 'clothes') {
+      const a = ri(2, 6);
+      const b = ri(2, 7);
+      const itemA = pick(['上衣', '帽子', 'T恤']);
+      const itemB = pick(['裤子', '裙子', '运动鞋']);
+      q = `有${a}件不同的${itemA}和${b}件不同的${itemB}，各选一件搭配，一共有多少种不同的穿法？`;
+      ans = `${a * b}种`;
+    } else if (mode === 'digits-two') {
+      const pool = [1, 2, 3, 4, 5, 6, 7, 8, 9].sort(() => Math.random() - 0.5);
+      const nums = pool.slice(0, 3);
+      q = `用${nums.join('、')}这3张数字卡片，每次取2张组成两位数（十位和个位不同），一共能组成多少个不同的两位数？`;
+      ans = `6个`;
+    } else if (mode === 'path-basic' || mode === 'path') {
+      const a = ri(2, 5);
+      const b = ri(2, 6);
+      q = `从家到图书馆有${a}条路，从图书馆到少年宫有${b}条路，从家经图书馆到少年宫一共有多少种不同的走法？`;
       ans = `${a * b}种`;
     } else if (mode === 'digits') {
-      const n = difficulty === 'hard' ? 3 : 2;
+      const n = 2;
       const pool = [1, 2, 3, 4, 5, 6, 7, 8, 9].sort(() => Math.random() - 0.5);
-      const nums = pool.slice(0, n + 1);
-      const width = n === 2 ? '两' : '三';
-      q = `用${nums.join('、')}这${n + 1}张数字卡片，每次取${n}张组成${width}位数，一共能组成多少个不同的${width}位数？`;
-      ans = `${n === 2 ? nums.length * (nums.length - 1) : nums.length * (nums.length - 1) * (nums.length - 2)}个`;
-    } else if (mode === 'path') {
-      const a = ri(2, 3);
-      const b = ri(2, 4);
-      q = `从甲地到乙地有${a}条路，从乙地到丙地有${b}条路，从甲地经乙地到丙地一共有多少种走法？`;
-      ans = `${a * b}种`;
-    } else {
-      const n = ri(3, difficulty === 'hard' ? 10 : 7);
-      q = `${n}个小朋友，每两人握一次手，一共要握多少次手？`;
+      const nums = pool.slice(0, 4);
+      q = `用${nums.join('、')}这4张数字卡片，每次取${n}张组成两位数，一共能组成多少个不同的两位数？`;
+      ans = `12个`;
+    } else if (mode === 'handshake') {
+      const n = ri(3, 12);
+      const act = pick(['每两人握一次手，一共要握多少次手', '每两人通一次电话，一共要通多少次电话']);
+      q = `${n}个小朋友聚会，${act}？`;
       ans = `${(n * (n - 1)) / 2}次`;
+    } else if (mode === 'digits-with-zero') {
+      const pool = [1, 2, 3, 4, 5, 6, 7, 8, 9].sort(() => Math.random() - 0.5);
+      const k = ri(3, 4);
+      const nums = [0, ...pool.slice(0, k)];
+      q = `用${nums.join('、')}这${k + 1}张数字卡片，每次取2张组成没有重复数字的两位数，一共能组成多少个？`;
+      ans = `${k * k}个`;
+    } else if (mode === 'photo-fixed') {
+      const n = ri(3, 4);
+      const names = ['甲', '乙', '丙', '丁', '戊'].slice(0, n);
+      q = `${names.join('、')}共${n}人排成一排照相（第${guard}组），如果${names[0]}必须站在最左边，一共有多少种不同的排法？`;
+      ans = `${n === 3 ? 2 : 6}种`;
+    } else if (mode === 'round-robin') {
+      const n = ri(4, 10);
+      q = `学校乒乓球比赛有${n}名选手参加单循环赛（每两名选手之间都要赛一场），一共要进行多少场比赛？`;
+      ans = `${(n * (n - 1)) / 2}场`;
+    } else {
+      const a = ri(2, 4), b = ri(2, 4), c = ri(2, 4);
+      q = `从A地到B地有${a}条路，从B地到C地有${b}条路，从C地到D地有${c}条路。从A地经B、C到D地共有多少种走法？`;
+      ans = `${a * b * c}种`;
     }
     if (seen.has(q)) continue;
     seen.add(q);
-    out.push({ question: q, answer: ans, subtype: 'unit-combine' });
+    out.push({ question: q, answer: ans, subtype: 'unit-combine', subtemplateId: mode });
   }
   return out;
 }
@@ -785,19 +861,18 @@ function combineProblems(difficulty, count) {
 function reasoningProblems(difficulty, count) {
   const out = [];
   const seen = new Set();
-  const names = ['小明', '小红', '小刚', '小丽', '小华'];
-  const items = ['苹果', '香蕉', '橘子', '梨', '葡萄', '西瓜'];
+  const names = ['小明', '小红', '小刚', '小丽', '小华', '小芳'];
+  const items = ['苹果', '香蕉', '橘子', '梨', '葡萄', '西瓜', '桃子'];
   let guard = 0;
-  while (out.length < count && guard < count * 40) {
+  while (out.length < count && guard < count * 50) {
     guard++;
-    const n = difficulty === 'hard' ? 3 : 2;
+    const n = difficulty === 'easy' ? 1 : difficulty === 'medium' ? 2 : 3;
+    const subId = difficulty === 'easy' ? 'reason-2p' : difficulty === 'medium' ? 'reason-3p' : 'reason-4p';
     const shuffledNames = names.slice().sort(() => Math.random() - 0.5);
     const shuffledItems = items.slice().sort(() => Math.random() - 0.5);
     const ns = shuffledNames.slice(0, n + 1);
     const its = shuffledItems.slice(0, n + 1);
-    // 随机分配给每个人不同的物品
     const perm = its.slice().sort(() => Math.random() - 0.5);
-    // 先确定前面的人，最后两人再用一条排除线索区分。
     const clues = ns.slice(0, -2).map((name, i) => `${name}拿的是${perm[i]}`);
     clues.push(`${ns.at(-2)}拿的不是${perm.at(-1)}`);
     const target = guard % 2 ? ns.length - 1 : ns.length - 2;
@@ -805,7 +880,7 @@ function reasoningProblems(difficulty, count) {
     const ans = perm[target];
     if (seen.has(q)) continue;
     seen.add(q);
-    out.push({ question: q, answer: ans, subtype: 'unit-reasoning' });
+    out.push({ question: q, answer: ans, subtype: 'unit-reasoning', subtemplateId: subId });
   }
   return out;
 }
@@ -894,43 +969,69 @@ function dataCountProblems(difficulty, count) {
 function pigeonholeProblems(difficulty, count) {
   const out = [];
   const seen = new Set();
+  const modesByDiff = {
+    easy: ['drawer-plus-one', 'socks', 'books-basic'],
+    medium: ['drawer', 'birthday', 'books'],
+    hard: ['balls', 'reverse-objects', 'cards-suit'],
+  };
+  const modes = modesByDiff[difficulty] || modesByDiff.medium;
   let guard = 0;
   while (out.length < count && guard < count * 60) {
     guard++;
-    const mode = pickCycle(['drawer', 'socks', 'birthday', 'balls', 'books'], guard);
+    const mode = pickCycle(modes, guard);
     let q, ans;
-    if (mode === 'drawer') {
-      const m = ri(2, difficulty === 'hard' ? 9 : 5);   // 抽屉数
-      const k = ri(1, difficulty === 'hard' ? 6 : 4);   // 每抽屉基数
-      const r = ri(1, m - 1);                            // 余数
+    if (mode === 'drawer-plus-one') {
+      const m = ri(2, 12);
+      q = `把${m + 1}只鸽子放进${m}个鸽巢里，总有一个鸽巢里至少飞进几只鸽子？`;
+      ans = `2只`;
+    } else if (mode === 'books-basic') {
+      const shelves = ri(2, 8);
+      const r = ri(1, shelves - 1);
+      const n = shelves + r;
+      q = `把${n}本课外书放进${shelves}个抽屉，总有一个抽屉至少放几本？`;
+      ans = `2本`;
+    } else if (mode === 'drawer') {
+      const m = ri(2, 8);
+      const k = ri(2, 5);
+      const r = ri(1, m - 1);
       const n = k * m + r;
       q = `把${n}个苹果放进${m}个抽屉里，不管怎么放，总有一个抽屉里至少放几个苹果？`;
       ans = `${k + 1}个`;
     } else if (mode === 'socks') {
-      const colors = ri(2, difficulty === 'hard' ? 5 : 3);
-      q = `抽屉里有${colors}种颜色的袜子各若干只（黑暗中看不见颜色），至少要摸出多少只袜子，才能保证有2只同色？`;
+      const colors = ri(2, 9);
+      const item = pick(['袜子', '手套', '筷子']);
+      q = `抽屉里有${colors}种颜色的${item}各若干只（看不见颜色），至少要摸出多少只，才能保证有2只同色？`;
       ans = `${colors + 1}只`;
     } else if (mode === 'birthday') {
-      const n = ri(13, difficulty === 'hard' ? 80 : 40);
+      const n = ri(13, 60);
       const ansN = Math.ceil(n / 12);
-      q = `${n}个人中，至少有几个人的生日在同一个月？`;
-      ans = `${ansN}人`;
+      q = `${n}名同学中，至少有几名同学的生日在同一个月？`;
+      ans = `${ansN}名`;
     } else if (mode === 'balls') {
-      const colors = ri(2, 4);
-      const want = ri(2, difficulty === 'hard' ? 4 : 3);
+      const colors = ri(2, 6);
+      const want = ri(3, 6);
       const ansN = colors * (want - 1) + 1;
       q = `盒子里有${colors}种颜色的球各若干个，至少摸出多少个球，才能保证有${want}个球同色？`;
       ans = `${ansN}个`;
+    } else if (mode === 'reverse-objects') {
+      const m = ri(3, 9);
+      const k = ri(2, 5);
+      q = `把一些小球放进${m}个盒子里，要保证总有一个盒子里至少有${k + 1}个小球，那么至少需要准备多少个小球？`;
+      ans = `${m * k + 1}个`;
+    } else if (mode === 'cards-suit') {
+      const want = ri(2, 9);
+      q = `一副扑克牌去掉大小王后还剩4种花色（第${guard}局），至少从中抽出多少张牌，才能保证有${want}张牌是同一种花色？`;
+      ans = `${4 * (want - 1) + 1}张`;
     } else {
-      const n = ri(10, difficulty === 'hard' ? 60 : 30);
-      const shelves = ri(2, 5);
+      const n = ri(10, 50);
+      const shelves = ri(2, 6);
       const ansN = Math.ceil(n / shelves);
       q = `图书角有${n}本书，放进${shelves}个书架，总有一个书架至少放多少本？`;
       ans = `${ansN}本`;
     }
     if (seen.has(q)) continue;
     seen.add(q);
-    out.push({ question: q, answer: ans, subtype: 'unit-pigeonhole' });
+    out.push({ question: q, answer: ans, subtype: 'unit-pigeonhole', subtemplateId: mode });
   }
   return out;
 }

@@ -77,17 +77,35 @@ function earlyTasks(plugin) {
 }
 
 function angleTasks(plugin, difficulty) {
-  const deg = (difficulty === 'easy' ? [30, 45, 60, 90] : [35, 55, 70, 110, 125, 145])[integer(0, difficulty === 'easy' ? 3 : 5)];
+  const pool = difficulty === 'easy'
+    ? [30, 45, 60, 90]
+    : difficulty === 'medium'
+      ? [35, 55, 70, 110, 125, 145]
+      : [25, 65, 85, 105, 135, 155];
+  const deg = pool[integer(0, pool.length - 1)];
   const x = integer(55, 72), y = 82;
   const ray = (angle, length = 47) => line(x, y, x + length * Math.cos(angle * Math.PI / 180), y - length * Math.sin(angle * Math.PI / 180));
   const angle = degrees => [ray(0), ray(degrees)];
   const type = deg < 90 ? '锐角' : deg > 90 ? '钝角' : '直角';
-  if (plugin === 'geo-angle-measure') return [
-    ['measure-angle', '用量角器量出图中角的度数。', `${deg}°`, scene(angle(deg))],
-    ['classify-angle', '判断图中的是锐角、直角还是钝角。', type, scene(angle(deg))],
-    ['draw-angle', `以图中的线段为一条边、左端点为顶点，向上画出 ${deg}° 的角。`, `${deg}°，见参考图`, scene(ray(0)), scene(angle(deg))],
-  ];
+  if (plugin === 'geo-angle-measure') {
+    if (difficulty === 'hard') return [
+      ['measure-angle', '用量角器量出图中角的度数。', `${deg}°`, scene(angle(deg))],
+      ['supplement-angle', `已知图中角与∠2拼成一个平角（180°），图中角为 ${deg}°，求∠2的度数。`, `${180 - deg}°`, scene(angle(deg), ray(180))],
+      ['draw-angle', `以图中的线段为一条边、左端点为顶点，向上画出 ${deg}° 的角。`, `${deg}°，见参考图`, scene(ray(0)), scene(angle(deg))],
+    ];
+    return [
+      ['measure-angle', '用量角器量出图中角的度数。', `${deg}°`, scene(angle(deg))],
+      ['classify-angle', '判断图中的是锐角、直角还是钝角。', type, scene(angle(deg))],
+      ['draw-angle', `以图中的线段为一条边、左端点为顶点，向上画出 ${deg}° 的角。`, `${deg}°，见参考图`, scene(ray(0)), scene(angle(deg))],
+    ];
+  }
   const right = integer(0, 1);
+  if (difficulty === 'hard') return [
+    ['count-right-angles', '数一数，图中的图形一共有几个直角？', right ? 4 : 1,
+      scene(right ? rect(x, 39, 54, 37) : polygon([[x, 75], [x + 50, 75], [x, 35]]))],
+    ['right-angle', '图中的角是直角吗？可以用三角尺比一比。', right ? '是' : '不是', scene(angle(right ? 90 : 60))],
+    ['locate-vertex', '在图中用小圆点标出角的顶点。', '两条边的公共端点', scene(angle(deg)), scene(angle(deg), ellipse(x, y, 3, 3))],
+  ];
   return [
     ['count-angles', '数一数，图中的封闭图形有几个角？', right ? 4 : 3,
       scene(right ? rect(x, 39, 54, 37) : polygon([[x, 75], [x + 50, 75], [x + 19, 35]]))],
@@ -97,8 +115,10 @@ function angleTasks(plugin, difficulty) {
 }
 
 function viewTasks(plugin, difficulty) {
-  const top = () => integer(0, difficulty === 'easy' ? 2 : 3);
-  const heights = plugin === 'geo-view-1' ? [[1, integer(0, 1), 0], [integer(0, 1), 1, integer(0, 1)]] : [[1, top(), 0], [top(), 1, top()]];
+  const top = () => integer(difficulty === 'hard' ? 1 : 0, difficulty === 'easy' ? 1 : difficulty === 'medium' ? 2 : 3);
+  const heights = plugin === 'geo-view-1'
+    ? [[1, integer(0, difficulty === 'easy' ? 1 : 2), 0], [integer(0, 1), 1, integer(0, difficulty === 'hard' ? 2 : 1)]]
+    : [[1, top(), 0], [top(), 1, top()]];
   const build = cubes(heights);
   const caption = [text(70, 113, '从前面看 ↗'), text(176, 113, '↖ 从右面看')];
   const front = heights[0].map((n, i) => Math.max(n, heights[1][i]));
@@ -108,8 +128,9 @@ function viewTasks(plugin, difficulty) {
   const topView = heights.map(row => row.map(height => height > 0));
   const layout = scene(build, caption);
   if (plugin === 'geo-view-3') {
-    const first = [[1, 0], [1, integer(1, 3)]];
-    const second = [[1, integer(1, 3)], [0, 1]];
+    const hMax = difficulty === 'easy' ? 2 : 3;
+    const first = [[1, 0], [1, integer(1, hMax)]];
+    const second = [[1, integer(1, hMax)], [0, 1]];
     const plan = cells => cells.flatMap((row, y) => row.map((n, x) => [
       rect(54 + 28 * x, 28 + 28 * y, 28, 28),
       text(68 + 28 * x, 46 + 28 * y, n || ''),
@@ -200,9 +221,9 @@ function planeTasks(plugin, difficulty) {
 }
 
 function solidTasks(plugin, difficulty) {
-  const a = integer(4, difficulty === 'easy' ? 7 : 12);
+  const a = integer(4, difficulty === 'easy' ? 6 : difficulty === 'medium' ? 10 : 15);
   const b = integer(2, a - 1);
-  const h = integer(3, 8);
+  const h = integer(2, difficulty === 'easy' ? 5 : difficulty === 'medium' ? 8 : 11);
   if (plugin === 'geo-cuboid') {
     const box = scene(rect(42, 35, 90, 53), polygon([[42, 35], [68, 18], [158, 18], [132, 35]]),
       polygon([[132, 35], [158, 18], [158, 71], [132, 88]]), text(87, 105, `${a} 厘米`), text(175, 81, `${b} 厘米`), text(19, 64, `${h} 厘米`));
@@ -210,6 +231,13 @@ function solidTasks(plugin, difficulty) {
     const net = [0, 1, 2, 3].map(i => rect(55 + i * size, 45, size, size));
     net.push(rect(55 + size, 45 - size, size, size), rect(55 + size, 45 + size, size, size));
     const face = (i, label) => text(55 + (i + 0.5) * size, 49 + size / 2, label);
+    if (difficulty === 'hard') return [
+      ['cuboid-volume', '读图中三条棱的长度，求长方体的体积。', `${a * b * h} 立方厘米`, box],
+      ['cuboid-edge-sum', '按图中标注的长、宽、高，求这个长方体12条棱的总长度。', `${4 * (a + b + h)} 厘米`, box],
+      ['opposite-face', '把这个展开图折成正方体，与 A 面相对的是哪个面？', 'C 面',
+        scene(net, face(0, 'A'), face(1, 'B'), face(2, 'C'), face(3, 'D')),
+        scene(net, face(0, 'A'), face(1, 'B'), face(2, 'C'), face(3, 'D'), text(217, 55, 'A 与 C 相对'))],
+    ];
     return [
       ['cuboid-volume', '读图中三条棱的长度，求长方体的体积。', `${a * b * h} 立方厘米`, box],
       ['cuboid-surface', '按图中标注，求长方体六个面的总面积。', `${2 * (a * b + a * h + b * h)} 平方厘米`, box],
@@ -224,6 +252,12 @@ function solidTasks(plugin, difficulty) {
   const cone = [ellipse(cx, bottom, rx, ry), line(cx, top, cx - rx, bottom), line(cx, top, cx + rx, bottom)];
   const base = [line(cx - rx, bottom, cx + rx, bottom), text(cx, 107, `直径 ${2 * b} 厘米`)];
   const height = [line(cx, top, cx, bottom, true), text(135, 61, `高 ${3 * h} 厘米`)];
+  if (difficulty === 'hard') return [
+    ['cylinder-lateral-area', '根据图中标注，求圆柱的侧面积。π 取 3.14。', `${(3.14 * 2 * b * 3 * h).toFixed(2)} 平方厘米`, scene(cylinder, base, height)],
+    ['cone-volume', '根据图中标注，求圆锥体积。π 取 3.14。', `${(3.14 * b * b * h).toFixed(2)} 立方厘米`, scene(cone, base, height)],
+    ['mark-cone-height', '画出图中圆锥的高。', '从顶点垂直连到底面圆心', scene(cone, element('circle', { cx, cy: bottom, r: 2, fill: '#111' }), text(150, 36 + a, '画一画')),
+      scene(cone, line(cx, top, cx, bottom, true), element('circle', { cx, cy: bottom, r: 2, fill: '#111' }))],
+  ];
   return [
     ['cylinder-volume', '根据图中标注，求圆柱体积。π 取 3.14。', `${(3.14 * b * b * 3 * h).toFixed(2)} 立方厘米`, scene(cylinder, base, height)],
     ['cone-volume', '根据图中标注，求圆锥体积。π 取 3.14。', `${(3.14 * b * b * h).toFixed(2)} 立方厘米`, scene(cone, base, height)],
