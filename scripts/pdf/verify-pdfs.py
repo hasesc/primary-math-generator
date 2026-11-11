@@ -3,7 +3,7 @@ import re
 import pdfplumber
 from pypdf import PdfWriter
 
-cases = [('oral',40),('vertical-decimal',20),('vertical-multiply',20),('vertical-divide',20),('unit-number',40),('unit-chart',20),('unit-grid',6),('unit-solid',6)]
+cases = [('oral',40),('vertical-decimal',20),('vertical-multiply',20),('vertical-divide',20),('unit-number',40),('unit-chart',20),('unit-grid',6),('unit-solid',6),('unit-circle',6),('unit-area',6),('unit-measure',20)]
 writer = PdfWriter()
 for name, count in cases:
     path = Path('output/pdf') / f'{name}.pdf'
@@ -18,7 +18,7 @@ for name, count in cases:
             if '参考答案' in text:
                 assert not answer
                 answer = True
-                assert text.lstrip().startswith('参考答案'), f'{name}: answer page not separate'
+                assert re.match(r'^(?:REFERENCE ANSWERS\s*)?参考答案', text.lstrip()), f'{name}: answer page not separate'
             target = after if answer else before
             target.extend(map(int,re.findall(r'(?<![\d.])(\d+)\.\s',text)))
             for word in page.extract_words():

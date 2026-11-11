@@ -150,6 +150,7 @@ function unitLenProblems(difficulty, count, cfg) {
     { big: '分米', small: '厘米', k: 10 },
     { big: '厘米', small: '毫米', k: 10 },
     { big: '千米', small: '米', k: 1000 },
+    { big: '吨', small: '千克', k: 1000 },
   ];
   const usable = String(cfg.grade) === '2' ? pairs.slice(0, 1) : pairs;
   const modes = difficulty === 'easy'
@@ -183,7 +184,9 @@ function unitLenProblems(difficulty, count, cfg) {
       ans = delta === 0 ? '=' : delta > 0 ? '<' : '>';
       format = 'compare';
     } else {
-      q = `一根木料长${n}${p.big}，锯下${extra}${p.small}后，还剩多少${p.small}？`;
+      q = p.big === '吨'
+        ? `一批货物重${n}吨，运走${extra}千克后，还剩多少千克？`
+        : `一根木料长${n}${p.big}，锯下${extra}${p.small}后，还剩多少${p.small}？`;
       ans = `${n * p.k - extra}${p.small}`;
     }
     if (seen.has(q)) continue;
@@ -998,30 +1001,77 @@ function combineProblems(difficulty, count) {
   return out;
 }
 
-/* ── 推理（二年级数学广角） ── */
+/* ── 推理（二年级数学广角） ──
+ * 三种考法轮转：fruit 水果配对 / order 高矮排序 / queue 排队位置
+ * 三档：easy 2~3人 → medium 3人（问中间/隐藏直接线索）→ hard 4人
+ */
+function permutationsOf(arr) {
+  if (arr.length <= 1) return [arr.slice()];
+  return arr.flatMap((x, i) => permutationsOf([...arr.slice(0, i), ...arr.slice(i + 1)]).map((p) => [x, ...p]));
+}
+const CN_ORD = ['一', '二', '三', '四'];
+
 function reasoningProblems(difficulty, count) {
   const out = [];
   const seen = new Set();
   const names = ['小明', '小红', '小刚', '小丽', '小华', '小芳'];
   const items = ['苹果', '香蕉', '橘子', '梨', '葡萄', '西瓜', '桃子'];
+  const shuffle = (a) => a.slice().sort(() => Math.random() - 0.5);
+  const modes = ['fruit', 'order', 'queue'];
   let guard = 0;
-  while (out.length < count && guard < count * 50) {
+  while (out.length < count && guard < count * 80) {
     guard++;
-    const n = difficulty === 'easy' ? 1 : difficulty === 'medium' ? 2 : 3;
-    const subId = difficulty === 'easy' ? 'reason-2p' : difficulty === 'medium' ? 'reason-3p' : 'reason-4p';
-    const shuffledNames = names.slice().sort(() => Math.random() - 0.5);
-    const shuffledItems = items.slice().sort(() => Math.random() - 0.5);
-    const ns = shuffledNames.slice(0, n + 1);
-    const its = shuffledItems.slice(0, n + 1);
-    const perm = its.slice().sort(() => Math.random() - 0.5);
-    const clues = ns.slice(0, -2).map((name, i) => `${name}拿的是${perm[i]}`);
-    clues.push(`${ns.at(-2)}拿的不是${perm.at(-1)}`);
-    const target = guard % 2 ? ns.length - 1 : ns.length - 2;
-    const q = `${ns.join('、')}每人拿一种不同的水果，水果有${its.join('、')}。${clues.join('；')}。${ns[target]}拿的是什么？`;
-    const ans = perm[target];
+    const mode = modes[guard % modes.length];
+    let q;
+    let ans;
+    if (mode === 'fruit') {
+      const n = difficulty === 'easy' ? 1 : difficulty === 'medium' ? 2 : 3;
+      const ns = shuffle(names).slice(0, n + 1);
+      const its = shuffle(items).slice(0, n + 1);
+      const perm = shuffle(its);
+      const clues = ns.slice(0, -2).map((name, i) => `${name}拿的是${perm[i]}`);
+      clues.push(`${ns.at(-2)}拿的不是${perm.at(-1)}`);
+      const target = guard % 2 ? ns.length - 1 : ns.length - 2;
+      q = `${ns.join('、')}每人拿一种不同的水果，水果有${its.join('、')}。${clues.join('；')}。${ns[target]}拿的是什么？`;
+      ans = perm[target];
+    } else if (mode === 'order') {
+      const k = difficulty === 'hard' ? 4 : 3;
+      const tallToShort = shuffle(names).slice(0, k);
+      const clues = shuffle(tallToShort.slice(0, -1).map((a, i) => `${a}比${tallToShort[i + 1]}高`));
+      const asks = difficulty === 'easy'
+        ? [['最高', 0], ['最矮', k - 1]]
+        : difficulty === 'medium' ? [['排在中间', 1]] : [['第二高', 1], ['第三高', 2]];
+      const [label, idx] = asks[guard % asks.length];
+      q = `${shuffle(tallToShort).join('、')}比身高，${clues.join('，')}。谁${label}？`;
+      ans = tallToShort[idx];
+    } else {
+      const k = difficulty === 'hard' ? 4 : 3;
+      const ns = shuffle(names).slice(0, k);
+      const truth = shuffle(ns); // truth[i] 排在第 i+1 个
+      const pos = (p, arr) => arr.indexOf(p);
+      const targetName = ns[guard % k];
+      const pool = [];
+      ns.forEach((p) => {
+        // easy 才给出“直接位置”线索；medium/hard 只给否定与前后关系，需要推理
+        if (difficulty === 'easy' && p !== targetName) pool.push({ text: `${p}排在第${CN_ORD[pos(p, truth)]}个`, ok: (a) => pos(p, a) === pos(p, truth) });
+        for (let i = 0; i < k; i++) if (i !== pos(p, truth)) pool.push({ text: `${p}不排在第${CN_ORD[i]}个`, ok: (a) => pos(p, a) !== i });
+        ns.forEach((o) => { if (o !== p && pos(p, truth) < pos(o, truth)) pool.push({ text: `${p}排在${o}前面`, ok: (a) => pos(p, a) < pos(o, a) }); });
+      });
+      const all = permutationsOf(ns);
+      const chosen = [];
+      let alive = all;
+      for (const c of shuffle(pool)) {
+        if (alive.length === 1) break;
+        const next = alive.filter(c.ok);
+        if (next.length < alive.length) { chosen.push(c); alive = next; }
+      }
+      if (alive.length !== 1) continue;
+      q = `${ns.join('、')}排成一队。${chosen.map((c) => c.text).join('；')}。${targetName}排在第几个？`;
+      ans = `第${CN_ORD[pos(targetName, truth)]}个`;
+    }
     if (seen.has(q)) continue;
     seen.add(q);
-    out.push({ question: q, answer: ans, subtype: 'unit-reasoning', subtemplateId: subId });
+    out.push({ question: q, answer: ans, subtype: 'unit-reasoning', subtemplateId: `reason-${difficulty}-${mode}` });
   }
   return out;
 }

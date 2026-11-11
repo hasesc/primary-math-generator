@@ -1,6 +1,6 @@
 // app.js —— 原型交互逻辑 (现代质感工作台 v0.8)
 import { TEXTBOOKS, UNITS, gradeDefaults } from './units.js';
-import { generatePaper } from './paper.js';
+import { generatePaper, spreadSubtemplates } from './paper.js';
 import { renderDiagram } from './renderDiagram.js';
 import { DAILY_RANGES, generateDailyPractice, renderVertical } from './dailyPractice.js';
 
@@ -97,7 +97,10 @@ $$('#mode-options .mode-card').forEach((card) => {
     state.mode = mode;
     state.unit = null;
     state.unitIndex = null;
-    $$('#mode-options .mode-card').forEach((c) => c.classList.toggle('selected', c === card));
+    $$('#mode-options .mode-card').forEach((c) => {
+      c.classList.toggle('selected', c === card);
+      c.setAttribute('aria-pressed', String(c === card));
+    });
     $('#textbook-field').hidden = state.mode !== 'unit';
     $('#semester-field').hidden = state.mode !== 'unit';
     refreshStep1();
@@ -142,7 +145,7 @@ function renderUnits(filterText = '') {
     } else if (u.maxCount) {
       badgeHtml = `<span class="unit-mini-badge diagram">📐 图形作图</span><span class="unit-mini-badge">限${u.maxCount}题</span>`;
     } else if (u.review) {
-      badgeHtml = `<span class="unit-mini-badge gradient">全真综合卷</span>`;
+      badgeHtml = `<span class="unit-mini-badge gradient">综合复习练</span>`;
     } else {
       badgeHtml = `<span class="unit-mini-badge gradient">✨ 阶梯考法</span><span class="unit-mini-badge">推荐30题</span>`;
     }
@@ -201,6 +204,7 @@ function showPanel(n) {
 
     $$('#difficulty-options .diff-card').forEach((o) => {
       o.classList.toggle('selected', o.dataset.v === state.difficulty);
+      o.setAttribute('aria-pressed', String(o.dataset.v === state.difficulty));
     });
 
     $$('#count-options .count-chip').forEach((o) => {
@@ -220,8 +224,12 @@ function showPanel(n) {
 $$('#difficulty-options .diff-card').forEach((card) => {
   card.onclick = () => {
     state.difficulty = card.dataset.v;
-    $$('#difficulty-options .diff-card').forEach((c) => c.classList.remove('selected'));
+    $$('#difficulty-options .diff-card').forEach((c) => {
+      c.classList.remove('selected');
+      c.setAttribute('aria-pressed', 'false');
+    });
     card.classList.add('selected');
+    card.setAttribute('aria-pressed', 'true');
     $('#btn-generate').disabled = false;
   };
 });
@@ -341,7 +349,7 @@ function renderPaper() {
   let secNo = 0;
 
   SECTION_DEFS.forEach((sec) => {
-    const items = paper.filter((p) => getDisplayType(p) === sec.type);
+    const items = spreadSubtemplates(paper.filter((p) => getDisplayType(p) === sec.type));
     if (!items.length) return;
     secNo++;
     const secTitle = `${CN_NUM[secNo - 1]}、${sec.title}`;
@@ -374,7 +382,7 @@ function renderPaper() {
 
         const item = document.createElement('div');
         item.appendChild(q);
-        if (sec.type === 'vertical') item.appendChild(renderVertical(it));
+        if (sec.type === 'vertical' && Array.isArray(it.payload?.operands)) item.appendChild(renderVertical(it));
         if (it.diagram) item.appendChild(renderDiagram(it.diagram));
 
         // 作答留白
@@ -446,7 +454,10 @@ if (params.get('grade')) {
 
   if (['unit', 'oral', 'vertical'].includes(qMode)) {
     state.mode = qMode;
-    $$('#mode-options .mode-card').forEach((b) => b.classList.toggle('selected', b.dataset.mode === qMode));
+    $$('#mode-options .mode-card').forEach((b) => {
+      b.classList.toggle('selected', b.dataset.mode === qMode);
+      b.setAttribute('aria-pressed', String(b.dataset.mode === qMode));
+    });
     $('#textbook-field').hidden = qMode !== 'unit';
     $('#semester-field').hidden = qMode !== 'unit';
   }

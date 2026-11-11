@@ -232,5 +232,31 @@ export function generatePaper(config) {
   }
 
   shortfall._unitScoped = hasUnitScope;
-  return { paper: results, shortfall };
+  return { paper: spreadSubtemplates(results), shortfall };
+}
+
+/**
+ * 考法轮转：重排题目，使相邻两题 subtemplateId 尽量不同（GEMINI.md 技术红线）。
+ * 贪心策略：每步在“与上一题考法不同”的候选中选剩余数量最多的考法，
+ * 可证明只要不存在某考法数量 > ⌈n/2⌉，即可做到相邻零重复；否则达到理论最小值。
+ * 无 subtemplateId 的题不参与比较，原相对顺序尽量保留。
+ */
+export function spreadSubtemplates(list) {
+  const rest = list.slice();
+  const out = [];
+  while (rest.length) {
+    const prev = out.length ? out[out.length - 1].subtemplateId : undefined;
+    const counts = new Map();
+    for (const p of rest) if (p.subtemplateId) counts.set(p.subtemplateId, (counts.get(p.subtemplateId) || 0) + 1);
+    let best = -1;
+    let bestCount = -1;
+    rest.forEach((p, i) => {
+      const id = p.subtemplateId;
+      if (id && id === prev) return;
+      const c = id ? counts.get(id) : 0;
+      if (c > bestCount) { best = i; bestCount = c; }
+    });
+    out.push(rest.splice(best < 0 ? 0 : best, 1)[0]);
+  }
+  return out;
 }

@@ -126,9 +126,10 @@ for (const g of grades) {
           }
           if (u.maxCount && !SCOPE_PLUGINS[u.plugin]) {
             const skills = result.paper.map(p => p.subtemplateId);
-            assert.equal(new Set(skills).size, 3, `${label} 应包含三种考法`);
+            const skillCount = ['geo-circle', 'geo-composite'].includes(u.plugin) ? 6 : 3;
+            assert.equal(new Set(skills).size, Math.min(problemCount, skillCount), `${label} 考法覆盖不足`);
             assert(skills.every((skill, i) => i === 0 || skill !== skills[i - 1]), `${label} 考法连续重复`);
-            for (const skill of new Set(skills)) assert.equal(skills.filter(s => s === skill).length, problemCount / 3);
+            for (const skill of new Set(skills)) assert.equal(skills.filter(s => s === skill).length, problemCount / Math.min(problemCount, skillCount));
             const kind = u.plugin.startsWith('grid-') ? 'grid' : 'geometry';
             if (kind === 'grid') assert(result.paper.some(p => p.answerDiagram), `${label} 缺少画图参考答案`);
             for (const { question, answer, diagram, answerDiagram, subtemplateId } of result.paper) {

@@ -190,10 +190,16 @@ function planeTasks(plugin, difficulty) {
       text(90, 20, `${b} 厘米`), text(93, 101, `${a} 厘米`), text(95, 63, `${h} 厘米`));
     const lShape = [[33, 22], [87, 22], [87, 51], [151, 51], [151, 83], [33, 83]];
     return [
+      ['parallelogram-area', '根据图中标出的底和高，求平行四边形的面积。', `${a * h} 平方厘米`,
+        scene(polygon([[35, 82], [140, 82], [165, 31], [60, 31]]), line(60, 31, 60, 82, true), text(94, 104, `底 ${a} 厘米`), text(97, 57, `高 ${h} 厘米`))],
+      ['triangle-area', '根据图中标出的底和高，求三角形的面积。', `${a * h / 2} 平方厘米`,
+        scene(polygon([[35, 82], [150, 82], [75, 25]]), line(75, 25, 75, 82, true), text(93, 104, `底 ${a} 厘米`), text(105, 57, `高 ${h} 厘米`))],
       ['trapezoid-area', '根据图中上下底和高，求梯形面积。', `${(a + b) * h / 2} 平方厘米`, trapezoid],
       ['split-shape', '只画一条线，把这个图形分成两个长方形。', '示例见参考图', scene(polygon(lShape), text(197, 35 + a, '分一分')), scene(polygon(lShape), line(87, 51, 87, 83, true))],
       ['combine-areas', '阴影由两个长方形拼成，图中数字均以厘米为单位。求阴影面积。', `${b * (h + a)} 平方厘米`,
         scene(polygon(lShape, '#ddd'), line(33, 51, 87, 51, true), text(60, 16, b), text(23, 39, h), text(91, 104, a), text(166, 69, b))],
+      ['triangle-find-height', `三角形面积为 ${a * h / 2} 平方厘米，底为 ${a} 厘米，求对应的高。`, `${h} 厘米`,
+        scene(polygon([[35, 82], [150, 82], [75, 25]]), line(75, 25, 75, 82, true), text(93, 104, `底 ${a} 厘米`), text(105, 57, '高？'))],
     ];
   }
   if (plugin === 'geo-triangle') {
@@ -213,10 +219,13 @@ function planeTasks(plugin, difficulty) {
   const radius = line(cx, cy, cx + r, cy);
   const center = element('circle', { cx, cy, r: 2, fill: '#111' });
   return [
+    ['circle-circumference', '根据图中半径，求圆的周长。π 取 3.14。', `${(2 * 3.14 * a).toFixed(2)} 厘米`, scene(circle, radius, center, text(cx, 105, `半径 ${a} 厘米`))],
+    ['circle-area', '根据图中半径，求圆的面积。π 取 3.14。', `${(3.14 * a * a).toFixed(2)} 平方厘米`, scene(circle, radius, center, text(cx, 105, `半径 ${a} 厘米`))],
     ['identify-segment', '图中画出的线段是半径还是直径？', a % 2 ? '直径' : '半径', scene(circle, a % 2 ? diameter : radius, center, text(cx, cy - 7, 'O'))],
     ['diameter-to-radius', '图中标出直径的长度，求这个圆的半径。', `${a} 厘米`, scene(circle, diameter, center, text(cx, 105, `${2 * a} 厘米`))],
     ['draw-radius', '从圆心 O 画一条半径。', '示例见参考图', scene(circle, center, text(cx - 8, cy + 13, 'O'), text(155, 37 + b, '画一画')),
       scene(circle, center, radius, text(cx - 8, cy + 13, 'O'))],
+    ['radius-to-diameter', '图中标出半径的长度，求这个圆的直径。', `${2 * a} 厘米`, scene(circle, radius, center, text(cx, 105, `半径 ${a} 厘米`))],
   ];
 }
 

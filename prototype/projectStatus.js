@@ -1,14 +1,14 @@
 // 自动生成文件（请勿手改）：由 node scripts/manage.mjs 生成
 export const PROJECT_STATUS = {
   "summary": {
-    "generatedAt": "2026/11/11 16:39:20",
+    "generatedAt": "2026/11/11 17:12:11",
     "totalUnits": 93,
     "dedicatedUnits": 92,
     "reviewUnits": 1,
     "diagramUnits": 31,
     "dailyCount": 17,
-    "testsPassed": 5,
-    "testsTotal": 5,
+    "testsPassed": 7,
+    "testsTotal": 7,
     "byGradient": {
       "tiered-skills": 42,
       "three-tier-range": 26,
@@ -31,15 +31,15 @@ export const PROJECT_STATUS = {
       "name": "整卷生成冒烟测试 (6年级×3难度)",
       "file": "prototype/smoke-test.mjs",
       "passed": true,
-      "durationMs": 119,
-      "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 1ms, 分布={\"arithmetic\":15,\"application\":7,\"olympiad\":8} | 结果: 18 通过 / 0 未达标"
+      "durationMs": 89,
+      "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 1ms, 分布={\"olympiad\":8,\"application\":7,\"arithmetic\":15} | 结果: 18 通过 / 0 未达标"
     },
     {
       "id": "coverage",
       "name": "93单元全量联动与756配置覆盖测试",
       "file": "prototype/coverage-test.mjs",
       "passed": true,
-      "durationMs": 174,
+      "durationMs": 162,
       "summary": "总计 93 单元：联动通过 92，无专属出题映射（含整理与复习）1，不合格 0 | 已检查 756 种难度与题量组合。至少一组配置只有一个卷面分类的单元（分类数不等于考法数）共 81 个：1上 准备课、1上 位置、1上 1~5的认识和加减法、1上 认识图形（一）、1上 6~10的认识和加减法、1上 11~20各数的认识、1上 20以内的进位加法、1下 20以内的退位减法、1下 100以内数的认识、1下 100以内的加法和减法（一）、1下 认识图形（二）、1下 100以内的加法和减法（二）、1下 找规律、2上 100以内的加法和减法（二）、2上 角的初步认识、2上 表内乘法（一）、2上 观察物体（一）、2上 表内乘法（二）、2上 数学广角——搭配（一）、2下 数据收集整理、2下 表内除法（一）、2下 图形的运动（一）、2下 表内除法（二）、2下 混合运算、2下 有余数的除法、2下 万以内数的认识、2下 数学广角——推理、3上 万以内的加法和减法（一）、3上 万以内的加法和减法（二）、3上 倍的认识、3上 多位数乘一位数、3上 长方形和正方形、3上 分数的初步认识、3下 位置与方向（一）、3下 除数是一位数的除法、3下 复式统计表、3下 两位数乘两位数、3下 面积、3下 年月日、3下 小数的初步认识、3下 数学广角——搭配（二）、4上 大数的认识、4上 角的度量、4上 三位数乘两位数、4上 平行四边形和梯形、4上 除数是两位数的除法、4上 条形统计图、4上 数学广角——优化、4下 四则运算、4下 观察物体（二）、4下 运算定律、4下 小数的意义和性质、4下 三角形、4下 小数的加法和减法、4下 图形的运动（二）、4下 平均数与条形统计图、4下 数学广角——鸡兔同笼、5上 位置、5上 可能性、5上 简易方程、5上 多边形的面积、5上 数学广角——植树问题、5下 观察物体（三）、5下 因数与倍数、5下 长方体和正方体、5下 分数的意义和性质、5下 图形的运动（三）、5下 分数的加法和减法、5下 折线统计图、5下 数学广角——找次品、6上 位置与方向（二）、6上 分数除法、6上 比、6上 圆、6上 扇形统计图、6上 数学广角——数与形、6下 负数、6下 百分数（二）、6下 圆柱与圆锥、6下 比例、6下 数学广角——鸽巢问题"
     },
     {
@@ -47,7 +47,7 @@ export const PROJECT_STATUS = {
       "name": "数学答案独立逆向复算测试 (160轮)",
       "file": "prototype/correctness-test.mjs",
       "passed": true,
-      "durationMs": 84,
+      "durationMs": 79,
       "summary": "鸡兔同笼、植树、统计图并列和小数乘法的独立复算通过"
     },
     {
@@ -55,7 +55,7 @@ export const PROJECT_STATUS = {
       "name": "口算/竖式每日一练专项测试 (123配置)",
       "file": "prototype/daily-practice-test.mjs",
       "passed": true,
-      "durationMs": 78,
+      "durationMs": 71,
       "summary": "123 种每日一练配置通过，题量、去重、答案复算和年级限制正常"
     },
     {
@@ -63,15 +63,31 @@ export const PROJECT_STATUS = {
       "name": "三档难度阶梯考法与答案测试",
       "file": "prototype/difficulty-gradient-test.mjs",
       "passed": true,
-      "durationMs": 91,
-      "summary": "✅ 25 个专项插件（18 个全独立三档考法 + 7 个进阶分支插件）的难度梯度、题量和提高题答案复算全部通过！"
+      "durationMs": 84,
+      "summary": "✅ 33 个专项插件（18 个全独立三档考法 + 15 个进阶分支插件）的难度梯度、题量和提高题答案复算全部通过！"
+    },
+    {
+      "id": "rotation",
+      "name": "同卷考法轮转相邻不重复测试 (93单元×3档×6轮)",
+      "file": "prototype/rotation-test.mjs",
+      "passed": true,
+      "durationMs": 230,
+      "summary": "考法轮转（相邻 subtemplateId 不重复）测试通过"
+    },
+    {
+      "id": "regression",
+      "name": "题面有效性、唯一解与必备考点回归测试",
+      "file": "prototype/regression-test.mjs",
+      "passed": true,
+      "durationMs": 117,
+      "summary": "题面有效性、动物题唯一解及缺失考点回归检查通过"
     }
   ],
   "git": {
     "initialized": true,
     "commits": [
       {
-        "hash": "b186e24",
+        "hash": "fad98a7",
         "date": "2026-11-11 16:39",
         "message": "fix: 修复Windows下URL唤起弹窗权限问题并优化双击脚本"
       },
@@ -101,7 +117,7 @@ export const PROJECT_STATUS = {
         "message": "feat: 上线项目管理系统 v0.6.0（可视化看板 + 自动巡检 + Git 版本台账）"
       }
     ],
-    "dirtyFiles": 0
+    "dirtyFiles": 35
   },
   "roadmap": [
     {
@@ -128,6 +144,10 @@ export const PROJECT_STATUS = {
     {
       "group": "P1 · 微信小程序端移植（M1 → M2）",
       "items": [
+        {
+          "done": false,
+          "text": "逐单元核对必备知识点；93 单元表示生成入口接通，不代表所有教材考点已完整覆盖。本轮已补齐圆周长/面积、平行四边形/三角形面积、吨与千克换算，并纳入回归检查。"
+        },
         {
           "done": false,
           "text": "将 `prototype/` 下的纯 JS 生成引擎与插件模块迁移至 `repos/skeleton/miniprogram/`"
@@ -161,6 +181,21 @@ export const PROJECT_STATUS = {
     }
   ],
   "changelog": [
+    {
+      "version": "v0.8.2",
+      "date": "2026-11-11",
+      "title": "审查修复、核心考点补齐与验证链路恢复",
+      "bullets": [
+        "修复年月日生成同月不存在日期、满减付款为负、约分条件未化简；新增固定种子题面有效性回归检查。",
+        "修复三种动物题的大小关系、标准题直接泄露答案和提高题条件不足；使用非负整数解枚举验证三档题目均唯一可解，移除错误兜底题。",
+        "补齐六上《圆》的周长/面积、五上《多边形的面积》的平行四边形/三角形面积与反求高、三上《测量》的吨与千克换算。93 单元接通与完整考点覆盖分开记录。",
+        "保留并收尾原工作区的考法轮转、推理三模式、竖式渲染保护、文案调整和本地服务访问范围限制；推理考法标识加入难度维度，并检查人数与线索梯度。",
+        "模式与难度卡片改为原生按钮，支持 Enter/空格选择、选中状态播报和键盘焦点提示；递增入口资源版本。",
+        "更新浏览器检查定位，增加页面异常与键盘操作断言；11 类 PDF 样张全部通过题号、答案页分隔和边界校验，共 37 页，已目检新增圆/面积题页面。",
+        "自动巡检扩展为 7 套测试；普通巡检遇到失败也返回非零退出码，故障注入检查通过。修复看板算术插件三档分类与测试总数展示，更新测试摘要。",
+        "验证：7/7 套件通过；覆盖 93 单元的 756 种配置、123 种每日练配置；11 类浏览器生成及 PDF 检查通过。未进行微信真机或逐项教材全考点认证。"
+      ]
+    },
     {
       "version": "v0.8.1",
       "date": "2026-11-11",
@@ -2998,23 +3033,14 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "arith-down",
             "repeat-2",
-            "arith-up"
+            "arith-up",
+            "arith-down"
           ],
           "formats": [
             "application"
           ],
           "samples": [
-            {
-              "question": "找规律填数：29，24，19，14，（　）",
-              "answer": "9",
-              "skill": "arith-down",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
             {
               "question": "按规律接着画（第2题）：□☆□☆□☆□☆（　）（　）",
               "answer": "□☆",
@@ -3034,9 +3060,18 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "找规律填数：45，41，37，33，（　）",
-              "answer": "29",
+              "question": "找规律填数：29，24，19，14，（　）",
+              "answer": "9",
               "skill": "arith-down",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "按规律接着画（第5题）：●▲●▲●▲●▲（　）（　）",
+              "answer": "●▲",
+              "skill": "repeat-2",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -3048,18 +3083,18 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "double",
+            "arith-two",
             "repeat-3",
-            "arith-two"
+            "double"
           ],
           "formats": [
             "application"
           ],
           "samples": [
             {
-              "question": "找规律填数：1，2，4，8，（　）",
-              "answer": "16",
-              "skill": "double",
+              "question": "找规律填数：1，8，15，22，（　），（　）",
+              "answer": "29，36",
+              "skill": "arith-two",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -3075,18 +3110,18 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "找规律填数：1，8，15，22，（　），（　）",
-              "answer": "29，36",
-              "skill": "arith-two",
+              "question": "找规律填数：1，2，4，8，（　）",
+              "answer": "16",
+              "skill": "double",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "找规律填数：3，6，12，24，（　）",
-              "answer": "48",
-              "skill": "double",
+              "question": "按规律填第 18 组后面的图形：△○□△○□△○□（　）",
+              "answer": "△",
+              "skill": "repeat-3",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -3099,8 +3134,8 @@ export const PROJECT_STATUS = {
           "targetCount": 20,
           "skills": [
             "missing-middle",
-            "bead-cycle",
-            "growing-diff"
+            "growing-diff",
+            "bead-cycle"
           ],
           "formats": [
             "application"
@@ -3116,18 +3151,18 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "珠子按“1颗红、2颗黄”的规律依次穿成一串，第 26 颗珠子是什么颜色？",
-              "answer": "黄",
-              "skill": "bead-cycle",
+              "question": "找规律填数：3，6，12，21，33，（　）",
+              "answer": "48",
+              "skill": "growing-diff",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "找规律填数：3，6，12，21，33，（　）",
-              "answer": "48",
-              "skill": "growing-diff",
+              "question": "珠子按“1颗红、2颗黄”的规律依次穿成一串，第 26 颗珠子是什么颜色？",
+              "answer": "黄",
+              "skill": "bead-cycle",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -3175,24 +3210,15 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "len-small-to-big",
             "len-compare",
-            "len-big-to-small"
+            "len-big-to-small",
+            "len-small-to-big"
           ],
           "formats": [
-            "fill",
-            "compare"
+            "compare",
+            "fill"
           ],
           "samples": [
-            {
-              "question": "800厘米 = （　）米",
-              "answer": "8米",
-              "skill": "len-small-to-big",
-              "format": "fill",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
             {
               "question": "在括号里填 >、< 或 =：2米（　）197厘米。",
               "answer": ">",
@@ -3212,9 +3238,18 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "500厘米 = （　）米",
-              "answer": "5米",
+              "question": "800厘米 = （　）米",
+              "answer": "8米",
               "skill": "len-small-to-big",
+              "format": "fill",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "4米 = （　）厘米",
+              "answer": "400厘米",
+              "skill": "len-big-to-small",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
@@ -4463,7 +4498,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "用8、4、3这3张数字卡片，每次取2张组成两位数（十位和个位不同），一共能组成多少个不同的两位数？",
+              "question": "用5、4、3这3张数字卡片，每次取2张组成两位数（十位和个位不同），一共能组成多少个不同的两位数？",
               "answer": "6个",
               "skill": "digits-two",
               "format": "application",
@@ -4479,8 +4514,8 @@ export const PROJECT_STATUS = {
           "skills": [
             "digits",
             "path",
-            "handshake",
-            "clothes"
+            "clothes",
+            "handshake"
           ],
           "formats": [
             "application"
@@ -4505,18 +4540,18 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "3个小朋友聚会，每两人通一次电话，一共要通多少次电话？",
-              "answer": "3次",
-              "skill": "handshake",
+              "question": "有5件不同的上衣和6件不同的裙子，各选一件搭配，一共有多少种不同的穿法？",
+              "answer": "30种",
+              "skill": "clothes",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "有5件不同的上衣和6件不同的裙子，各选一件搭配，一共有多少种不同的穿法？",
-              "answer": "30种",
-              "skill": "clothes",
+              "question": "3个小朋友聚会，每两人通一次电话，一共要通多少次电话？",
+              "answer": "3次",
+              "skill": "handshake",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -4529,9 +4564,9 @@ export const PROJECT_STATUS = {
           "targetCount": 20,
           "skills": [
             "photo-fixed",
-            "round-robin",
             "path-three-stops",
-            "digits-with-zero"
+            "digits-with-zero",
+            "round-robin"
           ],
           "formats": [
             "application"
@@ -4541,15 +4576,6 @@ export const PROJECT_STATUS = {
               "question": "甲、乙、丙、丁共4人排成一排照相（第1组），如果甲必须站在最左边，一共有多少种不同的排法？",
               "answer": "6种",
               "skill": "photo-fixed",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "学校乒乓球比赛有10名选手参加单循环赛（每两名选手之间都要赛一场），一共要进行多少场比赛？",
-              "answer": "45场",
-              "skill": "round-robin",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -4568,6 +4594,15 @@ export const PROJECT_STATUS = {
               "question": "用0、9、4、6、3这5张数字卡片，每次取2张组成没有重复数字的两位数，一共能组成多少个？",
               "answer": "16个",
               "skill": "digits-with-zero",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "学校乒乓球比赛有10名选手参加单循环赛（每两名选手之间都要赛一场），一共要进行多少场比赛？",
+              "answer": "45场",
+              "skill": "round-robin",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -5875,29 +5910,29 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "g-to-kg",
             "weight-compare",
+            "g-to-kg",
             "kg-to-g"
           ],
           "formats": [
-            "fill",
-            "compare"
+            "compare",
+            "fill"
           ],
           "samples": [
-            {
-              "question": "8000克 = （　）千克",
-              "answer": "8千克",
-              "skill": "g-to-kg",
-              "format": "fill",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
             {
               "question": "在括号里填 >、< 或 =：7千克（　）7800克。",
               "answer": "<",
               "skill": "weight-compare",
               "format": "compare",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "8000克 = （　）千克",
+              "answer": "8千克",
+              "skill": "g-to-kg",
+              "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
@@ -5912,10 +5947,10 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "2000克 = （　）千克",
-              "answer": "2千克",
-              "skill": "g-to-kg",
-              "format": "fill",
+              "question": "在括号里填 >、< 或 =：8千克（　）7600克。",
+              "answer": ">",
+              "skill": "weight-compare",
+              "format": "compare",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
@@ -5926,25 +5961,16 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "weight-compare",
             "weight-sub-story",
-            "kg-g-compound"
+            "kg-g-compound",
+            "weight-compare"
           ],
           "formats": [
-            "compare",
             "application",
-            "fill"
+            "fill",
+            "compare"
           ],
           "samples": [
-            {
-              "question": "在括号里填 >、< 或 =：8千克（　）8200克。",
-              "answer": "<",
-              "skill": "weight-compare",
-              "format": "compare",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
             {
               "question": "一袋米重7千克，取出600克后，还剩多少克？",
               "answer": "6400克",
@@ -5964,10 +5990,19 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "在括号里填 >、< 或 =：5千克（　）4800克。",
-              "answer": ">",
+              "question": "在括号里填 >、< 或 =：8千克（　）8200克。",
+              "answer": "<",
               "skill": "weight-compare",
               "format": "compare",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "一袋米重7千克，取出800克后，还剩多少克？",
+              "answer": "6200克",
+              "skill": "weight-sub-story",
+              "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
@@ -6047,9 +6082,9 @@ export const PROJECT_STATUS = {
       "gradientBadge": "success",
       "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
-        "easy": 1,
-        "medium": 1,
-        "hard": 1
+        "easy": 3,
+        "medium": 3,
+        "hard": 3
       },
       "hasDiagram": false,
       "byDifficulty": {
@@ -6057,43 +6092,45 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "reason-2p"
+            "reason-easy-order",
+            "reason-easy-queue",
+            "reason-easy-fruit"
           ],
           "formats": [
             "application"
           ],
           "samples": [
             {
-              "question": "小丽、小明每人拿一种不同的水果，水果有梨、橘子。小丽拿的不是橘子。小明拿的是什么？",
-              "answer": "橘子",
-              "skill": "reason-2p",
+              "question": "小红、小明、小丽比身高，小明比小红高，小丽比小明高。谁最矮？",
+              "answer": "小红",
+              "skill": "reason-easy-order",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "小华、小明每人拿一种不同的水果，水果有橘子、香蕉。小华拿的不是橘子。小华拿的是什么？",
-              "answer": "香蕉",
-              "skill": "reason-2p",
+              "question": "小明、小红、小华排成一队。小明排在小华前面；小华不排在第二个；小红排在第二个。小华排在第几个？",
+              "answer": "第三个",
+              "skill": "reason-easy-queue",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "小丽、小华每人拿一种不同的水果，水果有苹果、西瓜。小丽拿的不是苹果。小华拿的是什么？",
-              "answer": "苹果",
-              "skill": "reason-2p",
+              "question": "小刚、小红每人拿一种不同的水果，水果有梨、橘子。小刚拿的不是梨。小红拿的是什么？",
+              "answer": "梨",
+              "skill": "reason-easy-fruit",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "小丽、小明每人拿一种不同的水果，水果有苹果、桃子。小丽拿的不是桃子。小丽拿的是什么？",
-              "answer": "苹果",
-              "skill": "reason-2p",
+              "question": "小芳、小刚、小红比身高，小刚比小芳高，小红比小刚高。谁最高？",
+              "answer": "小红",
+              "skill": "reason-easy-order",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -6105,43 +6142,45 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "reason-3p"
+            "reason-medium-order",
+            "reason-medium-queue",
+            "reason-medium-fruit"
           ],
           "formats": [
             "application"
           ],
           "samples": [
             {
-              "question": "小明、小红、小芳每人拿一种不同的水果，水果有西瓜、葡萄、梨。小明拿的是西瓜；小红拿的不是梨。小芳拿的是什么？",
+              "question": "小芳、小红、小明比身高，小红比小芳高，小明比小红高。谁排在中间？",
+              "answer": "小红",
+              "skill": "reason-medium-order",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "小刚、小红、小明排成一队。小红排在小刚前面；小明排在小红前面。小明排在第几个？",
+              "answer": "第一个",
+              "skill": "reason-medium-queue",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "小华、小芳、小刚每人拿一种不同的水果，水果有西瓜、葡萄、梨。小华拿的是西瓜；小芳拿的不是梨。小刚拿的是什么？",
               "answer": "梨",
-              "skill": "reason-3p",
+              "skill": "reason-medium-fruit",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "小丽、小刚、小华每人拿一种不同的水果，水果有香蕉、西瓜、桃子。小丽拿的是桃子；小刚拿的不是香蕉。小刚拿的是什么？",
-              "answer": "西瓜",
-              "skill": "reason-3p",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "小华、小丽、小刚每人拿一种不同的水果，水果有橘子、香蕉、西瓜。小华拿的是香蕉；小丽拿的不是西瓜。小刚拿的是什么？",
-              "answer": "西瓜",
-              "skill": "reason-3p",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "小刚、小丽、小红每人拿一种不同的水果，水果有苹果、香蕉、西瓜。小刚拿的是苹果；小丽拿的不是西瓜。小丽拿的是什么？",
-              "answer": "香蕉",
-              "skill": "reason-3p",
+              "question": "小芳、小红、小刚比身高，小刚比小红高，小红比小芳高。谁排在中间？",
+              "answer": "小红",
+              "skill": "reason-medium-order",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -6153,43 +6192,45 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "reason-4p"
+            "reason-hard-order",
+            "reason-hard-queue",
+            "reason-hard-fruit"
           ],
           "formats": [
             "application"
           ],
           "samples": [
             {
-              "question": "小明、小红、小华、小刚每人拿一种不同的水果，水果有苹果、香蕉、葡萄、西瓜。小明拿的是西瓜；小红拿的是苹果；小华拿的不是葡萄。小刚拿的是什么？",
-              "answer": "葡萄",
-              "skill": "reason-4p",
+              "question": "小华、小红、小明、小刚比身高，小明比小红高，小红比小华高，小华比小刚高。谁第三高？",
+              "answer": "小华",
+              "skill": "reason-hard-order",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "小明、小丽、小红、小华每人拿一种不同的水果，水果有橘子、梨、香蕉、葡萄。小明拿的是橘子；小丽拿的是梨；小红拿的不是葡萄。小红拿的是什么？",
+              "question": "小丽、小刚、小红、小芳排成一队。小丽不排在第二个；小丽不排在第三个；小丽排在小芳前面；小刚不排在第二个；小红不排在第二个；小刚排在小红前面。小红排在第几个？",
+              "answer": "第四个",
+              "skill": "reason-hard-queue",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "小明、小芳、小丽、小红每人拿一种不同的水果，水果有苹果、葡萄、香蕉、桃子。小明拿的是苹果；小芳拿的是葡萄；小丽拿的不是香蕉。小红拿的是什么？",
               "answer": "香蕉",
-              "skill": "reason-4p",
+              "skill": "reason-hard-fruit",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "小刚、小丽、小芳、小华每人拿一种不同的水果，水果有西瓜、苹果、香蕉、葡萄。小刚拿的是葡萄；小丽拿的是香蕉；小芳拿的不是西瓜。小华拿的是什么？",
-              "answer": "西瓜",
-              "skill": "reason-4p",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "小明、小华、小红、小刚每人拿一种不同的水果，水果有橘子、香蕉、梨、西瓜。小明拿的是香蕉；小华拿的是梨；小红拿的不是西瓜。小红拿的是什么？",
-              "answer": "橘子",
-              "skill": "reason-4p",
+              "question": "小芳、小红、小刚、小明比身高，小红比小芳高，小芳比小明高，小刚比小红高。谁第二高？",
+              "answer": "小红",
+              "skill": "reason-hard-order",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -6592,24 +6633,15 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "len-small-to-big",
             "len-compare",
-            "len-big-to-small"
+            "len-big-to-small",
+            "len-small-to-big"
           ],
           "formats": [
-            "fill",
-            "compare"
+            "compare",
+            "fill"
           ],
           "samples": [
-            {
-              "question": "90分米 = （　）米",
-              "answer": "9米",
-              "skill": "len-small-to-big",
-              "format": "fill",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
             {
               "question": "在括号里填 >、< 或 =：5分米（　）52厘米。",
               "answer": "<",
@@ -6629,10 +6661,19 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "20毫米 = （　）厘米",
-              "answer": "2厘米",
+              "question": "90分米 = （　）米",
+              "answer": "9米",
               "skill": "len-small-to-big",
               "format": "fill",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "在括号里填 >、< 或 =：6分米（　）57厘米。",
+              "answer": ">",
+              "skill": "len-compare",
+              "format": "compare",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
@@ -6662,7 +6703,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "在括号里填 >、< 或 =：2厘米（　）22毫米。",
+              "question": "在括号里填 >、< 或 =：2千米（　）2002米。",
               "answer": "<",
               "skill": "len-compare",
               "format": "compare",
@@ -6671,8 +6712,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "5千米 = （　）米",
-              "answer": "5000米",
+              "question": "5吨 = （　）千克",
+              "answer": "5000千克",
               "skill": "len-big-to-small",
               "format": "fill",
               "responseKind": null,
@@ -6680,8 +6721,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "9千米864米 = （　）米",
-              "answer": "9864米",
+              "question": "9吨864千克 = （　）千克",
+              "answer": "9864千克",
               "skill": "len-compound",
               "format": "fill",
               "responseKind": null,
@@ -8595,7 +8636,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "2067 年是平年还是闰年？",
+              "question": "2045 年是平年还是闰年？",
               "answer": "平年",
               "skill": "year-type",
               "format": "practice",
@@ -8604,7 +8645,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "2062 年全年有多少天？",
+              "question": "2007 年全年有多少天？",
               "answer": "365",
               "skill": "year-days",
               "format": "practice",
@@ -8613,8 +8654,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "把下午 3 时 53 分写成 24 时计时法的形式。",
-              "answer": "15 时 53 分",
+              "question": "把下午 4 时 27 分写成 24 时计时法的形式。",
+              "answer": "16 时 27 分",
               "skill": "clock-24h",
               "format": "practice",
               "responseKind": "short",
@@ -8646,8 +8687,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "2002 年 9 月 30 日的第二天是几月几日？",
-              "answer": "10 月 1 日",
+              "question": "2064 年 6 月 30 日的第二天是几月几日？",
+              "answer": "7 月 1 日",
               "skill": "date-rollover",
               "format": "practice",
               "responseKind": "short",
@@ -8655,8 +8696,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "把 16 时 16 分改写成普通计时法（注明“下午”）。",
-              "answer": "下午 4 时 16 分",
+              "question": "把 19 时 46 分改写成普通计时法（注明“下午”）。",
+              "answer": "下午 7 时 46 分",
               "skill": "clock-12h",
               "format": "practice",
               "responseKind": "short",
@@ -8664,8 +8705,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "2028 年第一季度（1月、2月、3月）一共有多少天？",
-              "answer": "91",
+              "question": "2082 年第一季度（1月、2月、3月）一共有多少天？",
+              "answer": "90",
               "skill": "quarter-days",
               "format": "practice",
               "responseKind": "short",
@@ -8697,8 +8738,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "读书活动从 11 月 5 日开始，到 11 月 16 日结束（首尾两天都算），一共举办了多少天？",
-              "answer": "12 天",
+              "question": "读书活动从 4 月 9 日开始，到 4 月 17 日结束（首尾两天都算），一共举办了多少天？",
+              "answer": "9 天",
               "skill": "elapsed-days-in-month",
               "format": "practice",
               "responseKind": "short",
@@ -8706,8 +8747,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "如果 2010 年 7 月 2 日是星期三，那么同月 32 日是星期几？",
-              "answer": "星期五",
+              "question": "如果 2031 年 6 月 4 日是星期三，那么同月 25 日是星期几？",
+              "answer": "星期三",
               "skill": "weekday-cycle",
               "format": "practice",
               "responseKind": "short",
@@ -8715,8 +8756,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "一列列车第一天 17 时发车，第二天早晨 9 时到达（车次 53），途中行驶了多少小时？",
-              "answer": "16 小时",
+              "question": "一列列车第一天 16 时发车，第二天早晨 9 时到达（车次 50），途中行驶了多少小时？",
+              "answer": "17 小时",
               "skill": "cross-midnight-hours",
               "format": "practice",
               "responseKind": "short",
@@ -8937,8 +8978,8 @@ export const PROJECT_STATUS = {
           "targetCount": 20,
           "skills": [
             "digits-two",
-            "path-basic",
-            "clothes-basic"
+            "clothes-basic",
+            "path-basic"
           ],
           "formats": [
             "application"
@@ -8954,15 +8995,6 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "从家到图书馆有2条路，从图书馆到少年宫有5条路，从家经图书馆到少年宫一共有多少种不同的走法？",
-              "answer": "10种",
-              "skill": "path-basic",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
               "question": "有4件不同的T恤和2件不同的裙子，各选一件搭配，一共有多少种不同的穿法？",
               "answer": "8种",
               "skill": "clothes-basic",
@@ -8972,9 +9004,18 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "用3、7、4这3张数字卡片，每次取2张组成两位数（十位和个位不同），一共能组成多少个不同的两位数？",
-              "answer": "6个",
-              "skill": "digits-two",
+              "question": "从家到图书馆有2条路，从图书馆到少年宫有5条路，从家经图书馆到少年宫一共有多少种不同的走法？",
+              "answer": "10种",
+              "skill": "path-basic",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "有2件不同的帽子和4件不同的裙子，各选一件搭配，一共有多少种不同的穿法？",
+              "answer": "8种",
+              "skill": "clothes-basic",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -8987,9 +9028,9 @@ export const PROJECT_STATUS = {
           "targetCount": 20,
           "skills": [
             "digits",
-            "path",
             "handshake",
-            "clothes"
+            "clothes",
+            "path"
           ],
           "formats": [
             "application"
@@ -8999,15 +9040,6 @@ export const PROJECT_STATUS = {
               "question": "用1、7、2、8这4张数字卡片，每次取2张组成两位数，一共能组成多少个不同的两位数？",
               "answer": "12个",
               "skill": "digits",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "从家到图书馆有5条路，从图书馆到少年宫有5条路，从家经图书馆到少年宫一共有多少种不同的走法？",
-              "answer": "25种",
-              "skill": "path",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -9030,6 +9062,15 @@ export const PROJECT_STATUS = {
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
+            },
+            {
+              "question": "从家到图书馆有5条路，从图书馆到少年宫有5条路，从家经图书馆到少年宫一共有多少种不同的走法？",
+              "answer": "25种",
+              "skill": "path",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
             }
           ]
         },
@@ -9038,9 +9079,9 @@ export const PROJECT_STATUS = {
           "targetCount": 20,
           "skills": [
             "photo-fixed",
-            "round-robin",
             "path-three-stops",
-            "digits-with-zero"
+            "digits-with-zero",
+            "round-robin"
           ],
           "formats": [
             "application"
@@ -9050,15 +9091,6 @@ export const PROJECT_STATUS = {
               "question": "甲、乙、丙、丁共4人排成一排照相（第1组），如果甲必须站在最左边，一共有多少种不同的排法？",
               "answer": "6种",
               "skill": "photo-fixed",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "学校乒乓球比赛有8名选手参加单循环赛（每两名选手之间都要赛一场），一共要进行多少场比赛？",
-              "answer": "28场",
-              "skill": "round-robin",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -9077,6 +9109,15 @@ export const PROJECT_STATUS = {
               "question": "用0、1、2、5这4张数字卡片，每次取2张组成没有重复数字的两位数，一共能组成多少个？",
               "answer": "9个",
               "skill": "digits-with-zero",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "学校乒乓球比赛有8名选手参加单循环赛（每两名选手之间都要赛一场），一共要进行多少场比赛？",
+              "answer": "28场",
+              "skill": "round-robin",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -9295,29 +9336,29 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "area-small-to-big",
             "area-compare",
+            "area-small-to-big",
             "area-big-to-small"
           ],
           "formats": [
-            "fill",
-            "compare"
+            "compare",
+            "fill"
           ],
           "samples": [
-            {
-              "question": "50000平方米 = （　）公顷",
-              "answer": "5公顷",
-              "skill": "area-small-to-big",
-              "format": "fill",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
             {
               "question": "在括号里填 >、< 或 =：7平方千米（　）720公顷。",
               "answer": "<",
               "skill": "area-compare",
               "format": "compare",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "50000平方米 = （　）公顷",
+              "answer": "5公顷",
+              "skill": "area-small-to-big",
+              "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
@@ -9332,8 +9373,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "60000平方米 = （　）公顷",
-              "answer": "6公顷",
+              "question": "30000平方米 = （　）公顷",
+              "answer": "3公顷",
               "skill": "area-small-to-big",
               "format": "fill",
               "responseKind": null,
@@ -9397,24 +9438,15 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "area-small-to-big",
             "area-compare",
-            "area-big-to-small"
+            "area-big-to-small",
+            "area-small-to-big"
           ],
           "formats": [
-            "fill",
-            "compare"
+            "compare",
+            "fill"
           ],
           "samples": [
-            {
-              "question": "380000平方米 = （　）公顷",
-              "answer": "38公顷",
-              "skill": "area-small-to-big",
-              "format": "fill",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
             {
               "question": "在括号里填 >、< 或 =：14平方千米（　）1380公顷。",
               "answer": ">",
@@ -9428,6 +9460,15 @@ export const PROJECT_STATUS = {
               "question": "28公顷 = （　）平方米",
               "answer": "280000平方米",
               "skill": "area-big-to-small",
+              "format": "fill",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "380000平方米 = （　）公顷",
+              "answer": "38公顷",
+              "skill": "area-small-to-big",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
@@ -12010,12 +12051,12 @@ export const PROJECT_STATUS = {
             "chicken-rabbit-given-one",
             "chicken-rabbit-basic",
             "chicken-rabbit-simple",
-            "chicken-rabbit-with-difference",
             "chicken-rabbit-multiple",
             "chicken-rabbit-difference",
             "chicken-rabbit-move",
             "chicken-rabbit-legs-only",
-            "chicken-rabbit-buying"
+            "chicken-rabbit-buying",
+            "chicken-rabbit-with-difference"
           ],
           "formats": [
             "application"
@@ -12049,9 +12090,9 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "笼子里有鸡和兔，鸡有2条腿，兔有4条腿，共有23个头，60条腿，已知鸡比兔多9只，它们各有多少？",
-              "answer": "鸡16只，兔7只",
-              "skill": "chicken-rabbit-with-difference",
+              "question": "笼子里有鸡和兔，兔的数量是鸡的2倍，共有42个头，140条腿，鸡和兔各有多少只？",
+              "answer": "鸡14只，兔28只",
+              "skill": "chicken-rabbit-multiple",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -12070,8 +12111,8 @@ export const PROJECT_STATUS = {
             "chicken-rabbit-basic",
             "chicken-rabbit-given-one",
             "chicken-rabbit-move",
-            "chicken-rabbit-simple",
-            "chicken-rabbit-multiple"
+            "chicken-rabbit-multiple",
+            "chicken-rabbit-simple"
           ],
           "formats": [
             "application"
@@ -12125,9 +12166,9 @@ export const PROJECT_STATUS = {
             "chicken-rabbit-difference",
             "chicken-rabbit-given-one",
             "chicken-rabbit-with-difference",
-            "chicken-rabbit-buying",
             "chicken-rabbit-simple",
-            "chicken-rabbit-basic"
+            "chicken-rabbit-basic",
+            "chicken-rabbit-buying"
           ],
           "formats": [
             "application"
@@ -12583,17 +12624,17 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "买5本同样的笔记本共花79.5元，每本多少元？",
-              "answer": "15.9元",
-              "skill": "unit-word",
-              "format": "application",
+              "question": "15.6 ÷ 2 = ______",
+              "answer": "7.8",
+              "skill": "dec-div",
+              "format": "arithmetic",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "买5本同样的笔记本共花50.5元，每本多少元？",
-              "answer": "10.1元",
+              "question": "买5本同样的笔记本共花79.5元，每本多少元？",
+              "answer": "15.9元",
               "skill": "unit-word",
               "format": "application",
               "responseKind": null,
@@ -12633,17 +12674,17 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "买2本同样的笔记本共花9.2元，每本多少元？",
-              "answer": "4.6元",
-              "skill": "unit-word",
-              "format": "application",
+              "question": "10.8 ÷ 9 = ______",
+              "answer": "1.2",
+              "skill": "dec-div",
+              "format": "arithmetic",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "买3本同样的笔记本共花60.3元，每本多少元？",
-              "answer": "20.1元",
+              "question": "买2本同样的笔记本共花9.2元，每本多少元？",
+              "answer": "4.6元",
               "skill": "unit-word",
               "format": "application",
               "responseKind": null,
@@ -12683,17 +12724,17 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "买6本同样的笔记本共花335.4元，每本多少元？",
-              "answer": "55.9元",
-              "skill": "unit-word",
-              "format": "application",
+              "question": "63 ÷ 10 = ______",
+              "answer": "6.3",
+              "skill": "dec-div",
+              "format": "arithmetic",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "买3本同样的笔记本共花151.5元，每本多少元？",
-              "answer": "50.5元",
+              "question": "买6本同样的笔记本共花335.4元，每本多少元？",
+              "answer": "55.9元",
               "skill": "unit-word",
               "format": "application",
               "responseKind": null,
@@ -13083,9 +13124,9 @@ export const PROJECT_STATUS = {
       "gradientBadge": "info",
       "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
       "skillCount": {
-        "easy": 3,
-        "medium": 3,
-        "hard": 3
+        "easy": 6,
+        "medium": 6,
+        "hard": 6
       },
       "hasDiagram": true,
       "byDifficulty": {
@@ -13093,17 +13134,38 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
+            "parallelogram-area",
+            "triangle-area",
             "trapezoid-area",
             "split-shape",
-            "combine-areas"
+            "combine-areas",
+            "triangle-find-height"
           ],
           "formats": [
             "geometry"
           ],
           "samples": [
             {
-              "question": "根据图中上下底和高，求梯形面积。",
+              "question": "根据图中标出的底和高，求平行四边形的面积。",
+              "answer": "24 平方厘米",
+              "skill": "parallelogram-area",
+              "format": "geometry",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "根据图中标出的底和高，求三角形的面积。",
               "answer": "21 平方厘米",
+              "skill": "triangle-area",
+              "format": "geometry",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "根据图中上下底和高，求梯形面积。",
+              "answer": "30 平方厘米",
               "skill": "trapezoid-area",
               "format": "geometry",
               "responseKind": null,
@@ -13118,24 +13180,6 @@ export const PROJECT_STATUS = {
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": true
-            },
-            {
-              "question": "阴影由两个长方形拼成，图中数字均以厘米为单位。求阴影面积。",
-              "answer": "39 平方厘米",
-              "skill": "combine-areas",
-              "format": "geometry",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "根据图中上下底和高，求梯形面积。",
-              "answer": "16 平方厘米",
-              "skill": "trapezoid-area",
-              "format": "geometry",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
             }
           ]
         },
@@ -13143,17 +13187,38 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
+            "parallelogram-area",
+            "triangle-area",
             "trapezoid-area",
             "split-shape",
-            "combine-areas"
+            "combine-areas",
+            "triangle-find-height"
           ],
           "formats": [
             "geometry"
           ],
           "samples": [
             {
+              "question": "根据图中标出的底和高，求平行四边形的面积。",
+              "answer": "16 平方厘米",
+              "skill": "parallelogram-area",
+              "format": "geometry",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "根据图中标出的底和高，求三角形的面积。",
+              "answer": "40 平方厘米",
+              "skill": "triangle-area",
+              "format": "geometry",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
               "question": "根据图中上下底和高，求梯形面积。",
-              "answer": "12 平方厘米",
+              "answer": "44 平方厘米",
               "skill": "trapezoid-area",
               "format": "geometry",
               "responseKind": null,
@@ -13168,24 +13233,6 @@ export const PROJECT_STATUS = {
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": true
-            },
-            {
-              "question": "阴影由两个长方形拼成，图中数字均以厘米为单位。求阴影面积。",
-              "answer": "60 平方厘米",
-              "skill": "combine-areas",
-              "format": "geometry",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "根据图中上下底和高，求梯形面积。",
-              "answer": "21 平方厘米",
-              "skill": "trapezoid-area",
-              "format": "geometry",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
             }
           ]
         },
@@ -13193,14 +13240,35 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
+            "parallelogram-area",
+            "triangle-area",
             "trapezoid-area",
             "split-shape",
-            "combine-areas"
+            "combine-areas",
+            "triangle-find-height"
           ],
           "formats": [
             "geometry"
           ],
           "samples": [
+            {
+              "question": "根据图中标出的底和高，求平行四边形的面积。",
+              "answer": "40 平方厘米",
+              "skill": "parallelogram-area",
+              "format": "geometry",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "根据图中标出的底和高，求三角形的面积。",
+              "answer": "80 平方厘米",
+              "skill": "triangle-area",
+              "format": "geometry",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
             {
               "question": "根据图中上下底和高，求梯形面积。",
               "answer": "36 平方厘米",
@@ -13218,24 +13286,6 @@ export const PROJECT_STATUS = {
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": true
-            },
-            {
-              "question": "阴影由两个长方形拼成，图中数字均以厘米为单位。求阴影面积。",
-              "answer": "52 平方厘米",
-              "skill": "combine-areas",
-              "format": "geometry",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "根据图中上下底和高，求梯形面积。",
-              "answer": "28 平方厘米",
-              "skill": "trapezoid-area",
-              "format": "geometry",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
             }
           ]
         }
@@ -13273,8 +13323,8 @@ export const PROJECT_STATUS = {
           "targetCount": 20,
           "skills": [
             "tree-both-ends",
-            "tree-one-end",
-            "tree-circular"
+            "tree-circular",
+            "tree-one-end"
           ],
           "formats": [
             "application"
@@ -13290,15 +13340,6 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "小红在一条68米的路一侧种树,每隔4米种一棵,只种一端。共需多少棵树?",
-              "answer": "17棵",
-              "skill": "tree-one-end",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
               "question": "小明在周长391米的圆形花坛四周种树,每隔17米种一棵。需要多少棵树?",
               "answer": "23棵",
               "skill": "tree-circular",
@@ -13308,9 +13349,18 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "小雪在一条100米的路一侧种树,每隔10米种一棵,只种一端。共需多少棵树?",
-              "answer": "10棵",
+              "question": "小红在一条68米的路一侧种树,每隔4米种一棵,只种一端。共需多少棵树?",
+              "answer": "17棵",
               "skill": "tree-one-end",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "小军在周长294米的圆形花坛四周种树,每隔14米种一棵。需要多少棵树?",
+              "answer": "21棵",
+              "skill": "tree-circular",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -13358,9 +13408,9 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "小芳在一条76米的路一侧种树,每隔4米种一棵,只种一端。共需多少棵树?",
-              "answer": "19棵",
-              "skill": "tree-one-end",
+              "question": "小军在周长493米的圆形花坛四周种树,每隔17米种一棵。需要多少棵树?",
+              "answer": "29棵",
+              "skill": "tree-circular",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -13372,23 +13422,14 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "tree-both-ends",
             "tree-circular",
-            "tree-one-end"
+            "tree-one-end",
+            "tree-both-ends"
           ],
           "formats": [
             "application"
           ],
           "samples": [
-            {
-              "question": "小梅在52米长的路两边种树,每隔1米种一棵,两端都种。共需多少棵树?",
-              "answer": "106棵",
-              "skill": "tree-both-ends",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
             {
               "question": "小雪在周长342米的圆形花坛四周种树,每隔19米种一棵。需要多少棵树?",
               "answer": "18棵",
@@ -13402,6 +13443,15 @@ export const PROJECT_STATUS = {
               "question": "小芳在一条90米的路一侧种树,每隔10米种一棵,只种一端。共需多少棵树?",
               "answer": "9棵",
               "skill": "tree-one-end",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "小梅在52米长的路两边种树,每隔1米种一棵,两端都种。共需多少棵树?",
+              "answer": "106棵",
+              "skill": "tree-both-ends",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -14104,7 +14154,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "一个分数约分后是 3/18，已知原分数的分子与分母的和是 189，原分数是多少？",
+              "question": "一个分数约分后是 1/6，已知原分数的分子与分母的和是 189，原分数是多少？",
               "answer": "27/162",
               "skill": "find-fraction-by-sum",
               "format": "practice",
@@ -15598,9 +15648,9 @@ export const PROJECT_STATUS = {
       "gradientBadge": "info",
       "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
       "skillCount": {
-        "easy": 3,
-        "medium": 3,
-        "hard": 3
+        "easy": 6,
+        "medium": 6,
+        "hard": 6
       },
       "hasDiagram": true,
       "byDifficulty": {
@@ -15608,64 +15658,35 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
+            "circle-circumference",
+            "circle-area",
             "identify-segment",
             "diameter-to-radius",
-            "draw-radius"
+            "draw-radius",
+            "radius-to-diameter"
           ],
           "formats": [
             "geometry"
           ],
           "samples": [
             {
-              "question": "图中画出的线段是半径还是直径？",
-              "answer": "直径",
-              "skill": "identify-segment",
+              "question": "根据图中半径，求圆的周长。π 取 3.14。",
+              "answer": "43.96 厘米",
+              "skill": "circle-circumference",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
             {
-              "question": "图中标出直径的长度，求这个圆的半径。",
-              "answer": "6 厘米",
-              "skill": "diameter-to-radius",
+              "question": "根据图中半径，求圆的面积。π 取 3.14。",
+              "answer": "113.04 平方厘米",
+              "skill": "circle-area",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
-            {
-              "question": "从圆心 O 画一条半径。",
-              "answer": "示例见参考图",
-              "skill": "draw-radius",
-              "format": "geometry",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": true
-            },
-            {
-              "question": "图中画出的线段是半径还是直径？",
-              "answer": "半径",
-              "skill": "identify-segment",
-              "format": "geometry",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            }
-          ]
-        },
-        "medium": {
-          "generatedCount": 6,
-          "targetCount": 6,
-          "skills": [
-            "identify-segment",
-            "diameter-to-radius",
-            "draw-radius"
-          ],
-          "formats": [
-            "geometry"
-          ],
-          "samples": [
             {
               "question": "图中画出的线段是半径还是直径？",
               "answer": "半径",
@@ -15683,20 +15704,55 @@ export const PROJECT_STATUS = {
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
-            },
+            }
+          ]
+        },
+        "medium": {
+          "generatedCount": 6,
+          "targetCount": 6,
+          "skills": [
+            "circle-circumference",
+            "circle-area",
+            "identify-segment",
+            "diameter-to-radius",
+            "draw-radius",
+            "radius-to-diameter"
+          ],
+          "formats": [
+            "geometry"
+          ],
+          "samples": [
             {
-              "question": "从圆心 O 画一条半径。",
-              "answer": "示例见参考图",
-              "skill": "draw-radius",
+              "question": "根据图中半径，求圆的周长。π 取 3.14。",
+              "answer": "62.80 厘米",
+              "skill": "circle-circumference",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
-              "hasAnswerDiagram": true
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "根据图中半径，求圆的面积。π 取 3.14。",
+              "answer": "153.86 平方厘米",
+              "skill": "circle-area",
+              "format": "geometry",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
             },
             {
               "question": "图中画出的线段是半径还是直径？",
               "answer": "直径",
               "skill": "identify-segment",
+              "format": "geometry",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "图中标出直径的长度，求这个圆的半径。",
+              "answer": "10 厘米",
+              "skill": "diameter-to-radius",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
@@ -15708,17 +15764,38 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
+            "circle-circumference",
+            "circle-area",
             "identify-segment",
             "diameter-to-radius",
-            "draw-radius"
+            "draw-radius",
+            "radius-to-diameter"
           ],
           "formats": [
             "geometry"
           ],
           "samples": [
             {
+              "question": "根据图中半径，求圆的周长。π 取 3.14。",
+              "answer": "100.48 厘米",
+              "skill": "circle-circumference",
+              "format": "geometry",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "根据图中半径，求圆的面积。π 取 3.14。",
+              "answer": "200.96 平方厘米",
+              "skill": "circle-area",
+              "format": "geometry",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
               "question": "图中画出的线段是半径还是直径？",
-              "answer": "半径",
+              "answer": "直径",
               "skill": "identify-segment",
               "format": "geometry",
               "responseKind": null,
@@ -15727,26 +15804,8 @@ export const PROJECT_STATUS = {
             },
             {
               "question": "图中标出直径的长度，求这个圆的半径。",
-              "answer": "8 厘米",
+              "answer": "16 厘米",
               "skill": "diameter-to-radius",
-              "format": "geometry",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "从圆心 O 画一条半径。",
-              "answer": "示例见参考图",
-              "skill": "draw-radius",
-              "format": "geometry",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": true
-            },
-            {
-              "question": "图中画出的线段是半径还是直径？",
-              "answer": "直径",
-              "skill": "identify-segment",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
@@ -15887,24 +15946,15 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "pct-growth",
             "pct-interest",
-            "pct-discount"
+            "pct-discount",
+            "pct-growth"
           ],
           "formats": [
             "application",
             "fill"
           ],
           "samples": [
-            {
-              "question": "某果园去年产苹果500吨，今年产苹果900吨，今年比去年增产了百分之几？",
-              "answer": "80%",
-              "skill": "pct-growth",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
             {
               "question": "王叔叔把2900元存入银行，年利率是2%，存期3年，到期时一共可取回本息多少元？",
               "answer": "3074元",
@@ -15924,9 +15974,18 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "某果园去年产苹果410吨，今年产苹果615吨，今年比去年增产了百分之几？",
-              "answer": "50%",
+              "question": "某果园去年产苹果500吨，今年产苹果900吨，今年比去年增产了百分之几？",
+              "answer": "80%",
               "skill": "pct-growth",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "王叔叔把4600元存入银行，年利率是2%，存期1年，到期时一共可取回本息多少元？",
+              "answer": "4692元",
+              "skill": "pct-interest",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -16523,8 +16582,8 @@ export const PROJECT_STATUS = {
           "targetCount": 20,
           "skills": [
             "discount-single",
-            "discount-buy-get",
-            "discount-stack"
+            "discount-stack",
+            "discount-buy-get"
           ],
           "formats": [
             "application"
@@ -16540,18 +16599,18 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "超市玩具每22元,买7送1。小明想买17件玩具,最少付多少钱?",
-              "answer": "330元",
-              "skill": "discount-buy-get",
+              "question": "一件水果原价271元,先打8折,再参加满350减70的活动,实际付多少元?",
+              "answer": "133元",
+              "skill": "discount-stack",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "一件水果原价271元,先打8折,再参加满350减70的活动,实际付多少元?",
-              "answer": "133元",
-              "skill": "discount-stack",
+              "question": "超市玩具每22元,买7送1。小明想买17件玩具,最少付多少钱?",
+              "answer": "330元",
+              "skill": "discount-buy-get",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -16572,23 +16631,14 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "discount-single",
             "discount-buy-get",
-            "discount-stack"
+            "discount-stack",
+            "discount-single"
           ],
           "formats": [
             "application"
           ],
           "samples": [
-            {
-              "question": "一件水果原价65元,现在打7折,现价多少元?",
-              "answer": "42元",
-              "skill": "discount-single",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
             {
               "question": "超市服装每38元,买7送1。小明想买16件服装,最少付多少钱?",
               "answer": "532元",
@@ -16608,9 +16658,18 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "一件服装原价47元,现在打5折,现价多少元?",
-              "answer": "24元",
+              "question": "一件水果原价65元,现在打7折,现价多少元?",
+              "answer": "42元",
               "skill": "discount-single",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "一件零食原价383元,先打8折,再参加满130减26的活动,实际付多少元?",
+              "answer": "280元",
+              "skill": "discount-stack",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -16622,23 +16681,14 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "discount-single",
             "discount-stack",
-            "discount-buy-get"
+            "discount-buy-get",
+            "discount-single"
           ],
           "formats": [
             "application"
           ],
           "samples": [
-            {
-              "question": "一件零食原价66元,现在打5折,现价多少元?",
-              "answer": "33元",
-              "skill": "discount-single",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
             {
               "question": "一件零食原价347元,先打7折,再参加满350减70的活动,实际付多少元?",
               "answer": "156元",
@@ -16658,9 +16708,18 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "一件玩具原价97元,现在打6折,现价多少元?",
-              "answer": "53元",
+              "question": "一件零食原价66元,现在打5折,现价多少元?",
+              "answer": "33元",
               "skill": "discount-single",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "超市文具每32元,买9送1。小明想买18件文具,最少付多少钱?",
+              "answer": "544元",
+              "skill": "discount-buy-get",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -17233,8 +17292,7 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "arithmetic-result",
-            "arithmetic-operand",
+            "pigeon-socks",
             "train-bridge-time",
             "three-cattle-chicken",
             "statistics-mean",
@@ -17242,30 +17300,22 @@ export const PROJECT_STATUS = {
             "interest-find-total",
             "gc-square-grid",
             "logic-liar-truth",
-            "pigeon-socks",
-            "perfect-square-judge"
+            "perfect-square-judge",
+            "arithmetic-result",
+            "arithmetic-operand"
           ],
           "formats": [
-            "arithmetic",
-            "fill",
+            "olympiad",
             "application",
-            "olympiad"
+            "arithmetic",
+            "fill"
           ],
           "samples": [
             {
-              "question": "34 ÷ 17 = ______",
-              "answer": "2",
-              "skill": "arithmetic-result",
-              "format": "arithmetic",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "770 × ______ = 324170",
-              "answer": "421",
-              "skill": "arithmetic-operand",
-              "format": "fill",
+              "question": "抽屉里有1种颜色的袜子(每种足够多),至少摸出几只能保证配成颜色相同的一双?",
+              "answer": "2只(最坏情况是每种颜色各拿 1 只,第 2 只必与前 1 只中某色配对)",
+              "skill": "pigeon-socks",
+              "format": "olympiad",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
@@ -17280,9 +17330,18 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "牧场里有牛、羊、鸡共13只,腿数共44条,牛和羊都是4条腿、鸡2条腿,且牛比羊多3只。求牛、羊、鸡各多少只?",
-              "answer": "牛3只,羊6只,鸡4只",
+              "question": "牧场里有牛、羊、鸡共14只,腿数共48条,牛和羊都是4条腿、鸡2条腿,且牛比羊多4只。求牛、羊、鸡各多少只?",
+              "answer": "牛7只,羊3只,鸡4只",
               "skill": "three-cattle-chicken",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "10的平均数是多少?",
+              "answer": "10",
+              "skill": "statistics-mean",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -17294,38 +17353,38 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "arithmetic-result",
-            "arithmetic-operand",
-            "ratio-scale",
             "proportion-three-parts",
+            "perfect-square-divisor-count",
+            "ratio-scale",
             "distance-meet",
             "train-tunnel-time",
             "magic-3-row",
-            "perfect-square-divisor-count",
             "prob-compare",
-            "extreme-min-perimeter"
+            "extreme-min-perimeter",
+            "arithmetic-result",
+            "arithmetic-operand"
           ],
           "formats": [
-            "arithmetic",
-            "fill",
             "application",
-            "olympiad"
+            "olympiad",
+            "arithmetic",
+            "fill"
           ],
           "samples": [
             {
-              "question": "60 ÷ 20 = ______",
-              "answer": "3",
-              "skill": "arithmetic-result",
-              "format": "arithmetic",
+              "question": "把157支笔按3:3:4的比例分给三人,各分多少?",
+              "answer": "47支、47支、63支",
+              "skill": "proportion-three-parts",
+              "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "348 - ______ = 199",
-              "answer": "149",
-              "skill": "arithmetic-operand",
-              "format": "fill",
+              "question": "13共有多少个因数?",
+              "answer": "2个",
+              "skill": "perfect-square-divisor-count",
+              "format": "olympiad",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
@@ -17340,9 +17399,9 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "把157支笔按3:3:4的比例分给三人,各分多少?",
-              "answer": "47支、47支、63支",
-              "skill": "proportion-three-parts",
+              "question": "小梅每分钟走53米,小明每分钟走57米,两人相向而行3分钟后相遇,两地相距多少米?",
+              "answer": "330米",
+              "skill": "distance-meet",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -17354,8 +17413,6 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "arithmetic-result",
-            "arithmetic-operand",
             "train-cross-meet",
             "duty-last",
             "sports-relay",
@@ -17365,33 +17422,17 @@ export const PROJECT_STATUS = {
             "prob-two-stage",
             "coloring-domino",
             "comb-ball",
-            "nt-puzzle"
+            "nt-puzzle",
+            "arithmetic-result",
+            "arithmetic-operand"
           ],
           "formats": [
-            "arithmetic",
-            "fill",
             "application",
-            "olympiad"
+            "olympiad",
+            "arithmetic",
+            "fill"
           ],
           "samples": [
-            {
-              "question": "307 - 211 = ______",
-              "answer": "96",
-              "skill": "arithmetic-result",
-              "format": "arithmetic",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "______ - 239 = 205",
-              "answer": "444",
-              "skill": "arithmetic-operand",
-              "format": "fill",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
             {
               "question": "两列火车分别长514米和438米,各以每秒32米和36米的速度相向而行,从相遇到完全错开需多少秒?",
               "answer": "14秒",
@@ -17405,6 +17446,24 @@ export const PROJECT_STATUS = {
               "question": "今天是星期四,小华要在29天后的值日,那天是星期几?",
               "answer": "星期五",
               "skill": "duty-last",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "接力赛三人分别用时36秒、52秒、30秒,总成绩是多少秒?比纪录120秒快几秒?",
+              "answer": "总成绩118秒,快2秒",
+              "skill": "sports-relay",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "本金7103元,甲银行年利率4%,乙银行年利率5%,存4年,两家利息相差多少元?",
+              "answer": "285元",
+              "skill": "interest-compare",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,

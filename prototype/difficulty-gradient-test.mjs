@@ -192,4 +192,4 @@ for (let i = 0; i < 60; i++) {
   }
 }
 
-console.log(`✅ 25 个专项插件（18 个全独立三档考法 + 7 个进阶分支插件）的难度梯度、题量和提高题答案复算全部通过！`);
+console.log(`✅ ${STRICT_TIERED_SCOPE_PLUGINS.length + PARTIAL_OR_UNIT_TIERED_PLUGINS.length} 个专项插件（${STRICT_TIERED_SCOPE_PLUGINS.length} 个全独立三档考法 + ${PARTIAL_OR_UNIT_TIERED_PLUGINS.length} 个进阶分支插件）的难度梯度、题量和提高题答案复算全部通过！`);

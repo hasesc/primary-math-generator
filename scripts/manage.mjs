@@ -21,6 +21,8 @@ const TEST_SUITES = [
   { id: 'correctness', name: '数学答案独立逆向复算测试 (160轮)', file: 'prototype/correctness-test.mjs' },
   { id: 'daily', name: '口算/竖式每日一练专项测试 (123配置)', file: 'prototype/daily-practice-test.mjs' },
   { id: 'gradient', name: '三档难度阶梯考法与答案测试', file: 'prototype/difficulty-gradient-test.mjs' },
+  { id: 'rotation', name: '同卷考法轮转相邻不重复测试 (93单元×3档×6轮)', file: 'prototype/rotation-test.mjs' },
+  { id: 'regression', name: '题面有效性、唯一解与必备考点回归测试', file: 'prototype/regression-test.mjs' },
 ];
 
 // 各插件的难度梯度实现分类（基于源码静态+动态双重核验）
@@ -78,7 +80,7 @@ function classifyGradient(u, byDiff) {
       note: '基础(15分刻)/标准(5分刻)/提高(1分刻)三档精细度',
     };
   }
-  if (THREE_TIER_PLUGINS.has(u.plugin)) {
+  if (THREE_TIER_PLUGINS.has(u.plugin) || THREE_TIER_PLUGINS.has(u.arithmeticPlugin)) {
     return {
       tier: 'three-tier-range',
       label: '三档数值',
@@ -335,11 +337,12 @@ function main() {
   const action = process.argv[2] || 'status';
   const commitMsg = process.argv[3];
 
-  console.log('🔍 [1/4] 正在执行 5 大自动化测试套件...');
+  console.log(`🔍 [1/4] 正在执行 ${TEST_SUITES.length} 大自动化测试套件...`);
   const tests = runTestSuites();
   for (const t of tests) {
     console.log(`   ${t.passed ? '✅' : '❌'} ${t.name} (${t.durationMs}ms)`);
   }
+  if (tests.some(t => !t.passed)) process.exitCode = 1;
 
   console.log('📊 [2/4] 正在对 93 个教材单元与 17 个每日一练进行三档难度深度体检...');
   const units = auditUnits();
@@ -408,11 +411,7 @@ function main() {
       const status = execFileSync('git', ['status', '--porcelain'], { cwd: ROOT, encoding: 'utf8' });
       if (status.trim()) {
         execFileSync('git', ['commit', '-m', msg], { cwd: ROOT, stdio: 'inherit' });
-        const gitInfo = getGitHistory();
-        gitInfo.dirtyFiles = 0;
-        writeStatusFile(gitInfo);
-        execFileSync('git', ['add', 'prototype/projectStatus.js'], { cwd: ROOT, stdio: 'ignore' });
-        execFileSync('git', ['commit', '--amend', '--no-edit'], { cwd: ROOT, stdio: 'ignore' });
+        // 看板保留提交前的巡检快照，避免把提交标识写回自身后再次改写提交。
       } else {
         console.log('   ℹ️ 工作区无新增改动，跳过 commit。');
       }
@@ -430,7 +429,7 @@ function main() {
   console.log(`• 难度梯度分布: 阶梯考法 ${summary.byGradient['tiered-skills']} | 三档数值 ${summary.byGradient['three-tier-range']} | 两档数值 ${summary.byGradient['two-tier-range']} | 课标定界 ${summary.byGradient['fixed-range']}`);
   console.log(`• 模块分布:     Scope课标专项 ${summary.byModule.scope} | 通用单元插件 ${summary.byModule.unitPlugin} | 几何 ${summary.byModule.geometry} | 钟表统计 ${summary.byModule.diagram} | 方格 ${summary.byModule.grid} | 引擎模板 ${summary.byModule.engineTopic}`);
   console.log(`• 每日一练范围: ${summary.dailyCount} 个 (口算 + 竖式)`);
-  console.log(`• 自动化测试:   ${summary.testsPassed}/${summary.testsTotal} 套件全部通过`);
+  console.log(`• 自动化测试:   ${summary.testsPassed}/${summary.testsTotal} 套件通过${summary.testsPassed === summary.testsTotal ? '，全部通过' : '，存在失败'}`);
   console.log('==============================================');
 }
 

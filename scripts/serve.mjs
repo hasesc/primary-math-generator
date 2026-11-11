@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
+const PUBLIC_DIR = path.join(ROOT, 'prototype');
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -32,7 +33,9 @@ function startServer(port = 3000) {
         filePath = path.join(filePath, 'index.html');
       }
 
-      if (!filePath.startsWith(ROOT)) {
+      // 只允许访问 prototype/ 目录，且禁止任何隐藏文件（如 .git），防止本机源码被其他网页读取
+      const rel = path.relative(PUBLIC_DIR, filePath);
+      if (rel.startsWith('..') || path.isAbsolute(rel) || rel.split(path.sep).some((s) => s.startsWith('.'))) {
         res.writeHead(403, { 'Content-Type': 'text/plain; charset=utf-8' });
         res.end('403 Forbidden');
         return;
@@ -51,7 +54,7 @@ function startServer(port = 3000) {
       res.writeHead(200, {
         'Content-Type': contentType,
         'Cache-Control': 'no-cache, no-store, must-revalidate',
-        'Access-Control-Allow-Origin': '*',
+        'X-Content-Type-Options': 'nosniff',
       });
       res.end(content);
     } catch (err) {

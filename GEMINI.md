@@ -10,7 +10,7 @@
 只要你修改了 `prototype/` 下的任何代码、题型插件、单元配置或样式，在向用户汇报完成前 **必须依次执行以下三步**：
 1. **运行管理巡检脚本**：
    执行 `node scripts/manage.mjs`（或直接执行 `node scripts/manage.mjs snapshot "本次改动简述"`）。
-   - 该命令会自动运行全部 5 个测试套件（`smoke-test`、`coverage-test`、`correctness-test`、`daily-practice-test`、`difficulty-gradient-test`），确保零回归错误。
+   - 该命令会自动运行全部 7 个测试套件（`smoke-test`、`coverage-test`、`correctness-test`、`daily-practice-test`、`difficulty-gradient-test`、`rotation-test`、`regression-test`），确保零回归错误。
    - 自动扫描 93 个教材单元的三档难度（`easy/medium/hard`）状态并更新 [`prototype/projectStatus.js`](./prototype/projectStatus.js) 看板数据。
 2. **更新文档台账**：
    - 在 [`CHANGELOG.md`](./CHANGELOG.md) 顶部记录本次修改的模块、新增/调整的考法及验证结果。

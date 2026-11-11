@@ -36,12 +36,12 @@ function renderTopAndKpi() {
       sub: `7 个口算分级 + 10 个竖式分级（含小数对齐与除法竖式框）`,
     },
     {
-      label: '5大自动化测试防线',
+      label: `${summary.testsTotal}大自动化测试防线`,
       val: `${summary.testsPassed} / ${summary.testsTotal} 通过`,
-      sub: summary.testsPassed === summary.testsTotal ? '✅ 零回归错误（冒烟/全覆盖/复算/每日/梯度）' : '❌ 存在未通过测试，请检查',
+      sub: summary.testsPassed === summary.testsTotal ? '✅ 冒烟/覆盖/复算/每日/梯度/轮转/题面回归通过' : '❌ 存在未通过测试，请检查',
     },
     {
-      label: 'Git 版本快照状态',
+      label: '巡检时 Git 记录（提交前）',
       val: git.initialized ? (gitCommit ? `#${gitCommit.hash}` : '已初始化') : '未初始化',
       sub: gitCommit ? `${gitCommit.date} · ${gitCommit.message}` : '运行 node scripts/manage.mjs snapshot 创建快照',
     },

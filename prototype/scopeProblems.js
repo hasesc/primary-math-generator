@@ -178,10 +178,11 @@ function conceptTasks(kind, difficulty) {
       const minute = int(1, 59);
       const leap = year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0);
       const days = new Date(Date.UTC(year, month, 0)).getUTCDate();
+      const laterDay = int(a + 1, days);
       if (difficulty === 'hard') return [
         ['elapsed-hours-same-day', `一辆客车于 ${year} 年某天上午 ${a} 时出发，当天下午 ${b} 时到达终点，一共行驶了多少小时？`, `${b + 12 - a} 小时`],
         ['elapsed-days-in-month', `读书活动从 ${month} 月 ${a} 日开始，到 ${month} 月 ${a + b + c} 日结束（首尾两天都算），一共举办了多少天？`, `${b + c + 1} 天`],
-        ['weekday-cycle', `如果 ${year} 年 ${month} 月 ${a} 日是星期三，那么同月 ${a + b * 7 + (c % 3) + 1} 日是星期几？`, ['星期四', '星期五', '星期六'][c % 3]],
+        ['weekday-cycle', `如果 ${year} 年 ${month} 月 ${a} 日是星期三，那么同月 ${laterDay} 日是星期几？`, ['星期三', '星期四', '星期五', '星期六', '星期日', '星期一', '星期二'][(laterDay - a) % 7]],
         ['cross-midnight-hours', `一列列车第一天 ${12 + a} 时发车，第二天早晨 ${b} 时到达（车次 ${minute}），途中行驶了多少小时？`, `${12 - a + b} 小时`],
       ];
       if (difficulty === 'medium') return [
@@ -277,7 +278,7 @@ function conceptTasks(kind, difficulty) {
     case 'fraction-properties':
       if (difficulty === 'hard') return [
         ['invariant-property-add', `把分数 ${a}/${f} 的分子加上 ${a * b}，要使分数的大小不变，分母应该加上多少？`, f * b],
-        ['find-fraction-by-sum', `一个分数约分后是 ${a}/${f}，已知原分数的分子与分母的和是 ${(a + f) * b}，原分数是多少？`, `${a * b}/${f * b}`],
+        ['find-fraction-by-sum', `一个分数约分后是 ${fraction(a, f)}，已知原分数的分子与分母的和是 ${(a + f) * b}，原分数是多少？`, `${a * b}/${f * b}`],
         ['share-rope-ratio', `把 ${n} 米长的铁丝平均截成 ${f} 段，每段占全长的几分之几？`, `1/${f}`],
         ['max-proper-diff', `分母是 ${n} 的最大真分数与最小假分数相差多少（写最简分数）？`, `1/${n}`],
       ];
@@ -352,7 +353,7 @@ function conceptTasks(kind, difficulty) {
       ];
     case 'decimal-addsub':
       if (difficulty === 'hard') return [
-        ['decimal-coupon-story', `书店满 ${a + c} 元减 ${b} 元。小华买了一本 ${a}.${b} 元和一本 ${c}.${10 - b} 元的书，优惠后应付多少元？`, `${a + c + 1 - b} 元`],
+        ['decimal-coupon-story', `书店满 ${a + c} 元减 ${Math.min(b, a + c - 1)} 元。小华买了一本 ${a}.${b} 元和一本 ${c}.${10 - b} 元的书，优惠后应付多少元？`, `${a + c + 1 - Math.min(b, a + c - 1)} 元`],
         ['decimal-mistake-recover', `小马虎计算小数加法时，把一个加数 ${a}.${b} 看成了 ${a + c}.${b}，算得结果是 ${n + c}.${b}。正确结果是多少？`, `${n}.${b}`],
         ['decimal-tare-weight', `一筐苹果连筐共重 ${a + 2 * b}.8 千克，卖出一半苹果后，连筐重 ${a + b}.4 千克。空筐重多少千克？`, `${a} 千克`],
         ['decimal-shared-overlap', `两根木条分别长 ${n / 10} 米和 ${m / 10} 米，接在一起后接头重叠部分长 ${a / 10} 米。接好后的木条总长多少米？`, `${(n + m - a) / 10} 米`],
