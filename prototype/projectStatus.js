@@ -1,14 +1,14 @@
 // 自动生成文件（请勿手改）：由 node scripts/manage.mjs 生成
 export const PROJECT_STATUS = {
   "summary": {
-    "generatedAt": "2026/11/12 18:03:09",
+    "generatedAt": "2026/11/12 19:43:52",
     "totalUnits": 94,
     "dedicatedUnits": 93,
     "reviewUnits": 1,
     "diagramUnits": 31,
     "dailyCount": 24,
-    "testsPassed": 8,
-    "testsTotal": 8,
+    "testsPassed": 9,
+    "testsTotal": 9,
     "byGradient": {
       "tiered-skills": 69,
       "three-tier-range": 2,
@@ -32,14 +32,14 @@ export const PROJECT_STATUS = {
       "file": "prototype/smoke-test.mjs",
       "passed": true,
       "durationMs": 91,
-      "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 1ms, 分布={\"application\":7,\"olympiad\":8,\"arithmetic\":15} | 结果: 18 通过 / 0 未达标"
+      "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 1ms, 分布={\"olympiad\":8,\"application\":7,\"arithmetic\":15} | 结果: 18 通过 / 0 未达标"
     },
     {
       "id": "coverage",
       "name": "94单元全量联动与762配置覆盖测试",
       "file": "prototype/coverage-test.mjs",
       "passed": true,
-      "durationMs": 160,
+      "durationMs": 159,
       "summary": "总计 94 单元：联动通过 93，无专属出题映射（含整理与复习）1，不合格 0 | 已检查 765 种难度与题量组合。至少一组配置只有一个卷面分类的单元（分类数不等于考法数）共 83 个：1上 准备课、1上 位置、1上 1~5的认识和加减法、1上 认识图形（一）、1上 6~10的认识和加减法、1上 11~20各数的认识、1上 20以内的进位加法、1下 20以内的退位减法、1下 100以内数的认识、1下 100以内的加法和减法（一）、1下 认识图形（二）、1下 认识人民币、1下 100以内的加法和减法（二）、1下 找规律、2上 100以内的加法和减法（二）、2上 角的初步认识、2上 表内乘法（一）、2上 观察物体（一）、2上 表内乘法（二）、2上 数学广角——搭配（一）、2下 数据收集整理、2下 表内除法（一）、2下 图形的运动（一）、2下 表内除法（二）、2下 混合运算、2下 有余数的除法、2下 万以内数的认识、2下 数学广角——推理、3上 万以内的加法和减法（一）、3上 万以内的加法和减法（二）、3上 倍的认识、3上 多位数乘一位数、3上 长方形和正方形、3上 分数的初步认识、3下 位置与方向（一）、3下 除数是一位数的除法、3下 复式统计表、3下 两位数乘两位数、3下 面积、3下 年月日、3下 小数的初步认识、3下 数学广角——搭配（二）、4上 大数的认识、4上 公顷和平方千米、4上 角的度量、4上 三位数乘两位数、4上 平行四边形和梯形、4上 除数是两位数的除法、4上 条形统计图、4上 数学广角——优化、4下 四则运算、4下 观察物体（二）、4下 运算定律、4下 小数的意义和性质、4下 三角形、4下 小数的加法和减法、4下 图形的运动（二）、4下 平均数与条形统计图、4下 数学广角——鸡兔同笼、5上 位置、5上 可能性、5上 简易方程、5上 多边形的面积、5上 数学广角——植树问题、5下 观察物体（三）、5下 因数与倍数、5下 长方体和正方体、5下 分数的意义和性质、5下 图形的运动（三）、5下 分数的加法和减法、5下 折线统计图、5下 数学广角——找次品、6上 位置与方向（二）、6上 分数除法、6上 比、6上 圆、6上 扇形统计图、6上 数学广角——数与形、6下 负数、6下 百分数（二）、6下 圆柱与圆锥、6下 比例、6下 数学广角——鸽巢问题"
     },
     {
@@ -47,7 +47,7 @@ export const PROJECT_STATUS = {
       "name": "数学答案独立逆向复算测试 (160轮)",
       "file": "prototype/correctness-test.mjs",
       "passed": true,
-      "durationMs": 82,
+      "durationMs": 85,
       "summary": "鸡兔同笼、植树、统计图并列和小数乘法的独立复算通过"
     },
     {
@@ -55,7 +55,7 @@ export const PROJECT_STATUS = {
       "name": "口算/竖式每日一练专项测试 (186配置)",
       "file": "prototype/daily-practice-test.mjs",
       "passed": true,
-      "durationMs": 54,
+      "durationMs": 55,
       "summary": "186 种每日一练配置通过，题量、去重、答案复算和年级限制正常"
     },
     {
@@ -63,7 +63,7 @@ export const PROJECT_STATUS = {
       "name": "三档难度阶梯考法与答案测试",
       "file": "prototype/difficulty-gradient-test.mjs",
       "passed": true,
-      "durationMs": 84,
+      "durationMs": 85,
       "summary": "✅ 33 个专项插件（18 个全独立三档考法 + 15 个进阶分支插件）的难度梯度、题量和提高题答案复算全部通过！"
     },
     {
@@ -71,7 +71,7 @@ export const PROJECT_STATUS = {
       "name": "同卷考法轮转相邻不重复测试 (94单元×3档×6轮)",
       "file": "prototype/rotation-test.mjs",
       "passed": true,
-      "durationMs": 236,
+      "durationMs": 252,
       "summary": "考法轮转（相邻 subtemplateId 不重复）测试通过"
     },
     {
@@ -79,7 +79,7 @@ export const PROJECT_STATUS = {
       "name": "题面有效性、唯一解与必备考点回归测试",
       "file": "prototype/regression-test.mjs",
       "passed": true,
-      "durationMs": 82,
+      "durationMs": 64,
       "summary": "题面有效性、动物题唯一解及缺失考点回归检查通过"
     },
     {
@@ -87,13 +87,26 @@ export const PROJECT_STATUS = {
       "name": "100分制单元测验卷全链路测试 (6年级×3难度)",
       "file": "prototype/exam-paper-test.mjs",
       "passed": true,
-      "durationMs": 88,
+      "durationMs": 87,
       "summary": "✅ 100分制单元测验卷验证通过: 18/18 组全部达标 (6年级×3难度覆盖)"
+    },
+    {
+      "id": "miniprogram",
+      "name": "微信小程序引擎全链路与SVG测试",
+      "file": "prototype/miniprogram-engine-test.mjs",
+      "passed": true,
+      "durationMs": 89,
+      "summary": "ℹ todo 0 | ℹ duration_ms 8.8193"
     }
   ],
   "git": {
     "initialized": true,
     "commits": [
+      {
+        "hash": "1be5401",
+        "date": "2026-11-12 18:03",
+        "message": "fix: eliminate adult shorthand 'fangzhen' with child-friendly 'square formation', fix template wording and punctuation"
+      },
       {
         "hash": "3aebb6f",
         "date": "2026-11-12 17:44",
@@ -163,14 +176,9 @@ export const PROJECT_STATUS = {
         "hash": "88c826a",
         "date": "2026-11-12 14:40",
         "message": "feat: upgrade clock problems with tiered skills and multi-format templates"
-      },
-      {
-        "hash": "780b7b4",
-        "date": "2026-11-12 14:29",
-        "message": "docs: establish 25 weak units tiered redesign specification"
       }
     ],
-    "dirtyFiles": 56
+    "dirtyFiles": 10
   },
   "roadmap": [
     {
@@ -199,19 +207,19 @@ export const PROJECT_STATUS = {
       ]
     },
     {
-      "group": "P1 · 微信小程序端移植（M1 → M2）",
+      "group": "P1 · 微信小程序端移植（M1 → M2，已完成）",
       "items": [
         {
-          "done": false,
-          "text": "将 `prototype/` 下的纯 JS 生成引擎与插件模块迁移至 `repos/skeleton/miniprogram/`"
+          "done": true,
+          "text": "将 `prototype/` 下的纯 JS 生成引擎与插件模块迁移至 `repos/skeleton/miniprogram/engine/`，实现纯字符串 SVG 渲染器与 9 大自动化测试全绿防线"
         },
         {
-          "done": false,
-          "text": "实现小程序端四步选卷 UI（教材→年级学期单元→难度题量→预览导出）与 SVG/Canvas 图形渲染适配"
+          "done": true,
+          "text": "实现小程序端核心选卷 UI（`pages/index/` 单元同步练/每日一练/单元测验卷）与试卷卡片渲染（`pages/paper/` 答题留白、换题、答案解析折叠与文本导出）"
         },
         {
-          "done": false,
-          "text": "补齐“关于”页开源许可证声明（木兰 PSL v2 + MIT）与隐私保护指引"
+          "done": true,
+          "text": "补齐“关于”页合规声明（`pages/about/` 纯算法实时生成、零题库存储、Mulan PSL v2 开源许可证与隐私政策）"
         }
       ]
     },
@@ -221,6 +229,14 @@ export const PROJECT_STATUS = {
         {
           "done": false,
           "text": "编写闲鱼/小红书电子资料包批量导出脚本（按年级×单元自动生成带水印与小程序码的 PDF 题卡包）"
+        },
+        {
+          "done": false,
+          "text": "注册个人小程序账号，完成微信实名认证（免费），按“工具 > 办公”类目提审"
+        },
+        {
+          "done": false,
+          "text": "UV 满 500 后开通流量主（导出激励视频广告 + 结果页 Banner）"
         },
         {
           "done": false,
@@ -234,6 +250,27 @@ export const PROJECT_STATUS = {
     }
   ],
   "changelog": [
+    {
+      "version": "v0.9.0",
+      "date": "2026-11-12",
+      "title": "核心里程碑突破：微信小程序原生端技术移植与三大页面正式上线，实现 0 服务器 0 成本纯前端本地运算",
+      "bullets": [
+        "**模块一：微信小程序引擎整体移植与纯字符串 SVG 渲染器上线 (repos/skeleton/miniprogram/engine/)**：",
+        "成功将人教版 1~6 年级全部 94 个教材单元（units.js）、组卷调度总入口（paper.js）、每日一练（dailyPractice.js）、概念辨析（conceptProblems.js）及全部 42 个题材模板完整移植至微信小程序原生环境。",
+        "专门重构实现纯字符串级高分 SVG 渲染器（renderDiagramSVG.js）与 Base64 DataURL 接口，彻底摆脱网页 DOM document.createElementNS 依赖，完美兼容微信小程序 <image> 渲染与全机型运行。",
+        "自动化测试套件扩充升级为 **9 大测试套件**，新增 miniprogram-engine-test.mjs，确保每次运行 manage.mjs 均自动化验证小程序引擎生成完整性与 SVG 格式有效性。",
+        "**模块二：微信小程序原生首页练习中心上线 (pages/index/index)**：",
+        "采用移动端 Mobile-First 蔚蓝卡片设计，支持“📚 单元同步练”、“⚡ 每日一练”、“💯 单元测验卷”三大核心模式一键切换。",
+        "支持一年级至六年级横向胶囊快速切换、上册/下册学期切换；直观展示 94 个教材单元卡片与难度标签。",
+        "弹出式配置面板支持“基础/标准/提高”三档难度与“20/30/40题”题量一键出卷。",
+        "**模块三：微信小程序纸质练习卷预览与导出页上线 (pages/paper/paper)**：",
+        "严格对齐小学纸质练习卷排版：包含卷头、考点说明、姓名班级得分栏。",
+        "题目流智能按六大规范大题进行分栏展示：直接写得数（两列网格）、列竖式（演算留白）、填空选择、图形作图（高分 SVG 矢量渲染）、解决问题（配备专属 3 行作业本横线书写框与“答：_______”）。",
+        "底部吸底操作栏支持一键“🔄 换一批题”、“👁️ 查看参考答案（折叠展开，含详细思路点拨）”、“📥 导出 / 复制全卷文本”。",
+        "**模块四：合规声明与关于页上线 (pages/about/index)**：",
+        "严格遵守微信个人主体“工具-办公”类目规范，内置纯算法实时生成声明、零题库存储声明、开源许可证（Mulan PSL v2 / MIT）与隐私保护政策。"
+      ]
+    },
     {
       "version": "v0.8.12",
       "date": "2026-11-12",

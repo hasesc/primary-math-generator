@@ -4,15 +4,15 @@
 > 运行 `node scripts/manage.mjs` 可自动执行全套测试并刷新看板数据。
 
 ## 1. 当前版本与核心指标
-- **当前阶段**：彻底净化病态遗留题型并全面重构（`v0.8.12`）：彻底清除“方阵”成人缩写为“正方形队伍/点阵”，修复队列人数与层数逻辑漏洞；重构队列、家庭年龄、工程效率、环形跑道、钟面角、极值最值等模板，全量升级中文全角标点，消除电报体语病；自动化测试 8 大套件持续 100% 满分全绿
+- **当前阶段**：微信小程序原生端技术移植与三大页面正式上线（`v0.9.0`）：成功将 94 单元纯算法生成引擎完整移植至 `repos/skeleton/miniprogram/engine/`，实现纯字符串级 SVG 渲染；上线微信端练习中心、试卷预览/答案与合规关于页，零服务器零维护成本；自动化防线扩充至 9 大测试套件持续 100% 满分全绿
 - **生成入口覆盖（非完整考点验收）**：人教版 1~6 年级上下册共 **94 个单元**（93 个专属插件/模板映射 + 1 个六下《整理与复习》全科综合卷；其中 **69 个单元具备阶梯考法**、**2 个单元具备三档数值梯度**、**23 个单元为课标定界范围**，“两档待升级”保持 0 个）
-- **UI 与卷面**：现代教育工作台、毛玻璃导航、单元搜索过滤、A4 练习卷排版与大题科学分栏（直接写得数、列竖式、脱式计算、填空比较、作图、解决问题），每道大题配足作答留白与作业本横线，支持手机移动端原生触控吸底栏与题卡自适应
+- **UI 与卷面**：双端并进——Web 原型工作台支持 A4 打印与直接导出矢量 PDF；微信小程序原生端支持移动端触控选级、卡片式练习卷预览、作业本横线留白、一键换题与文本复制导出
 - **内置模块**：
   - **单元同步练**（主打，支持 3/6 题图形卷与 20/30/40 题标准卷）
   - **单元测验卷**（旗舰新增，标准 100 分制 6 大板块模拟考，含答题留白与思路点拨）
   - **口算每日一练**（14 个分级范围，覆盖 1~6 年级加减乘除、小数与百分数速算）
   - **竖式每日一练**（10 个分级范围，覆盖 2~6 年级多位数加减乘除、小数对齐与圆周率竖式框渲染）
-- **自动化防线**：8 大测试套件（`smoke-test`、`coverage-test`、`correctness-test`、`daily-practice-test` 186配置、`difficulty-gradient-test`、`rotation-test`、`regression-test`、`exam-paper-test` 18配置）+ 11 类 PDF 打印边界校验
+- **自动化防线**：9 大测试套件（`smoke-test`、`coverage-test`、`correctness-test`、`daily-practice-test` 186配置、`difficulty-gradient-test`、`rotation-test`、`regression-test`、`exam-paper-test` 18配置、`miniprogram-engine-test` 小程序引擎一致性）+ 11 类 PDF 打印边界校验
 
 ---
 
@@ -21,6 +21,7 @@
 | 模块/目录 | 核心文件 | 职责说明 |
 |---|---|---|
 | **工程规范蓝图** | [`SIX_CORE_UPGRADES_SPEC.md`](SIX_CORE_UPGRADES_SPEC.md) | 六大核心升级工程技术规范（题型、模式、排版、答案解析、手机适配、题库深度） |
+| **小程序原生工程** | `repos/skeleton/miniprogram/` | 微信小程序原生代码包：`engine/` 核心算法、`pages/index/` 首页、`pages/paper/` 试卷页、`pages/about/` 关于页 |
 | **单元配置表** | [`prototype/units.js`](prototype/units.js) | 人教版 1~6 年级 94 个单元映射定义（`plugin` / `arithmeticPlugin` / `topics` / `maxCount`）及 `gradeDefaults` |
 | **组卷总入口** | [`prototype/paper.js`](prototype/paper.js) | `generatePaper(config)` 纯函数组卷入口与 `generateExamPaper` 100分制测验卷引擎，调度引擎策略与单元插件，无任何存储 |
 | **概念辨析题** | [`prototype/conceptProblems.js`](prototype/conceptProblems.js) | 小学数学判断题（√/×）与单项选择题（A/B/C/D）算法生成引擎，带高仿真干扰项与解析点拨 |
@@ -33,7 +34,6 @@
 | **SVG 渲染器** | [`prototype/renderDiagram.js`](prototype/renderDiagram.js) | 将 `clock` / `bar-chart` / `line-chart` / `pie-chart` / `grid` / `geometry` 数据渲染为高分打印 SVG |
 | **前端交互与打印** | [`prototype/index.html`](prototype/index.html), [`prototype/app.js`](prototype/app.js), [`prototype/style.css`](prototype/style.css) | 四步出卷流程、卷面题型分组渲染、参考答案页、A4 打印专用 CSS |
 | **管理看板** | [`prototype/admin.html`](prototype/admin.html), [`prototype/admin.js`](prototype/admin.js), [`scripts/manage.mjs`](scripts/manage.mjs) | 可视化项目管理后台、94 单元三档难度体检、一键测试与 Git 快照工具 |
-| **小程序骨架** | `repos/skeleton/` | 微信小程序原生 TS+SCSS 骨架（木兰 PSL v2），待合入 `prototype/` 引擎与页面 |
 
 ---
 
@@ -46,13 +46,15 @@
 - [x] **扩充其余单元的三档难度梯度（`easy / medium / hard`）**：全部 34 个“两档数值”单元已升级为三档阶梯考法或三档递进数值（阶梯考法单元达 35 个、三档数值达 32 个，两档待升级清零）
 - [x] **前端支持 URL 参数直达单元**：从 `admin.html` 点击任意单元可直接打开 `index.html` 对应年级学期单元并预览试卷
 
-### P1 · 微信小程序端移植（M1 → M2）
-- [ ] 将 `prototype/` 下的纯 JS 生成引擎与插件模块迁移至 `repos/skeleton/miniprogram/`
-- [ ] 实现小程序端四步选卷 UI（教材→年级学期单元→难度题量→预览导出）与 SVG/Canvas 图形渲染适配
-- [ ] 补齐“关于”页开源许可证声明（木兰 PSL v2 + MIT）与隐私保护指引
+### P1 · 微信小程序端移植（M1 → M2，已完成）
+- [x] 将 `prototype/` 下的纯 JS 生成引擎与插件模块迁移至 `repos/skeleton/miniprogram/engine/`，实现纯字符串 SVG 渲染器与 9 大自动化测试全绿防线
+- [x] 实现小程序端核心选卷 UI（`pages/index/` 单元同步练/每日一练/单元测验卷）与试卷卡片渲染（`pages/paper/` 答题留白、换题、答案解析折叠与文本导出）
+- [x] 补齐“关于”页合规声明（`pages/about/` 纯算法实时生成、零题库存储、Mulan PSL v2 开源许可证与隐私政策）
 
 ### P2 · 变现与多出口副线（M3 → M4）
 - [ ] 编写闲鱼/小红书电子资料包批量导出脚本（按年级×单元自动生成带水印与小程序码的 PDF 题卡包）
+- [ ] 注册个人小程序账号，完成微信实名认证（免费），按“工具 > 办公”类目提审
+- [ ] UV 满 500 后开通流量主（导出激励视频广告 + 结果页 Banner）
 - [ ] 注册个人小程序账号，完成微信认证（¥30/年）与 ICP 备案，按“工具”类目提审
 - [ ] UV 满 500 后接入流量主（导出 PDF 激励视频 + 结果页 Banner）
 
