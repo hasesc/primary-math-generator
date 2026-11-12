@@ -15,7 +15,7 @@ export const treePlantingTemplate = {
         const trees = gaps + 1;
         const person = pickPerson(rng);
         return {
-          question: `${person}在${length}米长的路两边种树,每隔${interval}米种一棵,两端都种。共需多少棵树?`,
+          question: `${person}在${length}米长的路两边种树，每隔${interval}米种一棵，两端都种。共需多少棵树？`,
           answer: `${trees * 2}棵`,
           subtype: 'tree-planting',
           payload: { interval, length, trees, bothEnds: true, sides: 2 },
@@ -31,7 +31,7 @@ export const treePlantingTemplate = {
         const length = trees * interval;
         const person = pickPerson(rng);
         return {
-          question: `${person}在一条${length}米的路一侧种树,每隔${interval}米种一棵,只种一端。共需多少棵树?`,
+          question: `${person}在一条${length}米的路一侧种树，每隔${interval}米种一棵，只种一端。共需多少棵树？`,
           answer: `${trees}棵`,
           subtype: 'tree-planting',
           payload: { interval, length, trees, bothEnds: false, sides: 1 },
@@ -47,7 +47,7 @@ export const treePlantingTemplate = {
         const trees = circumference / interval;
         const person = pickPerson(rng);
         return {
-          question: `${person}在周长${circumference}米的圆形花坛四周种树,每隔${interval}米种一棵。需要多少棵树?`,
+          question: `${person}在周长${circumference}米的圆形花坛四周种树，每隔${interval}米种一棵。需要多少棵树？`,
           answer: `${trees}棵`,
           subtype: 'tree-planting',
           payload: { interval, circumference, trees, circular: true },

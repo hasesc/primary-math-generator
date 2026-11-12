@@ -15,7 +15,7 @@ export const reverseTemplate = {
         const after = start + a - b;
         const person = pickPerson(rng);
         return {
-          question: `${person}有一些糖果,先加上${a}颗,又吃掉${b}颗,还剩${after}颗。${person}原来有多少颗糖果?`,
+          question: `${person}有一些糖果，先加上${a}颗，又吃掉${b}颗，还剩${after}颗。${person}原来有多少颗糖果？`,
           answer: `${start}颗`,
           subtype: 'reverse',
           payload: { start, a, b, after, kind: 'add-eat' },
@@ -35,7 +35,7 @@ export const reverseTemplate = {
           if (Number.isInteger(after)) {
             const person = pickPerson(rng);
             return {
-              question: `${person}有一些卡片,数量先乘以${mul}再除以${div}后是${after}。${person}原来有多少张卡片?`,
+              question: `${person}有一些卡片，数量先乘以${mul}再除以${div}后是${after}。${person}原来有多少张卡片？`,
               answer: `${start}张`,
               subtype: 'reverse',
               payload: { start, mul, div, after, kind: 'mul-div' },
@@ -49,7 +49,7 @@ export const reverseTemplate = {
         const after = start;
         const person = pickPerson(rng);
         return {
-          question: `${person}有一些卡片,数量先乘以${mul}再除以${div}后是${after}。${person}原来有多少张卡片?`,
+          question: `${person}有一些卡片，数量先乘以${mul}再除以${div}后是${after}。${person}原来有多少张卡片？`,
           answer: `${start}张`,
           subtype: 'reverse',
           payload: { start, mul, div, after, kind: 'mul-div' },
@@ -67,7 +67,7 @@ export const reverseTemplate = {
         const after = ((start + a) * c) - b;
         const person = pickPerson(rng);
         return {
-          question: `${person}有一些邮票。朋友先给他${a}张,他又把现有数量乘以${c},然后送给同学${b}张,最后还剩${after}张。${person}原来有多少张邮票?`,
+          question: `${person}有一些邮票。朋友先给他${a}张，他又把现有数量乘以${c}，然后送给同学${b}张，最后还剩${after}张。${person}原来有多少张邮票？`,
           answer: `${start}张`,
           subtype: 'reverse',
           payload: { start, a, b, c, after, kind: 'chain' },

@@ -11,7 +11,7 @@ function generateInequalitySubtemplates() {
         const b = S - a;
         const maxProduct = a * b;
         return {
-          question: `两个正整数之和为${S},乘积最大是多少?`,
+          question: `两个正整数之和为${S}，乘积最大是多少？`,
           answer: `${maxProduct}`,
           subtype: 'inequality',
           payload: { S, a, b, maxProduct },
@@ -29,7 +29,7 @@ function generateInequalitySubtemplates() {
         const P = a * b;
         const minSum = a + b;
         return {
-          question: `两个正整数之积为${P},和最小是多少?`,
+          question: `两个正整数之积为${P}，和最小是多少？`,
           answer: `${minSum}`,
           subtype: 'inequality',
           payload: { P, a, b, minSum },
@@ -45,7 +45,7 @@ function generateInequalitySubtemplates() {
         const b = S - a;
         const maxProduct = a * b;
         return {
-          question: `两个正整数之和为${S},乘积最大是多少?`,
+          question: `两个正整数之和为${S}，乘积最大是多少？`,
           answer: `${maxProduct}`,
           subtype: 'inequality',
           payload: { S, a, b, maxProduct },
@@ -61,7 +61,7 @@ function generateInequalitySubtemplates() {
         const P = a * b;
         const minSum = a + b;
         return {
-          question: `两个正整数之积为${P},和最小是多少?`,
+          question: `两个正整数之积为${P}，和最小是多少？`,
           answer: `${minSum}`,
           subtype: 'inequality',
           payload: { P, a, b, minSum },
@@ -78,7 +78,7 @@ function generateInequalitySubtemplates() {
         const maxProduct = a * b;
         const minProduct = 1 * (S - 1);
         return {
-          question: `两个正整数之和为${S},乘积最大${maxProduct},最小${minProduct},差是多少?`,
+          question: `两个正整数之和为${S}，乘积最大${maxProduct}，最小${minProduct}，差是多少？`,
           answer: `${maxProduct - minProduct}`,
           subtype: 'inequality',
           payload: { S, a, b, maxProduct, minProduct, diff: maxProduct - minProduct },

@@ -11,7 +11,7 @@ function generateCombinatoricsSubtemplates() {
         const c = rng.int(2, 4);
         const total = a * b * c;
         return {
-          question: `从家到学校有${a}条路,从学校到公园有${b}条路,从公园到图书馆有${c}条路,一共多少种走法?`,
+          question: `从家到学校有${a}条路，从学校到公园有${b}条路，从公园到图书馆有${c}条路，一共多少种走法？`,
           answer: `${total}种`,
           subtype: 'combinatorics',
           payload: { a, b, c, total },
@@ -26,7 +26,7 @@ function generateCombinatoricsSubtemplates() {
         const b = rng.int(2, 5);
         const total = a + b;
         return {
-          question: `从甲地到乙地有${a}条公路和${b}条铁路,一共多少种走法?`,
+          question: `从甲地到乙地有${a}条公路和${b}条铁路，一共多少种走法？`,
           answer: `${total}种`,
           subtype: 'combinatorics',
           payload: { a, b, total },
@@ -41,7 +41,7 @@ function generateCombinatoricsSubtemplates() {
         const r = rng.int(2, n);
         const total = perm(n, r);
         return {
-          question: `从${n}个人中选${r}个人排队,有多少种排法?`,
+          question: `从${n}个人中选${r}个人排队，有多少种排法？`,
           answer: `${total}种`,
           subtype: 'combinatorics',
           payload: { n, r, total },
@@ -56,7 +56,7 @@ function generateCombinatoricsSubtemplates() {
         const r = rng.int(2, n);
         const total = comb(n, r);
         return {
-          question: `从${n}个人中选${r}个人组成小组(不排队),有多少种选法?`,
+          question: `从${n}个人中选${r}个人组成小组(不排队)，有多少种选法？`,
           answer: `${total}种`,
           subtype: 'combinatorics',
           payload: { n, r, total },
@@ -73,7 +73,7 @@ function generateCombinatoricsSubtemplates() {
         const totalComb = comb(total, pick);
         const redComb = comb(red, pick);
         return {
-          question: `袋中有${total}个球,其中${red}个红球,不放回摸${pick}个,摸到的全是红球的组合数是多少?`,
+          question: `袋中有${total}个球，其中${red}个红球，不放回摸${pick}个，摸到的全是红球的组合数是多少？`,
           answer: `${redComb}种(共有${totalComb}种组合)`,
           subtype: 'combinatorics',
           payload: { total, red, pick, totalComb, redComb },
@@ -89,7 +89,7 @@ function generateCombinatoricsSubtemplates() {
         const total = comb(n, r);
         const favorable = rng.int(1, total - 1);
         return {
-          question: `从${n}个球中选${r}个,共有${total}种选法,其中${favorable}种包含红球,包含红球的概率是多少?`,
+          question: `从${n}个球中选${r}个，共有${total}种选法，其中${favorable}种包含红球，包含红球的概率是多少？`,
           answer: `${favorable}/${total}`,
           subtype: 'combinatorics',
           payload: { n, r, total, favorable },

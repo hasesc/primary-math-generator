@@ -12,7 +12,7 @@ function generateSequenceSubtemplates() {
         const sequence = Array.from({ length }, (_, i) => start + i * commonDiff);
         const nextTerm = sequence[sequence.length - 1] + commonDiff;
         return {
-          question: `找规律填数：${sequence.join(', ')}, ( )`,
+          question: `找规律填数：${sequence.join(', ')}， ( )`,
           answer: `${nextTerm}`,
           subtype: 'sequence',
           payload: { sequence, nextTerm, type: '等差数列' },
@@ -29,7 +29,7 @@ function generateSequenceSubtemplates() {
         const sequence = Array.from({ length }, (_, i) => start * Math.pow(ratio, i));
         const nextTerm = sequence[sequence.length - 1] * ratio;
         return {
-          question: `找规律填数：${sequence.join(', ')}, ( )`,
+          question: `找规律填数：${sequence.join(', ')}， ( )`,
           answer: `${nextTerm}`,
           subtype: 'sequence',
           payload: { sequence, nextTerm, type: '等比数列' },
@@ -49,7 +49,7 @@ function generateSequenceSubtemplates() {
         }
         const nextTerm = sequence[length - 1] + sequence[length - 2];
         return {
-          question: `找规律填数：${sequence.join(', ')}, ( )`,
+          question: `找规律填数：${sequence.join(', ')}， ( )`,
           answer: `${nextTerm}`,
           subtype: 'sequence',
           payload: { sequence, nextTerm, type: '斐波那契数列' },
@@ -66,7 +66,7 @@ function generateSequenceSubtemplates() {
         const sequence = Array.from({ length }, (_, i) => start + i * add);
         const nextTerm = sequence[sequence.length - 1] + add;
         return {
-          question: `找规律填数：${sequence.join(', ')}, ( )`,
+          question: `找规律填数：${sequence.join(', ')}， ( )`,
           answer: `${nextTerm}`,
           subtype: 'sequence',
           payload: { sequence, nextTerm, type: '累加数列' },
@@ -87,7 +87,7 @@ function generateSequenceSubtemplates() {
         }
         const nextTerm = sequence[length - 1] * multiply + add;
         return {
-          question: `找规律填数：${sequence.join(', ')}, ( )`,
+          question: `找规律填数：${sequence.join(', ')}， ( )`,
           answer: `${nextTerm}`,
           subtype: 'sequence',
           payload: { sequence, nextTerm, type: '乘加混合' },
@@ -103,7 +103,7 @@ function generateSequenceSubtemplates() {
         const sequence = Array.from({ length }, (_, i) => (start + i) * (start + i));
         const nextTerm = (start + length) * (start + length);
         return {
-          question: `找规律填数：${sequence.join(', ')}, ( )`,
+          question: `找规律填数：${sequence.join(', ')}， ( )`,
           answer: `${nextTerm}`,
           subtype: 'sequence',
           payload: { sequence, nextTerm, type: '平方数列' },
@@ -126,7 +126,7 @@ function generateSequenceSubtemplates() {
         const nextDiff = diff1 + (length - 1) * diff2;
         const nextTerm = sequence[length - 1] + nextDiff;
         return {
-          question: `找规律填数：${sequence.join(', ')}, ( )`,
+          question: `找规律填数：${sequence.join(', ')}， ( )`,
           answer: `${nextTerm}`,
           subtype: 'sequence',
           payload: { sequence, nextTerm, type: '二级等差数列' },
@@ -146,7 +146,7 @@ function generateSequenceSubtemplates() {
         const nextTerm = sequence[length - 1] + 2;
         const type = isOdd ? '奇数列' : '偶数列';
         return {
-          question: `找规律填数：${sequence.join(', ')}, ( )`,
+          question: `找规律填数：${sequence.join(', ')}， ( )`,
           answer: `${nextTerm}`,
           subtype: 'sequence',
           payload: { sequence, nextTerm, type },

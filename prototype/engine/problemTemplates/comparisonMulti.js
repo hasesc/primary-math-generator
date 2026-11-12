@@ -14,8 +14,8 @@ export const comparisonMultiTemplate = {
         const c = pickNumberByBand(rng, 'easy', { min: 10, max: 50 });
         const sorted = [a, b, c].sort((x, y) => y - x);
         return {
-          question: `三个数 ${a}、${b}、${c},从大到小排序是?最大比最小多多少?`,
-          answer: `${sorted.join(' > ')},最大比最小多${sorted[0] - sorted[2]}`,
+          question: `三个数 ${a}、${b}、${c}，从大到小排序是？最大比最小多多少？`,
+          answer: `${sorted.join(' > ')}，最大比最小多${sorted[0] - sorted[2]}`,
           subtype: 'comparison-multi',
           payload: { kind: 'three-rank', nums: [a, b, c], sorted, diff: sorted[0] - sorted[2] },
         };
@@ -31,7 +31,7 @@ export const comparisonMultiTemplate = {
         const b = a + diffAB;
         const c = b + diffBC;
         return {
-          question: `甲比乙多${diffAB},乙比丙多${diffBC},甲是${a},求丙是多少。`,
+          question: `甲比乙多${diffAB}，乙比丙多${diffBC}，甲是${a}，求丙是多少。`,
           answer: `${c - diffAB - diffBC}`,
           subtype: 'comparison-multi',
           payload: { kind: 'three-relations', a, diffAB, diffBC, b, c: c - diffAB - diffBC },
@@ -45,8 +45,8 @@ export const comparisonMultiTemplate = {
         const nums = Array.from({ length: 4 }, () => pickNumberByBand(rng, 'hard', { min: 50, max: 200 }));
         const sorted = [...nums].sort((x, y) => y - x);
         return {
-          question: `${nums.join('、')} 这 4 个数从大到小排序是?第二大的是多少?`,
-          answer: `${sorted.join('、')},第二大的${sorted[1]}`,
+          question: `${nums.join('、')} 这 4 个数从大到小排序是？第二大的是多少？`,
+          answer: `${sorted.join('、')}，第二大的${sorted[1]}`,
           subtype: 'comparison-multi',
           payload: { kind: 'four-rank', nums, sorted, secondLargest: sorted[1] },
         };

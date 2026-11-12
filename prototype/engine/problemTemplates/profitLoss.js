@@ -15,7 +15,7 @@ export const profitLossTemplate = {
         const totalShort = people * perHead + diff;
         const person = pickPerson(rng);
         return {
-          question: `${person}把${totalShort}个糖果分给${people}个小朋友,如果每人分${perHead + 1}个会少${diff}个。糖果刚好够每人分几个?`,
+          question: `${person}把${totalShort}个糖果分给${people}个小朋友，如果每人分${perHead + 1}个会少${diff}个。糖果刚好够每人分几个？`,
           answer: `${perHead}个`,
           subtype: 'profit-loss',
           payload: { people, perHead, diff, total: totalShort },
@@ -32,7 +32,7 @@ export const profitLossTemplate = {
         const totalOver = people * perHead - diff;
         const person = pickPerson(rng);
         return {
-          question: `${person}把${totalOver}颗糖果分给${people}个小朋友,如果每人分${perHead}个会多${diff}颗。每人应该分几颗?`,
+          question: `${person}把${totalOver}颗糖果分给${people}个小朋友，如果每人分${perHead}个会多${diff}颗。每人应该分几颗？`,
           answer: `${perHead - 1}颗`,
           subtype: 'profit-loss',
           payload: { people, perHead, diff, total: totalOver, mode: 'over' },
@@ -50,8 +50,8 @@ export const profitLossTemplate = {
         const total = (perHead + 2) * people - short;
         const person = pickPerson(rng);
         return {
-          question: `${person}把一些书分给${people}个同学,如果每人分${perHead + 2}本则少${short}本,如果每人分${perHead + 1}本则多${over}本。书共有多少本?每人恰好分几本?`,
-          answer: `${total}本,每人${perHead + 1}本`,
+          question: `${person}把一些书分给${people}个同学，如果每人分${perHead + 2}本则少${short}本，如果每人分${perHead + 1}本则多${over}本。书共有多少本？每人恰好分几本？`,
+          answer: `${total}本，每人${perHead + 1}本`,
           subtype: 'profit-loss',
           payload: { people, perHead, short, over, total },
         };

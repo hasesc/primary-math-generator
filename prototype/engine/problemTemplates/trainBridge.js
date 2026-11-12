@@ -52,7 +52,7 @@ function genCrossMeet(rng) {
     if (l2 < L_MIN || l2 > L_MAX) continue;
     const time = lSum / vSum;
     return {
-      question: `两列火车分别长${l1}米和${l2}米,各以每秒${v1}米和${v2}米的速度相向而行,从相遇到完全错开需多少秒?`,
+      question: `两列火车分别长${l1}米和${l2}米，各以每秒${v1}米和${v2}米的速度相向而行，从相遇到完全错开需多少秒？`,
       answer: `${time}秒`,
       subtype: 'train-bridge',
       payload: { kind: 'cross', v1, v2, l1, l2, time },
@@ -64,8 +64,8 @@ function genCrossMeet(rng) {
   const l1 = 200;
   const l2 = 200;
   return {
-    question: `两列火车各长${l1}米,速度均为${v1}m/s,相向而行相遇完全错开需多少秒?`,
-    answer: `${(l1 + l2) / (v1 + v2)}秒`,
+    question: `两列火车各长 ${l1} 米，速度均为每秒 ${v1} 米，相向而行从相遇到完全错开需要多少秒？`,
+    answer: `${(l1 + l2) / (v1 + v2)} 秒`,
     subtype: 'train-bridge',
     payload: { kind: 'cross', v1, v2, l1, l2, time: (l1 + l2) / (v1 + v2) },
   };
@@ -85,7 +85,7 @@ export const trainBridgeTemplate = {
           speedMin: 30, speedMax: 50, distMin: 100, distMax: 400, isExtra: true,
         });
         return {
-          question: `一列火车长${carLen}米,以每秒${speed}米的速度通过一座${dist}米长的桥,需要多少秒?`,
+          question: `一列火车长${carLen}米，以每秒${speed}米的速度通过一座${dist}米长的桥，需要多少秒？`,
           answer: `${time}秒`,
           subtype: 'train-bridge',
           payload: { kind: 'bridge', speed, dist, carLen, time },
@@ -101,7 +101,7 @@ export const trainBridgeTemplate = {
           speedMin: 20, speedMax: 30, distMin: 200, distMax: 800, isExtra: true,
         });
         return {
-          question: `火车长${carLen}米,以每秒${speed}米的速度完全通过一条${dist}米长的隧道,需要多少秒?`,
+          question: `火车长${carLen}米，以每秒${speed}米的速度完全通过一条${dist}米长的隧道，需要多少秒？`,
           answer: `${time}秒`,
           subtype: 'train-bridge',
           payload: { kind: 'tunnel', speed, dist, carLen, time },

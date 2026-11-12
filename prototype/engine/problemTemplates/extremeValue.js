@@ -1,4 +1,4 @@
-import { pickNumberByBand, pickForBand } from './helpers.js';
+import { pickForBand } from './helpers.js';
 
 export const extremeValueTemplate = {
   id: 'extreme-value',
@@ -9,13 +9,13 @@ export const extremeValueTemplate = {
       id: 'extreme-max-product',
       band: 'easy',
       generate(rng) {
-        const total = pickNumberByBand(rng, 'easy', { min: 8, max: 12 });
+        const total = rng.int(10, 20);
         const a = Math.floor(total / 2);
         const b = total - a;
         const product = a * b;
         return {
-          question: `把${total}分成两个正整数之和,怎样分使它们的乘积最大?最大乘积是多少?`,
-          answer: `${a}和${b},乘积${product}`,
+          question: `把 ${total} 分成两个整数相加，怎样分能使它们的乘积最大？最大乘积是多少？`,
+          answer: `分成 ${a} 和 ${b} 时乘积最大，最大乘积是 ${product}`,
           subtype: 'extreme-value',
           payload: { kind: 'max-product', total, a, b, product },
         };
@@ -25,15 +25,14 @@ export const extremeValueTemplate = {
       id: 'extreme-min-perimeter',
       band: 'medium',
       generate(rng) {
-        const area = pickNumberByBand(rng, 'medium', { min: 12, max: 60 });
-        const side = Math.round(Math.sqrt(area));
-        const finalArea = side * side;
+        const side = rng.int(4, 12);
         const perimeter = 4 * side;
+        const area = side * side;
         return {
-          question: `一个长方形面积约${area},哪一形状周长最小(取整长)?正方形周长是多少?`,
-          answer: `正方形最小,边长${side},周长${perimeter},实际面积${finalArea}`,
+          question: `用一根长 ${perimeter} 厘米的铁丝围成一个长方形或正方形（边长为整厘米数），围成什么图形时面积最大？最大面积是多少平方厘米？`,
+          answer: `围成正方形时面积最大，边长是 ${side} 厘米，最大面积是 ${area} 平方厘米`,
           subtype: 'extreme-value',
-          payload: { kind: 'min-perimeter', area, side, perimeter },
+          payload: { kind: 'min-perimeter', side, perimeter, area },
         };
       },
     },
@@ -41,14 +40,16 @@ export const extremeValueTemplate = {
       id: 'extreme-pigeon-min',
       band: 'hard',
       generate(rng) {
-        const boxes = pickNumberByBand(rng, 'hard', { min: 5, max: 8 });
-        const items = boxes * pickNumberByBand(rng, 'hard', { min: 2, max: 4 });
-        const minPerBox = Math.ceil(items / boxes);
+        const boxes = rng.int(3, 6);
+        const q = rng.int(2, 4);
+        const r = rng.int(1, boxes - 1);
+        const items = boxes * q + r;
+        const minCount = q + 1;
         return {
-          question: `${items}个苹果放入${boxes}个抽屉,证明至少有一个抽屉里有不少于${minPerBox}个苹果。`,
-          answer: `由鸽巢原理,⌈${items}/${boxes}⌉ = ${minPerBox}`,
+          question: `把 ${items} 本书放进 ${boxes} 个抽屉里，总有一个抽屉里至少放进几本书？`,
+          answer: `至少放进 ${minCount} 本（因为 ${items} ÷ ${boxes} = ${q}……${r}，${q} + 1 = ${minCount}）`,
           subtype: 'extreme-value',
-          payload: { kind: 'pigeon-min', items, boxes, minPerBox },
+          payload: { kind: 'pigeon-min', items, boxes, q, r, minCount },
         };
       },
     },

@@ -16,8 +16,8 @@ export const chickenRabbit3VarTemplate = {
           const total = cattle + sheep + chicken;
           const legs = 4 * cattle + 4 * sheep + 2 * chicken;
           return {
-            question: `牧场里有牛、羊、鸡共${total}只,腿数共${legs}条,牛和羊都是4条腿、鸡2条腿,且牛比羊多${Math.abs(cattle - sheep)}只。求牛、羊、鸡各多少只?`,
-            answer: `牛${cattle}只,羊${sheep}只,鸡${chicken}只`,
+            question: `牧场里有牛、羊、鸡共${total}只，腿数共${legs}条，牛和羊都是4条腿、鸡2条腿，且牛比羊多${Math.abs(cattle - sheep)}只。求牛、羊、鸡各多少只？`,
+            answer: `牛${cattle}只，羊${sheep}只，鸡${chicken}只`,
             subtype: 'chicken-rabbit-3var',
             payload: { kind: 'three-cattle-chicken', cattle, sheep, chicken, total, legs },
           };
@@ -38,7 +38,7 @@ export const chickenRabbit3VarTemplate = {
           const totalValue = x * px + y * py + z * pz;
           return {
             question: `牧场里牛、羊、鸡共${x + y + z}只，腿数共${4 * x + 4 * y + 2 * z}条。牛和羊每只4条腿、鸡每只2条腿。牛每头${px}元、羊每只${py}元、鸡每只${pz}元，总价值${totalValue}元。求三类各多少只？`,
-            answer: `牛${x}头,羊${y}只,鸡${z}只`,
+            answer: `牛${x}头，羊${y}只，鸡${z}只`,
             subtype: 'chicken-rabbit-3var',
             payload: { kind: 'three-value', x, y, z, px, py, pz, totalValue },
           };
@@ -57,7 +57,7 @@ export const chickenRabbit3VarTemplate = {
         const legs = 4 * cow + 4 * pig + 2 * chicken;
         return {
           question: `牛(4条腿)、猪(4条腿)、鸡(2条腿)共${total}只，腿数${legs}条，且牛的数量是猪的${ratio}倍。求三类各多少只？`,
-          answer: `牛${cow}只,猪${pig}只,鸡${chicken}只`,
+          answer: `牛${cow}只，猪${pig}只，鸡${chicken}只`,
           subtype: 'chicken-rabbit-3var',
           payload: { kind: 'three-cattle-sheep-pig', cow, pig, chicken, total, legs, ratio },
         };

@@ -14,7 +14,7 @@ export const averageTemplate = {
         const sum = nums.reduce((a, b) => a + b, 0);
         const avg = sum / n;
         return {
-          question: `${nums.join('、')}这${n}个数的平均数是多少?`,
+          question: `${nums.join('、')}这${n}个数的平均数是多少？`,
           answer: `${avg}`,
           subtype: 'average',
           payload: { kind: 'simple', nums, sum, avg },
@@ -37,7 +37,7 @@ export const averageTemplate = {
           return 50;
         });
         return {
-          question: `小明${n}次考试,已知${n - 1}次成绩为${known.join('、')},平均分${avg},求第${n}次成绩。`,
+          question: `小明${n}次考试，已知${n - 1}次成绩为${known.join('、')}，平均分${avg}，求第${n}次成绩。`,
           answer: `${missing}分`,
           subtype: 'average',
           payload: { kind: 'find-number', known, n, avg, missing, total },
@@ -57,7 +57,7 @@ export const averageTemplate = {
         const totalN = n1 + n2;
         const totalAvg = (sum1 + sum2) / totalN;
         return {
-          question: `甲组${n1}人,平均分${avg1};乙组${n2}人,平均分${avg2}。两组合在一起的平均分是多少?`,
+          question: `甲组${n1}人，平均分${avg1};乙组${n2}人，平均分${avg2}。两组合在一起的平均分是多少？`,
           answer: `${totalAvg.toFixed(1)}分`,
           subtype: 'average',
           payload: { kind: 'two-groups', n1, avg1, n2, avg2, sum1, sum2, totalAvg },

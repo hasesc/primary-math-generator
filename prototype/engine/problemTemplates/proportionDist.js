@@ -16,8 +16,8 @@ export const proportionDistTemplate = {
         const partA = Math.round(sum * a / total);
         const partB = sum - partA;
         return {
-          question: `把${sum}本书按${a}:${b}的比例分给甲乙两人,甲乙各分多少本?`,
-          answer: `甲${partA}本,乙${partB}本`,
+          question: `把${sum}本书按${a}:${b}的比例分给甲乙两人，甲乙各分多少本？`,
+          answer: `甲${partA}本，乙${partB}本`,
           subtype: 'proportion-dist',
           payload: { kind: 'two-parts', ratio: [a, b], total: sum, parts: [partA, partB] },
         };
@@ -36,7 +36,7 @@ export const proportionDistTemplate = {
         const partB = Math.round(sum * b / total);
         const partC = sum - partA - partB;
         return {
-          question: `把${sum}支笔按${a}:${b}:${c}的比例分给三人,各分多少?`,
+          question: `把${sum}支笔按${a}:${b}:${c}的比例分给三人，各分多少？`,
           answer: `${partA}支、${partB}支、${partC}支`,
           subtype: 'proportion-dist',
           payload: { kind: 'three-parts', ratio: [a, b, c], total: sum, parts: [partA, partB, partC] },
@@ -56,7 +56,7 @@ export const proportionDistTemplate = {
         const partB = sum * b / total;
         const partC = sum * c / total;
         return {
-          question: `把${sum}颗糖果按${a}:${b}:${c}的比例分给三个孩子(允许小数),各分多少颗?`,
+          question: `把${sum}颗糖果按${a}:${b}:${c}的比例分给三个孩子(允许小数)，各分多少颗？`,
           answer: `${partA.toFixed(1)}、${partB.toFixed(1)}、${partC.toFixed(1)}`,
           subtype: 'proportion-dist',
           payload: { kind: 'fraction', ratio: [a, b, c], total: sum, parts: [partA, partB, partC] },

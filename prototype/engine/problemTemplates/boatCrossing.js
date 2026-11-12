@@ -12,7 +12,7 @@ function generateBoatSubtemplates() {
         const boats = Math.ceil(people / perBoat);
         const remain = boats * perBoat - people;
         return {
-          question: `${person}和${people - 1}个小朋友一共${people}人,每条船坐${perBoat}人,需要几条船?`,
+          question: `${person}和${people - 1}个小朋友一共${people}人，每条船坐${perBoat}人，需要几条船？`,
           answer: `${boats}条`,
           subtype: 'boat-crossing',
           payload: { people, perBoat, boats, remain },
@@ -29,8 +29,8 @@ function generateBoatSubtemplates() {
         const boats = Math.ceil(people / perBoat);
         const remain = boats * perBoat - people;
         return {
-          question: `${person}和${people - 1}个小朋友一共${people}人,每条船坐${perBoat}人,需要几条船?还剩几个座位?`,
-          answer: `需要${boats}条船,剩${remain}个座位`,
+          question: `${person}和${people - 1}个小朋友一共${people}人，每条船坐${perBoat}人，需要几条船？还剩几个座位？`,
+          answer: `需要${boats}条船，剩${remain}个座位`,
           subtype: 'boat-crossing',
           payload: { people, perBoat, boats, remain },
         };
@@ -50,8 +50,8 @@ function generateBoatSubtemplates() {
         const total1 = boats1 * pricePerBoat;
         const total2 = boats2 * pricePerBoat;
         return {
-          question: `${person1}组织了${people1}人,${person2}组织了${people2}人,每条船坐${perBoat}人,每条船${pricePerBoat}元。${person1}要租几艘船?一共多少钱?`,
-          answer: `需要${boats1}条船,共${total1}元`,
+          question: `${person1}组织了${people1}人，${person2}组织了${people2}人，每条船坐${perBoat}人，每条船${pricePerBoat}元。${person1}要租几艘船？一共多少钱？`,
+          answer: `需要${boats1}条船，共${total1}元`,
           subtype: 'boat-crossing',
           payload: { people1, people2, perBoat, pricePerBoat, boats1, boats2, total1, total2 },
         };

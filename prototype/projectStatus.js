@@ -1,7 +1,7 @@
 // 自动生成文件（请勿手改）：由 node scripts/manage.mjs 生成
 export const PROJECT_STATUS = {
   "summary": {
-    "generatedAt": "2026/11/12 17:44:18",
+    "generatedAt": "2026/11/12 18:03:09",
     "totalUnits": 94,
     "dedicatedUnits": 93,
     "reviewUnits": 1,
@@ -31,7 +31,7 @@ export const PROJECT_STATUS = {
       "name": "整卷生成冒烟测试 (6年级×3难度)",
       "file": "prototype/smoke-test.mjs",
       "passed": true,
-      "durationMs": 93,
+      "durationMs": 91,
       "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 1ms, 分布={\"application\":7,\"olympiad\":8,\"arithmetic\":15} | 结果: 18 通过 / 0 未达标"
     },
     {
@@ -39,7 +39,7 @@ export const PROJECT_STATUS = {
       "name": "94单元全量联动与762配置覆盖测试",
       "file": "prototype/coverage-test.mjs",
       "passed": true,
-      "durationMs": 165,
+      "durationMs": 160,
       "summary": "总计 94 单元：联动通过 93，无专属出题映射（含整理与复习）1，不合格 0 | 已检查 765 种难度与题量组合。至少一组配置只有一个卷面分类的单元（分类数不等于考法数）共 83 个：1上 准备课、1上 位置、1上 1~5的认识和加减法、1上 认识图形（一）、1上 6~10的认识和加减法、1上 11~20各数的认识、1上 20以内的进位加法、1下 20以内的退位减法、1下 100以内数的认识、1下 100以内的加法和减法（一）、1下 认识图形（二）、1下 认识人民币、1下 100以内的加法和减法（二）、1下 找规律、2上 100以内的加法和减法（二）、2上 角的初步认识、2上 表内乘法（一）、2上 观察物体（一）、2上 表内乘法（二）、2上 数学广角——搭配（一）、2下 数据收集整理、2下 表内除法（一）、2下 图形的运动（一）、2下 表内除法（二）、2下 混合运算、2下 有余数的除法、2下 万以内数的认识、2下 数学广角——推理、3上 万以内的加法和减法（一）、3上 万以内的加法和减法（二）、3上 倍的认识、3上 多位数乘一位数、3上 长方形和正方形、3上 分数的初步认识、3下 位置与方向（一）、3下 除数是一位数的除法、3下 复式统计表、3下 两位数乘两位数、3下 面积、3下 年月日、3下 小数的初步认识、3下 数学广角——搭配（二）、4上 大数的认识、4上 公顷和平方千米、4上 角的度量、4上 三位数乘两位数、4上 平行四边形和梯形、4上 除数是两位数的除法、4上 条形统计图、4上 数学广角——优化、4下 四则运算、4下 观察物体（二）、4下 运算定律、4下 小数的意义和性质、4下 三角形、4下 小数的加法和减法、4下 图形的运动（二）、4下 平均数与条形统计图、4下 数学广角——鸡兔同笼、5上 位置、5上 可能性、5上 简易方程、5上 多边形的面积、5上 数学广角——植树问题、5下 观察物体（三）、5下 因数与倍数、5下 长方体和正方体、5下 分数的意义和性质、5下 图形的运动（三）、5下 分数的加法和减法、5下 折线统计图、5下 数学广角——找次品、6上 位置与方向（二）、6上 分数除法、6上 比、6上 圆、6上 扇形统计图、6上 数学广角——数与形、6下 负数、6下 百分数（二）、6下 圆柱与圆锥、6下 比例、6下 数学广角——鸽巢问题"
     },
     {
@@ -47,7 +47,7 @@ export const PROJECT_STATUS = {
       "name": "数学答案独立逆向复算测试 (160轮)",
       "file": "prototype/correctness-test.mjs",
       "passed": true,
-      "durationMs": 80,
+      "durationMs": 82,
       "summary": "鸡兔同笼、植树、统计图并列和小数乘法的独立复算通过"
     },
     {
@@ -55,7 +55,7 @@ export const PROJECT_STATUS = {
       "name": "口算/竖式每日一练专项测试 (186配置)",
       "file": "prototype/daily-practice-test.mjs",
       "passed": true,
-      "durationMs": 55,
+      "durationMs": 54,
       "summary": "186 种每日一练配置通过，题量、去重、答案复算和年级限制正常"
     },
     {
@@ -63,7 +63,7 @@ export const PROJECT_STATUS = {
       "name": "三档难度阶梯考法与答案测试",
       "file": "prototype/difficulty-gradient-test.mjs",
       "passed": true,
-      "durationMs": 108,
+      "durationMs": 84,
       "summary": "✅ 33 个专项插件（18 个全独立三档考法 + 15 个进阶分支插件）的难度梯度、题量和提高题答案复算全部通过！"
     },
     {
@@ -71,7 +71,7 @@ export const PROJECT_STATUS = {
       "name": "同卷考法轮转相邻不重复测试 (94单元×3档×6轮)",
       "file": "prototype/rotation-test.mjs",
       "passed": true,
-      "durationMs": 242,
+      "durationMs": 236,
       "summary": "考法轮转（相邻 subtemplateId 不重复）测试通过"
     },
     {
@@ -79,7 +79,7 @@ export const PROJECT_STATUS = {
       "name": "题面有效性、唯一解与必备考点回归测试",
       "file": "prototype/regression-test.mjs",
       "passed": true,
-      "durationMs": 90,
+      "durationMs": 82,
       "summary": "题面有效性、动物题唯一解及缺失考点回归检查通过"
     },
     {
@@ -87,13 +87,18 @@ export const PROJECT_STATUS = {
       "name": "100分制单元测验卷全链路测试 (6年级×3难度)",
       "file": "prototype/exam-paper-test.mjs",
       "passed": true,
-      "durationMs": 93,
+      "durationMs": 88,
       "summary": "✅ 100分制单元测验卷验证通过: 18/18 组全部达标 (6年级×3难度覆盖)"
     }
   ],
   "git": {
     "initialized": true,
     "commits": [
+      {
+        "hash": "3aebb6f",
+        "date": "2026-11-12 17:44",
+        "message": "fix: rewrite equationTransform template to eliminate bizarre wording and align with curriculum"
+      },
       {
         "hash": "853d7a5",
         "date": "2026-11-12 17:39",
@@ -163,14 +168,9 @@ export const PROJECT_STATUS = {
         "hash": "780b7b4",
         "date": "2026-11-12 14:29",
         "message": "docs: establish 25 weak units tiered redesign specification"
-      },
-      {
-        "hash": "6adab38",
-        "date": "2026-11-12 14:16",
-        "message": "docs: add standard open-source README.md"
       }
     ],
-    "dirtyFiles": 5
+    "dirtyFiles": 56
   },
   "roadmap": [
     {
@@ -234,6 +234,38 @@ export const PROJECT_STATUS = {
     }
   ],
   "changelog": [
+    {
+      "version": "v0.8.12",
+      "date": "2026-11-12",
+      "title": "全面排查并清除成人化缩写与电报体语病：替换“方阵”为“正方形队伍/点阵”、重构队列/年龄/工作/钟表/极值模板，全量升级中文全角标点",
+      "bullets": [
+        "**模块一：彻底消灭“方阵”成人缩写与队列计算逻辑漏洞 (prototype/engine/problemTemplates/formation.js & prototype/scopeProblems.js)**：",
+        "将所有题目中的“方阵”字眼彻底替换为小学低中高年级学生通俗易懂的“正方形队伍”、“实心正方形队伍”、“中空的正方形队伍”以及几何图形中的“正方形点阵”。",
+        "修复原队列生成中 perimeter / 4 无法整除时落入硬编码兜底“一个方阵最外层共60人,这个方阵每边多少人?”的严重漏洞：重构为根据预设边长 $side$ 逆算最外层人数 $perimeter = 4 \\times (side - 1)$，从数学算理上彻底杜绝无法整除与写死兜底的问题。",
+        "修复中空队列层数 (outer - inner) / 2 可能产生小数层（如 2.5 层）的逻辑漏洞：重构为直接选取整数层数 $layers \\in [2, 4]$ 逆推外圈边长，保证层数与人数均为合理整数。",
+        "**模块二：全面重构排查成人电报体、荒唐算例与不规范术语**：",
+        "**家庭年龄模板重构 (ageProblemFamily.js)**：",
+        "修复难度缩放导致“父亲年龄是儿子的1倍，儿子4岁，父亲4岁”的荒唐数值 Bug；锁定合理的父子/祖孙真实年龄比与年龄差。",
+        "剔除 一家三口:、祖孙三代: 冒号电报体，改为生动亲切的小学叙事题干（“小明家有三口人，爸爸今年...，妈妈今年...，再过几年...”）。",
+        "**工程与工作效率模板重构 (unitaryWork.js)**：",
+        "消除无主语电报体“用5天完成50件”，改为“工人李师傅用 X 天时间加工了 Y 个零件...”。",
+        "消除无情境电报体，赋予规范的修筑公路、加工零件生活情境。",
+        "修复水池进出水管注水排空用时出现多位长循环小数（如 22.285714285714285小时）的算例 Bug，精选整除友好因子组，确保答案为工整的小学整数小时。",
+        "**环形跑道模板重构 (distanceCircular.js)**：",
+        "彻底消灭初高中物理公式化英文单位“m/s”，规范为小学数学标准用语“每秒跑 X 米”。",
+        "规范相遇与同向追及的生动情境（“小明和小华在周长...米环形跑道上跑步...”）。",
+        "**钟面角模板重构 (clockAngle.js)**：",
+        "废弃不符合小学实际的“时针分针下次重合大约55分钟后”，全面对齐人教版小学数学几何钟面角教学体系：整点夹角（锐角、直角、钝角、平角）、半点夹角（如3点30分时夹角为75度）、时分针旋转角度（分针1分钟走6°，时针1小时走30°）。",
+        "**极值与最值模板重构 (extremeValue.js)**：",
+        "消除“长方形面积约17，哪一形状周长最小”与大学离散数学符号“证明由鸽巢原理, ⌈...⌉”。",
+        "严格对齐人教版五年级“用铁丝围长方形或正方形，何时面积最大”以及六年级“数学广角——鸽巢问题/抽屉原理”（“把 X 本书放进 Y 个抽屉里，总有一个抽屉里至少放进几本书？”）。",
+        "**流水行船与列车过桥规范 (boatCurrent.js & trainBridge.js)**：",
+        "将英文缩写“km/h”统一规范为“千米/时”或“每小时行 X 千米”，消除电报体。",
+        "修复列车相遇兜底选项中遗留的 速度均为${v1}m/s 为“速度均为每秒 X 米”。",
+        "**模块三：全局题目与解析标点全角规范化 (prototype/engine/problemTemplates/ 42个模板)**：",
+        "对全部 42 个题型模板的 question 与 answer 进行安全标点规范化，将中文题干与解析中的英文半角逗号 , 和问号 ? 全面升级为标准的中文全角标点 ， 和 ？，彻底杜绝电报体与中英文混排凌乱感。"
+      ]
+    },
     {
       "version": "v0.8.11",
       "date": "2026-11-12",
@@ -13956,7 +13988,7 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "小强在39米长的路两边种树,每隔3米种一棵,两端都种。共需多少棵树?",
+              "question": "小强在39米长的路两边种树，每隔3米种一棵，两端都种。共需多少棵树？",
               "answer": "28棵",
               "skill": "tree-both-ends",
               "format": "application",
@@ -13965,7 +13997,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "小明在周长391米的圆形花坛四周种树,每隔17米种一棵。需要多少棵树?",
+              "question": "小明在周长391米的圆形花坛四周种树，每隔17米种一棵。需要多少棵树？",
               "answer": "23棵",
               "skill": "tree-circular",
               "format": "application",
@@ -13974,7 +14006,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "小红在一条68米的路一侧种树,每隔4米种一棵,只种一端。共需多少棵树?",
+              "question": "小红在一条68米的路一侧种树，每隔4米种一棵，只种一端。共需多少棵树？",
               "answer": "17棵",
               "skill": "tree-one-end",
               "format": "application",
@@ -13983,7 +14015,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "小军在周长294米的圆形花坛四周种树,每隔14米种一棵。需要多少棵树?",
+              "question": "小军在周长294米的圆形花坛四周种树，每隔14米种一棵。需要多少棵树？",
               "answer": "21棵",
               "skill": "tree-circular",
               "format": "application",
@@ -14006,7 +14038,7 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "小梅在40米长的路两边种树,每隔4米种一棵,两端都种。共需多少棵树?",
+              "question": "小梅在40米长的路两边种树，每隔4米种一棵，两端都种。共需多少棵树？",
               "answer": "22棵",
               "skill": "tree-both-ends",
               "format": "application",
@@ -14015,7 +14047,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "小红在周长238米的圆形花坛四周种树,每隔17米种一棵。需要多少棵树?",
+              "question": "小红在周长238米的圆形花坛四周种树，每隔17米种一棵。需要多少棵树？",
               "answer": "14棵",
               "skill": "tree-circular",
               "format": "application",
@@ -14024,7 +14056,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "小刚在一条64米的路一侧种树,每隔8米种一棵,只种一端。共需多少棵树?",
+              "question": "小刚在一条64米的路一侧种树，每隔8米种一棵，只种一端。共需多少棵树？",
               "answer": "8棵",
               "skill": "tree-one-end",
               "format": "application",
@@ -14033,7 +14065,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "小军在周长493米的圆形花坛四周种树,每隔17米种一棵。需要多少棵树?",
+              "question": "小军在周长493米的圆形花坛四周种树，每隔17米种一棵。需要多少棵树？",
               "answer": "29棵",
               "skill": "tree-circular",
               "format": "application",
@@ -14056,7 +14088,7 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "小雪在周长342米的圆形花坛四周种树,每隔19米种一棵。需要多少棵树?",
+              "question": "小雪在周长342米的圆形花坛四周种树，每隔19米种一棵。需要多少棵树？",
               "answer": "18棵",
               "skill": "tree-circular",
               "format": "application",
@@ -14065,7 +14097,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "小芳在一条90米的路一侧种树,每隔10米种一棵,只种一端。共需多少棵树?",
+              "question": "小芳在一条90米的路一侧种树，每隔10米种一棵，只种一端。共需多少棵树？",
               "answer": "9棵",
               "skill": "tree-one-end",
               "format": "application",
@@ -14074,7 +14106,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "小梅在52米长的路两边种树,每隔1米种一棵,两端都种。共需多少棵树?",
+              "question": "小梅在52米长的路两边种树，每隔1米种一棵，两端都种。共需多少棵树？",
               "answer": "106棵",
               "skill": "tree-both-ends",
               "format": "application",
@@ -14083,7 +14115,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "小强在周长391米的圆形花坛四周种树,每隔17米种一棵。需要多少棵树?",
+              "question": "小强在周长391米的圆形花坛四周种树，每隔17米种一棵。需要多少棵树？",
               "answer": "23棵",
               "skill": "tree-circular",
               "format": "application",
@@ -16114,8 +16146,8 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "小刚和小军按1:3合伙做生意,赚了40元,小刚分多少?",
-              "answer": "小刚10元,小军30元",
+              "question": "小刚和小军按1:3合伙做生意，赚了40元，小刚分多少？",
+              "answer": "小刚10元，小军30元",
               "skill": "ratio-partnership",
               "format": "application",
               "responseKind": null,
@@ -16123,8 +16155,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "小雪按1:3分糖,甲得了3个,乙得了几个?一共几个?",
-              "answer": "乙9个,一共12个",
+              "question": "小雪按1:3分糖，甲得了3个，乙得了几个？一共几个？",
+              "answer": "乙9个，一共12个",
               "skill": "ratio-scale",
               "format": "application",
               "responseKind": null,
@@ -16132,7 +16164,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "小梅第一次把21颗糖按5:2分给甲乙,第二次把18颗糖按5:4分给甲乙,两次合起来甲乙分到的糖的比是多少?",
+              "question": "小梅第一次把21颗糖按5:2分给甲乙，第二次把18颗糖按5:4分给甲乙，两次合起来甲乙分到的糖的比是多少？",
               "answer": "25:14",
               "skill": "ratio-combine",
               "format": "application",
@@ -16141,7 +16173,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "大伟有9个糖,按2:1分给甲乙两人,甲得几个?",
+              "question": "大伟有9个糖，按2:1分给甲乙两人，甲得几个？",
               "answer": "6个",
               "skill": "ratio-distribute",
               "format": "application",
@@ -16165,7 +16197,7 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "小刚第一次把18颗糖按2:4分给甲乙,第二次把30颗糖按2:4分给甲乙,两次合起来甲乙分到的糖的比是多少?",
+              "question": "小刚第一次把18颗糖按2:4分给甲乙，第二次把30颗糖按2:4分给甲乙，两次合起来甲乙分到的糖的比是多少？",
               "answer": "1:2",
               "skill": "ratio-combine",
               "format": "application",
@@ -16174,8 +16206,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "小强按1:2分糖,甲得了10个,乙得了几个?一共几个?",
-              "answer": "乙20个,一共30个",
+              "question": "小强按1:2分糖，甲得了10个，乙得了几个？一共几个？",
+              "answer": "乙20个，一共30个",
               "skill": "ratio-scale",
               "format": "application",
               "responseKind": null,
@@ -16183,7 +16215,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "小红有12个糖,按1:2分给甲乙两人,甲得几个?",
+              "question": "小红有12个糖，按1:2分给甲乙两人，甲得几个？",
               "answer": "4个",
               "skill": "ratio-distribute",
               "format": "application",
@@ -16192,8 +16224,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "小明和小强按5:9合伙做生意,赚了434元,小明分多少?",
-              "answer": "小明155元,小强279元",
+              "question": "小明和小强按5:9合伙做生意，赚了434元，小明分多少？",
+              "answer": "小明155元，小强279元",
               "skill": "ratio-partnership",
               "format": "application",
               "responseKind": null,
@@ -16216,8 +16248,8 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "小玲和小刚按1:3合伙做生意,赚了96元,小玲分多少?",
-              "answer": "小玲24元,小刚72元",
+              "question": "小玲和小刚按1:3合伙做生意，赚了96元，小玲分多少？",
+              "answer": "小玲24元，小刚72元",
               "skill": "ratio-partnership",
               "format": "application",
               "responseKind": null,
@@ -16225,7 +16257,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "小明有12个糖,按1:2分给甲乙两人,甲得几个?",
+              "question": "小明有12个糖，按1:2分给甲乙两人，甲得几个？",
               "answer": "4个",
               "skill": "ratio-distribute",
               "format": "application",
@@ -16234,8 +16266,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "小华按4:3分糖,甲得了36个,乙得了几个?一共几个?",
-              "answer": "乙27个,一共63个",
+              "question": "小华按4:3分糖，甲得了36个，乙得了几个？一共几个？",
+              "answer": "乙27个，一共63个",
               "skill": "ratio-scale",
               "format": "application",
               "responseKind": null,
@@ -16243,7 +16275,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "小芳第一次把27颗糖按5:4分给甲乙,第二次把16颗糖按3:5分给甲乙,两次合起来甲乙分到的糖的比是多少?",
+              "question": "小芳第一次把27颗糖按5:4分给甲乙，第二次把16颗糖按3:5分给甲乙，两次合起来甲乙分到的糖的比是多少？",
               "answer": "21:22",
               "skill": "ratio-combine",
               "format": "application",
@@ -16909,7 +16941,7 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "把 11 行 11 列的方阵扩成 12 行 12 列，要增加多少个点？",
+              "question": "把 11 行 11 列的正方形点阵扩成 12 行 12 列，要增加多少个点？",
               "answer": "23",
               "skill": "square-border",
               "format": "practice",
@@ -16978,7 +17010,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "一个实心方阵每边有 91 个点，拿走中心 83 行 83 列的点后，外圈还剩多少个点？",
+              "question": "一个实心正方形点阵每边有 91 个点，拿走中心 83 行 83 列的点后，外圈还剩多少个点？",
               "answer": "1392",
               "skill": "hollow-frame-dots",
               "format": "practice",
@@ -17939,7 +17971,7 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "从甲地到乙地有3条公路和5条铁路,一共多少种走法?",
+              "question": "从甲地到乙地有3条公路和5条铁路，一共多少种走法？",
               "answer": "8种",
               "skill": "comb-addition",
               "format": "olympiad",
@@ -17948,7 +17980,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "84克3%盐水、66克8%盐水、149克13%盐水混合,混合后浓度是多少?",
+              "question": "84克3%盐水、66克8%盐水、149克13%盐水混合，混合后浓度是多少？",
               "answer": "9.1%",
               "skill": "triple-mix-basic",
               "format": "application",
@@ -17957,8 +17989,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "船在静水中速度为12km/h,水流速度1km/h,顺水速度和逆水速度分别是多少?",
-              "answer": "顺水13km/h,逆水11km/h",
+              "question": "一艘轮船在静水中的速度是每小时 19 千米，水流速度是每小时 1 千米。这艘轮船顺水航行和逆水航行的速度各是多少？",
+              "answer": "顺水速度是每小时 20 千米，逆水速度是每小时 18 千米",
               "skill": "boat-find-downstream",
               "format": "application",
               "responseKind": null,
@@ -17966,8 +17998,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "把85本书按2:1的比例分给甲乙两人,甲乙各分多少本?",
-              "answer": "甲57本,乙28本",
+              "question": "把85本书按2:1的比例分给甲乙两人，甲乙各分多少本？",
+              "answer": "甲57本，乙28本",
               "skill": "proportion-two-parts",
               "format": "application",
               "responseKind": null,
@@ -18000,7 +18032,7 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "找规律填数：1, 4, 9, 16, ( )",
+              "question": "找规律填数：1, 4, 9, 16， ( )",
               "answer": "25",
               "skill": "sequence-square",
               "format": "olympiad",
@@ -18009,8 +18041,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "方阵最外层每边10人,内部空心部分每边5人,共有2.5层,这个方阵总人数是多少?",
-              "answer": "75人",
+              "question": "同学们排成一个中空的正方形队伍，最外层每边 10 人，内部中空部分每边 4 人，一共有 3 层。这个正方形队伍一共有多少人？",
+              "answer": "84 人",
               "skill": "formation-hollow",
               "format": "application",
               "responseKind": null,
@@ -18018,7 +18050,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "收了稻谷1278公斤,亩产量是142公斤,种了多少亩?",
+              "question": "收了稻谷1278公斤，亩产量是142公斤，种了多少亩？",
               "answer": "9亩",
               "skill": "harvest-area",
               "format": "application",
@@ -18027,7 +18059,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "班级值日按周一至周五循环,小明了第7个值日,那天是星期几?",
+              "question": "班级值日按周一至周五循环，小明了第7个值日，那天是星期几？",
               "answer": "星期二",
               "skill": "duty-roster",
               "format": "application",
@@ -18062,7 +18094,7 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "24克糖溶在116克水中,蒸发掉111克水,新浓度是多少(百分数,取整数)?",
+              "question": "24克糖溶在116克水中，蒸发掉111克水，新浓度是多少(百分数，取整数)？",
               "answer": "83%",
               "skill": "concentration-evaporate",
               "format": "application",
@@ -18071,7 +18103,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "第一块亩产255公斤,面积5亩;第二块亩产175公斤,面积7亩。哪块地产量高?高多少?",
+              "question": "第一块亩产255公斤，面积5亩;第二块亩产175公斤，面积7亩。哪块地产量高？高多少？",
               "answer": "第一块高50公斤",
               "skill": "harvest-compare",
               "format": "application",
@@ -18080,8 +18112,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "环形跑道周长982米,甲11m/s、乙7m/s 反向跑,1 分钟内两人相遇几次?",
-              "answer": "1次(每 54.6 秒相遇一次)",
+              "question": "小明和小华在周长 240 米的环形跑道上背向跑步。小明每秒跑 4 米，小华每秒跑 4 米。两人相遇一次需要多少秒？在 150 秒内，两人一共相遇多少次？",
+              "answer": "相遇一次需要 30 秒，在 150 秒内一共相遇 5 次",
               "skill": "circular-multi",
               "format": "application",
               "responseKind": null,
@@ -18090,7 +18122,7 @@ export const PROJECT_STATUS = {
             },
             {
               "question": "牛(4条腿)、猪(4条腿)、鸡(2条腿)共65只，腿数210条，且牛的数量是猪的3倍。求三类各多少只？",
-              "answer": "牛30只,猪10只,鸡25只",
+              "answer": "牛30只，猪10只，鸡25只",
               "skill": "three-cattle-sheep-pig",
               "format": "application",
               "responseKind": null,

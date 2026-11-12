@@ -1,42 +1,39 @@
-import { pickNumberByBand, pickForBand } from './helpers.js';
-
-const findDownstreamSub = {
-  id: 'boat-find-downstream',
-  band: 'easy',
-  generate(rng) {
-    const still = pickNumberByBand(rng, 'easy', { min: 10, max: 25 });
-    const current = pickNumberByBand(rng, 'easy', { min: 2, max: 6 });
-    const downstream = still + current;
-    const upstream = still - current;
-    return {
-      question: `船在静水中速度为${still}km/h,水流速度${current}km/h,顺水速度和逆水速度分别是多少?`,
-      answer: `顺水${downstream}km/h,逆水${upstream}km/h`,
-      subtype: 'boat-current',
-      payload: { still, current, downstream, upstream, kind: 'find-speeds' },
-    };
-  },
-};
+import { pickForBand } from './helpers.js';
 
 export const boatCurrentTemplate = {
   id: 'boat-current',
   gradeRange: ['5', '6'],
   semester: 'all',
   subtemplates: [
-    findDownstreamSub,
+    {
+      id: 'boat-find-downstream',
+      band: 'easy',
+      generate(rng) {
+        const vStill = rng.int(10, 20);
+        const vCurrent = rng.int(1, 4);
+        const vDown = vStill + vCurrent;
+        const vUp = vStill - vCurrent;
+        return {
+          question: `一艘轮船在静水中的速度是每小时 ${vStill} 千米，水流速度是每小时 ${vCurrent} 千米。这艘轮船顺水航行和逆水航行的速度各是多少？`,
+          answer: `顺水速度是每小时 ${vDown} 千米，逆水速度是每小时 ${vUp} 千米`,
+          subtype: 'boat-current',
+          payload: { kind: 'find-downstream', vStill, vCurrent, vDown, vUp },
+        };
+      },
+    },
     {
       id: 'boat-find-still',
       band: 'medium',
       generate(rng) {
-        const downstream = pickNumberByBand(rng, 'medium', { min: 15, max: 30 });
-        const upstream = pickNumberByBand(rng, 'medium', { min: 8, max: 18 });
-        if (upstream >= downstream) return findDownstreamSub.generate(rng);
-        const still = (downstream + upstream) / 2;
-        const current = (downstream - upstream) / 2;
+        const vStill = rng.int(12, 22);
+        const vCurrent = rng.int(2, 5);
+        const vDown = vStill + vCurrent;
+        const vUp = vStill - vCurrent;
         return {
-          question: `船顺水速度${downstream}km/h,逆水速度${upstream}km/h,求静水速度和水速。`,
-          answer: `静水${still}km/h,水速${current}km/h`,
+          question: `一艘轮船顺水航行的速度是每小时 ${vDown} 千米，逆水航行的速度是每小时 ${vUp} 千米。求这艘轮船在静水中的速度和水流速度。`,
+          answer: `静水速度是每小时 ${vStill} 千米，水流速度是每小时 ${vCurrent} 千米`,
           subtype: 'boat-current',
-          payload: { downstream, upstream, still, current, kind: 'find-still-current' },
+          payload: { kind: 'find-still', vDown, vUp, vStill, vCurrent },
         };
       },
     },
@@ -44,19 +41,19 @@ export const boatCurrentTemplate = {
       id: 'boat-time',
       band: 'hard',
       generate(rng) {
-        const still = pickNumberByBand(rng, 'hard', { min: 12, max: 24 });
-        const current = pickNumberByBand(rng, 'hard', { min: 2, max: 5 });
-        const distance = pickNumberByBand(rng, 'hard', { min: 60, max: 200 });
-        const upstreamSpeed = still - current;
-        const downstreamSpeed = still + current;
-        const upTime = Math.round(distance / upstreamSpeed);
-        const downTime = Math.round(distance / downstreamSpeed);
-        const total = upTime + downTime;
+        const scenarios = [
+          { vStill: 15, vCurrent: 3, distance: 72, tUp: 6, tDown: 4, totalHours: 10 },
+          { vStill: 18, vCurrent: 6, distance: 72, tUp: 6, tDown: 3, totalHours: 9 },
+          { vStill: 20, vCurrent: 4, distance: 96, tUp: 6, tDown: 4, totalHours: 10 },
+          { vStill: 24, vCurrent: 6, distance: 90, tUp: 5, tDown: 3, totalHours: 8 },
+          { vStill: 16, vCurrent: 4, distance: 60, tUp: 5, tDown: 3, totalHours: 8 },
+        ];
+        const { vStill, vCurrent, distance, tUp, tDown, totalHours } = rng.pick(scenarios);
         return {
-          question: `船静水${still}km/h,水速${current}km/h,甲乙两港相距${distance}km。船从甲到乙逆水而上再顺水返回,共需多少小时?`,
-          answer: `${total}小时`,
+          question: `一艘轮船在静水中的速度是每小时 ${vStill} 千米，水流速度是每小时 ${vCurrent} 千米。甲、乙两码头相距 ${distance} 千米，轮船从甲码头逆水航行到乙码头，再顺水返回甲码头，往返一共需要多少小时？`,
+          answer: `一共需要 ${totalHours} 小时（逆水用时 ${tUp} 小时，顺水用时 ${tDown} 小时）`,
           subtype: 'boat-current',
-          payload: { still, current, distance, upstreamSpeed, downstreamSpeed, upTime, downTime, total, kind: 'round-trip' },
+          payload: { kind: 'boat-time', vStill, vCurrent, distance, tUp, tDown, totalHours },
         };
       },
     },

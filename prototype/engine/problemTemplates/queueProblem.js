@@ -11,7 +11,7 @@ function generateQueueSubtemplates() {
         const behind = pickNumberByBand(rng, 'easy', { min: 1, max: 5 });
         const total = front + 1 + behind;
         return {
-          question: `${person}排队,前面有${front}人,后面有${behind}人。这一队一共多少人?`,
+          question: `${person}排队，前面有${front}人，后面有${behind}人。这一队一共多少人？`,
           answer: `${total}人`,
           subtype: 'queue',
           payload: { person, front, behind, total },
@@ -27,7 +27,7 @@ function generateQueueSubtemplates() {
         const posB = pickNumberByBand(rng, 'medium', { min: 1, max: 8 });
         const swap = Math.abs(posA - posB);
         return {
-          question: `${a}排在第${posA}位,${b}排在第${posB}位。如果交换位置,${a}比${b}靠前多少位?`,
+          question: `${a}排在第${posA}位，${b}排在第${posB}位。如果交换位置，${a}比${b}靠前多少位？`,
           answer: `${swap}位`,
           subtype: 'queue',
           payload: { a, b, posA, posB, swap },
@@ -47,7 +47,7 @@ function generateQueueSubtemplates() {
         const ahead = total - pos;
         const wait = ahead * skip;
         return {
-          question: `${person}购票时前面有${ahead}人,每1人购票需要${skip}分钟,轮到他时需要等多少分钟?`,
+          question: `${person}购票时前面有${ahead}人，每1人购票需要${skip}分钟，轮到他时需要等多少分钟？`,
           answer: `${wait}分钟`,
           subtype: 'queue',
           payload: { total, pos, skip, ahead, wait },

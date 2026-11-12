@@ -11,7 +11,7 @@ function generateShareSubtemplates() {
         const people = pickNumberByBand(rng, 'easy', { min: 2, max: 5 });
         const total = each * people;
         return {
-          question: `${person}给每位小朋友分${each}颗糖,分给了${people}位小朋友,一共分了多少颗糖?`,
+          question: `${person}给每位小朋友分${each}颗糖，分给了${people}位小朋友，一共分了多少颗糖？`,
           answer: `${total}颗`,
           subtype: 'share-candy',
           payload: { each, people, total },
@@ -29,7 +29,7 @@ function generateShareSubtemplates() {
         const remain = rng.int(1, each - 1);
         const total = people * each + remain;
         return {
-          question: `${person}有一些糖,每位小朋友分${each}颗,分给了${people}位小朋友,还剩${remain}颗。${person}原来有多少颗糖?`,
+          question: `${person}有一些糖，每位小朋友分${each}颗，分给了${people}位小朋友，还剩${remain}颗。${person}原来有多少颗糖？`,
           answer: `${total}颗`,
           subtype: 'share-candy',
           payload: { people, each, total, remain },
@@ -48,7 +48,7 @@ function generateShareSubtemplates() {
         const remain = rng.int(1, each - 1);
         const total = each * people + remain;
         return {
-          question: `${person}把${total}个苹果平均分给小朋友,每人分到${each}个,还剩${remain}个。一共有几位小朋友?`,
+          question: `${person}把${total}个苹果平均分给小朋友，每人分到${each}个，还剩${remain}个。一共有几位小朋友？`,
           answer: `${people}位`,
           subtype: 'share-candy',
           payload: { total, each, remain, people },
@@ -68,7 +68,7 @@ function generateShareSubtemplates() {
         let current = final;
         for (let i = 0; i < steps; i++) current = (current + 1) * 2;
         return {
-          question: `${person}有一些糖,每次拿走一半多1颗,拿了${steps}次后剩${final}颗。原来有多少颗?`,
+          question: `${person}有一些糖，每次拿走一半多1颗，拿了${steps}次后剩${final}颗。原来有多少颗？`,
           answer: `${current}颗`,
           subtype: 'share-candy',
           payload: { steps, final, original: current },

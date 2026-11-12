@@ -490,10 +490,10 @@ function conceptTasks(kind, difficulty) {
         ['table-seating-forward', `1 张方桌坐 4 人，2 张方桌拼成一排坐 6 人，3 张拼成一排坐 8 人……${n} 张方桌拼成一排一共可以坐多少人？`, 2 * n + 2],
         ['table-seating-reverse', `按“1 张方桌坐 4 人，每多拼 1 张多坐 2 人”的规律，要坐下 ${2 * n + 2} 人，需要把多少张方桌拼成一排？`, n],
         ['pythagorean-square-diff', `利用数形结合计算平方差：${n + a}² − ${n}² = ______。`, (2 * n + a) * a],
-        ['hollow-frame-dots', `一个实心方阵每边有 ${n + a} 个点，拿走中心 ${n} 行 ${n} 列的点后，外圈还剩多少个点？`, (2 * n + a) * a],
+        ['hollow-frame-dots', `一个实心正方形点阵每边有 ${n + a} 个点，拿走中心 ${n} 行 ${n} 列的点后，外圈还剩多少个点？`, (2 * n + a) * a],
       ];
       if (difficulty === 'medium') return [
-        ['square-border', `把 ${side} 行 ${side} 列的方阵扩成 ${side + 1} 行 ${side + 1} 列，要增加多少个点？`, 2 * side + 1],
+        ['square-border', `把 ${side} 行 ${side} 列的正方形点阵扩成 ${side + 1} 行 ${side + 1} 列，要增加多少个点？`, 2 * side + 1],
         ['odd-sum', `从第 ${a} 个奇数到第 ${a + b - 1} 个奇数（首尾都算）相加，和是多少？`, (a + b - 1) ** 2 - (a - 1) ** 2],
         ['connected-triangles', `用火柴棒连着摆一排三角形，摆 1 个用 3 根，摆 2 个用 5 根……摆 ${n} 个这样的三角形需要多少根火柴棒？`, 2 * n + 1],
         ['connected-squares', `用小棒连着摆一排正方形，摆 1 个用 4 根，摆 2 个用 7 根……摆 ${n} 个这样的正方形需要多少根小棒？`, 3 * n + 1],

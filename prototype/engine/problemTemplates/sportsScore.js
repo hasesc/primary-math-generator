@@ -9,7 +9,7 @@ function generateSportsSubtemplates() {
         const win = pickNumberByBand(rng, 'easy', { min: 1, max: 4 });
         const score = win * 3;
         return {
-          question: `球队赢了${win}场比赛(每场3分),总积分是多少?`,
+          question: `球队赢了${win}场比赛(每场3分)，总积分是多少？`,
           answer: `${score}分`,
           subtype: 'sports-score',
           payload: { win, score },
@@ -24,7 +24,7 @@ function generateSportsSubtemplates() {
         const draw = pickNumberByBand(rng, 'medium', { min: 1, max: 5 });
         const score = win * 3 + draw;
         return {
-          question: `球队赢了${win}场(每场3分),平了${draw}场(每场1分),球队总积分是多少?`,
+          question: `球队赢了${win}场(每场3分)，平了${draw}场(每场1分)，球队总积分是多少？`,
           answer: `${score}分`,
           subtype: 'sports-score',
           payload: { win, draw, score },
@@ -43,7 +43,7 @@ function generateSportsSubtemplates() {
         const scores = [a, b, c];
         const order = [0, 1, 2].sort((i, j) => scores[j] - scores[i]);
         return {
-          question: `红队、蓝队、黄队的积分分别是${a}分、${b}分、${c}分,请按积分从高到低排名。`,
+          question: `红队、蓝队、黄队的积分分别是${a}分、${b}分、${c}分，请按积分从高到低排名。`,
           answer: order
             .map((idx, rank) => `第${rank + 1}名${names[idx]}(${scores[idx]}分)`)
             .join(','),
@@ -63,8 +63,8 @@ function generateSportsSubtemplates() {
         const record = total + pickNumberByBand(rng, 'hard', { min: 1, max: 20 });
         const diff = record - total;
         return {
-          question: `接力赛三人分别用时${t1}秒、${t2}秒、${t3}秒,总成绩是多少秒?比纪录${record}秒快几秒?`,
-          answer: `总成绩${total}秒,快${diff}秒`,
+          question: `接力赛三人分别用时${t1}秒、${t2}秒、${t3}秒，总成绩是多少秒？比纪录${record}秒快几秒？`,
+          answer: `总成绩${total}秒，快${diff}秒`,
           subtype: 'sports-score',
           payload: { t1, t2, t3, total, record, diff },
         };

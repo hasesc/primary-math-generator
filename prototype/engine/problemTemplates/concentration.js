@@ -12,7 +12,7 @@ function generateConcentrationSubtemplates() {
         const solution = solute + water;
         const percent = Math.round(solute / solution * 100);
         return {
-          question: `把${solute}克糖溶解在${water}克水中,糖水浓度是多少(百分数,四舍五入取整数)?`,
+          question: `把${solute}克糖溶解在${water}克水中，糖水浓度是多少(百分数，四舍五入取整数)？`,
           answer: `${percent}%`,
           subtype: 'concentration',
           payload: { solute, water, solution, percent },
@@ -27,7 +27,7 @@ function generateConcentrationSubtemplates() {
         const percent = pickNumberByBand(rng, 'easy', { min: 5, max: 20 });
         const solute = Math.round(solution * percent / 100);
         return {
-          question: `${solution}克${percent}%的糖水中,糖有多少克?`,
+          question: `${solution}克${percent}%的糖水中，糖有多少克？`,
           answer: `${solute}克`,
           subtype: 'concentration',
           payload: { solute, solution, percent },
@@ -44,7 +44,7 @@ function generateConcentrationSubtemplates() {
         const newSolution = solute + water + addedWater;
         const newPercent = Math.round(solute / newSolution * 100);
         return {
-          question: `原有${solute}克糖溶在${water}克水中,又加了${addedWater}克水,新浓度是多少(百分数,取整数)?`,
+          question: `原有${solute}克糖溶在${water}克水中，又加了${addedWater}克水，新浓度是多少(百分数，取整数)？`,
           answer: `${newPercent}%`,
           subtype: 'concentration',
           payload: { solute, water, addedWater, newSolution, newPercent },
@@ -63,7 +63,7 @@ function generateConcentrationSubtemplates() {
         const totalSolution = sol1 + sol2;
         const percent = Math.round(totalSolute / totalSolution * 100);
         return {
-          question: `${sol1}克${Math.round(s1/sol1*100)}%糖水和${sol2}克${Math.round(s2/sol2*100)}%糖水混合,新浓度是多少?`,
+          question: `${sol1}克${Math.round(s1/sol1*100)}%糖水和${sol2}克${Math.round(s2/sol2*100)}%糖水混合，新浓度是多少？`,
           answer: `${percent}%`,
           subtype: 'concentration',
           payload: { s1, sol1, s2, sol2, totalSolute, totalSolution, percent },
@@ -81,7 +81,7 @@ function generateConcentrationSubtemplates() {
         const newSolution = solute + water - evaporated;
         const newPercent = Math.round(solute / newSolution * 100);
         return {
-          question: `${solute}克糖溶在${water}克水中,蒸发掉${evaporated}克水,新浓度是多少(百分数,取整数)?`,
+          question: `${solute}克糖溶在${water}克水中，蒸发掉${evaporated}克水，新浓度是多少(百分数，取整数)？`,
           answer: `${newPercent}%`,
           subtype: 'concentration',
           payload: { solute, water, evaporated, newSolution, newPercent },

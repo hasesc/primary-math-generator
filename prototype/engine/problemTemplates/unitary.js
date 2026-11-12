@@ -16,7 +16,7 @@ export const unitaryTemplate = {
         const targetTotal = unit * targetGroups;
         const person = pickPerson(rng);
         return {
-          question: `${person}买${groups}支铅笔花了${total}元。每支铅笔多少元?买${targetGroups}支需要多少元?`,
+          question: `${person}买${groups}支铅笔花了${total}元。每支铅笔多少元？买${targetGroups}支需要多少元？`,
           answer: `${unit}元;${targetTotal}元`,
           subtype: 'unitary',
           payload: { unit, groups, total, targetGroups, targetTotal },
@@ -33,7 +33,7 @@ export const unitaryTemplate = {
         const targetDays = pickNumberByBand(rng, 'medium', { min: 7, max: 14 });
         const person = pickPerson(rng);
         return {
-          question: `${person}用${days}天读了${total}页书。平均每天读几页?按这个速度,${targetDays}天能读多少页?`,
+          question: `${person}用${days}天读了${total}页书。平均每天读几页？按这个速度，${targetDays}天能读多少页？`,
           answer: `${perDay}页;${perDay * targetDays}页`,
           subtype: 'unitary',
           payload: { days, total, perDay, targetDays, result: perDay * targetDays },
@@ -50,7 +50,7 @@ export const unitaryTemplate = {
         const total = unit * groups;
         const person = pickPerson(rng);
         return {
-          question: `${person}用${total}元买了${groups}本笔记本。${targetGroups}本笔记本需要多少元?`,
+          question: `${person}用${total}元买了${groups}本笔记本。${targetGroups}本笔记本需要多少元？`,
           answer: `${unit * targetGroups}元`,
           subtype: 'unitary',
           payload: { unit, groups, total, targetGroups, result: unit * targetGroups, kind: 'reverse' },

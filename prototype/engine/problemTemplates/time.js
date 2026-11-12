@@ -123,7 +123,7 @@ function generateTimeSubtemplates() {
         const minute = rng.pick([0, 30]);
         const display = `${hour}:${String(minute).padStart(2, '0')}`;
         return {
-          question: `钟表指向${display},是几点几分?`,
+          question: `钟表指向${display}，是几点几分？`,
           answer: display,
           subtype: 'time',
           payload: { hour, minute },

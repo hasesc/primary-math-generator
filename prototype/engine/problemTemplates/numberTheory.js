@@ -10,7 +10,7 @@ function generateNumberTheorySubtemplates() {
         const divisor = rng.pick([2, 3, 5, 9]);
         const divisible = n % divisor === 0;
         return {
-          question: `${n}能否被${divisor}整除?`,
+          question: `${n}能否被${divisor}整除？`,
           answer: divisible ? '能' : '不能',
           subtype: 'number-theory',
           payload: { n, divisor, divisible: divisible ? 1 : 0 },
@@ -26,7 +26,7 @@ function generateNumberTheorySubtemplates() {
         const remainder = rng.int(1, divisor - 1);
         const dividend = divisor * quotient + remainder;
         return {
-          question: `${dividend}除以${divisor},商是${quotient},余数是几?`,
+          question: `${dividend}除以${divisor}，商是${quotient}，余数是几？`,
           answer: `${remainder}`,
           subtype: 'number-theory',
           payload: { dividend, divisor, quotient, remainder },
@@ -41,7 +41,7 @@ function generateNumberTheorySubtemplates() {
         const b = rng.int(4, 20);
         const L = lcm(a, b);
         return {
-          question: `${a}和${b}的最小公倍数是多少?`,
+          question: `${a}和${b}的最小公倍数是多少？`,
           answer: `${L}`,
           subtype: 'number-theory',
           payload: { a, b, L },
@@ -56,7 +56,7 @@ function generateNumberTheorySubtemplates() {
         const b = rng.int(10, 50);
         const G = gcd(a, b);
         return {
-          question: `${a}和${b}的最大公约数是多少?`,
+          question: `${a}和${b}的最大公约数是多少？`,
           answer: `${G}`,
           subtype: 'number-theory',
           payload: { a, b, G },
@@ -71,7 +71,7 @@ function generateNumberTheorySubtemplates() {
         const a = rng.int(1, n - 1);
         // Smallest positive integer congruent to a mod n is a itself.
         return {
-          question: `求最小的正整数x,使得x除以${n}余${a}。`,
+          question: `求最小的正整数x，使得x除以${n}余${a}。`,
           answer: `${a}`,
           subtype: 'number-theory',
           payload: { n, a, x: a },
@@ -94,7 +94,7 @@ function generateNumberTheorySubtemplates() {
           throw new Error(`nt-puzzle: no solution for n1=${n1} r1=${r1} n2=${n2} r2=${r2}`);
         }
         return {
-          question: `一个数除以${n1}余${r1},除以${n2}余${r2},这个数最小是多少?`,
+          question: `一个数除以${n1}余${r1}，除以${n2}余${r2}，这个数最小是多少？`,
           answer: `${x}`,
           subtype: 'number-theory',
           payload: { n1, n2, r1, r2, x },
