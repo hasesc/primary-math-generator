@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/paper/paper",
+    "pages/about/index",
+    "pages/arithmetic/arithmetic"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "小学数学 · 单元同步练",
+    "navigationBarBackgroundColor": "#2563eb",
+    "backgroundColor": "#f8fafc"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

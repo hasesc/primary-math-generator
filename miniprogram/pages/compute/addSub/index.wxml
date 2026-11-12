@@ -1,0 +1,58 @@
+<view>
+<!-- 选择界面 -->
+<view wx:if="{{showWherePage==0}}" class="container">
+  <range-total bind:beginTest="startTest" range="{{false}}"  bind:beginPrint="beginPrint" ></range-total>
+</view>
+
+  <view wx:if="{{showWherePage==1}}" class="container">
+
+    <progress-bar index="{{currentIndex}}" total="{{currentTotal}}" wrongNum="{{wrongQuestions.length}}"></progress-bar>
+       
+    <view id="feedback">{{feedbackMessage}}</view>
+        <!-- 竖式计算区域 -->
+        <view class="vertical-equation">
+            <!--计算动画演示 -->
+           
+
+            <!--数字1 -->
+            <view class="number-row">
+                <view wx:for="{{num1Array}}" wx:key="index" class="digit-cell {{index==num1Selected?'selected':''}}"  >{{item}}</view>
+            </view>
+            
+            <!-- 数字2 -->
+            <view class="number-row">
+                <!-- 计算符号 -->
+                <view class="digit-cell operator">{{operator}}</view>
+                <view wx:for="{{num2Array}}" wx:key="index" class="digit-cell {{index==num2Selected ? 'selected' : '' }}"  >{{item}}</view>
+            </view>
+            
+            <!-- 横线 -->
+            <view class="line"></view>
+            
+            <!-- 结果输入区域（逆向排列） -->
+            <view class="result-inputs {{errorShake? ' shake' : ''}}">
+                <input  wx:for="{{correctAnswerArray}}" wx:key="index" type="number" class="result-input" maxlength="1" data-val="{{item}}" data-index="{{index}}" placeholder="{{['个','十','百','千','万'][index]}}" bindinput="inputChange" focus="{{inputFocus==index}}"  value="{{userAnswer}}" /> 
+            </view>
+        </view>
+
+
+      <button id="nextQuestion" type="primary" bindtap="nextProblem">下一题</button>
+      <button bindtap="beginProcess" type="default" size="mini">解题过程</button>
+             <!--计算演示 -->
+        <view bind:tap="processOfProblem" wx:if="currentStep.description">{{currentStep.description}}  <text>点击看一步--></text></view>
+
+     
+	</view>
+
+ <!-- 错题本区域 -->
+  <view wx:if="{{showWherePage==2}}" class="container">
+    <wrong-list wrongList="{{wrongQuestions}}"></wrong-list>
+  </view>
+
+  <!-- 打印题展示界面 -->
+<view wx:if="{{showWherePage==3}}" class="container">
+  <print-view problemList="{{problemList}}" column="1" pcolumn="3" rowGap="4" bind:beginPrint="beginPrint"></print-view>
+</view>
+
+
+</view>

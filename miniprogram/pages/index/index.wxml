@@ -1,0 +1,214 @@
+<!-- pages/index/index.wxml -->
+<view class="container">
+  <!-- 顶栏品牌信息 -->
+  <view class="header-card">
+    <view class="brand-row">
+      <view class="brand-icon">📐</view>
+      <view class="brand-info">
+        <view class="brand-title">小学数学 · 单元同步练</view>
+        <view class="brand-desc">人教版 1~6 年级 · 纯算法实时生成</view>
+      </view>
+      <view class="about-btn" bindtap="goToAbout">关于</view>
+    </view>
+
+    <!-- 主功能 Tab 切换 -->
+    <view class="tab-bar">
+      <view class="tab-item {{activeTab === 'unit' ? 'active' : ''}}" data-tab="unit" bindtap="onTabChange">
+        <text class="tab-icon">📚</text>
+        <text class="tab-text">单元同步练</text>
+      </view>
+      <view class="tab-item {{activeTab === 'daily' ? 'active' : ''}}" data-tab="daily" bindtap="onTabChange">
+        <text class="tab-icon">⚡</text>
+        <text class="tab-text">每日一练</text>
+      </view>
+      <view class="tab-item {{activeTab === 'exam' ? 'active' : ''}}" data-tab="exam" bindtap="onTabChange">
+        <text class="tab-icon">💯</text>
+        <text class="tab-text">单元测验卷</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 年级与学期选择条 -->
+  <view class="control-panel">
+    <!-- 年级横向滚动条 -->
+    <scroll-view class="grade-scroll" scroll-x enable-flex>
+      <view 
+        wx:for="{{grades}}" 
+        wx:key="id" 
+        class="grade-pill {{selectedGrade === item.id ? 'active' : ''}}"
+        data-grade="{{item.id}}"
+        bindtap="onGradeChange"
+      >
+        {{item.name}}
+      </view>
+    </scroll-view>
+
+    <!-- 学期切换（单元练与测验卷显示） -->
+    <view class="semester-switch" wx:if="{{activeTab !== 'daily'}}">
+      <view 
+        class="sem-item {{selectedSemester === '上' ? 'active' : ''}}"
+        data-semester="上"
+        bindtap="onSemesterChange"
+      >上册</view>
+      <view 
+        class="sem-item {{selectedSemester === '下' ? 'active' : ''}}"
+        data-semester="下"
+        bindtap="onSemesterChange"
+      >下册</view>
+    </view>
+
+    <!-- 每日一练 口算/竖式 切换 -->
+    <view class="semester-switch" wx:if="{{activeTab === 'daily'}}">
+      <view 
+        class="sem-item {{dailyMode === 'oral' ? 'active' : ''}}"
+        data-mode="oral"
+        bindtap="onDailyModeChange"
+      >口算天天练</view>
+      <view 
+        class="sem-item {{dailyMode === 'vertical' ? 'active' : ''}}"
+        data-mode="vertical"
+        bindtap="onDailyModeChange"
+      >竖式天天练</view>
+    </view>
+  </view>
+
+  <!-- 单元列表展示（单元同步练 / 单元测验卷） -->
+  <view class="content-body" wx:if="{{activeTab === 'unit' || activeTab === 'exam'}}">
+    <view class="section-title-row">
+      <text class="section-title">{{selectedGrade}}年级{{selectedSemester}}册 · 教材单元</text>
+      <text class="section-badge">{{activeTab === 'exam' ? '100分模拟考' : '三档阶梯考法'}}</text>
+    </view>
+
+    <view class="unit-grid">
+      <view 
+        wx:for="{{currentUnits}}" 
+        wx:key="name" 
+        class="unit-card"
+        data-index="{{index}}"
+        bindtap="onUnitClick"
+      >
+        <view class="unit-card-header">
+          <text class="unit-index">第 {{index + 1}} 单元</text>
+          <text class="unit-tag {{item.plugin ? 'tag-plugin' : 'tag-std'}}">
+            {{item.maxCount ? '图形卷' : '标准卷'}}
+          </text>
+        </view>
+        <view class="unit-name">{{item.name}}</view>
+        <view class="unit-action">
+          <text class="action-text">{{activeTab === 'exam' ? '生成测验卷 →' : '选难度出题 →'}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 每日一练 范围列表 -->
+  <view class="content-body" wx:if="{{activeTab === 'daily'}}">
+    <view class="section-title-row">
+      <text class="section-title">{{dailyMode === 'oral' ? '口算' : '竖式'}}专项分类 · 实时出题</text>
+      <text class="section-badge">覆盖 1~{{selectedGrade}} 年级算理</text>
+    </view>
+
+    <view class="daily-list">
+      <view 
+        wx:for="{{filteredDailyRanges}}" 
+        wx:key="id"
+        class="daily-card"
+        data-id="{{item.id}}"
+        bindtap="onDailyRangeSelect"
+      >
+        <view class="daily-icon">{{dailyMode === 'oral' ? '⚡' : '📝'}}</view>
+        <view class="daily-info">
+          <view class="daily-name">{{item.name}}</view>
+          <view class="daily-desc">适合 {{item.grade}} 年级及以上 · 最高 {{item.maxCount || 40}} 题</view>
+        </view>
+        <view class="daily-arrow">→</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 试卷配置弹窗 (选难度/题量) -->
+  <view class="modal-mask" wx:if="{{showConfigModal}}" bindtap="closeModal">
+    <view class="modal-box" catchtap="true">
+      <view class="modal-header">
+        <text class="modal-title">{{modalTitle}}</text>
+        <view class="modal-close" bindtap="closeModal">✕</view>
+      </view>
+
+      <view class="modal-body">
+        <!-- 测验卷模式提示 -->
+        <view class="exam-notice" wx:if="{{modalType === 'exam'}}">
+          <view class="notice-title">💯 标准 100 分制测验卷规格</view>
+          <view class="notice-text">含填空(20分) + 判断(10分) + 选择(10分) + 计算(30分) + 操作(10分) + 应用(20分)，配有评分标准与详尽思路点拨。</view>
+        </view>
+
+        <!-- 难度选择 -->
+        <view class="config-group">
+          <view class="group-label">试卷难度</view>
+          <view class="opt-row">
+            <view 
+              class="opt-btn {{difficulty === 'easy' ? 'active' : ''}}"
+              data-diff="easy"
+              bindtap="onDifficultyChange"
+            >
+              <view class="opt-main">🌱 基础档</view>
+              <view class="opt-sub">立足课本算理</view>
+            </view>
+            <view 
+              class="opt-btn {{difficulty === 'medium' ? 'active' : ''}}"
+              data-diff="medium"
+              bindtap="onDifficultyChange"
+            >
+              <view class="opt-main">⭐ 标准档</view>
+              <view class="opt-sub">单元同步要求</view>
+            </view>
+            <view 
+              class="opt-btn {{difficulty === 'hard' ? 'active' : ''}}"
+              data-diff="hard"
+              bindtap="onDifficultyChange"
+            >
+              <view class="opt-main">🔥 提高档</view>
+              <view class="opt-sub">进阶思维拓展</view>
+            </view>
+          </view>
+        </view>
+
+        <!-- 题量选择（仅同步练与每日一练显示） -->
+        <view class="config-group" wx:if="{{modalType !== 'exam'}}">
+          <view class="group-label">题目数量</view>
+          <view class="opt-row">
+            <view 
+              class="opt-btn {{problemCount === 20 ? 'active' : ''}}"
+              data-count="20"
+              bindtap="onCountChange"
+            >
+              <view class="opt-main">20 题</view>
+              <view class="opt-sub">约 15 分钟</view>
+            </view>
+            <view 
+              class="opt-btn {{problemCount === 30 ? 'active' : ''}}"
+              data-count="30"
+              bindtap="onCountChange"
+            >
+              <view class="opt-main">30 题</view>
+              <view class="opt-sub">约 20 分钟</view>
+            </view>
+            <view 
+              class="opt-btn {{problemCount === 40 ? 'active' : ''}}"
+              data-count="40"
+              bindtap="onCountChange"
+            >
+              <view class="opt-main">40 题</view>
+              <view class="opt-sub">完整大练习</view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="modal-footer">
+        <button class="btn-generate" bindtap="confirmGenerate">
+          🚀 立即生成练习卷
+        </button>
+      </view>
+    </view>
+  </view>
+</view>

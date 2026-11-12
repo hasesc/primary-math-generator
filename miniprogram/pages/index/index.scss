@@ -1,0 +1,416 @@
+// pages/index/index.scss
+page {
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.container {
+  padding-bottom: 40rpx;
+}
+
+// 顶部品牌与主 Tab
+.header-card {
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+  padding: 30rpx 28rpx 24rpx;
+  color: #ffffff;
+  border-bottom-left-radius: 36rpx;
+  border-bottom-right-radius: 36rpx;
+  box-shadow: 0 8rpx 24rpx rgba(37, 99, 235, 0.25);
+}
+
+.brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28rpx;
+}
+
+.brand-icon {
+  font-size: 56rpx;
+  margin-right: 18rpx;
+}
+
+.brand-info {
+  flex: 1;
+}
+
+.brand-title {
+  font-size: 36rpx;
+  font-weight: 800;
+  letter-spacing: 1rpx;
+}
+
+.brand-desc {
+  font-size: 22rpx;
+  opacity: 0.88;
+  margin-top: 4rpx;
+}
+
+.about-btn {
+  font-size: 24rpx;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8rpx 20rpx;
+  border-radius: 20rpx;
+  backdrop-filter: blur(8px);
+}
+
+// 主 Tab 栏
+.tab-bar {
+  display: flex;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20rpx;
+  padding: 8rpx;
+  gap: 8rpx;
+}
+
+.tab-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16rpx 0;
+  border-radius: 16rpx;
+  transition: all 0.2s ease;
+
+  &.active {
+    background: #ffffff;
+    color: #1d4ed8;
+    font-weight: 700;
+    box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  }
+}
+
+.tab-icon {
+  font-size: 28rpx;
+  margin-right: 8rpx;
+}
+
+.tab-text {
+  font-size: 26rpx;
+}
+
+// 控制面板（年级与学期选择）
+.control-panel {
+  padding: 24rpx 28rpx 12rpx;
+}
+
+.grade-scroll {
+  display: flex;
+  white-space: nowrap;
+  margin-bottom: 20rpx;
+}
+
+.grade-pill {
+  display: inline-block;
+  padding: 14rpx 32rpx;
+  background: #ffffff;
+  color: #475569;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+  font-weight: 600;
+  margin-right: 16rpx;
+  border: 2rpx solid #e2e8f0;
+  transition: all 0.2s ease;
+
+  &.active {
+    background: #eff6ff;
+    color: #2563eb;
+    border-color: #2563eb;
+    box-shadow: 0 4rpx 10rpx rgba(37, 99, 235, 0.15);
+  }
+}
+
+.semester-switch {
+  display: flex;
+  background: #e2e8f0;
+  border-radius: 18rpx;
+  padding: 6rpx;
+}
+
+.sem-item {
+  flex: 1;
+  text-align: center;
+  padding: 12rpx 0;
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #64748b;
+  border-radius: 14rpx;
+  transition: all 0.2s ease;
+
+  &.active {
+    background: #ffffff;
+    color: #0f172a;
+    box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.08);
+  }
+}
+
+// 主内容区
+.content-body {
+  padding: 12rpx 28rpx;
+}
+
+.section-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16rpx 0 24rpx;
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.section-badge {
+  font-size: 22rpx;
+  background: #f1f5f9;
+  color: #64748b;
+  padding: 6rpx 16rpx;
+  border-radius: 12rpx;
+}
+
+// 单元网格
+.unit-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+}
+
+.unit-card {
+  background: #ffffff;
+  border-radius: 20rpx;
+  padding: 24rpx 26rpx;
+  border: 2rpx solid #e2e8f0;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.02);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: 0 6rpx 16rpx rgba(37, 99, 235, 0.1);
+  }
+}
+
+.unit-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+
+.unit-index {
+  font-size: 22rpx;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.unit-tag {
+  font-size: 20rpx;
+  padding: 4rpx 12rpx;
+  border-radius: 8rpx;
+
+  &.tag-std {
+    background: #ecfdf5;
+    color: #059669;
+  }
+
+  &.tag-plugin {
+    background: #f0f9ff;
+    color: #0284c7;
+  }
+}
+
+.unit-name {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 14rpx;
+}
+
+.unit-action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.action-text {
+  font-size: 24rpx;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+// 每日一练卡片
+.daily-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.daily-card {
+  background: #ffffff;
+  border-radius: 20rpx;
+  padding: 24rpx 26rpx;
+  display: flex;
+  align-items: center;
+  border: 2rpx solid #e2e8f0;
+
+  &:active {
+    background: #f8fafc;
+  }
+}
+
+.daily-icon {
+  font-size: 44rpx;
+  margin-right: 20rpx;
+}
+
+.daily-info {
+  flex: 1;
+}
+
+.daily-name {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.daily-desc {
+  font-size: 22rpx;
+  color: #64748b;
+  margin-top: 4rpx;
+}
+
+.daily-arrow {
+  font-size: 28rpx;
+  color: #94a3b8;
+  font-weight: 700;
+}
+
+// 配置弹窗 Modal
+.modal-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: flex-end;
+  z-index: 100;
+  backdrop-filter: blur(4px);
+}
+
+.modal-box {
+  width: 100%;
+  background: #ffffff;
+  border-top-left-radius: 36rpx;
+  border-top-right-radius: 36rpx;
+  padding: 36rpx 32rpx 48rpx;
+  box-sizing: border-box;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+
+.modal-title {
+  font-size: 32rpx;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.modal-close {
+  font-size: 36rpx;
+  color: #94a3b8;
+  padding: 10rpx;
+}
+
+.exam-notice {
+  background: #f0fdf4;
+  border: 2rpx solid #bbf7d0;
+  border-radius: 16rpx;
+  padding: 18rpx 20rpx;
+  margin-bottom: 28rpx;
+}
+
+.notice-title {
+  font-size: 26rpx;
+  font-weight: 700;
+  color: #166534;
+}
+
+.notice-text {
+  font-size: 22rpx;
+  color: #15803d;
+  margin-top: 4rpx;
+  line-height: 1.4;
+}
+
+.config-group {
+  margin-bottom: 28rpx;
+}
+
+.group-label {
+  font-size: 26rpx;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 16rpx;
+}
+
+.opt-row {
+  display: flex;
+  gap: 16rpx;
+}
+
+.opt-btn {
+  flex: 1;
+  background: #f8fafc;
+  border: 2rpx solid #e2e8f0;
+  border-radius: 18rpx;
+  padding: 20rpx 12rpx;
+  text-align: center;
+  transition: all 0.2s ease;
+
+  &.active {
+    background: #eff6ff;
+    border-color: #2563eb;
+
+    .opt-main {
+      color: #2563eb;
+    }
+  }
+}
+
+.opt-main {
+  font-size: 26rpx;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.opt-sub {
+  font-size: 20rpx;
+  color: #64748b;
+  margin-top: 4rpx;
+}
+
+.modal-footer {
+  margin-top: 36rpx;
+}
+
+.btn-generate {
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 30rpx;
+  font-weight: 700;
+  border-radius: 24rpx;
+  padding: 24rpx 0;
+  border: none;
+  box-shadow: 0 8rpx 20rpx rgba(37, 99, 235, 0.35);
+
+  &:active {
+    background: #1d4ed8;
+  }
+}

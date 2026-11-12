@@ -11,7 +11,7 @@ import {
   DAILY_RANGES,
   generateDailyPractice,
   renderDiagramSVG,
-} from '../repos/skeleton/miniprogram/engine/index.js';
+} from '../miniprogram/engine/index.js';
 
 describe('微信小程序引擎全链路测试', () => {
   it('涵盖 1~6 年级上下册所有单元结构', () => {

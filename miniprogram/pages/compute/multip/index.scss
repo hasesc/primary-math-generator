@@ -1,0 +1,74 @@
+page{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 标题样式 */
+.title {
+  text-align: center;
+  color: #ff7b9c; /* 珊瑚粉 */
+  font-size: 32px;
+  margin: 20px 0 30px;
+  position: relative;
+}
+/* 题目容器（关键改进点） */
+.questions-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* 卡片间距 */
+  max-width: 90vh;
+  margin: 0 auto;
+}
+
+/* 题目卡片 */
+.question-card {
+  background: linear-gradient(to right, #ff9a9e, #fad0c4); /* 粉橙渐变 */
+  border-radius: 20px;
+  padding: 10px;
+  width: 100%;
+  box-shadow: 0 8px 25px rgba(255, 182, 193, 0.2); /* 柔和阴影 */
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+
+
+/* 题目文字 */
+.question-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgb(113, 113, 116);
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+/* 重新开始按钮 */
+.restart-btn {
+  display: block;
+  width: 80%;
+  margin: 30px auto;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4); /* 粉橙渐变 */
+  border-radius: 50px;
+  color: rgb(112, 44, 44);
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(255, 154, 158, 0.4);
+  border: none !important;
+  padding: 15px 0;
+}

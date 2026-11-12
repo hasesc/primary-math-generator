@@ -1,0 +1,108 @@
+<!-- pages/paper/paper.wxml -->
+<view class="paper-page">
+  <!-- 纸质试卷主卡片 -->
+  <view class="paper-sheet">
+    <!-- 试卷卷头信息 -->
+    <view class="paper-header">
+      <view class="header-main-title">{{paperTitle}}</view>
+      <view class="header-sub-title">{{paperSubtitle}}</view>
+      
+      <!-- 学生信息与考核栏 -->
+      <view class="meta-bar">
+        <text class="meta-item">姓名：_______</text>
+        <text class="meta-item">班级：_______</text>
+        <text class="meta-item">得分：_______</text>
+        <text class="meta-item">用时：___分钟</text>
+      </view>
+    </view>
+
+    <!-- 题目板块列表 -->
+    <view class="section-container" wx:for="{{sections}}" wx:key="sectionId">
+      <view class="section-header">
+        <text class="section-title-text">{{item.title}}</text>
+        <text class="section-score-hint" wx:if="{{item.scoreText}}">{{item.scoreText}}</text>
+      </view>
+
+      <!-- 口算速算题（两列网格展示） -->
+      <view class="oral-grid" wx:if="{{item.isOral}}">
+        <view class="oral-item" wx:for="{{item.problems}}" wx:for-item="p" wx:key="problemIndex">
+          <text class="p-num">{{p.problemIndex}}.</text>
+          <text class="p-expr">{{p.question}}</text>
+        </view>
+      </view>
+
+      <!-- 列竖式计算题 -->
+      <view class="vertical-list" wx:elif="{{item.isVertical}}">
+        <view class="vertical-card" wx:for="{{item.problems}}" wx:for-item="p" wx:key="problemIndex">
+          <view class="p-title-row">
+            <text class="p-num">{{p.problemIndex}}.</text>
+            <text class="p-expr">{{p.question}}</text>
+          </view>
+          <view class="vertical-workspace">
+            <text class="workspace-hint">（在此列竖式演算）</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- 普通题目流（填空、判断、选择、应用） -->
+      <view class="standard-list" wx:else>
+        <view class="problem-card" wx:for="{{item.problems}}" wx:for-item="p" wx:key="problemIndex">
+          <view class="problem-stem">
+            <text class="p-num">{{p.problemIndex}}.</text>
+            <text class="p-text">{{p.question}}</text>
+          </view>
+
+          <!-- 示意图 / 几何作图 / 钟表渲染 -->
+          <view class="diagram-wrapper" wx:if="{{p.diagramUrl}}">
+            <image class="diagram-img" src="{{p.diagramUrl}}" mode="aspectFit" />
+          </view>
+
+          <!-- 解决问题专属作答留白与横线 -->
+          <view class="solve-workspace" wx:if="{{item.isWord || p.format === 'application'}}">
+            <view class="guide-line"></view>
+            <view class="guide-line"></view>
+            <view class="guide-line"></view>
+            <view class="answer-line">答：________________________________________________。</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 参考答案与解析板块（折叠显示） -->
+    <view class="answer-sheet" wx:if="{{showAnswers}}">
+      <view class="answer-header">
+        <text class="ans-title">📝 参考答案与解析要点</text>
+        <text class="ans-badge">仅供核对</text>
+      </view>
+
+      <view class="ans-sec-group" wx:for="{{answerSections}}" wx:key="title">
+        <view class="ans-sec-title">{{item.title}}</view>
+        <view class="ans-item-list">
+          <view class="ans-item-row" wx:for="{{item.items}}" wx:for-item="ans" wx:key="index">
+            <text class="ans-num">{{ans.index}}.</text>
+            <view class="ans-content">
+              <text class="ans-val">{{ans.answer}}</text>
+              <text class="ans-ana" wx:if="{{ans.analysis}}">（点拨：{{ans.analysis}}）</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部吸底快捷工具栏 -->
+  <view class="bottom-action-bar">
+    <button class="action-btn btn-regen" bindtap="onRegenerate">
+      <text class="btn-icon">🔄</text>
+      <text>换一批题</text>
+    </button>
+    <button class="action-btn btn-answer {{showAnswers ? 'active' : ''}}" bindtap="toggleAnswers">
+      <text class="btn-icon">👁️</text>
+      <text>{{showAnswers ? '收起答案' : '核对答案'}}</text>
+    </button>
+    <button class="action-btn btn-export" bindtap="onExport">
+      <text class="btn-icon">📥</text>
+      <text>导出 / 打印</text>
+    </button>
+  </view>
+</view>

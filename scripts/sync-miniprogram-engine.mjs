@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const SRC_DIR = 'prototype';
-const DEST_DIR = 'repos/skeleton/miniprogram/engine';
+const DEST_DIR = 'miniprogram/engine';
 
 fs.mkdirSync(DEST_DIR, { recursive: true });
 

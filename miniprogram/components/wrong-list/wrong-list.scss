@@ -1,0 +1,109 @@
+/* components/wrong-list/wrong-list.wxss */
+
+
+/* 标题样式 */
+.title {
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #ff2222;
+  text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.3);
+  padding-bottom: 20rpx;
+}
+
+/* 问题列表容器 */
+.questions-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+  padding-bottom: 40rpx;
+}
+
+/* 问题卡片样式 */
+.question-card {
+  background: #d8cbcb;
+  display: flex;
+  gap: 18rpx;
+  padding: .5rem 1rem;
+  border-radius: 20rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.1);
+  border: 1rpx solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  align-items: center;
+}
+.question-content {
+  font-weight: 800;
+  color: #2c3e50;
+  flex: 0.2 0 auto;
+}
+.your-answer {
+  display: block;
+  color: #e74c3c;
+  font-weight: 500;
+  flex: 0.8 0 auto;
+}
+
+.demo-btn {
+  color: #665cf7 !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+@keyframes confetti-fall {
+  to { transform: translateY(100vh) rotate(360deg); }
+}
+@keyframes bounce{
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: 
+    cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: 
+    cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+.confetti {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  opacity: 0;
+  animation: confetti-fall 3s linear forwards;
+}
+.animate-bounce {
+  color: rgb(147 51 234 / var(--tw-text-opacity, 1));
+  font-weight: 700;
+  animation: bounce 1s infinite;
+}
+.good-job{
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 40px;
+  .good-job-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .item-icon{
+      font-size: 2.5rem;
+      line-height: 4rem;
+      border-radius: 9999px;
+    }
+    .item-c1{
+      background-color:  #29ed1f;
+    }
+    .item-c2{
+      background-color:  #facc15;
+    }
+    .item-c3{
+      background-color:  #c084fc;
+    }
+  }
+}
+

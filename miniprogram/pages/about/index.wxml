@@ -1,0 +1,35 @@
+<!-- pages/about/index.wxml -->
+<view class="about-container">
+  <view class="about-header">
+    <view class="app-icon">📐</view>
+    <view class="app-title">小学数学 · 单元同步练</view>
+    <view class="app-ver">版本 v1.0.0 · 办公实用工具</view>
+  </view>
+
+  <view class="about-card">
+    <view class="card-title">📖 产品简介与定位</view>
+    <view class="card-desc">
+      本小程序是一款专为小学家长与教师设计的数学练习排版与出题工具。支持人教版小学数学 1~6 年级上下册共 94 个单元的同步出题、口算速算与列竖式天天练，方便家长打印练习纸供孩子线下练习与自测。
+    </view>
+  </view>
+
+  <view class="about-card">
+    <view class="card-title">🛡️ 合规与纯算法声明</view>
+    <view class="card-desc">
+      1. 【纯算法实时生成】：本工具所有题目与运算均由手机本地算法实时随机运算生成，无任何题库、数据库存储，亦不抓取公立学校试卷。<br/>
+      2. 【纯本地排版工具】：本工具不提供任何在线授课、辅导课程或收费教学服务，定位为纯粹的家庭作业排版与打印辅助工具。<br/>
+      3. 【版权与开源】：遵循开源木兰宽松许可证（Mulan PSL v2）及 MIT 协议。
+    </view>
+  </view>
+
+  <view class="about-card">
+    <view class="card-title">🔒 隐私与数据安全</view>
+    <view class="card-desc">
+      本工具无需用户注册登录，不收集、不上传任何个人姓名、手机号或位置等隐私数据。所有试卷配置与练习记录均保存在您的本地手机缓存中。
+    </view>
+  </view>
+
+  <view class="about-footer">
+    <text>祝同学们学习进步，数学思维步步高！</text>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "demo-anim": "/components/demo-anim/demo-anim"
+   
+  }
+}
