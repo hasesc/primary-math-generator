@@ -54,8 +54,19 @@
   - iOS (Safari)：点击底部分享按钮 -> 选择 **“添加到主屏幕”**。
   - Android (Chrome/Edge)：点击右上角菜单 -> 选择 **“安装应用”** 或 **“添加到桌面”**。
 
-### ⚡ 一键免费部署到 Vercel (推荐)
-点击下方按钮，免费将本项目一键部署到你自己的 Vercel 账号，获得全球极速访问地址：
+### ⚡ 方式 1：一键免费部署（国内免翻，全球极速）
+
+#### 选项 A：Cloudflare Pages 部署（国内网络访问极佳，推荐 ⭐）
+1. 访问 [Cloudflare 控制台](https://dash.cloudflare.com/)，进入 **Workers & Pages** -> **Create application** -> **Pages**。
+2. 点击 **Connect to Git** 并选中本仓库 `hasesc/primary-math-generator`。
+3. 构建配置参数：
+   - **Framework preset**（框架预设）：`None`
+   - **Build command**（构建命令）：留空
+   - **Build output directory**（输出目录）：`prototype`
+4. 点击 **Save and Deploy**，30 秒即可获得专属 `*.pages.dev` 全球极速直连域名。
+
+#### 选项 B：Vercel 一键部署
+点击下方按钮，免费将本项目一键部署到你自己的 Vercel 账号：
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhasesc%2Fprimary-math-generator)
 
