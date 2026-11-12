@@ -4,7 +4,7 @@
 > 运行 `node scripts/manage.mjs` 可自动执行全套测试并刷新看板数据。
 
 ## 1. 当前版本与核心指标
-- **当前阶段**：微信小程序原生端技术移植与三大页面正式上线（`v0.9.0`）：成功将 94 单元纯算法生成引擎完整移植至 `repos/skeleton/miniprogram/engine/`，实现纯字符串级 SVG 渲染；上线微信端练习中心、试卷预览/答案与合规关于页，零服务器零维护成本；自动化防线扩充至 9 大测试套件持续 100% 满分全绿
+- **当前阶段**：全网开源升级与 GitHub 自动化部署上线（`v0.9.1`）：已正式开源并推送到官方仓库 [`hasesc/primary-math-generator`](https://github.com/hasesc/primary-math-generator)；GitHub Actions CI/CD 流水线跑通 9 大测试套件并自动部署至官方在线网站 [`https://hasesc.github.io/primary-math-generator/`](https://hasesc.github.io/primary-math-generator/)；微信小程序原生工程提升至根目录 `miniprogram/`，全端 PWA 离线应用与 Vercel 一键部署全面就绪
 - **生成入口覆盖（非完整考点验收）**：人教版 1~6 年级上下册共 **94 个单元**（93 个专属插件/模板映射 + 1 个六下《整理与复习》全科综合卷；其中 **69 个单元具备阶梯考法**、**2 个单元具备三档数值梯度**、**23 个单元为课标定界范围**，“两档待升级”保持 0 个）
 - **UI 与卷面**：双端并进——Web 原型工作台支持 A4 打印与直接导出矢量 PDF；微信小程序原生端支持移动端触控选级、卡片式练习卷预览、作业本横线留白、一键换题与文本复制导出
 - **内置模块**：

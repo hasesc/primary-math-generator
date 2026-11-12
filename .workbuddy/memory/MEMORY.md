@@ -7,8 +7,13 @@
 - **v1.0 核心卖点**：按教材版本×年级×单元×难度实时生成整卷+答案页；同时内置“口算每日一练”与“竖式每日一练”模块
 - **红线**：① 纯算法实时生成，绝不做题库/存储 ② 命名只叫“单元同步练”，绝不碰“真题/试卷/小升初/课程/讲解” ③ 名称/Logo 完全自起
 
-## 2. 最新开发状态（2026-11-12 v0.9.0）
-- **微信小程序原生端技术移植与三大页面正式上线（0 服务器 0 维护成本）**：
+## 2. 最新开发状态（2026-11-12 v0.9.1）
+- **全网开源升级与 GitHub 自动化持续部署上线（v0.9.1）**：
+  - 正式将项目开源并发布至官方 GitHub 仓库：[`https://github.com/hasesc/primary-math-generator`](https://github.com/hasesc/primary-math-generator)。
+  - 接入 GitHub Actions 自动化 CI/CD 流水线，每次推送自动执行 9 大测试套件，并通过自动化部署直接上线 GitHub Pages 官方网站：[`https://hasesc.github.io/primary-math-generator/`](https://hasesc.github.io/primary-math-generator/)。
+  - 微信小程序原生工程完整升级至根目录 `miniprogram/`，包含全部 94 单元算法引擎、纯字符串 SVG 矢量渲染、三核心页面及配置。
+  - 全端通用 Web 应用（PWA 离线支持、图标规范、Vercel 零配置一键部署、桌面一键运行）全面交付。
+- **微信小程序原生端技术移植与三大页面正式上线（0 服务器 0 维护成本，v0.9.0）**：
   - 成功将 94 个教材单元纯算法生成引擎完整移植至 `repos/skeleton/miniprogram/engine/`，实现纯字符串级高分 SVG 渲染器与 Base64 DataURL，彻底脱离浏览器 DOM 依赖。
   - 上线小程序首页练习中心（`pages/index/index`），支持“单元同步练”、“每日一练”、“单元测验卷”三大模式，涵盖 1~6 年级上下册 94 单元网格与口算/竖式天天练。
   - 上线纸质练习卷预览与导出页（`pages/paper/paper`），实现六大规范大题分栏、专属作业本横线书写留白、换题、答案解析折叠与全卷文字一键复制。
