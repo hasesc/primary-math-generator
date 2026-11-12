@@ -1,7 +1,7 @@
 // 自动生成文件（请勿手改）：由 node scripts/manage.mjs 生成
 export const PROJECT_STATUS = {
   "summary": {
-    "generatedAt": "2026/11/12 14:40:00",
+    "generatedAt": "2026/11/12 14:44:39",
     "totalUnits": 93,
     "dedicatedUnits": 92,
     "reviewUnits": 1,
@@ -10,8 +10,8 @@ export const PROJECT_STATUS = {
     "testsPassed": 7,
     "testsTotal": 7,
     "byGradient": {
-      "tiered-skills": 44,
-      "three-tier-range": 25,
+      "tiered-skills": 47,
+      "three-tier-range": 22,
       "two-tier-range": 0,
       "fixed-range": 24
     },
@@ -31,7 +31,7 @@ export const PROJECT_STATUS = {
       "name": "整卷生成冒烟测试 (6年级×3难度)",
       "file": "prototype/smoke-test.mjs",
       "passed": true,
-      "durationMs": 117,
+      "durationMs": 116,
       "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 1ms, 分布={\"application\":7,\"olympiad\":8,\"arithmetic\":15} | 结果: 18 通过 / 0 未达标"
     },
     {
@@ -39,7 +39,7 @@ export const PROJECT_STATUS = {
       "name": "93单元全量联动与756配置覆盖测试",
       "file": "prototype/coverage-test.mjs",
       "passed": true,
-      "durationMs": 184,
+      "durationMs": 186,
       "summary": "总计 93 单元：联动通过 92，无专属出题映射（含整理与复习）1，不合格 0 | 已检查 756 种难度与题量组合。至少一组配置只有一个卷面分类的单元（分类数不等于考法数）共 81 个：1上 准备课、1上 位置、1上 1~5的认识和加减法、1上 认识图形（一）、1上 6~10的认识和加减法、1上 11~20各数的认识、1上 20以内的进位加法、1下 20以内的退位减法、1下 100以内数的认识、1下 100以内的加法和减法（一）、1下 认识图形（二）、1下 100以内的加法和减法（二）、1下 找规律、2上 100以内的加法和减法（二）、2上 角的初步认识、2上 表内乘法（一）、2上 观察物体（一）、2上 表内乘法（二）、2上 数学广角——搭配（一）、2下 数据收集整理、2下 表内除法（一）、2下 图形的运动（一）、2下 表内除法（二）、2下 混合运算、2下 有余数的除法、2下 万以内数的认识、2下 数学广角——推理、3上 万以内的加法和减法（一）、3上 万以内的加法和减法（二）、3上 倍的认识、3上 多位数乘一位数、3上 长方形和正方形、3上 分数的初步认识、3下 位置与方向（一）、3下 除数是一位数的除法、3下 复式统计表、3下 两位数乘两位数、3下 面积、3下 年月日、3下 小数的初步认识、3下 数学广角——搭配（二）、4上 大数的认识、4上 角的度量、4上 三位数乘两位数、4上 平行四边形和梯形、4上 除数是两位数的除法、4上 条形统计图、4上 数学广角——优化、4下 四则运算、4下 观察物体（二）、4下 运算定律、4下 小数的意义和性质、4下 三角形、4下 小数的加法和减法、4下 图形的运动（二）、4下 平均数与条形统计图、4下 数学广角——鸡兔同笼、5上 位置、5上 可能性、5上 简易方程、5上 多边形的面积、5上 数学广角——植树问题、5下 观察物体（三）、5下 因数与倍数、5下 长方体和正方体、5下 分数的意义和性质、5下 图形的运动（三）、5下 分数的加法和减法、5下 折线统计图、5下 数学广角——找次品、6上 位置与方向（二）、6上 分数除法、6上 比、6上 圆、6上 扇形统计图、6上 数学广角——数与形、6下 负数、6下 百分数（二）、6下 圆柱与圆锥、6下 比例、6下 数学广角——鸽巢问题"
     },
     {
@@ -47,7 +47,7 @@ export const PROJECT_STATUS = {
       "name": "数学答案独立逆向复算测试 (160轮)",
       "file": "prototype/correctness-test.mjs",
       "passed": true,
-      "durationMs": 93,
+      "durationMs": 88,
       "summary": "鸡兔同笼、植树、统计图并列和小数乘法的独立复算通过"
     },
     {
@@ -55,7 +55,7 @@ export const PROJECT_STATUS = {
       "name": "口算/竖式每日一练专项测试 (123配置)",
       "file": "prototype/daily-practice-test.mjs",
       "passed": true,
-      "durationMs": 75,
+      "durationMs": 78,
       "summary": "123 种每日一练配置通过，题量、去重、答案复算和年级限制正常"
     },
     {
@@ -63,7 +63,7 @@ export const PROJECT_STATUS = {
       "name": "三档难度阶梯考法与答案测试",
       "file": "prototype/difficulty-gradient-test.mjs",
       "passed": true,
-      "durationMs": 90,
+      "durationMs": 88,
       "summary": "✅ 33 个专项插件（18 个全独立三档考法 + 15 个进阶分支插件）的难度梯度、题量和提高题答案复算全部通过！"
     },
     {
@@ -71,7 +71,7 @@ export const PROJECT_STATUS = {
       "name": "同卷考法轮转相邻不重复测试 (93单元×3档×6轮)",
       "file": "prototype/rotation-test.mjs",
       "passed": true,
-      "durationMs": 256,
+      "durationMs": 258,
       "summary": "考法轮转（相邻 subtemplateId 不重复）测试通过"
     },
     {
@@ -79,13 +79,18 @@ export const PROJECT_STATUS = {
       "name": "题面有效性、唯一解与必备考点回归测试",
       "file": "prototype/regression-test.mjs",
       "passed": true,
-      "durationMs": 117,
+      "durationMs": 118,
       "summary": "题面有效性、动物题唯一解及缺失考点回归检查通过"
     }
   ],
   "git": {
     "initialized": true,
     "commits": [
+      {
+        "hash": "88c826a",
+        "date": "2026-11-12 14:40",
+        "message": "feat: upgrade clock problems with tiered skills and multi-format templates"
+      },
       {
         "hash": "780b7b4",
         "date": "2026-11-12 14:29",
@@ -137,7 +142,7 @@ export const PROJECT_STATUS = {
         "message": "feat: 上线项目管理系统 v0.6.0（可视化看板 + 自动巡检 + Git 版本台账）"
       }
     ],
-    "dirtyFiles": 4
+    "dirtyFiles": 1
   },
   "roadmap": [
     {
@@ -204,15 +209,18 @@ export const PROJECT_STATUS = {
     {
       "version": "v0.8.3",
       "date": "2026-11-12",
-      "title": "题型薄弱单元深度体检与 25 单元重构工程规范确立",
+      "title": "题型薄弱单元深度体检与首批钟表时间单元考法重构",
       "bullets": [
+        "**首批薄弱单元考法重构（1上认识钟表 + 2上认识时间）**：",
+        "重构 [prototype/diagramProblems.js](prototype/diagramProblems.js) 中的 clockProblems，彻底解决钟表时间单元全卷单一考法问题。",
+        "**1上 认识钟表**：细分 clock-read-whole（看图读整时）、clock-parts-whole（钟面部件与大格填空）、clock-draw-whole（画时针分针作图）、clock-time-shift（前后1小时推算）、clock-choice-whole（整时三选一）、clock-approximate-time（快到/刚过几时判断）以及 clock-daily-routine（生活作息整时情境）共 7 种考法，三档梯次分布。",
+        "**2上 认识时间**：细分 time-read-5min（5分步长读写）、time-draw-5min（5分画针）、time-choice-5min（三选一）、time-read-1min（1分精准读写）、time-draw-accurate（偏角画针作图）、time-elapsed-fill（经过时间推算）以及 time-draw-future（推算未来时刻画针），三档梯度分明。",
+        "极度贫血单元由 5 个降至 3 个，阶梯考法单元总数提升至 **44 个**，全套 7 大自动化测试套件持续 100% 绿灯。",
         "**开源化与全量题型体检**：",
         "确立 GitHub 纯前端开源与技术复盘路线，增加标准开源 [README.md](README.md)。",
         "编写自动化诊断工具 [scripts/find_weak_units.mjs](scripts/find_weak_units.mjs)，对全套 93 个单元的三档考法真实生成链路进行全量扫描。",
-        "识别出 25 个处于“极度贫血（仅1~2种考法）”或“相对单薄（仅3种固定考法）”的单元（如钟表、时间、小数乘除法、长方形正方形、图形运动、植树问题、百分数二等）。",
-        "**制定 25 单元重构施工蓝图**：",
-        "产出完整工程规范文档 [WEAK_UNITS_REDESIGN_SPEC.md](WEAK_UNITS_REDESIGN_SPEC.md)，明确定义每个薄弱单元在 Easy（基础识记）、Medium（反向推算与作图）、Hard（错因辨析与生活综合）三档下的完整考法矩阵、题面情境、算理约束与数据形式。",
-        "后续代码题型重构严格以该文档为唯一基准。"
+        "产出完整工程规范文档 [WEAK_UNITS_REDESIGN_SPEC.md](WEAK_UNITS_REDESIGN_SPEC.md)，明确定义 25 个薄弱单元在 Easy/Medium/Hard 三档下的完整考法矩阵、题面情境、算理约束与数据形式。",
+        "确定“平时做单元专项练（因类制宜）、周末出单元测验卷（五大板块大题考卷）”的双轨制架构。"
       ]
     },
     {
@@ -666,16 +674,16 @@ export const PROJECT_STATUS = {
       "maxCount": 40,
       "samples": [
         {
-          "question": "6.4 × 3.3 = ______",
-          "answer": "21.12"
+          "question": "12 × 4.1 = ______",
+          "answer": "49.2"
         },
         {
-          "question": "1.2 × 7 = ______",
-          "answer": "8.4"
+          "question": "2.7 × 1.1 = ______",
+          "answer": "2.97"
         },
         {
-          "question": "1.7 × 5 = ______",
-          "answer": "8.5"
+          "question": "7 × 3.8 = ______",
+          "answer": "26.6"
         }
       ]
     },
@@ -687,16 +695,16 @@ export const PROJECT_STATUS = {
       "maxCount": 40,
       "samples": [
         {
-          "question": "57.6 ÷ 9 = ______",
-          "answer": "6.4"
+          "question": "16.8 ÷ 2.8 = ______",
+          "answer": "6"
         },
         {
-          "question": "20.8 ÷ 8 = ______",
-          "answer": "2.6"
+          "question": "1.36 ÷ 0.8 = ______",
+          "answer": "1.7"
         },
         {
-          "question": "26.7 ÷ 3 = ______",
-          "answer": "8.9"
+          "question": "10.4 ÷ 1.3 = ______",
+          "answer": "8"
         }
       ]
     }
@@ -12276,14 +12284,14 @@ export const PROJECT_STATUS = {
       "moduleKey": "unitPlugin",
       "moduleLabel": "通用单元插件 (unitPlugins)",
       "moduleFile": "prototype/unitPlugins.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
-        "easy": 2,
-        "medium": 2,
-        "hard": 2
+        "easy": 3,
+        "medium": 3,
+        "hard": 3
       },
       "hasDiagram": false,
       "byDifficulty": {
@@ -12291,7 +12299,8 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-dec-mul",
+            "dec-mul-ten-hundred",
+            "dec-mul-tenth-int",
             "unit-word"
           ],
           "formats": [
@@ -12300,17 +12309,26 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "1.1 × 9 = ______",
-              "answer": "9.9",
-              "skill": "unit-dec-mul",
+              "question": "1.2 × 100 = ______",
+              "answer": "120",
+              "skill": "dec-mul-ten-hundred",
               "format": "arithmetic",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "一支笔12.1元，买3支一共要多少元？",
-              "answer": "36.3元",
+              "question": "3.8 × 2 = ______",
+              "answer": "7.6",
+              "skill": "dec-mul-tenth-int",
+              "format": "arithmetic",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "一支笔24.7元，买3支一共要多少元？",
+              "answer": "74.1元",
               "skill": "unit-word",
               "format": "application",
               "responseKind": null,
@@ -12318,17 +12336,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "一支笔11.8元，买2支一共要多少元？",
-              "answer": "23.6元",
-              "skill": "unit-word",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "一支笔5.9元，买5支一共要多少元？",
-              "answer": "29.5元",
+              "question": "一支笔11.3元，买3支一共要多少元？",
+              "answer": "33.9元",
               "skill": "unit-word",
               "format": "application",
               "responseKind": null,
@@ -12341,7 +12350,8 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-dec-mul",
+            "dec-mul-int-tenth",
+            "dec-mul-tenth-tenth",
             "unit-word"
           ],
           "formats": [
@@ -12350,17 +12360,26 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "2.9 × 3.1 = ______",
-              "answer": "8.99",
-              "skill": "unit-dec-mul",
+              "question": "3 × 3.4 = ______",
+              "answer": "10.2",
+              "skill": "dec-mul-int-tenth",
               "format": "arithmetic",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "一支笔21.6元，买4支一共要多少元？",
-              "answer": "86.4元",
+              "question": "2.5 × 1.7 = ______",
+              "answer": "4.25",
+              "skill": "dec-mul-tenth-tenth",
+              "format": "arithmetic",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "一支笔20.9元，买3支一共要多少元？",
+              "answer": "62.7元",
               "skill": "unit-word",
               "format": "application",
               "responseKind": null,
@@ -12368,17 +12387,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "一支笔20元，买2支一共要多少元？",
-              "answer": "40元",
-              "skill": "unit-word",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "一支笔17.7元，买4支一共要多少元？",
-              "answer": "70.8元",
+              "question": "一支笔4元，买5支一共要多少元？",
+              "answer": "20元",
               "skill": "unit-word",
               "format": "application",
               "responseKind": null,
@@ -12391,7 +12401,8 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-dec-mul",
+            "dec-mul-special-quarter",
+            "dec-mul-hundredth-tenth",
             "unit-word"
           ],
           "formats": [
@@ -12400,17 +12411,26 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "3.6 × 3.3 = ______",
-              "answer": "11.88",
-              "skill": "unit-dec-mul",
+              "question": "0.25 × 8 = ______",
+              "answer": "2",
+              "skill": "dec-mul-special-quarter",
               "format": "arithmetic",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "一支笔56.8元，买2支一共要多少元？",
-              "answer": "113.6元",
+              "question": "1.87 × 2.1 = ______",
+              "answer": "3.927",
+              "skill": "dec-mul-hundredth-tenth",
+              "format": "arithmetic",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "一支笔72.4元，买5支一共要多少元？",
+              "answer": "362元",
               "skill": "unit-word",
               "format": "application",
               "responseKind": null,
@@ -12418,17 +12438,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "一支笔85.3元，买3支一共要多少元？",
-              "answer": "255.9元",
-              "skill": "unit-word",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "一支笔32.5元，买4支一共要多少元？",
-              "answer": "130元",
+              "question": "一支笔78.6元，买4支一共要多少元？",
+              "answer": "314.4元",
               "skill": "unit-word",
               "format": "application",
               "responseKind": null,
@@ -12630,14 +12641,14 @@ export const PROJECT_STATUS = {
       "moduleKey": "unitPlugin",
       "moduleLabel": "通用单元插件 (unitPlugins)",
       "moduleFile": "prototype/unitPlugins.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
-        "easy": 2,
-        "medium": 2,
-        "hard": 2
+        "easy": 3,
+        "medium": 3,
+        "hard": 3
       },
       "hasDiagram": false,
       "byDifficulty": {
@@ -12645,7 +12656,8 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "dec-div",
+            "dec-div-ten-divisor",
+            "dec-div-int-divisor",
             "unit-word"
           ],
           "formats": [
@@ -12654,17 +12666,26 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "3 ÷ 2 = ______",
-              "answer": "1.5",
-              "skill": "dec-div",
+              "question": "19 ÷ 10 = ______",
+              "answer": "1.9",
+              "skill": "dec-div-ten-divisor",
               "format": "arithmetic",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "买3本同样的笔记本共花56.4元，每本多少元？",
-              "answer": "18.8元",
+              "question": "8 ÷ 2 = ______",
+              "answer": "4",
+              "skill": "dec-div-int-divisor",
+              "format": "arithmetic",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "买4本同样的笔记本共花14.8元，每本多少元？",
+              "answer": "3.7元",
               "skill": "unit-word",
               "format": "application",
               "responseKind": null,
@@ -12672,17 +12693,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "15.6 ÷ 2 = ______",
-              "answer": "7.8",
-              "skill": "dec-div",
-              "format": "arithmetic",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "买5本同样的笔记本共花79.5元，每本多少元？",
-              "answer": "15.9元",
+              "question": "买4本同样的笔记本共花47.2元，每本多少元？",
+              "answer": "11.8元",
               "skill": "unit-word",
               "format": "application",
               "responseKind": null,
@@ -12695,7 +12707,8 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "dec-div",
+            "dec-div-two-tenth",
+            "dec-div-dec-divisor",
             "unit-word"
           ],
           "formats": [
@@ -12704,9 +12717,18 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "14.4 ÷ 2 = ______",
-              "answer": "7.2",
-              "skill": "dec-div",
+              "question": "7.2 ÷ 1.2 = ______",
+              "answer": "6",
+              "skill": "dec-div-two-tenth",
+              "format": "arithmetic",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "0.88 ÷ 0.8 = ______",
+              "answer": "1.1",
+              "skill": "dec-div-dec-divisor",
               "format": "arithmetic",
               "responseKind": null,
               "hasDiagram": false,
@@ -12717,15 +12739,6 @@ export const PROJECT_STATUS = {
               "answer": "23.5元",
               "skill": "unit-word",
               "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "10.8 ÷ 9 = ______",
-              "answer": "1.2",
-              "skill": "dec-div",
-              "format": "arithmetic",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
@@ -12745,7 +12758,8 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "dec-div",
+            "dec-div-special-quarter",
+            "dec-div-two-dec",
             "unit-word"
           ],
           "formats": [
@@ -12754,17 +12768,26 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "21.3 ÷ 3 = ______",
-              "answer": "7.1",
-              "skill": "dec-div",
+              "question": "2.5 ÷ 0.25 = ______",
+              "answer": "10",
+              "skill": "dec-div-special-quarter",
               "format": "arithmetic",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "买8本同样的笔记本共花446.4元，每本多少元？",
-              "answer": "55.8元",
+              "question": "0.352 ÷ 0.16 = ______",
+              "answer": "2.2",
+              "skill": "dec-div-two-dec",
+              "format": "arithmetic",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "买6本同样的笔记本共花418.2元，每本多少元？",
+              "answer": "69.7元",
               "skill": "unit-word",
               "format": "application",
               "responseKind": null,
@@ -12772,17 +12795,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "63 ÷ 10 = ______",
-              "answer": "6.3",
-              "skill": "dec-div",
-              "format": "arithmetic",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "买6本同样的笔记本共花335.4元，每本多少元？",
-              "answer": "55.9元",
+              "question": "买6本同样的笔记本共花446.4元，每本多少元？",
+              "answer": "74.4元",
               "skill": "unit-word",
               "format": "application",
               "responseKind": null,
@@ -14975,14 +14989,14 @@ export const PROJECT_STATUS = {
       "moduleKey": "unitPlugin",
       "moduleLabel": "通用单元插件 (unitPlugins)",
       "moduleFile": "prototype/unitPlugins.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
-        "easy": 2,
-        "medium": 2,
-        "hard": 2
+        "easy": 3,
+        "medium": 3,
+        "hard": 3
       },
       "hasDiagram": false,
       "byDifficulty": {
@@ -14990,7 +15004,8 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-frac-mul",
+            "frac-mul-int-cancel",
+            "frac-mul-int-simple",
             "unit-word"
           ],
           "formats": [
@@ -14999,25 +15014,25 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "5/6 × 5 = ______",
-              "answer": "25/6",
-              "skill": "unit-frac-mul",
+              "question": "1/12 × 12 = ______",
+              "answer": "1",
+              "skill": "frac-mul-int-cancel",
               "format": "arithmetic",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "一桶油重36千克，倒出它的5/6，还剩多少千克？",
-              "answer": "6千克",
-              "skill": "unit-word",
-              "format": "application",
+              "question": "4/6 × 5 = ______",
+              "answer": "10/3",
+              "skill": "frac-mul-int-simple",
+              "format": "arithmetic",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "一桶油重8千克，倒出它的2/4，还剩多少千克？",
+              "question": "一桶油重6千克，倒出它的1/3，还剩多少千克？",
               "answer": "4千克",
               "skill": "unit-word",
               "format": "application",
@@ -15026,8 +15041,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "一桶油重18千克，倒出它的3/6，还剩多少千克？",
-              "answer": "9千克",
+              "question": "一桶油重12千克，倒出它的1/2，还剩多少千克？",
+              "answer": "6千克",
               "skill": "unit-word",
               "format": "application",
               "responseKind": null,
@@ -15040,7 +15055,8 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-frac-mul",
+            "frac-mul-frac-cancel",
+            "frac-mul-frac-basic",
             "unit-word"
           ],
           "formats": [
@@ -15049,17 +15065,26 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "5/8 × 3/6 = ______",
-              "answer": "5/16",
-              "skill": "unit-frac-mul",
+              "question": "2/15 × 5/7 = ______",
+              "answer": "2/21",
+              "skill": "frac-mul-frac-cancel",
               "format": "arithmetic",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "一桶油重10千克，倒出它的1/5，还剩多少千克？",
-              "answer": "8千克",
+              "question": "2/5 × 3/7 = ______",
+              "answer": "6/35",
+              "skill": "frac-mul-frac-basic",
+              "format": "arithmetic",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "一桶油重10千克，倒出它的3/5，还剩多少千克？",
+              "answer": "4千克",
               "skill": "unit-word",
               "format": "application",
               "responseKind": null,
@@ -15067,17 +15092,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "一桶油重10千克，倒出它的1/2，还剩多少千克？",
+              "question": "一桶油重20千克，倒出它的3/4，还剩多少千克？",
               "answer": "5千克",
-              "skill": "unit-word",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "一根绳子长12米，用去了它的1/2，用去了多少米？",
-              "answer": "6米",
               "skill": "unit-word",
               "format": "application",
               "responseKind": null,
@@ -15090,7 +15106,8 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-frac-mul",
+            "frac-mul-cross-cancel",
+            "frac-mul-three-terms",
             "unit-word"
           ],
           "formats": [
@@ -15099,17 +15116,26 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "5/7 × 3/10 = ______",
-              "answer": "3/14",
-              "skill": "unit-frac-mul",
+              "question": "7/9 × 3/12 = ______",
+              "answer": "7/36",
+              "skill": "frac-mul-cross-cancel",
               "format": "arithmetic",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "一桶油重24千克，倒出它的3/6，还剩多少千克？",
-              "answer": "12千克",
+              "question": "1/2 × 2/3 × 3/4 = ______",
+              "answer": "1/4",
+              "skill": "frac-mul-three-terms",
+              "format": "arithmetic",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "一根绳子长20米，用去了它的2/4，用去了多少米？",
+              "answer": "10米",
               "skill": "unit-word",
               "format": "application",
               "responseKind": null,
@@ -15117,19 +15143,10 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "一桶油重50千克，倒出它的3/5，还剩多少千克？",
-              "answer": "20千克",
-              "skill": "unit-word",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "一桶油重54千克，倒出它的3/6，还剩多少千克？",
-              "answer": "27千克",
-              "skill": "unit-word",
-              "format": "application",
+              "question": "6/7 × 4/11 = ______",
+              "answer": "24/77",
+              "skill": "frac-mul-cross-cancel",
+              "format": "arithmetic",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false

@@ -4,12 +4,14 @@
 
 ---
 
-## [v0.8.3] - 2026-11-12 · 题型薄弱单元深度体检与首批钟表时间单元考法重构
-- **首批薄弱单元考法重构（1上认识钟表 + 2上认识时间）**：
-  - 重构 [`prototype/diagramProblems.js`](prototype/diagramProblems.js) 中的 `clockProblems`，彻底解决钟表时间单元全卷单一考法问题。
-  - **1上 认识钟表**：细分 `clock-read-whole`（看图读整时）、`clock-parts-whole`（钟面部件与大格填空）、`clock-draw-whole`（画时针分针作图）、`clock-time-shift`（前后1小时推算）、`clock-choice-whole`（整时三选一）、`clock-approximate-time`（快到/刚过几时判断）以及 `clock-daily-routine`（生活作息整时情境）共 7 种考法，三档梯次分布。
-  - **2上 认识时间**：细分 `time-read-5min`（5分步长读写）、`time-draw-5min`（5分画针）、`time-choice-5min`（三选一）、`time-read-1min`（1分精准读写）、`time-draw-accurate`（偏角画针作图）、`time-elapsed-fill`（经过时间推算）以及 `time-draw-future`（推算未来时刻画针），三档梯度分明。
-  - 极度贫血单元由 5 个降至 3 个，阶梯考法单元总数提升至 **44 个**，全套 7 大自动化测试套件持续 100% 绿灯。
+## [v0.8.3] - 2026-11-12 · 题型薄弱单元深度体检与极度贫血单元彻底清零
+- **极度贫血单元彻底清零 (5 -> 0)**：
+  - 重构 [`prototype/unitPlugins.js`](prototype/unitPlugins.js) 中的三大高年级核心计算插件（`decimalMulProblems`、`decimalDivProblems`、`fractionMulProblems`），全面引入三档独立考法与子模板矩阵：
+    - **5上-U1 小数乘法**：细分 `dec-mul-tenth-int`（小数乘整数）、`dec-mul-ten-hundred`（扩大10/100倍）、`dec-mul-tenth-tenth`（一位乘一位）、`dec-mul-int-tenth`（整数乘一位）、`dec-mul-hundredth-tenth`（两位乘一位）以及 `dec-mul-special-quarter`（特殊因数0.25/1.25巧算）共 6 种阶梯考法。
+    - **5上-U3 小数除法**：细分 `dec-div-int-divisor`（整数除数一位商）、`dec-div-ten-divisor`（除以10/100）、`dec-div-dec-divisor`（小数除数）、`dec-div-two-tenth`（两位除数）、`dec-div-two-dec`（两位小数除法）以及 `dec-div-special-quarter`（特殊除数0.25巧除）共 6 种阶梯考法。
+    - **6上-U1 分数乘法**：细分 `frac-mul-int-simple`（分数乘整数基础）、`frac-mul-int-cancel`（整除约分型）、`frac-mul-frac-basic`（分数乘分数）、`frac-mul-frac-cancel`（带交叉约分型）、`frac-mul-three-terms`（三项连乘链式巧算）以及 `frac-mul-cross-cancel` 共 6 种阶梯考法。
+  - 结合首批钟表与时间单元的重构，全网 93 单元中**“极度贫血（仅1~2种考法）”单元由 5 个彻底降至 0 个**！考法较丰富单元增至 **73 个**，阶梯考法单元总数提升至 **47 个**！
+  - 全套 7 大自动化测试套件持续 100% 满额通过，独立逆向数学复算无一谬误。
 - **开源化与全量题型体检**：
   - 确立 GitHub 纯前端开源与技术复盘路线，增加标准开源 [`README.md`](README.md)。
   - 编写自动化诊断工具 [`scripts/find_weak_units.mjs`](scripts/find_weak_units.mjs)，对全套 93 个单元的三档考法真实生成链路进行全量扫描。

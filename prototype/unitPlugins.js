@@ -616,19 +616,54 @@ function frac(n, d) {
 function decimalDivProblems(difficulty, count) {
   const out = [];
   const seen = new Set();
-  const divRange = { easy: [2, 5], medium: [2, 9], hard: [3, 12] }[difficulty];
+  const subIds = {
+    easy: ['dec-div-int-divisor', 'dec-div-ten-divisor'],
+    medium: ['dec-div-dec-divisor', 'dec-div-two-tenth'],
+    hard: ['dec-div-two-dec', 'dec-div-special-quarter'],
+  }[difficulty] || ['dec-div-int-divisor'];
+
   let guard = 0;
-  while (out.length < count && guard < count * 30) {
+  while (out.length < count && guard < count * 50) {
     guard++;
-    const b = ri(divRange[0], divRange[1]);
-    let q10 = ri(11, difficulty === 'hard' ? 199 : 99); // 被除数=商×除数（一位小数商）
-    while (q10 % 10 === 0) q10 = ri(11, difficulty === 'hard' ? 199 : 99);
-    const quotient = q10 / 10;
-    const dividend = Number((quotient * b).toFixed(1));
-    const q = `${dividend} ÷ ${b} = ______`;
+    const subtemplateId = subIds[guard % subIds.length];
+    let dividend, divisor, quotient;
+
+    if (subtemplateId === 'dec-div-int-divisor') {
+      divisor = ri(2, 6);
+      quotient = ri(11, 49) / 10;
+      dividend = Number((quotient * divisor).toFixed(1));
+    } else if (subtemplateId === 'dec-div-ten-divisor') {
+      divisor = pick([10, 100]);
+      dividend = ri(15, 95);
+      quotient = Number((dividend / divisor).toFixed(2));
+    } else if (subtemplateId === 'dec-div-dec-divisor') {
+      divisor = pick([0.2, 0.4, 0.5, 0.8]);
+      quotient = ri(11, 49) / 10;
+      dividend = Number((quotient * divisor).toFixed(2));
+    } else if (subtemplateId === 'dec-div-two-tenth') {
+      divisor = ri(11, 29) / 10;
+      quotient = ri(2, 8);
+      dividend = Number((quotient * divisor).toFixed(1));
+    } else if (subtemplateId === 'dec-div-two-dec') {
+      divisor = pick([0.15, 0.25, 0.12, 0.16]);
+      quotient = ri(12, 48) / 10;
+      dividend = Number((quotient * divisor).toFixed(3));
+    } else {
+      divisor = pick([0.25, 0.5, 1.25]);
+      quotient = ri(4, 24);
+      dividend = Number((quotient * divisor).toFixed(2));
+    }
+
+    const q = `${dividend} ÷ ${divisor} = ______`;
     if (seen.has(q)) continue;
     seen.add(q);
-    out.push({ question: q, answer: String(quotient), subtype: 'unit-dec-div', subtemplateId: 'dec-div' });
+    out.push({
+      question: q,
+      answer: String(quotient),
+      subtype: 'unit-dec-div',
+      subtemplateId,
+      band: difficulty,
+    });
   }
   return out;
 }
@@ -636,26 +671,64 @@ function decimalDivProblems(difficulty, count) {
 function fractionMulProblems(difficulty, count) {
   const out = [];
   const seen = new Set();
+  const subIds = {
+    easy: ['frac-mul-int-simple', 'frac-mul-int-cancel'],
+    medium: ['frac-mul-frac-basic', 'frac-mul-frac-cancel'],
+    hard: ['frac-mul-three-terms', 'frac-mul-cross-cancel'],
+  }[difficulty] || ['frac-mul-int-simple'];
+
   let guard = 0;
-  while (out.length < count && guard < count * 30) {
+  while (out.length < count && guard < count * 50) {
     guard++;
-    const an = ri(1, 5), ad = ri(an + 1, 9);
-    const useInt = difficulty === 'easy' ? true : difficulty === 'hard' ? false : ri(0, 1) === 0;
-    let q, ans, subId;
-    if (useInt) {
-      const k = ri(2, difficulty === 'easy' ? 6 : 12);
+    const subtemplateId = subIds[guard % subIds.length];
+    let q, ans;
+
+    if (subtemplateId === 'frac-mul-int-simple') {
+      const an = ri(1, 4), ad = ri(an + 2, 9);
+      const k = ri(2, 5);
       q = `${an}/${ad} × ${k} = ______`;
       ans = frac(an * k, ad);
-      subId = 'frac-mul-int';
-    } else {
-      const bn = ri(1, difficulty === 'hard' ? 7 : 5), bd = ri(bn + 1, difficulty === 'hard' ? 12 : 9);
+    } else if (subtemplateId === 'frac-mul-int-cancel') {
+      const ad = pick([4, 6, 8, 9, 10, 12]);
+      const an = ri(1, ad - 1);
+      const k = ad;
+      q = `${an}/${ad} × ${k} = ______`;
+      ans = String(an);
+    } else if (subtemplateId === 'frac-mul-frac-basic') {
+      const an = ri(1, 4), ad = ri(an + 1, 6);
+      const bn = ri(1, 4), bd = ri(bn + 1, 7);
       q = `${an}/${ad} × ${bn}/${bd} = ______`;
       ans = frac(an * bn, ad * bd);
-      subId = difficulty === 'hard' ? 'frac-mul-frac-hard' : 'frac-mul-frac';
+    } else if (subtemplateId === 'frac-mul-frac-cancel') {
+      const common = ri(2, 5);
+      const an = ri(1, 3);
+      const ad = common * ri(2, 4);
+      const bn = common;
+      const bd = ri(5, 9);
+      q = `${an}/${ad} × ${bn}/${bd} = ______`;
+      ans = frac(an * bn, ad * bd);
+    } else if (subtemplateId === 'frac-mul-three-terms') {
+      const an = 1, ad = 2;
+      const bn = 2, bd = 3;
+      const cn = 3, cd = 4;
+      q = `${an}/${ad} × ${bn}/${bd} × ${cn}/${cd} = ______`;
+      ans = '1/4';
+    } else {
+      const an = ri(3, 7), ad = ri(an + 1, 12);
+      const bn = ri(2, 6), bd = ri(bn + 1, 15);
+      q = `${an}/${ad} × ${bn}/${bd} = ______`;
+      ans = frac(an * bn, ad * bd);
     }
+
     if (seen.has(q)) continue;
     seen.add(q);
-    out.push({ question: q, answer: ans, subtype: 'unit-frac-mul' });
+    out.push({
+      question: q,
+      answer: ans,
+      subtype: 'unit-frac-mul',
+      subtemplateId,
+      band: difficulty,
+    });
   }
   return out;
 }
@@ -723,21 +796,59 @@ function unitAreaProblems(difficulty, count) {
 function decimalMulProblems(difficulty, count) {
   const out = [];
   const seen = new Set();
+  const subIds = {
+    easy: ['dec-mul-tenth-int', 'dec-mul-ten-hundred'],
+    medium: ['dec-mul-tenth-tenth', 'dec-mul-int-tenth'],
+    hard: ['dec-mul-hundredth-tenth', 'dec-mul-special-quarter'],
+  }[difficulty] || ['dec-mul-tenth-int'];
+
   let guard = 0;
-  while (out.length < count && guard < count * 30) {
+  while (out.length < count && guard < count * 50) {
     guard++;
-    const maxTenth = difficulty === 'easy' ? 39 : difficulty === 'medium' ? 69 : 99;
-    const tenths = ri(11, maxTenth);
-    if (tenths % 10 === 0) continue;
-    const a = tenths / 10;
-    const useInt = difficulty === 'easy' ? true : difficulty === 'hard' ? false : ri(0, 1) === 0;
-    const b = useInt ? ri(2, 9) : ri(11, 49) / 10;
-    if (!useInt && Math.round(b * 10) % 10 === 0) continue;
-    const ans = Number((a * b).toFixed(2));
+    const subtemplateId = subIds[guard % subIds.length];
+    let a, b;
+
+    if (subtemplateId === 'dec-mul-tenth-int') {
+      const tenths = ri(11, 49);
+      a = tenths % 10 === 0 ? (tenths + 1) / 10 : tenths / 10;
+      b = ri(2, 9);
+    } else if (subtemplateId === 'dec-mul-ten-hundred') {
+      a = ri(11, 89) / 10;
+      b = pick([10, 100]);
+    } else if (subtemplateId === 'dec-mul-tenth-tenth') {
+      const t1 = ri(11, 39);
+      const t2 = ri(11, 29);
+      a = t1 % 10 === 0 ? (t1 + 1) / 10 : t1 / 10;
+      b = t2 % 10 === 0 ? (t2 + 1) / 10 : t2 / 10;
+    } else if (subtemplateId === 'dec-mul-int-tenth') {
+      a = ri(3, 12);
+      const t = ri(11, 49);
+      b = t % 10 === 0 ? (t + 1) / 10 : t / 10;
+    } else if (subtemplateId === 'dec-mul-hundredth-tenth') {
+      a = Number((ri(105, 395) / 100).toFixed(2));
+      const t = ri(11, 29);
+      b = t % 10 === 0 ? (t + 1) / 10 : t / 10;
+    } else {
+      a = pick([0.25, 0.5, 1.25, 2.5]);
+      b = pick([4, 8, 12, 16, 24, 32]);
+    }
+
+    // 确保满足 correctness-test.mjs 的断言：!Number.isInteger(a) || !Number.isInteger(b)
+    if (Number.isInteger(a) && Number.isInteger(b)) {
+      a = a + 0.5;
+    }
+
+    const ans = Number((a * b).toFixed(3));
     const q = `${a} × ${b} = ______`;
     if (seen.has(q)) continue;
     seen.add(q);
-    out.push({ question: q, answer: String(ans), subtype: 'unit-dec-mul' });
+    out.push({
+      question: q,
+      answer: String(ans),
+      subtype: 'unit-dec-mul',
+      subtemplateId,
+      band: difficulty,
+    });
   }
   return out;
 }
