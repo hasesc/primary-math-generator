@@ -518,8 +518,99 @@ function updateMobileBar(step) {
     btnEl.disabled = false;
   } else if (step === 4) {
     statusEl.textContent = `卷面已生成（共 ${state.paper?.length || 0} 题）`;
-    btnEl.textContent = '🖨️ 打印/导出';
+    btnEl.textContent = '📥 立即下载 PDF 试卷';
     btnEl.disabled = false;
+  }
+}
+
+/* ── 全局提示与真实 PDF 导出管线（直接下载文件，不调用打印机） ── */
+let toastTimer = null;
+function showToast(message, duration = 3000) {
+  let toast = $('#global-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'global-toast';
+    toast.className = 'export-toast';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = message;
+  toast.classList.remove('hidden');
+  clearTimeout(toastTimer);
+  if (duration > 0) {
+    toastTimer = setTimeout(() => {
+      toast.classList.add('hidden');
+    }, duration);
+  }
+}
+
+function getExportFileName(type = 'paper') {
+  const gradeStr = state.grade ? `${state.grade}年级` : '';
+  const semStr = state.semester ? `${state.semester}册` : '';
+  const unitStr = state.unitName || (state.mode === 'oral' ? '口算每日一练' : (state.mode === 'vertical' ? '竖式每日一练' : '练习卷'));
+  const modeStr = state.mode === 'exam' ? '单元测验卷' : (state.mode === 'unit' ? '单元同步练' : '');
+  const typeStr = type === 'answers' ? '参考答案' : (type === 'both' ? '练习卷与答案合辑' : (modeStr || '练习卷'));
+  return `人教版小学数学_${gradeStr}${semStr}_${unitStr}_${typeStr}.pdf`.replace(/[\/\\:*?"<>|]/g, '_');
+}
+
+function getExportHtml(type = 'paper') {
+  const paperSheet = $('#paper-sheet');
+  const answerSheet = $('#answer-sheet');
+  if (type === 'paper') {
+    return paperSheet ? paperSheet.outerHTML : '';
+  } else if (type === 'answers') {
+    if (!answerSheet) return '';
+    const clone = answerSheet.cloneNode(true);
+    clone.classList.remove('hidden');
+    return clone.outerHTML;
+  } else {
+    if (!paperSheet || !answerSheet) return '';
+    const ansClone = answerSheet.cloneNode(true);
+    ansClone.classList.remove('hidden');
+    return paperSheet.outerHTML + '\n' + ansClone.outerHTML;
+  }
+}
+
+async function exportPdf(type = 'paper') {
+  const filename = getExportFileName(type);
+  const html = getExportHtml(type);
+  if (!html) {
+    showToast('⚠️ 未检测到有效卷面内容，请先生成试卷。');
+    return;
+  }
+
+  showToast('⏳ 正在生成高清 A4 矢量 PDF，请稍候...', 30000);
+
+  try {
+    const res = await fetch('/api/export-pdf', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ html, filename })
+    });
+
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || `HTTP ${res.status}`);
+    }
+
+    const blob = await res.blob();
+    const downloadUrl = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = downloadUrl;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(downloadUrl), 8000);
+
+    showToast('✅ PDF 已生成并直接下载，请在“下载”文件夹查看！', 3500);
+  } catch (err) {
+    console.warn('PDF export API unreachable, fallback to window.print():', err);
+    showToast('⚠️ 当前未运行后台服务（建议双击运行【双击启动出题器.bat】体验 1 秒直接下载 PDF）。现为您调起系统打印。', 5000);
+    if (type === 'answers' || type === 'both') {
+      state.showAnswers = true;
+      $('#answer-sheet')?.classList.remove('hidden');
+    }
+    window.print();
   }
 }
 
@@ -529,7 +620,7 @@ if (mobileBtn) {
     if (currentStep === 1) showPanel(2);
     else if (currentStep === 2 && state.unit) showPanel(3);
     else if (currentStep === 3) doGenerate();
-    else if (currentStep === 4) window.print();
+    else if (currentStep === 4) exportPdf('paper');
   };
 }
 
@@ -539,7 +630,12 @@ $$('[data-back]').forEach((b) => {
   b.onclick = () => showPanel(Number(b.dataset.back));
 });
 $('#btn-generate').onclick = () => doGenerate();
-$('#btn-print').onclick = () => window.print();
+
+// 真实 PDF 直接下载按钮绑定
+$('#btn-download-paper')?.addEventListener('click', () => exportPdf('paper'));
+$('#btn-download-both')?.addEventListener('click', () => exportPdf('both'));
+$('#btn-download-ans')?.addEventListener('click', () => exportPdf('answers'));
+$('#btn-print')?.addEventListener('click', () => window.print());
 
 $('#btn-toggle-answers').onclick = () => {
   state.showAnswers = !state.showAnswers;

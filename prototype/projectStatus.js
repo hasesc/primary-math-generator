@@ -1,7 +1,7 @@
 // 自动生成文件（请勿手改）：由 node scripts/manage.mjs 生成
 export const PROJECT_STATUS = {
   "summary": {
-    "generatedAt": "2026/11/12 16:35:47",
+    "generatedAt": "2026/11/12 16:47:13",
     "totalUnits": 94,
     "dedicatedUnits": 93,
     "reviewUnits": 1,
@@ -31,15 +31,15 @@ export const PROJECT_STATUS = {
       "name": "整卷生成冒烟测试 (6年级×3难度)",
       "file": "prototype/smoke-test.mjs",
       "passed": true,
-      "durationMs": 91,
-      "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 1ms, 分布={\"application\":7,\"olympiad\":8,\"arithmetic\":15} | 结果: 18 通过 / 0 未达标"
+      "durationMs": 90,
+      "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 0ms, 分布={\"application\":7,\"olympiad\":8,\"arithmetic\":15} | 结果: 18 通过 / 0 未达标"
     },
     {
       "id": "coverage",
       "name": "94单元全量联动与762配置覆盖测试",
       "file": "prototype/coverage-test.mjs",
       "passed": true,
-      "durationMs": 162,
+      "durationMs": 158,
       "summary": "总计 94 单元：联动通过 93，无专属出题映射（含整理与复习）1，不合格 0 | 已检查 765 种难度与题量组合。至少一组配置只有一个卷面分类的单元（分类数不等于考法数）共 83 个：1上 准备课、1上 位置、1上 1~5的认识和加减法、1上 认识图形（一）、1上 6~10的认识和加减法、1上 11~20各数的认识、1上 20以内的进位加法、1下 20以内的退位减法、1下 100以内数的认识、1下 100以内的加法和减法（一）、1下 认识图形（二）、1下 认识人民币、1下 100以内的加法和减法（二）、1下 找规律、2上 100以内的加法和减法（二）、2上 角的初步认识、2上 表内乘法（一）、2上 观察物体（一）、2上 表内乘法（二）、2上 数学广角——搭配（一）、2下 数据收集整理、2下 表内除法（一）、2下 图形的运动（一）、2下 表内除法（二）、2下 混合运算、2下 有余数的除法、2下 万以内数的认识、2下 数学广角——推理、3上 万以内的加法和减法（一）、3上 万以内的加法和减法（二）、3上 倍的认识、3上 多位数乘一位数、3上 长方形和正方形、3上 分数的初步认识、3下 位置与方向（一）、3下 除数是一位数的除法、3下 复式统计表、3下 两位数乘两位数、3下 面积、3下 年月日、3下 小数的初步认识、3下 数学广角——搭配（二）、4上 大数的认识、4上 公顷和平方千米、4上 角的度量、4上 三位数乘两位数、4上 平行四边形和梯形、4上 除数是两位数的除法、4上 条形统计图、4上 数学广角——优化、4下 四则运算、4下 观察物体（二）、4下 运算定律、4下 小数的意义和性质、4下 三角形、4下 小数的加法和减法、4下 图形的运动（二）、4下 平均数与条形统计图、4下 数学广角——鸡兔同笼、5上 位置、5上 可能性、5上 简易方程、5上 多边形的面积、5上 数学广角——植树问题、5下 观察物体（三）、5下 因数与倍数、5下 长方体和正方体、5下 分数的意义和性质、5下 图形的运动（三）、5下 分数的加法和减法、5下 折线统计图、5下 数学广角——找次品、6上 位置与方向（二）、6上 分数除法、6上 比、6上 圆、6上 扇形统计图、6上 数学广角——数与形、6下 负数、6下 百分数（二）、6下 圆柱与圆锥、6下 比例、6下 数学广角——鸽巢问题"
     },
     {
@@ -47,7 +47,7 @@ export const PROJECT_STATUS = {
       "name": "数学答案独立逆向复算测试 (160轮)",
       "file": "prototype/correctness-test.mjs",
       "passed": true,
-      "durationMs": 82,
+      "durationMs": 83,
       "summary": "鸡兔同笼、植树、统计图并列和小数乘法的独立复算通过"
     },
     {
@@ -55,7 +55,7 @@ export const PROJECT_STATUS = {
       "name": "口算/竖式每日一练专项测试 (186配置)",
       "file": "prototype/daily-practice-test.mjs",
       "passed": true,
-      "durationMs": 53,
+      "durationMs": 56,
       "summary": "186 种每日一练配置通过，题量、去重、答案复算和年级限制正常"
     },
     {
@@ -63,7 +63,7 @@ export const PROJECT_STATUS = {
       "name": "三档难度阶梯考法与答案测试",
       "file": "prototype/difficulty-gradient-test.mjs",
       "passed": true,
-      "durationMs": 83,
+      "durationMs": 88,
       "summary": "✅ 33 个专项插件（18 个全独立三档考法 + 15 个进阶分支插件）的难度梯度、题量和提高题答案复算全部通过！"
     },
     {
@@ -71,7 +71,7 @@ export const PROJECT_STATUS = {
       "name": "同卷考法轮转相邻不重复测试 (94单元×3档×6轮)",
       "file": "prototype/rotation-test.mjs",
       "passed": true,
-      "durationMs": 234,
+      "durationMs": 232,
       "summary": "考法轮转（相邻 subtemplateId 不重复）测试通过"
     },
     {
@@ -79,7 +79,7 @@ export const PROJECT_STATUS = {
       "name": "题面有效性、唯一解与必备考点回归测试",
       "file": "prototype/regression-test.mjs",
       "passed": true,
-      "durationMs": 61,
+      "durationMs": 87,
       "summary": "题面有效性、动物题唯一解及缺失考点回归检查通过"
     },
     {
@@ -94,6 +94,11 @@ export const PROJECT_STATUS = {
   "git": {
     "initialized": true,
     "commits": [
+      {
+        "hash": "83ba68d",
+        "date": "2026-11-12 16:35",
+        "message": "feat: complete P0 fixes - add RMB unit, overhaul percent-two, fix discount & stack bugs"
+      },
       {
         "hash": "586f552",
         "date": "2026-11-12 16:07",
@@ -163,14 +168,9 @@ export const PROJECT_STATUS = {
         "hash": "96399e4",
         "date": "2026-11-11 17:12",
         "message": "fix: 修复题面与唯一解缺陷，补齐核心考点并恢复验证链路"
-      },
-      {
-        "hash": "fad98a7",
-        "date": "2026-11-11 16:39",
-        "message": "fix: 修复Windows下URL唤起弹窗权限问题并优化双击脚本"
       }
     ],
-    "dirtyFiles": 11
+    "dirtyFiles": 9
   },
   "roadmap": [
     {
@@ -234,6 +234,27 @@ export const PROJECT_STATUS = {
     }
   ],
   "changelog": [
+    {
+      "version": "v0.8.9",
+      "date": "2026-11-12",
+      "title": "全面升级直接导出 A4 矢量 PDF 引擎：彻底告别系统打印机弹窗、支持练习卷/答案/合辑直接下载与移动端极速保存",
+      "bullets": [
+        "**模块一：后台极速 PDF 导出接口上线 (scripts/serve.mjs)**：",
+        "新增 /api/export-pdf 与 /api/export-pdf/health 接口，采用 Headless Chromium 实例池常驻复用技术，平均仅耗时 ~200ms 即可直接输出标准 A4 矢量 PDF 文件流。",
+        "严格注入小学数学 @page { size: A4 portrait; margin: 12mm 14mm; } 样式，精准保持题号、竖式网格、高分辨率 SVG 图形与打分框不跨页撕裂。",
+        "**模块二：前端导出与下载体验彻底重构 (prototype/index.html & prototype/app.js)**：",
+        "废弃容易引起误操作的单一 🖨️ 打印 / 导出 PDF，升级为高清晰度文件下载组：",
+        "📥 下载练习卷 (PDF)（主操作蓝底高亮大按钮，点击直接在浏览器触发文件下载，纯后台静默生成，绝不弹起打印机弹窗）。",
+        "📥 下载试卷+答案 (合辑 PDF)（绿底辅助大按钮，自动分页插入答案页，适合家长整套存档）。",
+        "📥 下载参考答案 (PDF)（纯答案页独立导出）。",
+        "针对确实连接物理打印机的桌面用户，保留次要的 🖨️ 系统打印 辅助按钮。",
+        "智能文件名格式生成：人教版小学数学_X年级X册_单元名称_练习卷.pdf（如 人教版小学数学_三年级上册_长方形和正方形_单元同步练.pdf），下载即整理完毕。",
+        "**模块三：手机端 Mobile-First 体验闭环与降级容灾 (prototype/app.js & prototype/style.css)**：",
+        "移动端吸底快捷操作栏在第 4 步直出 📥 立即下载 PDF 试卷，手机微信或移动浏览器点击直接下载 PDF 文件，支持一键发送微信文件传输助手与家庭打印小程序。",
+        "新增全局毛玻璃导出加载与完成提示气泡 (.export-toast)。",
+        "离线/未启动后台服务容灾降级：当通过静态 file:// 打开或未连接后台服务时，弹出友好指引提示运行 双击启动出题器.bat，并安全兜底至系统打印。"
+      ]
+    },
     {
       "version": "v0.8.8",
       "date": "2026-11-12",

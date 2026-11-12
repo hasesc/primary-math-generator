@@ -634,6 +634,20 @@ body {
   border-color: var(--muted-light);
 }
 
+.btn.success {
+  background: #16a34a;
+  color: #fff;
+  border-color: #16a34a;
+  box-shadow: 0 2px 10px rgba(22, 163, 74, 0.3);
+}
+
+.btn.success:hover:not(:disabled) {
+  background: #15803d;
+  border-color: #15803d;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.4);
+}
+
 .btn.ghost {
   background: transparent;
   color: var(--muted);
@@ -643,6 +657,11 @@ body {
 .btn.ghost:hover {
   color: var(--ink);
   background: var(--line-light);
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 13px;
 }
 
 .hint {
@@ -1195,5 +1214,40 @@ body {
 
   .ans-diagrams .question-diagram {
     max-width: 210px;
+  }
+}
+
+/* ── 全局直接导出 PDF 提示气泡 ── */
+.export-toast {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #ffffff;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.35), 0 8px 12px -6px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  animation: toastFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes toastFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
   }
 }

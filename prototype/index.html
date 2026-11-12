@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>小学数学 · 单元同步练习生成器</title>
-<link rel="stylesheet" href="style.css?v=20261112f">
+<link rel="stylesheet" href="style.css?v=20261112g">
 </head>
 <body>
 
@@ -201,11 +201,14 @@
   <!-- 悬浮操作栏 -->
   <div class="paper-workbench-bar no-print">
     <div class="workbench-left">
-      <button class="btn primary" id="btn-print">🖨️ 打印 / 导出 PDF</button>
-      <button class="btn secondary" id="btn-toggle-answers">👁️ 显示答案页</button>
+      <button class="btn primary" id="btn-download-paper" title="生成并下载练习卷 A4 PDF 文件（无需调用打印机）">📥 下载练习卷 (PDF)</button>
+      <button class="btn success" id="btn-download-both" title="生成并下载练习卷与参考答案合辑 A4 PDF 文件">📥 下载试卷+答案 (合辑 PDF)</button>
+      <button class="btn secondary" id="btn-download-ans" title="生成并下载参考答案 A4 PDF 文件">📥 下载参考答案 (PDF)</button>
+      <button class="btn secondary" id="btn-toggle-answers">👁️ 预览答案页</button>
       <button class="btn secondary" id="btn-regenerate">🔄 换一套新题</button>
     </div>
     <div class="workbench-right">
+      <button class="btn ghost btn-sm" id="btn-print" title="若电脑已连接物理打印机，可调用系统打印">🖨️ 系统打印</button>
       <button class="btn ghost" id="btn-back-config">⚙️ 调整配置</button>
     </div>
   </div>
@@ -247,7 +250,10 @@
   <button type="button" class="btn primary btn-mobile-next" id="btn-mobile-next" disabled>选单元 →</button>
 </div>
 
-<script type="module" src="app.js?v=20261112f"></script>
+<!-- 全局极速导出提示气泡 -->
+<div class="export-toast hidden" id="global-toast"></div>
+
+<script type="module" src="app.js?v=20261112g"></script>
 <script>
   setTimeout(function() {
     if (!window.__APP_INITIALIZED__) {
