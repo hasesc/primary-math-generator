@@ -1,0 +1,22 @@
+{
+  "name": "小学数学 · 单元同步练习生成器",
+  "short_name": "数学出题器",
+  "description": "人教版 1~6 年级小学数学单元同步练习卷与口算竖式实时生成器",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
