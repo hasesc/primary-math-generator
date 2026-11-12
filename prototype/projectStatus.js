@@ -1,27 +1,27 @@
 // 自动生成文件（请勿手改）：由 node scripts/manage.mjs 生成
 export const PROJECT_STATUS = {
   "summary": {
-    "generatedAt": "2026/11/12 16:07:37",
-    "totalUnits": 93,
-    "dedicatedUnits": 92,
+    "generatedAt": "2026/11/12 16:35:47",
+    "totalUnits": 94,
+    "dedicatedUnits": 93,
     "reviewUnits": 1,
     "diagramUnits": 31,
     "dailyCount": 24,
     "testsPassed": 8,
     "testsTotal": 8,
     "byGradient": {
-      "tiered-skills": 67,
+      "tiered-skills": 69,
       "three-tier-range": 2,
       "two-tier-range": 0,
-      "fixed-range": 24
+      "fixed-range": 23
     },
     "byModule": {
       "scope": 41,
       "geometry": 17,
       "grid": 6,
       "diagram": 8,
-      "unitPlugin": 16,
-      "engineTopic": 4,
+      "unitPlugin": 18,
+      "engineTopic": 3,
       "review": 1
     }
   },
@@ -31,23 +31,23 @@ export const PROJECT_STATUS = {
       "name": "整卷生成冒烟测试 (6年级×3难度)",
       "file": "prototype/smoke-test.mjs",
       "passed": true,
-      "durationMs": 124,
+      "durationMs": 91,
       "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 1ms, 分布={\"application\":7,\"olympiad\":8,\"arithmetic\":15} | 结果: 18 通过 / 0 未达标"
     },
     {
       "id": "coverage",
-      "name": "93单元全量联动与756配置覆盖测试",
+      "name": "94单元全量联动与762配置覆盖测试",
       "file": "prototype/coverage-test.mjs",
       "passed": true,
-      "durationMs": 189,
-      "summary": "总计 93 单元：联动通过 92，无专属出题映射（含整理与复习）1，不合格 0 | 已检查 756 种难度与题量组合。至少一组配置只有一个卷面分类的单元（分类数不等于考法数）共 82 个：1上 准备课、1上 位置、1上 1~5的认识和加减法、1上 认识图形（一）、1上 6~10的认识和加减法、1上 11~20各数的认识、1上 20以内的进位加法、1下 20以内的退位减法、1下 100以内数的认识、1下 100以内的加法和减法（一）、1下 认识图形（二）、1下 100以内的加法和减法（二）、1下 找规律、2上 100以内的加法和减法（二）、2上 角的初步认识、2上 表内乘法（一）、2上 观察物体（一）、2上 表内乘法（二）、2上 数学广角——搭配（一）、2下 数据收集整理、2下 表内除法（一）、2下 图形的运动（一）、2下 表内除法（二）、2下 混合运算、2下 有余数的除法、2下 万以内数的认识、2下 数学广角——推理、3上 万以内的加法和减法（一）、3上 万以内的加法和减法（二）、3上 倍的认识、3上 多位数乘一位数、3上 长方形和正方形、3上 分数的初步认识、3下 位置与方向（一）、3下 除数是一位数的除法、3下 复式统计表、3下 两位数乘两位数、3下 面积、3下 年月日、3下 小数的初步认识、3下 数学广角——搭配（二）、4上 大数的认识、4上 公顷和平方千米、4上 角的度量、4上 三位数乘两位数、4上 平行四边形和梯形、4上 除数是两位数的除法、4上 条形统计图、4上 数学广角——优化、4下 四则运算、4下 观察物体（二）、4下 运算定律、4下 小数的意义和性质、4下 三角形、4下 小数的加法和减法、4下 图形的运动（二）、4下 平均数与条形统计图、4下 数学广角——鸡兔同笼、5上 位置、5上 可能性、5上 简易方程、5上 多边形的面积、5上 数学广角——植树问题、5下 观察物体（三）、5下 因数与倍数、5下 长方体和正方体、5下 分数的意义和性质、5下 图形的运动（三）、5下 分数的加法和减法、5下 折线统计图、5下 数学广角——找次品、6上 位置与方向（二）、6上 分数除法、6上 比、6上 圆、6上 扇形统计图、6上 数学广角——数与形、6下 负数、6下 百分数（二）、6下 圆柱与圆锥、6下 比例、6下 数学广角——鸽巢问题"
+      "durationMs": 162,
+      "summary": "总计 94 单元：联动通过 93，无专属出题映射（含整理与复习）1，不合格 0 | 已检查 765 种难度与题量组合。至少一组配置只有一个卷面分类的单元（分类数不等于考法数）共 83 个：1上 准备课、1上 位置、1上 1~5的认识和加减法、1上 认识图形（一）、1上 6~10的认识和加减法、1上 11~20各数的认识、1上 20以内的进位加法、1下 20以内的退位减法、1下 100以内数的认识、1下 100以内的加法和减法（一）、1下 认识图形（二）、1下 认识人民币、1下 100以内的加法和减法（二）、1下 找规律、2上 100以内的加法和减法（二）、2上 角的初步认识、2上 表内乘法（一）、2上 观察物体（一）、2上 表内乘法（二）、2上 数学广角——搭配（一）、2下 数据收集整理、2下 表内除法（一）、2下 图形的运动（一）、2下 表内除法（二）、2下 混合运算、2下 有余数的除法、2下 万以内数的认识、2下 数学广角——推理、3上 万以内的加法和减法（一）、3上 万以内的加法和减法（二）、3上 倍的认识、3上 多位数乘一位数、3上 长方形和正方形、3上 分数的初步认识、3下 位置与方向（一）、3下 除数是一位数的除法、3下 复式统计表、3下 两位数乘两位数、3下 面积、3下 年月日、3下 小数的初步认识、3下 数学广角——搭配（二）、4上 大数的认识、4上 公顷和平方千米、4上 角的度量、4上 三位数乘两位数、4上 平行四边形和梯形、4上 除数是两位数的除法、4上 条形统计图、4上 数学广角——优化、4下 四则运算、4下 观察物体（二）、4下 运算定律、4下 小数的意义和性质、4下 三角形、4下 小数的加法和减法、4下 图形的运动（二）、4下 平均数与条形统计图、4下 数学广角——鸡兔同笼、5上 位置、5上 可能性、5上 简易方程、5上 多边形的面积、5上 数学广角——植树问题、5下 观察物体（三）、5下 因数与倍数、5下 长方体和正方体、5下 分数的意义和性质、5下 图形的运动（三）、5下 分数的加法和减法、5下 折线统计图、5下 数学广角——找次品、6上 位置与方向（二）、6上 分数除法、6上 比、6上 圆、6上 扇形统计图、6上 数学广角——数与形、6下 负数、6下 百分数（二）、6下 圆柱与圆锥、6下 比例、6下 数学广角——鸽巢问题"
     },
     {
       "id": "correctness",
       "name": "数学答案独立逆向复算测试 (160轮)",
       "file": "prototype/correctness-test.mjs",
       "passed": true,
-      "durationMs": 87,
+      "durationMs": 82,
       "summary": "鸡兔同笼、植树、统计图并列和小数乘法的独立复算通过"
     },
     {
@@ -55,7 +55,7 @@ export const PROJECT_STATUS = {
       "name": "口算/竖式每日一练专项测试 (186配置)",
       "file": "prototype/daily-practice-test.mjs",
       "passed": true,
-      "durationMs": 71,
+      "durationMs": 53,
       "summary": "186 种每日一练配置通过，题量、去重、答案复算和年级限制正常"
     },
     {
@@ -63,15 +63,15 @@ export const PROJECT_STATUS = {
       "name": "三档难度阶梯考法与答案测试",
       "file": "prototype/difficulty-gradient-test.mjs",
       "passed": true,
-      "durationMs": 89,
+      "durationMs": 83,
       "summary": "✅ 33 个专项插件（18 个全独立三档考法 + 15 个进阶分支插件）的难度梯度、题量和提高题答案复算全部通过！"
     },
     {
       "id": "rotation",
-      "name": "同卷考法轮转相邻不重复测试 (93单元×3档×6轮)",
+      "name": "同卷考法轮转相邻不重复测试 (94单元×3档×6轮)",
       "file": "prototype/rotation-test.mjs",
       "passed": true,
-      "durationMs": 261,
+      "durationMs": 234,
       "summary": "考法轮转（相邻 subtemplateId 不重复）测试通过"
     },
     {
@@ -79,7 +79,7 @@ export const PROJECT_STATUS = {
       "name": "题面有效性、唯一解与必备考点回归测试",
       "file": "prototype/regression-test.mjs",
       "passed": true,
-      "durationMs": 77,
+      "durationMs": 61,
       "summary": "题面有效性、动物题唯一解及缺失考点回归检查通过"
     },
     {
@@ -87,13 +87,18 @@ export const PROJECT_STATUS = {
       "name": "100分制单元测验卷全链路测试 (6年级×3难度)",
       "file": "prototype/exam-paper-test.mjs",
       "passed": true,
-      "durationMs": 114,
+      "durationMs": 88,
       "summary": "✅ 100分制单元测验卷验证通过: 18/18 组全部达标 (6年级×3难度覆盖)"
     }
   ],
   "git": {
     "initialized": true,
     "commits": [
+      {
+        "hash": "586f552",
+        "date": "2026-11-12 16:07",
+        "message": "chore: update projectStatus.js after manage check"
+      },
       {
         "hash": "401d8f6",
         "date": "2026-11-12 16:07",
@@ -163,22 +168,17 @@ export const PROJECT_STATUS = {
         "hash": "fad98a7",
         "date": "2026-11-11 16:39",
         "message": "fix: 修复Windows下URL唤起弹窗权限问题并优化双击脚本"
-      },
-      {
-        "hash": "220f2c5",
-        "date": "2026-11-11 16:30",
-        "message": "fix: 彻底解决本地浏览器file协议下按钮无反应问题，新增一键双击启动器与智能引导"
       }
     ],
-    "dirtyFiles": 0
+    "dirtyFiles": 11
   },
   "roadmap": [
     {
-      "group": "P0 · 正在推进 / 近期优先",
+      "group": "P0 · 核心考点攻坚与缺陷修复（已完成）",
       "items": [
         {
-          "done": false,
-          "text": "首发内容验收：以 [单元必备考点验收表](UNIT_COVERAGE_AUDIT.md) 为唯一缺口清单。下一步固定目标教材版次，并先修复折扣/满减与单模板跨难度问题；退出条件是目录有依据、P0关闭、主干考点具备独立验证。"
+          "done": true,
+          "text": "P0 级核心考点攻坚与数值缺陷修复：以 [`UNIT_COVERAGE_AUDIT.md`](UNIT_COVERAGE_AUDIT.md) 为缺口验收标准，彻底修复折扣四舍五入与折后满减门槛逻辑 Bug，重构六下《百分数（二）》为 4 大板块全覆盖阶梯插件，补齐一下《认识人民币》核心单元与元角分进率体系。主干考点全部具备独立逆向复算测试与考法轮转校验，P0风险全部关闭。"
         },
         {
           "done": true,
@@ -234,6 +234,32 @@ export const PROJECT_STATUS = {
     }
   ],
   "changelog": [
+    {
+      "version": "v0.8.8",
+      "date": "2026-11-12",
+      "title": "完成 P0 级攻坚修复：补齐一年级下册《认识人民币》核心单元、彻底重构六年级下册《百分数（二）》阶梯插件、修复满减阈值与折扣四舍五入数值 Bug",
+      "bullets": [
+        "**模块一：修复折扣计算四舍五入与折后满减门槛 Bug (prototype/engine/problemTemplates/discount.js)**：",
+        "彻底消除 0.55 折扣被四舍五入为“6折”但仍按 0.55 计算的矛盾；重构为标准离散整折率池（5折、6折、7折、7.5折、8折、8.5折、9折）并采用整20倍数正向算例，杜绝小数舍入偏差。",
+        "修复 discount-stack 满减叠扣 Bug：在折后价满足门槛后才发生抵扣，将门槛严格钳制在折后价的合理整百区间，严禁出现折后不足门槛却扣款的算理逻辑错误。",
+        "**模块二：彻底重构六年级下册《百分数（二）》专属阶梯插件 (prototype/unitPlugins.js)**：",
+        "原先仅映射到 discount 单一模板，现升级为全新独立 percentTwoProblems 专属插件，全面覆盖课标 4 大板块与促销比选方案：",
+        "easy (基础认知与直求)：discount-calc (折扣现价直求), chengshu-concept (成数概念与直算), tax-calc (增值税/消费税税额直算), interest-calc (定期存款利息直算)。",
+        "medium (逆向推算与总额)：discount-reverse (知折后价反求原价), chengshu-yield (知增产成数求当年总产量), tax-reverse (知应纳税额与税率反求营业额), interest-total (本息合计提取综合计算)。",
+        "hard (方案比选与多步综合)：promo-compare (商场买满返券与打折方案最优比选), discount-save (折扣节省金额及反推), chengshu-decrease (受灾减产成数后推算常年产量), interest-diff (不同存期与利率收益差额比选)。",
+        "**模块三：补齐人教版一年级下册核心缺失单元《认识人民币》(prototype/unitPlugins.js & prototype/units.js)**：",
+        "在 UNITS['1']['下'] 新增第5单元 { name: '认识人民币', plugin: 'rmb' }，教材单元总数增至 **94 个**。",
+        "研发专属 rmbProblems 插件，建立完整的元角分三档阶梯认知模型：",
+        "easy (基础面额与单复名数转换)：rmb-rate-fill (元角分进率填空 1元=10角/1角=10分), rmb-yuan-to-jiao (几元等于几十角), rmb-jiao-to-fen (几角等于几十分), rmb-compound-to-jiao (几元几角换算为纯角)。",
+        "medium (同名数运算与简易购物)：rmb-compare (名数比大小), rmb-add-simple (相同单位相加), rmb-sub-simple (整元减整元), rmb-shop-total (买两样文具合计应付金额)。",
+        "hard (购物找零、付整找零与人民币兑换)：rmb-shop-change (付整钱购物找零计算), rmb-pay-exact (无找零恰好支付面额组合分析), rmb-afford-calc (带固定金额购书后剩余金额判断), rmb-bill-exchange (大面额纸币换小面额张数推算)。",
+        "**模块四：全套自动化测试套件与看板数据联动更新**：",
+        "更新 UNIT_COVERAGE_AUDIT.md，关闭 G6下-U2 与 G1下-U5 的 P0 风险项。",
+        "更新 scripts/manage.mjs 测试与巡检输出，支持 94 个单元联动体检。",
+        "自动化测试全部 8 大套件持续 100% 满分通过，零回归错误。",
+        "看板指标更新：94 单元全量接入，阶梯考法单元跃升至 **69 个**（三档数值仅剩 2 个，课标定界 23 个）。"
+      ]
+    },
     {
       "version": "v0.8.7",
       "date": "2026-11-12",
@@ -3185,6 +3211,187 @@ export const PROJECT_STATUS = {
       "grade": 1,
       "semester": "下",
       "unitNo": 5,
+      "name": "认识人民币",
+      "plugin": "rmb",
+      "arithmeticPlugin": null,
+      "topics": null,
+      "maxCount": null,
+      "review": false,
+      "moduleKey": "unitPlugin",
+      "moduleLabel": "通用单元插件 (unitPlugins)",
+      "moduleFile": "prototype/unitPlugins.js",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
+      "skillCount": {
+        "easy": 4,
+        "medium": 4,
+        "hard": 4
+      },
+      "hasDiagram": false,
+      "byDifficulty": {
+        "easy": {
+          "generatedCount": 20,
+          "targetCount": 20,
+          "skills": [
+            "rmb-compound-to-jiao",
+            "rmb-yuan-to-jiao",
+            "rmb-rate-fill",
+            "rmb-jiao-to-fen"
+          ],
+          "formats": [
+            "fill"
+          ],
+          "samples": [
+            {
+              "question": "18角 = （    ）元（    ）角",
+              "answer": "1元8角",
+              "skill": "rmb-compound-to-jiao",
+              "format": "fill",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "9元 = （    ）角",
+              "answer": "90",
+              "skill": "rmb-yuan-to-jiao",
+              "format": "fill",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "10分 = （    ）角",
+              "answer": "1",
+              "skill": "rmb-rate-fill",
+              "format": "fill",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "6角 = （    ）分",
+              "answer": "60",
+              "skill": "rmb-jiao-to-fen",
+              "format": "fill",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            }
+          ]
+        },
+        "medium": {
+          "generatedCount": 20,
+          "targetCount": 20,
+          "skills": [
+            "rmb-add-simple",
+            "rmb-sub-simple",
+            "rmb-compare",
+            "rmb-shop-total"
+          ],
+          "formats": [
+            "fill",
+            "compare"
+          ],
+          "samples": [
+            {
+              "question": "5元3角 + 4元 = （    ）元（    ）角",
+              "answer": "9元3角",
+              "skill": "rmb-add-simple",
+              "format": "fill",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "2元 - 9角 = （    ）元（    ）角",
+              "answer": "1元1角",
+              "skill": "rmb-sub-simple",
+              "format": "fill",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "在括号里填 >、< 或 =：7元（    ）65角。",
+              "answer": ">",
+              "skill": "rmb-compare",
+              "format": "compare",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "买一支铅笔花 6角，买一块橡皮花 5角，一共花了多少钱？",
+              "answer": "1元1角",
+              "skill": "rmb-shop-total",
+              "format": "fill",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            }
+          ]
+        },
+        "hard": {
+          "generatedCount": 20,
+          "targetCount": 20,
+          "skills": [
+            "rmb-afford-calc",
+            "rmb-pay-exact",
+            "rmb-bill-exchange",
+            "rmb-shop-change"
+          ],
+          "formats": [
+            "fill"
+          ],
+          "samples": [
+            {
+              "question": "小明有 21元 零花钱，想买一本 9元 的故事书和一个 14元 的书包，他的钱够吗？还差多少元？",
+              "answer": "不够，还差2元",
+              "skill": "rmb-afford-calc",
+              "format": "fill",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "买一套拼图需要 19元。如果只用面值 5元 和 1元 的纸币正好付清不用找钱，需要（    ）张 5元 和（    ）张 1元。",
+              "answer": "3张5元，4张1元",
+              "skill": "rmb-pay-exact",
+              "format": "fill",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "1张20元可以换（    ）张5元纸币。",
+              "answer": "4",
+              "skill": "rmb-bill-exchange",
+              "format": "fill",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "小红买一盒彩笔花了 7元，付给售货员一张 10元纸币，应找回多少元？",
+              "answer": "3元",
+              "skill": "rmb-shop-change",
+              "format": "fill",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "G1下-U6",
+      "grade": 1,
+      "semester": "下",
+      "unitNo": 6,
       "name": "100以内的加法和减法（二）",
       "plugin": "sum-100",
       "arithmeticPlugin": null,
@@ -3219,8 +3426,8 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "67 + 1 = ______",
-              "answer": "68",
+              "question": "21 + 21 = ______",
+              "answer": "42",
               "skill": "calculate",
               "format": "practice",
               "responseKind": "calculation",
@@ -3228,8 +3435,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "27 + ______ = 35",
-              "answer": "8",
+              "question": "59 + ______ = 79",
+              "answer": "20",
               "skill": "missing-operand",
               "format": "practice",
               "responseKind": "blank",
@@ -3237,7 +3444,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "在括号里填 >、< 或 =：19 − 4（　）15。",
+              "question": "在括号里填 >、< 或 =：99 + 1（　）100。",
               "answer": "=",
               "skill": "compare-expression",
               "format": "practice",
@@ -3246,8 +3453,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "盒里原有 31 枚棋子，又放入 15 枚，现在有多少枚？",
-              "answer": "46",
+              "question": "盒里原有 99 枚棋子，又放入 1 枚，现在有多少枚？",
+              "answer": "100",
               "skill": "apply",
               "format": "practice",
               "responseKind": "word",
@@ -3270,8 +3477,8 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "31 + 56 = ______",
-              "answer": "87",
+              "question": "84 − 4 = ______",
+              "answer": "80",
               "skill": "calculate",
               "format": "practice",
               "responseKind": "calculation",
@@ -3279,8 +3486,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "92 − ______ = 61",
-              "answer": "31",
+              "question": "26 + ______ = 80",
+              "answer": "54",
               "skill": "missing-operand",
               "format": "practice",
               "responseKind": "blank",
@@ -3288,8 +3495,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "在括号里填 >、< 或 =：60 − 46（　）14。",
-              "answer": "=",
+              "question": "在括号里填 >、< 或 =：41 + 12（　）52。",
+              "answer": ">",
               "skill": "compare-expression",
               "format": "practice",
               "responseKind": "comparison",
@@ -3297,8 +3504,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "盒里原有 48 枚棋子，拿走 1 枚，还剩多少枚？",
-              "answer": "47",
+              "question": "盒里原有 17 枚棋子，拿走 5 枚，还剩多少枚？",
+              "answer": "12",
               "skill": "apply",
               "format": "practice",
               "responseKind": "word",
@@ -3321,8 +3528,8 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "94 + 4 = ______",
-              "answer": "98",
+              "question": "48 − 41 = ______",
+              "answer": "7",
               "skill": "calculate",
               "format": "practice",
               "responseKind": "calculation",
@@ -3330,8 +3537,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "59 − ______ = 25",
-              "answer": "34",
+              "question": "91 − ______ = 4",
+              "answer": "87",
               "skill": "missing-operand",
               "format": "practice",
               "responseKind": "blank",
@@ -3339,8 +3546,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "在括号里填 >、< 或 =：2 − 1（　）1。",
-              "answer": "=",
+              "question": "在括号里填 >、< 或 =：82 + 14（　）97。",
+              "answer": "<",
               "skill": "compare-expression",
               "format": "practice",
               "responseKind": "comparison",
@@ -3348,8 +3555,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "盒里原有 66 枚棋子，又放入 28 枚，现在有多少枚？",
-              "answer": "94",
+              "question": "盒里原有 35 枚棋子，又放入 3 枚，现在有多少枚？",
+              "answer": "38",
               "skill": "apply",
               "format": "practice",
               "responseKind": "word",
@@ -3361,10 +3568,10 @@ export const PROJECT_STATUS = {
       }
     },
     {
-      "id": "G1下-U6",
+      "id": "G1下-U7",
       "grade": 1,
       "semester": "下",
-      "unitNo": 6,
+      "unitNo": 7,
       "name": "找规律",
       "plugin": "pattern",
       "arithmeticPlugin": null,
@@ -3398,8 +3605,8 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "找规律填数：29，24，19，14，（　）",
-              "answer": "9",
+              "question": "找规律填数：40，38，36，34，（　）",
+              "answer": "32",
               "skill": "arith-down",
               "format": "application",
               "responseKind": null,
@@ -3407,8 +3614,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "按规律接着画：☆◆☆◆☆◆（　）（　）",
-              "answer": "☆◆",
+              "question": "按规律接着画：■★■★■★■★（　）（　）",
+              "answer": "■★",
               "skill": "repeat-2",
               "format": "application",
               "responseKind": null,
@@ -3416,8 +3623,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "找规律填数：8，12，16，20，（　）",
-              "answer": "24",
+              "question": "找规律填数：14，16，18，20，（　）",
+              "answer": "22",
               "skill": "arith-up",
               "format": "application",
               "responseKind": null,
@@ -3425,8 +3632,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "找规律填数：38，33，28，23，（　）",
-              "answer": "18",
+              "question": "找规律填数：26，21，16，11，（　）",
+              "answer": "6",
               "skill": "arith-down",
               "format": "application",
               "responseKind": null,
@@ -3439,14 +3646,32 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "double",
             "repeat-3",
-            "arith-two"
+            "arith-two",
+            "double"
           ],
           "formats": [
             "application"
           ],
           "samples": [
+            {
+              "question": "图形按“☆□◇”的规律重复排列，第 22 个图形是（　）。",
+              "answer": "☆",
+              "skill": "repeat-3",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "找规律填数：2，5，8，11，（　），（　）",
+              "answer": "14，17",
+              "skill": "arith-two",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
             {
               "question": "找规律填数：1，2，4，8，（　）",
               "answer": "16",
@@ -3457,27 +3682,9 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "图形按“◇△◆”的规律重复排列，第 15 个图形是（　）。",
-              "answer": "◆",
-              "skill": "repeat-3",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "找规律填数：9，15，21，27，（　），（　）",
-              "answer": "33，39",
+              "question": "找规律填数：6，12，18，24，（　），（　）",
+              "answer": "30，36",
               "skill": "arith-two",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "找规律填数：4，8，16，32，（　）",
-              "answer": "64",
-              "skill": "double",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -3498,8 +3705,8 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "找规律填空缺的数：2，8，（　），20，26",
-              "answer": "14",
+              "question": "找规律填空缺的数：2，5，（　），11，14",
+              "answer": "8",
               "skill": "missing-middle",
               "format": "application",
               "responseKind": null,
@@ -3507,8 +3714,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "珠子按“3颗黑、1颗绿”的规律依次穿成一串，第 37 颗珠子是什么颜色？",
-              "answer": "黑",
+              "question": "珠子按“1颗红、1颗白”的规律依次穿成一串，第 20 颗珠子是什么颜色？",
+              "answer": "白",
               "skill": "bead-cycle",
               "format": "application",
               "responseKind": null,
@@ -3516,8 +3723,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "找规律填数：13，16，22，31，43，（　）",
-              "answer": "58",
+              "question": "找规律填数：10，11，13，16，20，（　）",
+              "answer": "25",
               "skill": "growing-diff",
               "format": "application",
               "responseKind": null,
@@ -3525,8 +3732,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "找规律填空缺的数：11，16，（　），26，31",
-              "answer": "21",
+              "question": "找规律填空缺的数：9，12，（　），18，21",
+              "answer": "15",
               "skill": "missing-middle",
               "format": "application",
               "responseKind": null,
@@ -16921,24 +17128,22 @@ export const PROJECT_STATUS = {
       "semester": "下",
       "unitNo": 2,
       "name": "百分数（二）",
-      "plugin": null,
+      "plugin": "percent-two",
       "arithmeticPlugin": null,
-      "topics": [
-        "discount"
-      ],
+      "topics": null,
       "maxCount": null,
       "review": false,
-      "moduleKey": "engineTopic",
-      "moduleLabel": "引擎题材模板 (problemTemplates)",
-      "moduleFile": "prototype/engine/problemTemplates/",
-      "gradientTier": "fixed-range",
-      "gradientLabel": "课标定界",
-      "gradientBadge": "neutral",
-      "gradientNote": "按教材单元固定算理/图形范围出题（三档考法与数值区间一致）",
+      "moduleKey": "unitPlugin",
+      "moduleLabel": "通用单元插件 (unitPlugins)",
+      "moduleFile": "prototype/unitPlugins.js",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
-        "easy": 3,
-        "medium": 3,
-        "hard": 3
+        "easy": 4,
+        "medium": 4,
+        "hard": 4
       },
       "hasDiagram": false,
       "byDifficulty": {
@@ -16946,45 +17151,46 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "discount-single",
-            "discount-stack",
-            "discount-buy-get"
+            "tax-calc",
+            "interest-calc",
+            "discount-calc",
+            "chengshu-concept"
           ],
           "formats": [
             "application"
           ],
           "samples": [
             {
-              "question": "一件文具原价68元,现在打7折,现价多少元?",
-              "answer": "48元",
-              "skill": "discount-single",
+              "question": "一家饭店某月的营业额是 200 万元，如果按营业额的 6% 缴纳增值税，应缴纳税款多少万元？",
+              "answer": "12万元",
+              "skill": "tax-calc",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "一件水果原价271元,先打8折,再参加满350减70的活动,实际付多少元?",
-              "answer": "133元",
-              "skill": "discount-stack",
+              "question": "小明把 2000 元压岁钱存入银行，存期 2 年，年利率是 2.5%，到期后可得利息多少元？",
+              "answer": "100元",
+              "skill": "interest-calc",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "超市玩具每22元,买7送1。小明想买17件玩具,最少付多少钱?",
-              "answer": "330元",
-              "skill": "discount-buy-get",
+              "question": "一个书包原价 200 元，现在商场搞促销打七折出售，现价是多少元？",
+              "answer": "140元",
+              "skill": "discount-calc",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "一件水果原价97元,现在打5折,现价多少元?",
-              "answer": "49元",
-              "skill": "discount-single",
+              "question": "农业收成中，“三成五”改写成百分数是（    ）。",
+              "answer": "35%",
+              "skill": "chengshu-concept",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -16996,45 +17202,46 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "discount-buy-get",
-            "discount-stack",
-            "discount-single"
+            "chengshu-yield",
+            "tax-reverse",
+            "interest-total",
+            "discount-reverse"
           ],
           "formats": [
             "application"
           ],
           "samples": [
             {
-              "question": "超市服装每38元,买7送1。小明想买16件服装,最少付多少钱?",
-              "answer": "532元",
-              "skill": "discount-buy-get",
+              "question": "某农场去年产玉米 190 吨，今年比去年增产二成五，今年产玉米多少吨？",
+              "answer": "238吨",
+              "skill": "chengshu-yield",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "一件零食原价305元,先打9折,再参加满175减35的活动,实际付多少元?",
-              "answer": "224元",
-              "skill": "discount-stack",
+              "question": "某商场按 3% 的税率缴纳增值税 5.4 万元，该商场本月的营业额是多少万元？",
+              "answer": "180万元",
+              "skill": "tax-reverse",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "一件水果原价65元,现在打7折,现价多少元?",
-              "answer": "42元",
-              "skill": "discount-single",
+              "question": "李阿姨把 16000 元存入银行，存期 1 年，年利率 2.0%，到期时她一共可以取回本金和利息共多少元？",
+              "answer": "16320元",
+              "skill": "interest-total",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "一件零食原价383元,先打8折,再参加满130减26的活动,实际付多少元?",
-              "answer": "280元",
-              "skill": "discount-stack",
+              "question": "一个微波炉打八折出售，现价是 80 元，这件商品的原价是多少元？",
+              "answer": "100元",
+              "skill": "discount-reverse",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -17046,45 +17253,46 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "discount-stack",
-            "discount-buy-get",
-            "discount-single"
+            "discount-save",
+            "chengshu-decrease",
+            "interest-diff",
+            "promo-compare"
           ],
           "formats": [
             "application"
           ],
           "samples": [
             {
-              "question": "一件零食原价347元,先打7折,再参加满350减70的活动,实际付多少元?",
-              "answer": "156元",
-              "skill": "discount-stack",
+              "question": "一套百科全书原价 220 元，现在书店打七五折特价出售，买这套书比原来便宜了多少元？",
+              "answer": "55元",
+              "skill": "discount-save",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "超市电器每31元,买5送1。小明想买13件电器,最少付多少钱?",
-              "answer": "341元",
-              "skill": "discount-buy-get",
+              "question": "某工厂通过节水节电改造，今年用电量比去年节约了一成五。去年用电 80 万度，今年用电多少万度？",
+              "answer": "68万度",
+              "skill": "chengshu-decrease",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "一件零食原价66元,现在打5折,现价多少元?",
-              "answer": "33元",
-              "skill": "discount-single",
+              "question": "本金 19000 元，存入银行3年。若按三年期整存整取（年利率3.0%），比每年存一次一年期（年利率2.0%，连续存3年）到期利息多多少元？",
+              "answer": "570元",
+              "skill": "interest-diff",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "超市文具每32元,买9送1。小明想买18件文具,最少付多少钱?",
-              "answer": "544元",
-              "skill": "discount-buy-get",
+              "question": "一件大衣标价 800 元。甲商场一律打八折，乙商场“满100元减25元”。在哪个商场购买更划算？更划算的商场比另一家便宜多少元？",
+              "answer": "在乙商场买更划算，便宜 40 元",
+              "skill": "promo-compare",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -17648,7 +17856,7 @@ export const PROJECT_STATUS = {
       "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
         "easy": 11,
-        "medium": 10,
+        "medium": 11,
         "hard": 12
       },
       "hasDiagram": false,
@@ -17657,15 +17865,15 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "pigeon-socks",
-            "train-bridge-time",
+            "comb-addition",
+            "triple-mix-basic",
+            "boat-find-downstream",
+            "proportion-two-parts",
+            "boat-two",
             "three-cattle-chicken",
-            "statistics-mean",
-            "sports-single",
-            "interest-find-total",
-            "gc-square-grid",
-            "logic-liar-truth",
-            "perfect-square-judge",
+            "coloring-checkerboard",
+            "matchstick-move",
+            "logic-give-receive",
             "arithmetic-result",
             "arithmetic-operand"
           ],
@@ -17677,36 +17885,36 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "抽屉里有1种颜色的袜子(每种足够多),至少摸出几只能保证配成颜色相同的一双?",
-              "answer": "2只(最坏情况是每种颜色各拿 1 只,第 2 只必与前 1 只中某色配对)",
-              "skill": "pigeon-socks",
+              "question": "从甲地到乙地有3条公路和5条铁路,一共多少种走法?",
+              "answer": "8种",
+              "skill": "comb-addition",
               "format": "olympiad",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "一列火车长88米,以每秒22米的速度通过一座264米长的桥,需要多少秒?",
-              "answer": "16秒",
-              "skill": "train-bridge-time",
+              "question": "84克3%盐水、66克8%盐水、149克13%盐水混合,混合后浓度是多少?",
+              "answer": "9.1%",
+              "skill": "triple-mix-basic",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "牧场里有牛、羊、鸡共14只,腿数共48条,牛和羊都是4条腿、鸡2条腿,且牛比羊多4只。求牛、羊、鸡各多少只?",
-              "answer": "牛7只,羊3只,鸡4只",
-              "skill": "three-cattle-chicken",
+              "question": "船在静水中速度为12km/h,水流速度1km/h,顺水速度和逆水速度分别是多少?",
+              "answer": "顺水13km/h,逆水11km/h",
+              "skill": "boat-find-downstream",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "10的平均数是多少?",
-              "answer": "10",
-              "skill": "statistics-mean",
+              "question": "把85本书按2:1的比例分给甲乙两人,甲乙各分多少本?",
+              "answer": "甲57本,乙28本",
+              "skill": "proportion-two-parts",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -17718,55 +17926,56 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "proportion-three-parts",
-            "perfect-square-divisor-count",
-            "ratio-scale",
-            "distance-meet",
-            "train-tunnel-time",
-            "magic-3-row",
-            "prob-compare",
-            "extreme-min-perimeter",
+            "sequence-square",
+            "formation-hollow",
+            "harvest-area",
+            "duty-roster",
+            "triple-find-mass",
+            "boat-three",
+            "nt-gcd-application",
+            "matchstick-add",
+            "gc-triangle",
             "arithmetic-result",
             "arithmetic-operand"
           ],
           "formats": [
-            "application",
             "olympiad",
+            "application",
             "arithmetic",
             "fill"
           ],
           "samples": [
             {
-              "question": "把157支笔按3:3:4的比例分给三人,各分多少?",
-              "answer": "47支、47支、63支",
-              "skill": "proportion-three-parts",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "13共有多少个因数?",
-              "answer": "2个",
-              "skill": "perfect-square-divisor-count",
+              "question": "找规律填数：1, 4, 9, 16, ( )",
+              "answer": "25",
+              "skill": "sequence-square",
               "format": "olympiad",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "小华按3:1分糖,甲得了21个,乙得了几个?一共几个?",
-              "answer": "乙7个,一共28个",
-              "skill": "ratio-scale",
+              "question": "方阵最外层每边10人,内部空心部分每边5人,共有2.5层,这个方阵总人数是多少?",
+              "answer": "75人",
+              "skill": "formation-hollow",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "小梅每分钟走53米,小明每分钟走57米,两人相向而行3分钟后相遇,两地相距多少米?",
-              "answer": "330米",
-              "skill": "distance-meet",
+              "question": "收了稻谷1278公斤,亩产量是142公斤,种了多少亩?",
+              "answer": "9亩",
+              "skill": "harvest-area",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "班级值日按周一至周五循环,小明了第7个值日,那天是星期几?",
+              "answer": "星期二",
+              "skill": "duty-roster",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -17778,16 +17987,16 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "train-cross-meet",
-            "duty-last",
-            "sports-relay",
-            "interest-compare",
-            "age-meet-sum",
-            "sequence-double-diff",
-            "prob-two-stage",
-            "coloring-domino",
-            "comb-ball",
+            "concentration-evaporate",
+            "harvest-compare",
+            "circular-multi",
+            "three-cattle-sheep-pig",
+            "average-two-groups",
+            "pigeon-apples",
             "nt-puzzle",
+            "prob-two-stage",
+            "comb-ball",
+            "gc-rectangle",
             "arithmetic-result",
             "arithmetic-operand"
           ],
@@ -17799,36 +18008,36 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "两列火车分别长514米和438米,各以每秒32米和36米的速度相向而行,从相遇到完全错开需多少秒?",
-              "answer": "14秒",
-              "skill": "train-cross-meet",
+              "question": "24克糖溶在116克水中,蒸发掉111克水,新浓度是多少(百分数,取整数)?",
+              "answer": "83%",
+              "skill": "concentration-evaporate",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "今天是星期四,小华要在29天后的值日,那天是星期几?",
-              "answer": "星期五",
-              "skill": "duty-last",
+              "question": "第一块亩产255公斤,面积5亩;第二块亩产175公斤,面积7亩。哪块地产量高?高多少?",
+              "answer": "第一块高50公斤",
+              "skill": "harvest-compare",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "接力赛三人分别用时36秒、52秒、30秒,总成绩是多少秒?比纪录120秒快几秒?",
-              "answer": "总成绩118秒,快2秒",
-              "skill": "sports-relay",
+              "question": "环形跑道周长982米,甲11m/s、乙7m/s 反向跑,1 分钟内两人相遇几次?",
+              "answer": "1次(每 54.6 秒相遇一次)",
+              "skill": "circular-multi",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "本金7103元,甲银行年利率4%,乙银行年利率5%,存4年,两家利息相差多少元?",
-              "answer": "285元",
-              "skill": "interest-compare",
+              "question": "牛(4条腿)、猪(4条腿)、鸡(2条腿)共65只，腿数210条，且牛的数量是猪的3倍。求三类各多少只？",
+              "answer": "牛30只,猪10只,鸡25只",
+              "skill": "three-cattle-sheep-pig",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,

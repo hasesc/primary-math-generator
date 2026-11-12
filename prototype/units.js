@@ -29,6 +29,7 @@ export const UNITS = {
       { name: '100以内数的认识', plugin: 'number-100' },
       { name: '100以内的加法和减法（一）', plugin: 'sum-100-oral' },
       { name: '认识图形（二）', plugin: 'geo-shapes-plane', maxCount: 6 },
+      { name: '认识人民币', plugin: 'rmb' },
       { name: '100以内的加法和减法（二）', plugin: 'sum-100' },
       { name: '找规律', plugin: 'pattern' },
     ],
@@ -135,7 +136,7 @@ export const UNITS = {
     ],
     下: [
       { name: '负数', plugin: 'negative' },
-      { name: '百分数（二）', topics: ['discount'] },
+      { name: '百分数（二）', plugin: 'percent-two' },
       { name: '圆柱与圆锥', plugin: 'geo-cylinder', maxCount: 6 },
       { name: '比例', plugin: 'proportion' },
       { name: '数学广角——鸽巢问题', plugin: 'pigeonhole' },

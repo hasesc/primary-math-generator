@@ -1480,6 +1480,268 @@ function pigeonholeProblems(difficulty, count) {
   return out;
 }
 
+/* ── 百分数（二）（折扣、成数、税率、利率、促销策略） ── */
+function percentTwoProblems(difficulty, count) {
+  const out = [];
+  const seen = new Set();
+  const subIds = {
+    easy: ['discount-calc', 'chengshu-concept', 'tax-calc', 'interest-calc'],
+    medium: ['discount-reverse', 'chengshu-yield', 'tax-reverse', 'interest-total'],
+    hard: ['promo-compare', 'discount-save', 'chengshu-decrease', 'interest-diff'],
+  }[difficulty] || ['discount-calc', 'chengshu-concept', 'tax-calc', 'interest-calc'];
+
+  let guard = 0;
+  while (out.length < count && guard < count * 35) {
+    guard++;
+    const subtemplateId = subIds[guard % subIds.length];
+    let q, ans;
+
+    if (subtemplateId === 'discount-calc') {
+      const items = ['一件衣服', '一双球鞋', '一个书包', '一辆自行车', '一台风扇', '一套运动服'];
+      const item = pick(items);
+      const rates = [
+        { r: 0.8, name: '八折' },
+        { r: 0.7, name: '七折' },
+        { r: 0.85, name: '八五折' },
+        { r: 0.9, name: '九折' },
+        { r: 0.75, name: '七五折' },
+      ];
+      const d = pick(rates);
+      const price = ri(3, 20) * 20;
+      const final = Math.round(price * d.r);
+      q = `${item}原价 ${price} 元，现在商场搞促销打${d.name}出售，现价是多少元？`;
+      ans = `${final}元`;
+    } else if (subtemplateId === 'chengshu-concept') {
+      const chengshus = [
+        { c: '二成', pct: '20%' },
+        { c: '三成五', pct: '35%' },
+        { c: '四成', pct: '40%' },
+        { c: '八成五', pct: '85%' },
+        { c: '一成五', pct: '15%' },
+        { c: '五成', pct: '50%' },
+      ];
+      const ch = pick(chengshus);
+      q = `农业收成中，“${ch.c}”改写成百分数是（    ）。`;
+      ans = ch.pct;
+    } else if (subtemplateId === 'tax-calc') {
+      const sales = ri(10, 50) * 10;
+      const taxRate = pick([3, 5, 6]);
+      const tax = (sales * taxRate) / 100;
+      q = `一家饭店某月的营业额是 ${sales} 万元，如果按营业额的 ${taxRate}% 缴纳增值税，应缴纳税款多少万元？`;
+      ans = `${tax}万元`;
+    } else if (subtemplateId === 'interest-calc') {
+      const principal = ri(2, 10) * 1000;
+      const years = ri(1, 3);
+      const rate = years === 1 ? 2.0 : years === 2 ? 2.5 : 3.0;
+      const interest = Math.round(principal * (rate / 100) * years);
+      q = `小明把 ${principal} 元压岁钱存入银行，存期 ${years} 年，年利率是 ${rate.toFixed(1)}%，到期后可得利息多少元？`;
+      ans = `${interest}元`;
+    } else if (subtemplateId === 'discount-reverse') {
+      const items = ['一件羽绒服', '一台学习机', '一双运动鞋', '一套百科全书', '一个微波炉'];
+      const item = pick(items);
+      const rates = [
+        { r: 0.8, name: '八折' },
+        { r: 0.7, name: '七折' },
+        { r: 0.9, name: '九折' },
+        { r: 0.75, name: '七五折' },
+      ];
+      const d = pick(rates);
+      const price = ri(4, 25) * 20;
+      const final = Math.round(price * d.r);
+      q = `${item}打${d.name}出售，现价是 ${final} 元，这件商品的原价是多少元？`;
+      ans = `${price}元`;
+    } else if (subtemplateId === 'chengshu-yield') {
+      const crops = ['水稻', '玉米', '小麦', '苹果', '棉花'];
+      const crop = pick(crops);
+      const lastYear = ri(5, 20) * 10;
+      const chengshus = [
+        { c: '一成', r: 0.1 },
+        { c: '二成', r: 0.2 },
+        { c: '二成五', r: 0.25 },
+        { c: '三成', r: 0.3 },
+      ];
+      const ch = pick(chengshus);
+      const thisYear = Math.round(lastYear * (1 + ch.r));
+      q = `某农场去年产${crop} ${lastYear} 吨，今年比去年增产${ch.c}，今年产${crop}多少吨？`;
+      ans = `${thisYear}吨`;
+    } else if (subtemplateId === 'tax-reverse') {
+      const taxRate = pick([3, 5]);
+      const sales = ri(10, 40) * 10;
+      const tax = (sales * taxRate) / 100;
+      q = `某商场按 ${taxRate}% 的税率缴纳增值税 ${tax} 万元，该商场本月的营业额是多少万元？`;
+      ans = `${sales}万元`;
+    } else if (subtemplateId === 'interest-total') {
+      const principal = ri(5, 20) * 1000;
+      const years = ri(1, 3);
+      const rate = years === 1 ? 2.0 : years === 2 ? 2.5 : 3.0;
+      const interest = Math.round(principal * (rate / 100) * years);
+      const total = principal + interest;
+      q = `李阿姨把 ${principal} 元存入银行，存期 ${years} 年，年利率 ${rate.toFixed(1)}%，到期时她一共可以取回本金和利息共多少元？`;
+      ans = `${total}元`;
+    } else if (subtemplateId === 'promo-compare') {
+      const price = ri(4, 8) * 100;
+      const costA = price * 0.8;
+      const costB = price - (price / 100) * 25;
+      const better = costA < costB ? '甲商场' : '乙商场';
+      const diff = Math.abs(costA - costB);
+      q = `一件大衣标价 ${price} 元。甲商场一律打八折，乙商场“满100元减25元”。在哪个商场购买更划算？更划算的商场比另一家便宜多少元？`;
+      ans = `在${better}买更划算，便宜 ${diff} 元`;
+    } else if (subtemplateId === 'discount-save') {
+      const price = ri(5, 25) * 20;
+      const rates = [
+        { r: 0.8, name: '八折' },
+        { r: 0.75, name: '七五折' },
+        { r: 0.7, name: '七折' },
+      ];
+      const d = pick(rates);
+      const saved = Math.round(price * (1 - d.r));
+      q = `一套百科全书原价 ${price} 元，现在书店打${d.name}特价出售，买这套书比原来便宜了多少元？`;
+      ans = `${saved}元`;
+    } else if (subtemplateId === 'chengshu-decrease') {
+      const lastPower = ri(5, 15) * 10;
+      const chengshus = [
+        { c: '一成', r: 0.1 },
+        { c: '一成五', r: 0.15 },
+        { c: '二成', r: 0.2 },
+      ];
+      const ch = pick(chengshus);
+      const thisPower = Math.round(lastPower * (1 - ch.r) * 10) / 10;
+      q = `某工厂通过节水节电改造，今年用电量比去年节约了${ch.c}。去年用电 ${lastPower} 万度，今年用电多少万度？`;
+      ans = `${thisPower}万度`;
+    } else if (subtemplateId === 'interest-diff') {
+      const principal = ri(5, 20) * 1000;
+      const int3Yr = Math.round(principal * 0.03 * 3);
+      const int1Yr = Math.round(principal * 0.02 * 3);
+      const diff = int3Yr - int1Yr;
+      q = `本金 ${principal} 元，存入银行3年。若按三年期整存整取（年利率3.0%），比每年存一次一年期（年利率2.0%，连续存3年）到期利息多多少元？`;
+      ans = `${diff}元`;
+    }
+
+    if (seen.has(q)) continue;
+    seen.add(q);
+    out.push({ question: q, answer: ans, subtype: 'unit-percent-two', subtemplateId, format: 'application' });
+  }
+  return out;
+}
+
+/* ── 认识人民币（元角分进率、币值辨识、购物找零） ── */
+function rmbProblems(difficulty, count) {
+  const out = [];
+  const seen = new Set();
+  const subIds = {
+    easy: ['rmb-rate-fill', 'rmb-yuan-to-jiao', 'rmb-jiao-to-fen', 'rmb-compound-to-jiao'],
+    medium: ['rmb-compare', 'rmb-add-simple', 'rmb-sub-simple', 'rmb-shop-total'],
+    hard: ['rmb-shop-change', 'rmb-pay-exact', 'rmb-afford-calc', 'rmb-bill-exchange'],
+  }[difficulty] || ['rmb-rate-fill', 'rmb-yuan-to-jiao', 'rmb-jiao-to-fen', 'rmb-compound-to-jiao'];
+
+  let guard = 0;
+  while (out.length < count && guard < count * 35) {
+    guard++;
+    const subtemplateId = subIds[guard % subIds.length];
+    let q, ans, format = 'fill';
+
+    if (subtemplateId === 'rmb-rate-fill') {
+      const rates = [
+        { q: '1元 = （    ）角', a: '10' },
+        { q: '1角 = （    ）分', a: '10' },
+        { q: '1元 = （    ）分', a: '100' },
+        { q: '10角 = （    ）元', a: '1' },
+        { q: '10分 = （    ）角', a: '1' },
+      ];
+      const r = rates[guard % rates.length];
+      q = r.q;
+      ans = r.a;
+    } else if (subtemplateId === 'rmb-yuan-to-jiao') {
+      const n = ri(2, 9);
+      q = `${n}元 = （    ）角`;
+      ans = `${n * 10}`;
+    } else if (subtemplateId === 'rmb-jiao-to-fen') {
+      const n = ri(2, 8);
+      q = `${n}角 = （    ）分`;
+      ans = `${n * 10}`;
+    } else if (subtemplateId === 'rmb-compound-to-jiao') {
+      const y = ri(1, 5);
+      const j = ri(1, 9);
+      if (guard % 2 === 0) {
+        q = `${y}元${j}角 = （    ）角`;
+        ans = `${y * 10 + j}`;
+      } else {
+        q = `${y * 10 + j}角 = （    ）元（    ）角`;
+        ans = `${y}元${j}角`;
+      }
+    } else if (subtemplateId === 'rmb-compare') {
+      format = 'compare';
+      const y = ri(1, 9);
+      const delta = ri(-2, 2) * 5;
+      const j = y * 10 + delta;
+      q = `在括号里填 >、< 或 =：${y}元（    ）${j}角。`;
+      ans = delta === 0 ? '=' : delta > 0 ? '<' : '>';
+    } else if (subtemplateId === 'rmb-add-simple') {
+      const y1 = ri(1, 5);
+      const j1 = ri(1, 8);
+      const y2 = ri(1, 4);
+      q = `${y1}元${j1}角 + ${y2}元 = （    ）元（    ）角`;
+      ans = `${y1 + y2}元${j1}角`;
+    } else if (subtemplateId === 'rmb-sub-simple') {
+      const y = ri(2, 5);
+      const j = ri(1, 9);
+      q = `${y}元 - ${j}角 = （    ）元（    ）角`;
+      ans = `${y - 1}元${10 - j}角`;
+    } else if (subtemplateId === 'rmb-shop-total') {
+      const items = [
+        { name: '一支铅笔', price: ri(5, 9) },
+        { name: '一块橡皮', price: ri(5, 8) },
+        { name: '一把尺子', price: ri(6, 9) },
+      ];
+      const i1 = items[0];
+      const i2 = items[1];
+      const sum = i1.price + i2.price;
+      q = `买${i1.name}花 ${i1.price}角，买${i2.name}花 ${i2.price}角，一共花了多少钱？`;
+      ans = sum >= 10 ? `${Math.floor(sum / 10)}元${sum % 10}角` : `${sum}角`;
+    } else if (subtemplateId === 'rmb-shop-change') {
+      const items = [
+        { name: '一本练习本', price: ri(2, 4) },
+        { name: '一个笔袋', price: ri(5, 8) },
+        { name: '一盒彩笔', price: ri(6, 9) },
+      ];
+      const it = pick(items);
+      const bill = 10;
+      q = `小红买${it.name}花了 ${it.price}元，付给售货员一张 ${bill}元纸币，应找回多少元？`;
+      ans = `${bill - it.price}元`;
+    } else if (subtemplateId === 'rmb-pay-exact') {
+      const fives = ri(1, 3);
+      const ones = ri(1, 4);
+      const total = fives * 5 + ones;
+      q = `买一套拼图需要 ${total}元。如果只用面值 5元 和 1元 的纸币正好付清不用找钱，需要（    ）张 5元 和（    ）张 1元。`;
+      ans = `${fives}张5元，${ones}张1元`;
+    } else if (subtemplateId === 'rmb-afford-calc') {
+      const pocket = ri(15, 25);
+      const p1 = ri(8, 12);
+      const p2 = ri(10, 16);
+      const need = p1 + p2;
+      const diff = need - pocket;
+      q = `小明有 ${pocket}元 零花钱，想买一本 ${p1}元 的故事书和一个 ${p2}元 的书包，他的钱够吗？还差多少元？`;
+      ans = diff > 0 ? `不够，还差${diff}元` : `够了，还剩${-diff}元`;
+    } else if (subtemplateId === 'rmb-bill-exchange') {
+      const exchanges = [
+        { big: '1张100元', small: '10元', num: '10' },
+        { big: '1张50元', small: '10元', num: '5' },
+        { big: '1张20元', small: '5元', num: '4' },
+        { big: '1张10元', small: '1元', num: '10' },
+        { big: '1张5元', small: '1元', num: '5' },
+      ];
+      const ex = pick(exchanges);
+      q = `${ex.big}可以换（    ）张${ex.small}纸币。`;
+      ans = ex.num;
+    }
+
+    if (seen.has(q)) continue;
+    seen.add(q);
+    out.push({ question: q, answer: ans, subtype: 'unit-rmb', subtemplateId, format });
+  }
+  return out;
+}
+
 export const UNIT_PLUGINS = {
   ...SCOPE_PLUGINS,
   'geo-count': geometryProblems,
@@ -1540,4 +1802,6 @@ export const UNIT_PLUGINS = {
   'dec-addsub': decimalAddSubProblems,
   'frac-mul': fractionMulProblems,
   'frac-div': fractionDivProblems,
+  'percent-two': percentTwoProblems,
+  rmb: rmbProblems,
 };

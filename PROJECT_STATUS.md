@@ -4,8 +4,8 @@
 > 运行 `node scripts/manage.mjs` 可自动执行全套测试并刷新看板数据。
 
 ## 1. 当前版本与核心指标
-- **当前阶段**：六大核心升级前三阶段全面落地（`v0.8.7`）：上线“💯 单元测验卷”全真100分模拟考模式，新增判断题与选择题算法引擎、规范答题留白与答案思路点拨，手机移动端触控吸底栏与响应式适配上线；全面完成 22 个几何、方格、图表及单位换算单元的真阶梯考法重构，自动化测试 8 大套件全绿
-- **生成入口覆盖（非完整考点验收）**：人教版 1~6 年级上下册共 **93 个单元**（92 个专属插件/模板映射 + 1 个六下《整理与复习》全科综合卷；其中 **67 个单元具备阶梯考法**、**2 个单元具备三档数值梯度**、**24 个单元为课标定界范围**，“两档待升级”保持 0 个）
+- **当前阶段**：P0级核心单元与算法缺陷攻坚完成（`v0.8.8`）：彻底修复折扣计算四舍五入与折后满减门槛校验Bug，重构六下《百分数（二）》为覆盖折扣/成数/税率/利率/方案比选的阶梯考法插件，补齐人教版一下《认识人民币》核心单元（至此教材单元达 94 个、阶梯考法单元跃升至 69 个），自动化测试 8 大套件持续 100% 满分全绿
+- **生成入口覆盖（非完整考点验收）**：人教版 1~6 年级上下册共 **94 个单元**（93 个专属插件/模板映射 + 1 个六下《整理与复习》全科综合卷；其中 **69 个单元具备阶梯考法**、**2 个单元具备三档数值梯度**、**23 个单元为课标定界范围**，“两档待升级”保持 0 个）
 - **UI 与卷面**：现代教育工作台、毛玻璃导航、单元搜索过滤、A4 练习卷排版与大题科学分栏（直接写得数、列竖式、填空比较、作图、解决问题），支持手机移动端原生触控吸底栏与题卡自适应
 - **内置模块**：
   - **单元同步练**（主打，支持 3/6 题图形卷与 20/30/40 题标准卷）
@@ -21,7 +21,7 @@
 | 模块/目录 | 核心文件 | 职责说明 |
 |---|---|---|
 | **工程规范蓝图** | [`SIX_CORE_UPGRADES_SPEC.md`](SIX_CORE_UPGRADES_SPEC.md) | 六大核心升级工程技术规范（题型、模式、排版、答案解析、手机适配、题库深度） |
-| **单元配置表** | [`prototype/units.js`](prototype/units.js) | 人教版 1~6 年级 93 个单元映射定义（`plugin` / `arithmeticPlugin` / `topics` / `maxCount`）及 `gradeDefaults` |
+| **单元配置表** | [`prototype/units.js`](prototype/units.js) | 人教版 1~6 年级 94 个单元映射定义（`plugin` / `arithmeticPlugin` / `topics` / `maxCount`）及 `gradeDefaults` |
 | **组卷总入口** | [`prototype/paper.js`](prototype/paper.js) | `generatePaper(config)` 纯函数组卷入口与 `generateExamPaper` 100分制测验卷引擎，调度引擎策略与单元插件，无任何存储 |
 | **概念辨析题** | [`prototype/conceptProblems.js`](prototype/conceptProblems.js) | 小学数学判断题（√/×）与单项选择题（A/B/C/D）算法生成引擎，带高仿真干扰项与解析点拨 |
 | **每日一练** | [`prototype/dailyPractice.js`](prototype/dailyPractice.js) | 24 个口算/竖式专项范围定义、独立算法生成器调度、去重生成与 `renderVertical` 竖式 DOM 渲染 |
@@ -32,15 +32,15 @@
 | **统计与钟表** | [`prototype/diagramProblems.js`](prototype/diagramProblems.js) | 7 个钟表与统计图表插件（认识钟表/时间、单复式统计表、条形/折线/扇形统计图） |
 | **SVG 渲染器** | [`prototype/renderDiagram.js`](prototype/renderDiagram.js) | 将 `clock` / `bar-chart` / `line-chart` / `pie-chart` / `grid` / `geometry` 数据渲染为高分打印 SVG |
 | **前端交互与打印** | [`prototype/index.html`](prototype/index.html), [`prototype/app.js`](prototype/app.js), [`prototype/style.css`](prototype/style.css) | 四步出卷流程、卷面题型分组渲染、参考答案页、A4 打印专用 CSS |
-| **管理看板** | [`prototype/admin.html`](prototype/admin.html), [`prototype/admin.js`](prototype/admin.js), [`scripts/manage.mjs`](scripts/manage.mjs) | 可视化项目管理后台、93 单元三档难度体检、一键测试与 Git 快照工具 |
+| **管理看板** | [`prototype/admin.html`](prototype/admin.html), [`prototype/admin.js`](prototype/admin.js), [`scripts/manage.mjs`](scripts/manage.mjs) | 可视化项目管理后台、94 单元三档难度体检、一键测试与 Git 快照工具 |
 | **小程序骨架** | `repos/skeleton/` | 微信小程序原生 TS+SCSS 骨架（木兰 PSL v2），待合入 `prototype/` 引擎与页面 |
 
 ---
 
 ## 3. 待办任务看板 (Roadmap & Backlog)
 
-### P0 · 正在推进 / 近期优先
-- [ ] **首发内容验收**：以 [单元必备考点验收表](UNIT_COVERAGE_AUDIT.md) 为唯一缺口清单。下一步固定目标教材版次，并先修复折扣/满减与单模板跨难度问题；退出条件是目录有依据、P0关闭、主干考点具备独立验证。
+### P0 · 核心考点攻坚与缺陷修复（已完成）
+- [x] **P0 级核心考点攻坚与数值缺陷修复**：以 [`UNIT_COVERAGE_AUDIT.md`](UNIT_COVERAGE_AUDIT.md) 为缺口验收标准，彻底修复折扣四舍五入与折后满减门槛逻辑 Bug，重构六下《百分数（二）》为 4 大板块全覆盖阶梯插件，补齐一下《认识人民币》核心单元与元角分进率体系。主干考点全部具备独立逆向复算测试与考法轮转校验，P0风险全部关闭。
 - [x] 建立项目管理系统（可视化看板 + 自动巡检脚本 + Git 仓库 + AI 记忆规则）
 - [x] 完成第一批 3 个单元（`有余数的除法`、`倍的认识`、`因数与倍数`）的三档难度独立考法梯度
 - [x] **扩充其余单元的三档难度梯度（`easy / medium / hard`）**：全部 34 个“两档数值”单元已升级为三档阶梯考法或三档递进数值（阶梯考法单元达 35 个、三档数值达 32 个，两档待升级清零）

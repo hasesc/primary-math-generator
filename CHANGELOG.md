@@ -4,6 +4,30 @@
 
 ---
 
+## [v0.8.8] - 2026-11-12 · 完成 P0 级攻坚修复：补齐一年级下册《认识人民币》核心单元、彻底重构六年级下册《百分数（二）》阶梯插件、修复满减阈值与折扣四舍五入数值 Bug
+
+- **模块一：修复折扣计算四舍五入与折后满减门槛 Bug (`prototype/engine/problemTemplates/discount.js`)**：
+  - 彻底消除 `0.55` 折扣被四舍五入为“6折”但仍按 0.55 计算的矛盾；重构为标准离散整折率池（5折、6折、7折、7.5折、8折、8.5折、9折）并采用整20倍数正向算例，杜绝小数舍入偏差。
+  - 修复 `discount-stack` 满减叠扣 Bug：在折后价满足门槛后才发生抵扣，将门槛严格钳制在折后价的合理整百区间，严禁出现折后不足门槛却扣款的算理逻辑错误。
+- **模块二：彻底重构六年级下册《百分数（二）》专属阶梯插件 (`prototype/unitPlugins.js`)**：
+  - 原先仅映射到 `discount` 单一模板，现升级为全新独立 `percentTwoProblems` 专属插件，全面覆盖课标 4 大板块与促销比选方案：
+    - `easy` (基础认知与直求)：`discount-calc` (折扣现价直求), `chengshu-concept` (成数概念与直算), `tax-calc` (增值税/消费税税额直算), `interest-calc` (定期存款利息直算)。
+    - `medium` (逆向推算与总额)：`discount-reverse` (知折后价反求原价), `chengshu-yield` (知增产成数求当年总产量), `tax-reverse` (知应纳税额与税率反求营业额), `interest-total` (本息合计提取综合计算)。
+    - `hard` (方案比选与多步综合)：`promo-compare` (商场买满返券与打折方案最优比选), `discount-save` (折扣节省金额及反推), `chengshu-decrease` (受灾减产成数后推算常年产量), `interest-diff` (不同存期与利率收益差额比选)。
+- **模块三：补齐人教版一年级下册核心缺失单元《认识人民币》(`prototype/unitPlugins.js` & `prototype/units.js`)**：
+  - 在 `UNITS['1']['下']` 新增第5单元 `{ name: '认识人民币', plugin: 'rmb' }`，教材单元总数增至 **94 个**。
+  - 研发专属 `rmbProblems` 插件，建立完整的元角分三档阶梯认知模型：
+    - `easy` (基础面额与单复名数转换)：`rmb-rate-fill` (元角分进率填空 1元=10角/1角=10分), `rmb-yuan-to-jiao` (几元等于几十角), `rmb-jiao-to-fen` (几角等于几十分), `rmb-compound-to-jiao` (几元几角换算为纯角)。
+    - `medium` (同名数运算与简易购物)：`rmb-compare` (名数比大小), `rmb-add-simple` (相同单位相加), `rmb-sub-simple` (整元减整元), `rmb-shop-total` (买两样文具合计应付金额)。
+    - `hard` (购物找零、付整找零与人民币兑换)：`rmb-shop-change` (付整钱购物找零计算), `rmb-pay-exact` (无找零恰好支付面额组合分析), `rmb-afford-calc` (带固定金额购书后剩余金额判断), `rmb-bill-exchange` (大面额纸币换小面额张数推算)。
+- **模块四：全套自动化测试套件与看板数据联动更新**：
+  - 更新 `UNIT_COVERAGE_AUDIT.md`，关闭 G6下-U2 与 G1下-U5 的 P0 风险项。
+  - 更新 `scripts/manage.mjs` 测试与巡检输出，支持 94 个单元联动体检。
+  - 自动化测试全部 8 大套件持续 100% 满分通过，零回归错误。
+  - 看板指标更新：94 单元全量接入，阶梯考法单元跃升至 **69 个**（三档数值仅剩 2 个，课标定界 23 个）。
+
+---
+
 ## [v0.8.7] - 2026-11-12 · 推进完成第三阶段：全面完成 22 个几何、方格、图表及单位换算单元的真阶梯考法重构
 
 - **模块一：几何与三视图专项重构 (`prototype/geometryProblems.js`)**：
