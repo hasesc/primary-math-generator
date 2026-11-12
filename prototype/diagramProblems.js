@@ -3,42 +3,253 @@ const randomInt = (min, max) => min + Math.floor(Math.random() * (max - min + 1)
 const timeText = ({ hour, minute }) => `${hour}时${minute ? `${minute}分` : ''}`;
 
 export function clockProblems(difficulty, count, { grade }) {
-  const step = String(grade) === '1' ? 60 : { easy: 15, medium: 5, hard: 1 }[difficulty];
-  const slots = 720 / step;
-  const offset = randomInt(0, slots - 1);
-  const timeAt = slot => {
-    const minutes = ((slot + offset) % slots) * step;
-    return { hour: Math.floor(minutes / 60) || 12, minute: minutes % 60 };
+  const isG1 = String(grade) === '1';
+
+  // 1年级考法定义 (保持 fill, draw, choice 三种卷面题型，兼顾丰富考法与全量契约)
+  const g1Skills = {
+    easy: ['clock-read-whole', 'clock-parts-whole', 'clock-choice-whole'],
+    medium: ['clock-draw-whole', 'clock-time-shift', 'clock-choice-whole'],
+    hard: ['clock-approximate-time', 'clock-daily-routine', 'clock-draw-whole', 'clock-choice-whole', 'clock-time-shift'],
   };
-  return Array.from({ length: count }, (_, i) => {
-    const mode = i % 3;
-    const index = Math.floor(i / 3);
-    const time = timeAt(index);
-    const label = timeText(time);
-    let question, answer, clocks, format;
-    if (mode === 0 && index < slots) {
-      question = '看钟面，写出时间。';
-      answer = label;
-      clocks = [time];
-      format = 'fill';
-    } else if (mode === 1 && index < slots) {
-      question = `在钟面上画出 ${label} 的时针和分针。`;
-      answer = label;
-      clocks = [null];
-      format = 'draw';
+
+  // 2年级考法定义 (5分步长、1分精准读写、偏角作图、经过时间推算)
+  const g2Skills = {
+    easy: ['time-read-5min', 'time-draw-5min', 'time-choice-5min'],
+    medium: ['time-read-1min', 'time-draw-accurate', 'time-choice-5min'],
+    hard: ['time-elapsed-fill', 'time-draw-future', 'time-choice-5min'],
+  };
+
+  const pool = (isG1 ? g1Skills : g2Skills)[difficulty] || (isG1 ? g1Skills.easy : g2Skills.easy);
+  const out = [];
+  const seen = new Set();
+  let attempts = 0;
+
+  while (out.length < count && attempts < count * 80) {
+    attempts++;
+    const subtemplateId = pool[out.length % pool.length];
+    const i = attempts;
+    let question, answer, clocks, format, answerDiagram;
+
+    if (isG1) {
+      // ---------------- 一年级逻辑（整时 1~12） ----------------
+      const h = ((attempts * 5 + randomInt(1, 11)) % 12) + 1;
+      const wholeTime = { hour: h, minute: 0 };
+      const label = `${h}时`;
+
+      switch (subtemplateId) {
+        case 'clock-read-whole': {
+          const prompts = [
+            '看钟面，写出时间。',
+            '认一认钟面上的时刻，填在横线上。',
+            '仔细观察钟面，此时是（ ）时整。',
+            '看钟面写时刻。',
+          ];
+          question = prompts[attempts % prompts.length];
+          answer = label;
+          clocks = [wholeTime];
+          format = 'fill';
+          break;
+        }
+        case 'clock-parts-whole': {
+          const parts = [
+            `看钟面，分针指向12，时针正指向 ${h}，这时是（ ）时整。`,
+            `看钟面，此时时针指向 ${h}，分针指向12，钟面表示（ ）时。`,
+            `观察钟面（${h}时），钟面上又粗又短的针指的是数字（ ）。`,
+            `钟面上有12个大格，此时时针指向数字 ${h}，表示（ ）时。`,
+          ];
+          question = parts[attempts % parts.length];
+          answer = `${h}`;
+          clocks = [wholeTime];
+          format = 'fill';
+          break;
+        }
+        case 'clock-draw-whole': {
+          const drawPrompts = [
+            `在钟面上画出 ${label} 的时针和分针。`,
+            `请在钟面上补全 ${label} 的指针（短针指几，长针指12）。`,
+            `画一画：请在钟面上表示出 ${label}。`,
+          ];
+          question = drawPrompts[attempts % drawPrompts.length];
+          answer = label;
+          clocks = [null];
+          answerDiagram = { kind: 'clock', clocks: [wholeTime] };
+          format = 'draw';
+          break;
+        }
+        case 'clock-time-shift': {
+          const isAfter = attempts % 2 === 0;
+          if (isAfter) {
+            const nextH = h === 12 ? 1 : h + 1;
+            question = `看钟面（${h}时），过 1 小时是（ ）时。`;
+            answer = `${nextH}时`;
+          } else {
+            const prevH = h === 1 ? 12 : h - 1;
+            question = `看钟面（${h}时），1 小时前是（ ）时。`;
+            answer = `${prevH}时`;
+          }
+          clocks = [wholeTime];
+          format = 'fill';
+          break;
+        }
+        case 'clock-choice-whole': {
+          const correct = attempts % 3;
+          const w1 = ((h + 2) % 12) + 1;
+          const w2 = ((h + 5) % 12) + 1;
+          const hours = correct === 0 ? [h, w1, w2] : (correct === 1 ? [w1, h, w2] : [w1, w2, h]);
+          clocks = hours.map(hr => ({ hour: hr, minute: 0 }));
+          question = `哪一个钟面显示 ${label}？`;
+          answer = ['A', 'B', 'C'][correct];
+          format = 'choice';
+          break;
+        }
+        case 'clock-approximate-time': {
+          const isAboutBefore = attempts % 2 === 0;
+          if (isAboutBefore) {
+            const prevH = h === 1 ? 12 : h - 1;
+            clocks = [{ hour: prevH, minute: 55 }];
+            const prompts = [
+              `观察钟面，分针快走到12，时针快指到 ${h}，这时可以说是快到（ ）时了。`,
+              `看钟面上的指针位置，此时大约是快到（ ）时整。`,
+              `观察钟面，现在的时刻可以说成是：快到（ ）时。`,
+            ];
+            question = prompts[attempts % prompts.length];
+            answer = `${h}`;
+          } else {
+            clocks = [{ hour: h, minute: 5 }];
+            const prompts = [
+              `观察钟面，分针刚走过12，时针刚走过 ${h}，这时可以说是刚过（ ）时。`,
+              `看钟面上的指针位置，此时大约是刚过（ ）时整。`,
+              `观察钟面，现在的时刻可以说成是：刚过（ ）时。`,
+            ];
+            question = prompts[attempts % prompts.length];
+            answer = `${h}`;
+          }
+          format = 'fill';
+          break;
+        }
+        case 'clock-daily-routine': {
+          const routines = [
+            { act: '早晨背书包去上学', h: 8, prompt: '小明在这一时刻正在（ ）。' },
+            { act: '中午在学校吃午餐', h: 12, prompt: '同学们在这一时刻正在（ ）。' },
+            { act: '下午在操场做运动', h: 4, prompt: '亮亮在这一时刻正在（ ）。' },
+            { act: '晚上准时上床睡觉', h: 9, prompt: '红红在这一时刻正在（ ）。' },
+            { act: '上午去图书馆看书', h: 10, prompt: '周末上午这一时刻小华正在（ ）。' },
+            { act: '下午参加美术兴趣班', h: 3, prompt: '周末下午这一时刻明明正在（ ）。' },
+            { act: '早晨起床刷牙洗脸', h: 7, prompt: '天天在这一时刻正在（ ）。' },
+            { act: '晚上和爸爸妈妈吃晚餐', h: 6, prompt: '全家人在这一时刻正在（ ）。' },
+          ];
+          const r = routines[attempts % routines.length];
+          clocks = [{ hour: r.h, minute: 0 }];
+          question = `看钟面（${r.h}时整），${r.prompt}（填对应活动名称）`;
+          answer = r.act;
+          format = 'fill';
+          break;
+        }
+      }
     } else {
-      const correct = index % 3;
-      const shift = index < slots ? 0 : (mode + 1) * 3;
-      clocks = [0, 1, 2].map(j => j === correct ? time : timeAt(index + (j + shift) % (slots - 1) + 1));
-      question = `哪一个钟面显示 ${label}？`;
-      answer = ['A', 'B', 'C'][correct];
-      format = 'choice';
+      // ---------------- 二年级逻辑 ----------------
+      const h = ((attempts * 3 + randomInt(1, 11)) % 12) + 1;
+
+      switch (subtemplateId) {
+        case 'time-read-5min': {
+          const m = (((attempts + 1) * 7) % 12) * 5;
+          const time = { hour: h, minute: m };
+          const label = timeText(time);
+          question = attempts % 2 === 0 ? '看钟面，写出时间。' : '认一认钟面上的时刻。';
+          answer = label;
+          clocks = [time];
+          format = 'fill';
+          break;
+        }
+        case 'time-draw-5min': {
+          const m = ((attempts * 3 + 1) % 12) * 5;
+          const time = { hour: h, minute: m };
+          const label = timeText(time);
+          question = `在钟面上画出 ${label} 的时针和分针。`;
+          answer = label;
+          clocks = [null];
+          answerDiagram = { kind: 'clock', clocks: [time] };
+          format = 'draw';
+          break;
+        }
+        case 'time-choice-5min': {
+          const m = ((attempts * 5 + 2) % 12) * 5;
+          const targetTime = { hour: h, minute: m };
+          const label = timeText(targetTime);
+          const correct = attempts % 3;
+          const w1 = { hour: h, minute: (m + 20) % 60 };
+          const w2 = { hour: ((h + 2) % 12) + 1, minute: m };
+          clocks = correct === 0 ? [targetTime, w1, w2] : (correct === 1 ? [w1, targetTime, w2] : [w1, w2, targetTime]);
+          question = `哪一个钟面显示 ${label}？`;
+          answer = ['A', 'B', 'C'][correct];
+          format = 'choice';
+          break;
+        }
+        case 'time-read-1min': {
+          const m = ((attempts * 17 + 7) % 59) + 1;
+          const time = { hour: h, minute: m };
+          const label = timeText(time);
+          question = attempts % 2 === 0 ? '看钟面，写出时间。' : '认一认钟面上的精准时刻。';
+          answer = label;
+          clocks = [time];
+          format = 'fill';
+          break;
+        }
+        case 'time-draw-accurate': {
+          const m = [15, 30, 45, 50, 55][attempts % 5];
+          const time = { hour: h, minute: m };
+          const label = timeText(time);
+          question = `在钟面上画出 ${label} 的时针和分针。`;
+          answer = label;
+          clocks = [null];
+          answerDiagram = { kind: 'clock', clocks: [time] };
+          format = 'draw';
+          break;
+        }
+        case 'time-elapsed-fill': {
+          const startM = (attempts % 6) * 5;
+          const dur = 20 + (attempts % 5) * 5;
+          const endM = startM + dur;
+          const startTime = { hour: h, minute: startM };
+          clocks = [startTime];
+          question = `看钟面（${timeText(startTime)}），亮亮开始踢球，踢了 ${dur} 分钟，结束时间是（ ）时（ ）分。`;
+          answer = `${h}时${endM}分`;
+          format = 'fill';
+          break;
+        }
+        case 'time-draw-future': {
+          const m = (attempts % 6) * 5;
+          const nextM = m + 20;
+          const currentTime = { hour: h, minute: m };
+          const futureTime = { hour: h, minute: nextM };
+          const futureLabel = timeText(futureTime);
+          question = `钟面上现在是 ${timeText(currentTime)}，请画出过20分钟后（${futureLabel}）的时针和分针。`;
+          answer = futureLabel;
+          clocks = [null];
+          answerDiagram = { kind: 'clock', clocks: [futureTime] };
+          format = 'draw';
+          break;
+        }
+      }
     }
-    return {
-      question, answer, format, subtype: 'unit-clock', diagram: { kind: 'clock', clocks },
-      answerDiagram: format === 'draw' ? { kind: 'clock', clocks: [time] } : undefined,
-    };
-  });
+
+    const key = clocks ? JSON.stringify([question, clocks]) : question;
+    if (seen.has(key)) continue;
+    seen.add(key);
+
+    out.push({
+      question,
+      answer,
+      format,
+      subtype: 'unit-clock',
+      subtemplateId,
+      band: difficulty,
+      diagram: { kind: 'clock', clocks },
+      answerDiagram,
+    });
+  }
+
+  return out;
 }
 
 const statistics = {

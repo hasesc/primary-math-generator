@@ -4,14 +4,17 @@
 
 ---
 
-## [v0.8.3] - 2026-11-12 · 题型薄弱单元深度体检与 25 单元重构工程规范确立
+## [v0.8.3] - 2026-11-12 · 题型薄弱单元深度体检与首批钟表时间单元考法重构
+- **首批薄弱单元考法重构（1上认识钟表 + 2上认识时间）**：
+  - 重构 [`prototype/diagramProblems.js`](prototype/diagramProblems.js) 中的 `clockProblems`，彻底解决钟表时间单元全卷单一考法问题。
+  - **1上 认识钟表**：细分 `clock-read-whole`（看图读整时）、`clock-parts-whole`（钟面部件与大格填空）、`clock-draw-whole`（画时针分针作图）、`clock-time-shift`（前后1小时推算）、`clock-choice-whole`（整时三选一）、`clock-approximate-time`（快到/刚过几时判断）以及 `clock-daily-routine`（生活作息整时情境）共 7 种考法，三档梯次分布。
+  - **2上 认识时间**：细分 `time-read-5min`（5分步长读写）、`time-draw-5min`（5分画针）、`time-choice-5min`（三选一）、`time-read-1min`（1分精准读写）、`time-draw-accurate`（偏角画针作图）、`time-elapsed-fill`（经过时间推算）以及 `time-draw-future`（推算未来时刻画针），三档梯度分明。
+  - 极度贫血单元由 5 个降至 3 个，阶梯考法单元总数提升至 **44 个**，全套 7 大自动化测试套件持续 100% 绿灯。
 - **开源化与全量题型体检**：
   - 确立 GitHub 纯前端开源与技术复盘路线，增加标准开源 [`README.md`](README.md)。
   - 编写自动化诊断工具 [`scripts/find_weak_units.mjs`](scripts/find_weak_units.mjs)，对全套 93 个单元的三档考法真实生成链路进行全量扫描。
-  - 识别出 25 个处于“极度贫血（仅1~2种考法）”或“相对单薄（仅3种固定考法）”的单元（如钟表、时间、小数乘除法、长方形正方形、图形运动、植树问题、百分数二等）。
-- **制定 25 单元重构施工蓝图**：
-  - 产出完整工程规范文档 [`WEAK_UNITS_REDESIGN_SPEC.md`](WEAK_UNITS_REDESIGN_SPEC.md)，明确定义每个薄弱单元在 Easy（基础识记）、Medium（反向推算与作图）、Hard（错因辨析与生活综合）三档下的完整考法矩阵、题面情境、算理约束与数据形式。
-  - 后续代码题型重构严格以该文档为唯一基准。
+  - 产出完整工程规范文档 [`WEAK_UNITS_REDESIGN_SPEC.md`](WEAK_UNITS_REDESIGN_SPEC.md)，明确定义 25 个薄弱单元在 Easy/Medium/Hard 三档下的完整考法矩阵、题面情境、算理约束与数据形式。
+  - 确定“平时做单元专项练（因类制宜）、周末出单元测验卷（五大板块大题考卷）”的双轨制架构。
 
 ---
 

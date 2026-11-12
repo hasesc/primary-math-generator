@@ -1,7 +1,7 @@
 // 自动生成文件（请勿手改）：由 node scripts/manage.mjs 生成
 export const PROJECT_STATUS = {
   "summary": {
-    "generatedAt": "2026/11/11 17:21:41",
+    "generatedAt": "2026/11/12 14:40:00",
     "totalUnits": 93,
     "dedicatedUnits": 92,
     "reviewUnits": 1,
@@ -10,10 +10,10 @@ export const PROJECT_STATUS = {
     "testsPassed": 7,
     "testsTotal": 7,
     "byGradient": {
-      "tiered-skills": 42,
-      "three-tier-range": 26,
+      "tiered-skills": 44,
+      "three-tier-range": 25,
       "two-tier-range": 0,
-      "fixed-range": 25
+      "fixed-range": 24
     },
     "byModule": {
       "scope": 41,
@@ -31,15 +31,15 @@ export const PROJECT_STATUS = {
       "name": "整卷生成冒烟测试 (6年级×3难度)",
       "file": "prototype/smoke-test.mjs",
       "passed": true,
-      "durationMs": 88,
-      "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 0ms, 分布={\"application\":7,\"olympiad\":8,\"arithmetic\":15} | 结果: 18 通过 / 0 未达标"
+      "durationMs": 117,
+      "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 1ms, 分布={\"application\":7,\"olympiad\":8,\"arithmetic\":15} | 结果: 18 通过 / 0 未达标"
     },
     {
       "id": "coverage",
       "name": "93单元全量联动与756配置覆盖测试",
       "file": "prototype/coverage-test.mjs",
       "passed": true,
-      "durationMs": 154,
+      "durationMs": 184,
       "summary": "总计 93 单元：联动通过 92，无专属出题映射（含整理与复习）1，不合格 0 | 已检查 756 种难度与题量组合。至少一组配置只有一个卷面分类的单元（分类数不等于考法数）共 81 个：1上 准备课、1上 位置、1上 1~5的认识和加减法、1上 认识图形（一）、1上 6~10的认识和加减法、1上 11~20各数的认识、1上 20以内的进位加法、1下 20以内的退位减法、1下 100以内数的认识、1下 100以内的加法和减法（一）、1下 认识图形（二）、1下 100以内的加法和减法（二）、1下 找规律、2上 100以内的加法和减法（二）、2上 角的初步认识、2上 表内乘法（一）、2上 观察物体（一）、2上 表内乘法（二）、2上 数学广角——搭配（一）、2下 数据收集整理、2下 表内除法（一）、2下 图形的运动（一）、2下 表内除法（二）、2下 混合运算、2下 有余数的除法、2下 万以内数的认识、2下 数学广角——推理、3上 万以内的加法和减法（一）、3上 万以内的加法和减法（二）、3上 倍的认识、3上 多位数乘一位数、3上 长方形和正方形、3上 分数的初步认识、3下 位置与方向（一）、3下 除数是一位数的除法、3下 复式统计表、3下 两位数乘两位数、3下 面积、3下 年月日、3下 小数的初步认识、3下 数学广角——搭配（二）、4上 大数的认识、4上 角的度量、4上 三位数乘两位数、4上 平行四边形和梯形、4上 除数是两位数的除法、4上 条形统计图、4上 数学广角——优化、4下 四则运算、4下 观察物体（二）、4下 运算定律、4下 小数的意义和性质、4下 三角形、4下 小数的加法和减法、4下 图形的运动（二）、4下 平均数与条形统计图、4下 数学广角——鸡兔同笼、5上 位置、5上 可能性、5上 简易方程、5上 多边形的面积、5上 数学广角——植树问题、5下 观察物体（三）、5下 因数与倍数、5下 长方体和正方体、5下 分数的意义和性质、5下 图形的运动（三）、5下 分数的加法和减法、5下 折线统计图、5下 数学广角——找次品、6上 位置与方向（二）、6上 分数除法、6上 比、6上 圆、6上 扇形统计图、6上 数学广角——数与形、6下 负数、6下 百分数（二）、6下 圆柱与圆锥、6下 比例、6下 数学广角——鸽巢问题"
     },
     {
@@ -47,7 +47,7 @@ export const PROJECT_STATUS = {
       "name": "数学答案独立逆向复算测试 (160轮)",
       "file": "prototype/correctness-test.mjs",
       "passed": true,
-      "durationMs": 78,
+      "durationMs": 93,
       "summary": "鸡兔同笼、植树、统计图并列和小数乘法的独立复算通过"
     },
     {
@@ -55,7 +55,7 @@ export const PROJECT_STATUS = {
       "name": "口算/竖式每日一练专项测试 (123配置)",
       "file": "prototype/daily-practice-test.mjs",
       "passed": true,
-      "durationMs": 73,
+      "durationMs": 75,
       "summary": "123 种每日一练配置通过，题量、去重、答案复算和年级限制正常"
     },
     {
@@ -63,7 +63,7 @@ export const PROJECT_STATUS = {
       "name": "三档难度阶梯考法与答案测试",
       "file": "prototype/difficulty-gradient-test.mjs",
       "passed": true,
-      "durationMs": 82,
+      "durationMs": 90,
       "summary": "✅ 33 个专项插件（18 个全独立三档考法 + 15 个进阶分支插件）的难度梯度、题量和提高题答案复算全部通过！"
     },
     {
@@ -71,7 +71,7 @@ export const PROJECT_STATUS = {
       "name": "同卷考法轮转相邻不重复测试 (93单元×3档×6轮)",
       "file": "prototype/rotation-test.mjs",
       "passed": true,
-      "durationMs": 243,
+      "durationMs": 256,
       "summary": "考法轮转（相邻 subtemplateId 不重复）测试通过"
     },
     {
@@ -79,13 +79,28 @@ export const PROJECT_STATUS = {
       "name": "题面有效性、唯一解与必备考点回归测试",
       "file": "prototype/regression-test.mjs",
       "passed": true,
-      "durationMs": 113,
+      "durationMs": 117,
       "summary": "题面有效性、动物题唯一解及缺失考点回归检查通过"
     }
   ],
   "git": {
     "initialized": true,
     "commits": [
+      {
+        "hash": "780b7b4",
+        "date": "2026-11-12 14:29",
+        "message": "docs: establish 25 weak units tiered redesign specification"
+      },
+      {
+        "hash": "6adab38",
+        "date": "2026-11-12 14:16",
+        "message": "docs: add standard open-source README.md"
+      },
+      {
+        "hash": "b71e1d1",
+        "date": "2026-11-11 17:21",
+        "message": "docs: 建立93单元考点验收表并明确首发内容缺口"
+      },
       {
         "hash": "96399e4",
         "date": "2026-11-11 17:12",
@@ -186,6 +201,20 @@ export const PROJECT_STATUS = {
     }
   ],
   "changelog": [
+    {
+      "version": "v0.8.3",
+      "date": "2026-11-12",
+      "title": "题型薄弱单元深度体检与 25 单元重构工程规范确立",
+      "bullets": [
+        "**开源化与全量题型体检**：",
+        "确立 GitHub 纯前端开源与技术复盘路线，增加标准开源 [README.md](README.md)。",
+        "编写自动化诊断工具 [scripts/find_weak_units.mjs](scripts/find_weak_units.mjs)，对全套 93 个单元的三档考法真实生成链路进行全量扫描。",
+        "识别出 25 个处于“极度贫血（仅1~2种考法）”或“相对单薄（仅3种固定考法）”的单元（如钟表、时间、小数乘除法、长方形正方形、图形运动、植树问题、百分数二等）。",
+        "**制定 25 单元重构施工蓝图**：",
+        "产出完整工程规范文档 [WEAK_UNITS_REDESIGN_SPEC.md](WEAK_UNITS_REDESIGN_SPEC.md)，明确定义每个薄弱单元在 Easy（基础识记）、Medium（反向推算与作图）、Hard（错因辨析与生活综合）三档下的完整考法矩阵、题面情境、算理约束与数据形式。",
+        "后续代码题型重构严格以该文档为唯一基准。"
+      ]
+    },
     {
       "version": "v0.8.2",
       "date": "2026-11-11",
@@ -1764,14 +1793,14 @@ export const PROJECT_STATUS = {
       "moduleKey": "diagram",
       "moduleLabel": "钟表与统计图表 (diagramProblems)",
       "moduleFile": "prototype/diagramProblems.js",
-      "gradientTier": "fixed-range",
-      "gradientLabel": "课标定界",
-      "gradientBadge": "neutral",
-      "gradientNote": "一年级上册《认识钟表》课标规定仅考整时（固定步长60分）",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
-        "easy": 1,
-        "medium": 1,
-        "hard": 1
+        "easy": 3,
+        "medium": 3,
+        "hard": 5
       },
       "hasDiagram": true,
       "byDifficulty": {
@@ -1779,36 +1808,37 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-clock"
+            "clock-read-whole",
+            "clock-parts-whole",
+            "clock-choice-whole"
           ],
           "formats": [
             "fill",
-            "draw",
             "choice"
           ],
           "samples": [
             {
-              "question": "看钟面，写出时间。",
-              "answer": "7时",
-              "skill": "unit-clock",
+              "question": "认一认钟面上的时刻，填在横线上。",
+              "answer": "1时",
+              "skill": "clock-read-whole",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
             {
-              "question": "在钟面上画出 7时 的时针和分针。",
-              "answer": "7时",
-              "skill": "unit-clock",
-              "format": "draw",
+              "question": "观察钟面（12时），钟面上又粗又短的针指的是数字（ ）。",
+              "answer": "12",
+              "skill": "clock-parts-whole",
+              "format": "fill",
               "responseKind": null,
               "hasDiagram": true,
-              "hasAnswerDiagram": true
+              "hasAnswerDiagram": false
             },
             {
-              "question": "哪一个钟面显示 7时？",
+              "question": "哪一个钟面显示 1时？",
               "answer": "A",
-              "skill": "unit-clock",
+              "skill": "clock-choice-whole",
               "format": "choice",
               "responseKind": null,
               "hasDiagram": true,
@@ -1816,8 +1846,8 @@ export const PROJECT_STATUS = {
             },
             {
               "question": "看钟面，写出时间。",
-              "answer": "8时",
-              "skill": "unit-clock",
+              "answer": "3时",
+              "skill": "clock-read-whole",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": true,
@@ -1829,49 +1859,51 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-clock"
+            "clock-draw-whole",
+            "clock-time-shift",
+            "clock-choice-whole"
           ],
           "formats": [
-            "fill",
             "draw",
+            "fill",
             "choice"
           ],
           "samples": [
             {
-              "question": "看钟面，写出时间。",
-              "answer": "7时",
-              "skill": "unit-clock",
-              "format": "fill",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "在钟面上画出 7时 的时针和分针。",
-              "answer": "7时",
-              "skill": "unit-clock",
+              "question": "请在钟面上补全 1时 的指针（短针指几，长针指12）。",
+              "answer": "1时",
+              "skill": "clock-draw-whole",
               "format": "draw",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": true
             },
             {
-              "question": "哪一个钟面显示 7时？",
+              "question": "看钟面（7时），过 1 小时是（ ）时。",
+              "answer": "8时",
+              "skill": "clock-time-shift",
+              "format": "fill",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "哪一个钟面显示 11时？",
               "answer": "A",
-              "skill": "unit-clock",
+              "skill": "clock-choice-whole",
               "format": "choice",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
             {
-              "question": "看钟面，写出时间。",
-              "answer": "8时",
-              "skill": "unit-clock",
-              "format": "fill",
+              "question": "请在钟面上补全 6时 的指针（短针指几，长针指12）。",
+              "answer": "6时",
+              "skill": "clock-draw-whole",
+              "format": "draw",
               "responseKind": null,
               "hasDiagram": true,
-              "hasAnswerDiagram": false
+              "hasAnswerDiagram": true
             }
           ]
         },
@@ -1879,7 +1911,11 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-clock"
+            "clock-approximate-time",
+            "clock-daily-routine",
+            "clock-draw-whole",
+            "clock-choice-whole",
+            "clock-time-shift"
           ],
           "formats": [
             "fill",
@@ -1888,37 +1924,37 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "看钟面，写出时间。",
-              "answer": "7时",
-              "skill": "unit-clock",
+              "question": "看钟面上的指针位置，此时大约是刚过（ ）时整。",
+              "answer": "2",
+              "skill": "clock-approximate-time",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
             {
-              "question": "在钟面上画出 7时 的时针和分针。",
-              "answer": "7时",
-              "skill": "unit-clock",
+              "question": "看钟面（4时整），亮亮在这一时刻正在（ ）。（填对应活动名称）",
+              "answer": "下午在操场做运动",
+              "skill": "clock-daily-routine",
+              "format": "fill",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "在钟面上画出 9时 的时针和分针。",
+              "answer": "9时",
+              "skill": "clock-draw-whole",
               "format": "draw",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": true
             },
             {
-              "question": "哪一个钟面显示 7时？",
-              "answer": "A",
-              "skill": "unit-clock",
+              "question": "哪一个钟面显示 10时？",
+              "answer": "B",
+              "skill": "clock-choice-whole",
               "format": "choice",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "看钟面，写出时间。",
-              "answer": "8时",
-              "skill": "unit-clock",
-              "format": "fill",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
@@ -4276,14 +4312,14 @@ export const PROJECT_STATUS = {
       "moduleKey": "diagram",
       "moduleLabel": "钟表与统计图表 (diagramProblems)",
       "moduleFile": "prototype/diagramProblems.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础(15分刻)/标准(5分刻)/提高(1分刻)三档精细度",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
-        "easy": 1,
-        "medium": 1,
-        "hard": 1
+        "easy": 3,
+        "medium": 3,
+        "hard": 3
       },
       "hasDiagram": true,
       "byDifficulty": {
@@ -4291,7 +4327,9 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-clock"
+            "time-read-5min",
+            "time-draw-5min",
+            "time-choice-5min"
           ],
           "formats": [
             "fill",
@@ -4300,27 +4338,27 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "看钟面，写出时间。",
-              "answer": "6时",
-              "skill": "unit-clock",
+              "question": "认一认钟面上的时刻。",
+              "answer": "10时10分",
+              "skill": "time-read-5min",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
             {
-              "question": "在钟面上画出 6时 的时针和分针。",
-              "answer": "6时",
-              "skill": "unit-clock",
+              "question": "在钟面上画出 8时35分 的时针和分针。",
+              "answer": "8时35分",
+              "skill": "time-draw-5min",
               "format": "draw",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": true
             },
             {
-              "question": "哪一个钟面显示 6时？",
+              "question": "哪一个钟面显示 8时25分？",
               "answer": "A",
-              "skill": "unit-clock",
+              "skill": "time-choice-5min",
               "format": "choice",
               "responseKind": null,
               "hasDiagram": true,
@@ -4328,8 +4366,8 @@ export const PROJECT_STATUS = {
             },
             {
               "question": "看钟面，写出时间。",
-              "answer": "6时15分",
-              "skill": "unit-clock",
+              "answer": "9时55分",
+              "skill": "time-read-5min",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": true,
@@ -4341,7 +4379,9 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-clock"
+            "time-read-1min",
+            "time-draw-accurate",
+            "time-choice-5min"
           ],
           "formats": [
             "fill",
@@ -4350,27 +4390,27 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "看钟面，写出时间。",
-              "answer": "6时5分",
-              "skill": "unit-clock",
+              "question": "认一认钟面上的精准时刻。",
+              "answer": "10时25分",
+              "skill": "time-read-1min",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
             {
-              "question": "在钟面上画出 6时5分 的时针和分针。",
-              "answer": "6时5分",
-              "skill": "unit-clock",
+              "question": "在钟面上画出 3时45分 的时针和分针。",
+              "answer": "3时45分",
+              "skill": "time-draw-accurate",
               "format": "draw",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": true
             },
             {
-              "question": "哪一个钟面显示 6时5分？",
+              "question": "哪一个钟面显示 6时25分？",
               "answer": "A",
-              "skill": "unit-clock",
+              "skill": "time-choice-5min",
               "format": "choice",
               "responseKind": null,
               "hasDiagram": true,
@@ -4378,8 +4418,8 @@ export const PROJECT_STATUS = {
             },
             {
               "question": "看钟面，写出时间。",
-              "answer": "6时10分",
-              "skill": "unit-clock",
+              "answer": "12时17分",
+              "skill": "time-read-1min",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": true,
@@ -4391,7 +4431,9 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unit-clock"
+            "time-elapsed-fill",
+            "time-draw-future",
+            "time-choice-5min"
           ],
           "formats": [
             "fill",
@@ -4400,36 +4442,36 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "看钟面，写出时间。",
-              "answer": "6时9分",
-              "skill": "unit-clock",
+              "question": "看钟面（10时5分），亮亮开始踢球，踢了 25 分钟，结束时间是（ ）时（ ）分。",
+              "answer": "10时30分",
+              "skill": "time-elapsed-fill",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
             {
-              "question": "在钟面上画出 6时9分 的时针和分针。",
-              "answer": "6时9分",
-              "skill": "unit-clock",
+              "question": "钟面上现在是 11时10分，请画出过20分钟后（11时30分）的时针和分针。",
+              "answer": "11时30分",
+              "skill": "time-draw-future",
               "format": "draw",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": true
             },
             {
-              "question": "哪一个钟面显示 6时9分？",
+              "question": "哪一个钟面显示 3时25分？",
               "answer": "A",
-              "skill": "unit-clock",
+              "skill": "time-choice-5min",
               "format": "choice",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
             {
-              "question": "看钟面，写出时间。",
-              "answer": "6时10分",
-              "skill": "unit-clock",
+              "question": "看钟面（4时20分），亮亮开始踢球，踢了 40 分钟，结束时间是（ ）时（ ）分。",
+              "answer": "4时60分",
+              "skill": "time-elapsed-fill",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": true,
