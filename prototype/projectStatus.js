@@ -1,7 +1,7 @@
 // 自动生成文件（请勿手改）：由 node scripts/manage.mjs 生成
 export const PROJECT_STATUS = {
   "summary": {
-    "generatedAt": "2026/11/12 16:07:02",
+    "generatedAt": "2026/11/12 16:07:37",
     "totalUnits": 93,
     "dedicatedUnits": 92,
     "reviewUnits": 1,
@@ -31,7 +31,7 @@ export const PROJECT_STATUS = {
       "name": "整卷生成冒烟测试 (6年级×3难度)",
       "file": "prototype/smoke-test.mjs",
       "passed": true,
-      "durationMs": 120,
+      "durationMs": 124,
       "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 1ms, 分布={\"application\":7,\"olympiad\":8,\"arithmetic\":15} | 结果: 18 通过 / 0 未达标"
     },
     {
@@ -39,7 +39,7 @@ export const PROJECT_STATUS = {
       "name": "93单元全量联动与756配置覆盖测试",
       "file": "prototype/coverage-test.mjs",
       "passed": true,
-      "durationMs": 193,
+      "durationMs": 189,
       "summary": "总计 93 单元：联动通过 92，无专属出题映射（含整理与复习）1，不合格 0 | 已检查 756 种难度与题量组合。至少一组配置只有一个卷面分类的单元（分类数不等于考法数）共 82 个：1上 准备课、1上 位置、1上 1~5的认识和加减法、1上 认识图形（一）、1上 6~10的认识和加减法、1上 11~20各数的认识、1上 20以内的进位加法、1下 20以内的退位减法、1下 100以内数的认识、1下 100以内的加法和减法（一）、1下 认识图形（二）、1下 100以内的加法和减法（二）、1下 找规律、2上 100以内的加法和减法（二）、2上 角的初步认识、2上 表内乘法（一）、2上 观察物体（一）、2上 表内乘法（二）、2上 数学广角——搭配（一）、2下 数据收集整理、2下 表内除法（一）、2下 图形的运动（一）、2下 表内除法（二）、2下 混合运算、2下 有余数的除法、2下 万以内数的认识、2下 数学广角——推理、3上 万以内的加法和减法（一）、3上 万以内的加法和减法（二）、3上 倍的认识、3上 多位数乘一位数、3上 长方形和正方形、3上 分数的初步认识、3下 位置与方向（一）、3下 除数是一位数的除法、3下 复式统计表、3下 两位数乘两位数、3下 面积、3下 年月日、3下 小数的初步认识、3下 数学广角——搭配（二）、4上 大数的认识、4上 公顷和平方千米、4上 角的度量、4上 三位数乘两位数、4上 平行四边形和梯形、4上 除数是两位数的除法、4上 条形统计图、4上 数学广角——优化、4下 四则运算、4下 观察物体（二）、4下 运算定律、4下 小数的意义和性质、4下 三角形、4下 小数的加法和减法、4下 图形的运动（二）、4下 平均数与条形统计图、4下 数学广角——鸡兔同笼、5上 位置、5上 可能性、5上 简易方程、5上 多边形的面积、5上 数学广角——植树问题、5下 观察物体（三）、5下 因数与倍数、5下 长方体和正方体、5下 分数的意义和性质、5下 图形的运动（三）、5下 分数的加法和减法、5下 折线统计图、5下 数学广角——找次品、6上 位置与方向（二）、6上 分数除法、6上 比、6上 圆、6上 扇形统计图、6上 数学广角——数与形、6下 负数、6下 百分数（二）、6下 圆柱与圆锥、6下 比例、6下 数学广角——鸽巢问题"
     },
     {
@@ -47,7 +47,7 @@ export const PROJECT_STATUS = {
       "name": "数学答案独立逆向复算测试 (160轮)",
       "file": "prototype/correctness-test.mjs",
       "passed": true,
-      "durationMs": 89,
+      "durationMs": 87,
       "summary": "鸡兔同笼、植树、统计图并列和小数乘法的独立复算通过"
     },
     {
@@ -55,7 +55,7 @@ export const PROJECT_STATUS = {
       "name": "口算/竖式每日一练专项测试 (186配置)",
       "file": "prototype/daily-practice-test.mjs",
       "passed": true,
-      "durationMs": 63,
+      "durationMs": 71,
       "summary": "186 种每日一练配置通过，题量、去重、答案复算和年级限制正常"
     },
     {
@@ -63,7 +63,7 @@ export const PROJECT_STATUS = {
       "name": "三档难度阶梯考法与答案测试",
       "file": "prototype/difficulty-gradient-test.mjs",
       "passed": true,
-      "durationMs": 93,
+      "durationMs": 89,
       "summary": "✅ 33 个专项插件（18 个全独立三档考法 + 15 个进阶分支插件）的难度梯度、题量和提高题答案复算全部通过！"
     },
     {
@@ -71,7 +71,7 @@ export const PROJECT_STATUS = {
       "name": "同卷考法轮转相邻不重复测试 (93单元×3档×6轮)",
       "file": "prototype/rotation-test.mjs",
       "passed": true,
-      "durationMs": 259,
+      "durationMs": 261,
       "summary": "考法轮转（相邻 subtemplateId 不重复）测试通过"
     },
     {
@@ -79,7 +79,7 @@ export const PROJECT_STATUS = {
       "name": "题面有效性、唯一解与必备考点回归测试",
       "file": "prototype/regression-test.mjs",
       "passed": true,
-      "durationMs": 75,
+      "durationMs": 77,
       "summary": "题面有效性、动物题唯一解及缺失考点回归检查通过"
     },
     {
@@ -87,13 +87,18 @@ export const PROJECT_STATUS = {
       "name": "100分制单元测验卷全链路测试 (6年级×3难度)",
       "file": "prototype/exam-paper-test.mjs",
       "passed": true,
-      "durationMs": 119,
+      "durationMs": 114,
       "summary": "✅ 100分制单元测验卷验证通过: 18/18 组全部达标 (6年级×3难度覆盖)"
     }
   ],
   "git": {
     "initialized": true,
     "commits": [
+      {
+        "hash": "401d8f6",
+        "date": "2026-11-12 16:07",
+        "message": "feat: complete Phase 3 full tiered-skills overhaul for 22 geometry, grid, diagram and unit-area units"
+      },
       {
         "hash": "eda0d1d",
         "date": "2026-11-12 15:43",
@@ -163,14 +168,9 @@ export const PROJECT_STATUS = {
         "hash": "220f2c5",
         "date": "2026-11-11 16:30",
         "message": "fix: 彻底解决本地浏览器file协议下按钮无反应问题，新增一键双击启动器与智能引导"
-      },
-      {
-        "hash": "8638a4b",
-        "date": "2026-11-11 16:18",
-        "message": "feat: 前端UI界面全面精装升级 + 通用插件考法补全 (阶梯考法达42单元，v0.8.0)"
       }
     ],
-    "dirtyFiles": 10
+    "dirtyFiles": 0
   },
   "roadmap": [
     {
