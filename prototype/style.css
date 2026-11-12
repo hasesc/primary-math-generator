@@ -727,6 +727,8 @@ body {
 .paper.answers {
   margin-top: 36px;
   background: #fcfdfe;
+  break-before: page;
+  page-break-before: always;
 }
 
 /* 试卷规范抬头 */

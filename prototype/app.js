@@ -695,59 +695,43 @@ async function exportPdf(type = 'paper') {
       const paperSheet = $('#paper-sheet');
       const answerSheet = $('#answer-sheet');
 
-      const wrapper = document.createElement('div');
-      wrapper.style.position = 'fixed';
-      wrapper.style.left = '-9999px';
-      wrapper.style.top = '0';
-      wrapper.style.width = '794px';
-      wrapper.style.background = '#ffffff';
-      wrapper.style.color = '#000000';
-      wrapper.style.fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif';
+      let targetEl = paperSheet;
+      let needHideAnswers = false;
 
-      if (type === 'paper' || type === 'both') {
-        const pClone = paperSheet.cloneNode(true);
-        pClone.classList.remove('hidden');
-        pClone.style.boxShadow = 'none';
-        pClone.style.margin = '0 auto';
-        pClone.style.width = '100%';
-        wrapper.appendChild(pClone);
+      if (type === 'answers') {
+        targetEl = answerSheet;
+        if (answerSheet.classList.contains('hidden')) {
+          answerSheet.classList.remove('hidden');
+          needHideAnswers = !state.showAnswers;
+        }
+      } else if (type === 'both') {
+        targetEl = $('#paper-container') || paperSheet.parentElement;
+        if (answerSheet.classList.contains('hidden')) {
+          answerSheet.classList.remove('hidden');
+          needHideAnswers = !state.showAnswers;
+        }
       }
-
-      if (type === 'both') {
-        const divider = document.createElement('div');
-        divider.className = 'html2pdf__page-break';
-        divider.style.height = '1px';
-        divider.style.pageBreakBefore = 'always';
-        wrapper.appendChild(divider);
-      }
-
-      if (type === 'answers' || type === 'both') {
-        const aClone = answerSheet.cloneNode(true);
-        aClone.classList.remove('hidden');
-        aClone.style.boxShadow = 'none';
-        aClone.style.margin = '0 auto';
-        aClone.style.width = '100%';
-        wrapper.appendChild(aClone);
-      }
-
-      document.body.appendChild(wrapper);
 
       const opt = {
-        margin: [6, 6, 6, 6],
+        margin: [8, 8, 8, 8],
         filename: filename,
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: {
           scale: 2,
           useCORS: true,
           logging: false,
-          windowWidth: 794
+          scrollY: 0,
+          scrollX: 0
         },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak: { mode: ['css', 'legacy'] }
       };
 
-      await window.html2pdf().set(opt).from(wrapper).save();
-      document.body.removeChild(wrapper);
+      await window.html2pdf().set(opt).from(targetEl).save();
+
+      if (needHideAnswers) {
+        answerSheet.classList.add('hidden');
+      }
 
       showToast('✅ PDF 已生成并直接下载，请在“下载”文件夹查看！', 3500);
       return;

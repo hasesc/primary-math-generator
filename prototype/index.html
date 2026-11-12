@@ -220,35 +220,37 @@
     </div>
   </div>
 
-  <!-- A4 练习卷纸张 -->
-  <article class="paper" id="paper-sheet">
-    <div class="paper-head">
-      <div class="paper-badge">单元同步练 · 实时生成 · 导出打印</div>
-      <h1 class="paper-title" id="p-title">单元同步练</h1>
-      <div class="paper-sub" id="p-sub"></div>
-      <div class="paper-meta-grid">
-        <div>学校：<span class="blank-line" style="min-width:110px"></span></div>
-        <div>班级：<span class="blank-line"></span></div>
-        <div>姓名：<span class="blank-line"></span></div>
-        <div>学号：<span class="blank-line" style="min-width:60px"></span></div>
-        <div>用时：<span class="blank-line" style="min-width:50px"></span> 分钟</div>
-        <div>得分：<span class="score-box">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+  <div id="paper-container">
+    <!-- A4 练习卷纸张 -->
+    <article class="paper" id="paper-sheet">
+      <div class="paper-head">
+        <div class="paper-badge">单元同步练 · 实时生成 · 导出打印</div>
+        <h1 class="paper-title" id="p-title">单元同步练</h1>
+        <div class="paper-sub" id="p-sub"></div>
+        <div class="paper-meta-grid">
+          <div>学校：<span class="blank-line" style="min-width:110px"></span></div>
+          <div>班级：<span class="blank-line"></span></div>
+          <div>姓名：<span class="blank-line"></span></div>
+          <div>学号：<span class="blank-line" style="min-width:60px"></span></div>
+          <div>用时：<span class="blank-line" style="min-width:50px"></span> 分钟</div>
+          <div>得分：<span class="score-box">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        </div>
       </div>
-    </div>
 
-    <!-- 试卷大题区域 -->
-    <div id="paper-sections"></div>
-  </article>
+      <!-- 试卷大题区域 -->
+      <div id="paper-sections"></div>
+    </article>
 
-  <!-- 参考答案纸张 -->
-  <article class="paper answers hidden" id="answer-sheet">
-    <div class="paper-head" style="border-bottom:1.5px solid #22c55e">
-      <div class="paper-badge" style="color:#16a34a">REFERENCE ANSWERS</div>
-      <h2 class="paper-title" style="color:#15803d">参考答案与评分要点</h2>
-      <div class="paper-sub" id="a-sub"></div>
-    </div>
-    <div id="answer-sections"></div>
-  </article>
+    <!-- 参考答案纸张 -->
+    <article class="paper answers hidden" id="answer-sheet">
+      <div class="paper-head" style="border-bottom:1.5px solid #22c55e">
+        <div class="paper-badge" style="color:#16a34a">REFERENCE ANSWERS</div>
+        <h2 class="paper-title" style="color:#15803d">参考答案与评分要点</h2>
+        <div class="paper-sub" id="a-sub"></div>
+      </div>
+      <div id="answer-sections"></div>
+    </article>
+  </div>
 </section>
 
 <!-- 手机端触控吸底快捷操作栏 -->
