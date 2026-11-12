@@ -49,7 +49,7 @@
 ## 🚀 在线体验与一键部署
 
 ### 🌐 在线即刻使用
-- **Web 版 / PWA 在线访问**：[立即进入工作台](https://your-domain.vercel.app/) *(部署后替换为你的链接)*
+- **GitHub Pages 在线访问**：[立即进入工作台](https://hasesc.github.io/primary-math-generator/)
 - **添加到手机桌面 (PWA)**：
   - iOS (Safari)：点击底部分享按钮 -> 选择 **“添加到主屏幕”**。
   - Android (Chrome/Edge)：点击右上角菜单 -> 选择 **“安装应用”** 或 **“添加到桌面”**。
@@ -57,12 +57,12 @@
 ### ⚡ 一键免费部署到 Vercel (推荐)
 点击下方按钮，免费将本项目一键部署到你自己的 Vercel 账号，获得全球极速访问地址：
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyour-username%2Fprimary-math-generator)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhasesc%2Fprimary-math-generator)
 
 ### 📦 方式 2：本地双击直接运行（无需联网）
 1. 下载或克隆本项目：
    ```bash
-   git clone https://github.com/your-username/primary-math-generator.git
+   git clone https://github.com/hasesc/primary-math-generator.git
    ```
 2. 双击根目录下的 **`双击启动出题器.bat`**。
 3. 浏览器将自动弹开本地出题工作台：`http://localhost:3000`。

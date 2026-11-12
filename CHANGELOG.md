@@ -4,6 +4,20 @@
 
 ---
 
+## [v0.9.1] - 2026-11-12 · 全网开源升级：PC端与移动端通用 Web 应用（PWA）、一键部署与官方 GitHub 仓库正式关联
+
+- **模块一：全端响应式 Web 架构与 PWA 移动端应用化**：
+  - 新增根目录直通路由 `index.html`，实现 PC 端大屏与手机端直接即开即用。
+  - 新增规范 PWA 配置文件 `prototype/manifest.json` 与全套矢量应用图标（192px / 512px / favicon），支持 iOS（Safari 添加到主屏幕）与 Android（Chrome/Edge 安装应用）离线无缝使用。
+- **模块二：Vercel 一键云端部署与 GitHub Actions 自动化 CI/CD**：
+  - 新增 `vercel.json` 零配置部署路由与安全防护响应头。
+  - 新增 `.github/workflows/deploy.yml` 自动化流水线，每次推送代码自动跑通 9 大测试套件并自动部署至 GitHub Pages。
+- **模块三：官方 GitHub 开源仓库正式对接与全开源社区文档交付**：
+  - 关联官方远程仓库 `https://github.com/hasesc/primary-math-generator`。
+  - 交付完整图文并茂开源 `README.md`，涵盖核心特性、94单元与全真测验规格、手写演算板、在线访问与本地无网双击启动全流程指南。
+
+---
+
 ## [v0.9.0] - 2026-11-12 · 核心里程碑突破：微信小程序原生端技术移植与三大页面正式上线，实现 0 服务器 0 成本纯前端本地运算
 
 - **模块一：微信小程序引擎整体移植与纯字符串 SVG 渲染器上线 (`repos/skeleton/miniprogram/engine/`)**：
