@@ -137,20 +137,68 @@ function viewTasks(plugin, difficulty) {
     ])).flat();
     const prompt = '俯视图上方是后方，格内数字表示这一格叠了几个小正方体，空白格没有方块。';
     const buildPlan = [[first[1][1], 1], [1, 0]];
+    if (difficulty === 'easy') {
+      return [
+        ['interpret-plan', `${prompt} 拼出这堆图形一共需要几个小正方体？`, first.flat().reduce((a, b) => a + b), scene(plan(first)), scene(cubes(first), caption)],
+        ['plan-to-front', `${prompt} 从前面看，左右两列分别有几层？`, `左列 ${Math.max(...second.map(row => row[0]))} 层，右列 ${Math.max(...second.map(row => row[1]))} 层`, scene(plan(second)), scene(cubes(second), caption)],
+        ['plan-total-cubes', `${prompt} 从上面看，底面一共有几个小正方体？`, first.flat().filter(n => n > 0).length, scene(plan(first)), scene(cubes(first), caption)],
+      ];
+    }
+    if (difficulty === 'hard') {
+      return [
+        ['reconstruct-three-views', `${prompt} 根据三视图还原，这堆立体模型一共有多少个小正方体？`, first.flat().reduce((a, b) => a + b), scene(plan(first)), scene(cubes(first), caption)],
+        ['build-from-plan', `${prompt} 请用小正方体摆出这个图形。`, '搭法见参考图', scene(plan(buildPlan)), scene(cubes(buildPlan), caption)],
+        ['plan-min-max-cubes', `${prompt} 若要在这个立体图形上添放 1 个小正方体且俯视图不变，有（    ）种不同放法。`, `${first.flat().filter(n => n > 0).length} 种`, scene(plan(first)), scene(cubes(first), caption)],
+      ];
+    }
     return [
       ['interpret-plan', `${prompt} 拼出这堆图形一共需要几个小正方体？`, first.flat().reduce((a, b) => a + b), scene(plan(first)), scene(cubes(first), caption)],
       ['plan-to-front', `${prompt} 从前面看，左右两列分别有几层？`, `左列 ${Math.max(...second.map(row => row[0]))} 层，右列 ${Math.max(...second.map(row => row[1]))} 层`, scene(plan(second)), scene(cubes(second), caption)],
       ['build-from-plan', `${prompt} 请用小正方体摆出这个图形。`, '搭法见参考图', scene(plan(buildPlan)), scene(cubes(buildPlan), caption)],
     ];
   }
+
+  if (plugin === 'geo-view-1') {
+    if (difficulty === 'easy') {
+      return [
+        ['count-blocks-simple', '图中的方块摆成竖直的柱。标出的这堆一共有几个小正方体？', heights.flat().reduce((a, b) => a + b), layout],
+        ['read-front', '从前面看，最下面一行能看到几个小正方形？', front.filter(n => n > 0).length, layout],
+        ['count-blocks-columns', '图中的小正方体一共摆成了几列？', heights[0].filter((_, i) => heights[0][i] > 0 || heights[1][i] > 0).length, layout],
+      ];
+    }
+    if (difficulty === 'hard') {
+      return [
+        ['count-blocks-occluded', '标出的这堆几何体（含被完全遮挡的底层方块）一共有几个小正方体？', heights.flat().reduce((a, b) => a + b), layout],
+        ['draw-top', '从上面看哪些格子有小正方体？在右侧空格中涂出来。右侧图上方对应物体的后方。', '见参考图', scene(build, caption, projection(topView.map(row => row.map(() => false)))), scene(build, caption, projection(topView))],
+        ['view-diff-perspectives', '从正面和上面看到的图形形状是否相同？（填“相同”或“不相同”）', '不相同', layout],
+      ];
+    }
+    return [
+      ['count-blocks', '图中的方块摆成竖直的柱，每个上层方块下面都垫满。标出的这堆一共有几个小正方体？', heights.flat().reduce((a, b) => a + b), layout],
+      ['read-front', '从前面看，最下面一行能看到几个小正方形？', front.filter(n => n > 0).length, layout],
+      ['draw-top', '从上面看哪些格子有小正方体？在右侧空格中涂出来。右侧图上方对应物体的后方。', '见参考图', scene(build, caption, projection(topView.map(row => row.map(() => false)))), scene(build, caption, projection(topView))],
+    ];
+  }
+
+  // geo-view-2
+  if (difficulty === 'easy') {
+    return [
+      ['count-blocks', '标出的这堆一共有几个小正方体？', heights.flat().reduce((a, b) => a + b), layout],
+      ['read-front', '从前面看，最高的一列有几个小正方形？', Math.max(...front), layout],
+      ['view-layer-count', '从正面看，最左边一列有几层？', heights[0][0] || heights[1][0] || 1, layout],
+    ];
+  }
+  if (difficulty === 'hard') {
+    return [
+      ['view-min-max-cubes', '从前面看最高有 2 层，从上面看有 3 个小正方形，搭出这个立体图形最少需要（    ）个小正方体。', '4 个', layout],
+      ['draw-side', '从右面看是什么样子？在右侧方格里从最底下一行开始涂，左列对应物体的后排。', '见参考图', scene(build, caption, projection(rows(side).map(row => row.map(() => false)))), scene(build, caption, projection(rows(side)))],
+      ['view-blind-spot', '在这个立体图形后面添上一个小正方体，从正面看形状不变，最多能添（    ）个。', `${Math.max(1, 3 - heights[0].filter(n => n > 0).length)} 个`, layout],
+    ];
+  }
   return [
     ['count-blocks', '图中的方块摆成竖直的柱，每个上层方块下面都垫满。标出的这堆一共有几个小正方体？', heights.flat().reduce((a, b) => a + b), layout],
-    plugin === 'geo-view-1'
-      ? ['read-front', '从前面看，最下面一行能看到几个小正方形？', front.filter(n => n > 0).length, layout]
-      : ['read-front', '从前面看，最高的一列有几个小正方形？', Math.max(...front), layout],
-    plugin === 'geo-view-1'
-      ? ['draw-top', '从上面看哪些格子有小正方体？在右侧空格中涂出来。右侧图上方对应物体的后方。', '见参考图', scene(build, caption, projection(topView.map(row => row.map(() => false)))), scene(build, caption, projection(topView))]
-      : ['draw-side', '从右面看是什么样子？在右侧方格里从最底下一行开始涂，左列对应物体的后排。', '见参考图', scene(build, caption, projection(rows(side).map(row => row.map(() => false)))), scene(build, caption, projection(rows(side)))],
+    ['read-front', '从前面看，最高的一列有几个小正方形？', Math.max(...front), layout],
+    ['draw-side', '从右面看是什么样子？在右侧方格里从最底下一行开始涂，左列对应物体的后排。', '见参考图', scene(build, caption, projection(rows(side).map(row => row.map(() => false)))), scene(build, caption, projection(rows(side)))],
   ];
 }
 
@@ -159,31 +207,80 @@ function planeTasks(plugin, difficulty) {
   const b = integer(2, a - 1);
   const dimensions = scene(rect(35, 24, 94, 62), text(82, 104, `${a} 厘米`), text(160, 58, `${b} 厘米`));
   const square = scene(rect(37, 23, 63, 63), text(68, 106, `${b} 厘米`));
-  if (plugin === 'geo-perimeter') return [
-    ['rect-perimeter', '求图中长方形的周长。', `${2 * (a + b)} 厘米`, dimensions],
-    ['square-perimeter', '沿正方形四周围一圈，需要多长的线？', `${4 * b} 厘米`, square],
-    ['trace-perimeter', '从图中的黑点出发，沿边描一圈，再回到黑点。', '描出长方形四条边', scene(dimensions.elements, element('circle', { cx: 35, cy: 24, r: 3, fill: '#111' })),
-      scene(rect(35, 24, 94, 62), element('rect', { x: 35, y: 24, width: 94, height: 62, fill: 'none', 'stroke-width': 4 }))],
-  ];
-  if (plugin === 'geo-area') {
-    const cells = Array.from({ length: b + 1 }, (_, y) => Array.from({ length: a + 1 }, (_, x) => rect(30 + x * 6, 20 + y * 6, 6, 6, x < a && y < b ? '#ddd' : 'none')));
+
+  if (plugin === 'geo-perimeter') {
+    if (difficulty === 'easy') {
+      return [
+        ['rect-perimeter', '求图中长方形的周长。', `${2 * (a + b)} 厘米`, dimensions],
+        ['square-perimeter', '沿正方形四周围一圈，需要多长的线？', `${4 * b} 厘米`, square],
+        ['trace-perimeter', '从图中的黑点出发，沿边描一圈，再回到黑点。', '描出长方形四条边', scene(dimensions.elements, element('circle', { cx: 35, cy: 24, r: 3, fill: '#111' })),
+          scene(rect(35, 24, 94, 62), element('rect', { x: 35, y: 24, width: 94, height: 62, fill: 'none', 'stroke-width': 4 }))],
+      ];
+    }
+    if (difficulty === 'hard') {
+      return [
+        ['peri-splice-puzzle', `用2个长 ${a} 厘米、宽 ${b} 厘米的长方形拼成一个大长方形，周长最长是多少厘米？`, `${4 * a + 2 * b} 厘米`, dimensions],
+        ['peri-cut-corner', `从边长为 ${a} 厘米的正方形纸的一个角剪去一个边长为 ${b} 厘米的小正方形，剩下图形的周长和原正方形相比（    ）。`, '不变', square],
+        ['peri-reverse-calc', `长方形周长为 ${2 * (a + b)} 厘米，长为 ${a} 厘米，宽是多少厘米？`, `${b} 厘米`, dimensions],
+      ];
+    }
     return [
-      ['count-area-units', '每小格是 1 平方厘米。数一数，阴影的面积是多少？', `${a * b} 平方厘米`, scene(cells.flat())],
-      ['rect-area', '按图中标注，求长方形的面积。', `${a * b} 平方厘米`, dimensions],
-      ['square-area', '按图中标注，求正方形的面积。', `${b * b} 平方厘米`, square],
+      ['peri-reverse-calc', `长方形周长为 ${2 * (a + b)} 厘米，长为 ${a} 厘米，宽是多少厘米？`, `${b} 厘米`, dimensions],
+      ['peri-fence-wall', `一块长方形菜地长 ${a} 米，宽 ${b} 米，一边靠墙围篱笆，篱笆至少需要多少米？`, `${a + 2 * b} 米`, dimensions],
+      ['rect-perimeter', '求图中长方形的周长。', `${2 * (a + b)} 厘米`, dimensions],
     ];
   }
+
+  if (plugin === 'geo-area') {
+    const cells = Array.from({ length: b + 1 }, (_, y) => Array.from({ length: a + 1 }, (_, x) => rect(30 + x * 6, 20 + y * 6, 6, 6, x < a && y < b ? '#ddd' : 'none')));
+    if (difficulty === 'easy') {
+      return [
+        ['count-area-units', '每小格是 1 平方厘米。数一数，阴影的面积是多少？', `${a * b} 平方厘米`, scene(cells.flat())],
+        ['rect-area', '按图中标注，求长方形的面积。', `${a * b} 平方厘米`, dimensions],
+        ['square-area', '按图中标注，求正方形的面积。', `${b * b} 平方厘米`, square],
+      ];
+    }
+    if (difficulty === 'hard') {
+      return [
+        ['area-cut-max', `在一张长 ${a} 厘米、宽 ${b} 厘米的长方形纸上剪下一个最大的正方形，剩下图形的面积是多少平方厘米？`, `${(a - b) * b} 平方厘米`, dimensions],
+        ['area-pave-tiles', `一个长方形房间长 ${a} 米，宽 ${b} 米，用边长 1 米的正方形地砖铺满，至少需要多少块？`, `${a * b} 块`, dimensions],
+        ['area-reverse-calc', `长方形面积为 ${a * b} 平方厘米，长为 ${a} 厘米，求宽。`, `${b} 厘米`, dimensions],
+      ];
+    }
+    return [
+      ['area-reverse-calc', `长方形面积为 ${a * b} 平方厘米，长为 ${a} 厘米，求宽。`, `${b} 厘米`, dimensions],
+      ['area-perimeter-combo', `正方形的周长是 ${4 * b} 厘米，它的面积是多少平方厘米？`, `${b * b} 平方厘米`, square],
+      ['rect-area', '按图中标注，求长方形的面积。', `${a * b} 平方厘米`, dimensions],
+    ];
+  }
+
   if (plugin === 'geo-quad') {
     const para = [[34, 84], [118, 84], [145, 32], [61, 32]];
     const trap = [[34, 84], [142, 84], [113, 32], [62, 32]];
+    const deg = 50 + (b % 5) * 5;
+    if (difficulty === 'easy') {
+      return [
+        ['classify-quad', '图中是平行四边形还是梯形？', a % 2 ? '平行四边形' : '梯形', scene(polygon(a % 2 ? para : trap), text(200, 36 + b, '看一看'))],
+        ['parallel-sides', '用笔描出这个梯形中互相平行的一对边。', '描出上底和下底', scene(polygon(trap), text(200, 42 + a, '描一描')),
+          scene(polygon(trap), element('line', { x1: 34, y1: 84, x2: 142, y2: 84, 'stroke-width': 4 }), element('line', { x1: 62, y1: 32, x2: 113, y2: 32, 'stroke-width': 4 }))],
+        ['quad-names', a % 2 ? '平行四边形的两组对边分别（    ）。' : '梯形只有（    ）组对边互相平行。', a % 2 ? '平行且相等' : '一', scene(polygon(a % 2 ? para : trap), text(200, 35 + a, '填一填'))],
+      ];
+    }
+    if (difficulty === 'hard') {
+      return [
+        ['trap-split', '在梯形中画一条线段，把它分成一个平行四边形和一个三角形。', '见参考图', scene(polygon(trap), text(200, 35 + a, '画一画')), scene(polygon(trap), line(62, 32, 85, 84, true))],
+        ['quad-pull-nature', '把一个长方形活动木框拉成平行四边形后，它的周长（    ），面积（    ）。', '周长不变，面积变小', scene(polygon(para), text(200, 35 + b, '想一想'))],
+        ['quad-cut-triangle', '一个梯形通过剪一刀最多可以分成两个（    ）。', '梯形（或三角形）', scene(polygon(trap), text(200, 35 + a, '试一试'))],
+      ];
+    }
     return [
-      ['classify-quad', '图中是平行四边形还是梯形？', a % 2 ? '平行四边形' : '梯形', scene(polygon(a % 2 ? para : trap), text(200, 36 + b, '看一看'))],
-      ['parallel-sides', '用笔描出这个梯形中互相平行的一对边。', '描出上底和下底', scene(polygon(trap), text(200, 42 + a, '描一描')),
-        scene(polygon(trap), element('line', { x1: 34, y1: 84, x2: 142, y2: 84, 'stroke-width': 4 }), element('line', { x1: 62, y1: 32, x2: 113, y2: 32, 'stroke-width': 4 }))],
       ['draw-height', '从黑点向下方的底画一条高。', '见参考图', scene(polygon(para), element('circle', { cx: 61, cy: 32, r: 3, fill: '#111' }), text(197, 48 + b, '画一画')),
         scene(polygon(para), line(61, 32, 61, 84, true), rect(61, 77, 7, 7))],
+      ['quad-angles', `平行四边形的一个内角是 ${deg}°，与它相邻的角是多少度？`, `${180 - deg}°`, scene(polygon(para), text(61, 70, `${deg}°`))],
+      ['trap-kinds', b % 2 ? '两腰相等的梯形叫做（    ）梯形。' : '有一个角是直角的梯形叫做（    ）梯形。', b % 2 ? '等腰' : '直角', scene(polygon(trap), text(200, 35 + b, '填一填'))],
     ];
   }
+
   if (plugin === 'geo-composite') {
     const h = 2 * b;
     const trapezoid = scene(polygon([[35, 82], [152, 82], [118, 31], [64, 31]]), line(64, 31, 64, 82, true),
@@ -202,17 +299,34 @@ function planeTasks(plugin, difficulty) {
         scene(polygon([[35, 82], [150, 82], [75, 25]]), line(75, 25, 75, 82, true), text(93, 104, `底 ${a} 厘米`), text(105, 57, '高？'))],
     ];
   }
+
   if (plugin === 'geo-triangle') {
     const points = a % 2 ? [[31, 83], [123, 83], [31, 25]] : [[31, 83], [123, 83], [75, 20]];
     const second = 80 - b * 2;
+    const baseAngle = 40 + (b % 6) * 5;
+    if (difficulty === 'easy') {
+      return [
+        ['classify-triangle', '看图判断，这是直角三角形还是锐角三角形？', a % 2 ? '直角三角形' : '锐角三角形', scene(polygon(points), a % 2 ? rect(31, 76, 7, 7) : text(171, 46 + b, '看一看'))],
+        ['triangle-height', '从顶点 A 向下方的底画一条高。', '见参考图', scene(polygon(points), text(points[2][0], points[2][1] - 7, 'A')),
+          scene(polygon(points), line(points[2][0], points[2][1], points[2][0], 83, true), text(points[2][0], points[2][1] - 7, 'A'))],
+        ['triangle-elements', '三角形有（    ）条边，（    ）个角，（    ）个顶点。', '3条边，3个角，3个顶点', scene(polygon(points), text(171, 40 + a, '想一想'))],
+      ];
+    }
+    if (difficulty === 'hard') {
+      return [
+        ['triangle-sides-rule', '下列三组线段中，能围成三角形的一组是（    ）。A: 3,4,8  B: 2,5,7  C: 4,5,6', 'C', scene(polygon(points), text(171, 40 + b, '选一选'))],
+        ['triangle-third-range', `已知三角形两边长分别为 ${a} 厘米和 ${b} 厘米，第三边最长是（    ）厘米（取整厘米数）。`, `${a + b - 1} 厘米`, scene(polygon(points))],
+        ['triangle-angle-ratio', '三角形三个内角度数的比是 1:2:3，这是一个（    ）三角形。', '直角', scene(polygon(points), text(171, 40 + a, '推一推'))],
+      ];
+    }
     return [
-      ['classify-triangle', '看图判断，这是直角三角形还是锐角三角形？', a % 2 ? '直角三角形' : '锐角三角形', scene(polygon(points), a % 2 ? rect(31, 76, 7, 7) : text(171, 46 + b, '看一看'))],
       ['triangle-angle-sum', '根据图中标出的两个角，求顶角 ∠A。', `${180 - 45 - second}°`,
         scene(polygon([[31, 83], [145, 83], [84, 24]]), text(84, 15, 'A'), text(54, 77, '45°'), text(121, 77, `${second}°`))],
-      ['triangle-height', '从顶点 A 向下方的底画一条高。', '见参考图', scene(polygon(points), text(points[2][0], points[2][1] - 7, 'A')),
-        scene(polygon(points), line(points[2][0], points[2][1], points[2][0], 83, true), text(points[2][0], points[2][1] - 7, 'A'))],
+      ['triangle-iso-angle', `等腰三角形的一个底角是 ${baseAngle}°，它的顶角是（    ）度。`, `${180 - 2 * baseAngle}°`, scene(polygon(points), text(50, 75, `${baseAngle}°`), text(104, 75, `${baseAngle}°`))],
+      ['triangle-right-angle', '直角三角形中，两个锐角的度数之和等于（    ）度。', '90°', scene(polygon(points), rect(31, 76, 7, 7), text(171, 40 + a, '算一算'))],
     ];
   }
+
   const cx = 81, cy = 57, r = 36;
   const circle = ellipse(cx, cy, r, r);
   const diameter = line(cx - r, cy, cx + r, cy);

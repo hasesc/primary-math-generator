@@ -768,27 +768,76 @@ function unitAreaProblems(difficulty, count) {
     { big: '平方千米', small: '公顷', k: 100 },
     { big: '平方千米', small: '平方米', k: 1000000 },
   ];
+  const subIds = {
+    easy: ['ha-to-sqm', 'sqkm-to-ha', 'sqm-to-ha', 'ha-to-sqkm'],
+    medium: ['area-unit-choice', 'area-compare', 'area-mixed-sum'],
+    hard: ['land-planning-rect', 'crop-yield-area', 'area-speed-plow'],
+  }[difficulty] || ['ha-to-sqm', 'sqkm-to-ha', 'sqm-to-ha'];
+
   let guard = 0;
-  while (out.length < count && guard < count * 30) {
+  while (out.length < count && guard < count * 35) {
     guard++;
-    const p = pick(difficulty === 'easy' ? pairs.slice(0, 2) : pairs);
-    const n = ri(1, difficulty === 'easy' ? 9 : difficulty === 'medium' ? 20 : 50);
-    const mode = guard % 3;
-    let q, ans;
-    if (mode === 0) {
-      q = `${n}${p.big} = （　）${p.small}`;
-      ans = `${n * p.k}${p.small}`;
-    } else if (mode === 1) {
-      q = `${n * p.k}${p.small} = （　）${p.big}`;
-      ans = `${n}${p.big}`;
-    } else {
+    const subtemplateId = subIds[guard % subIds.length];
+    const n = ri(2, difficulty === 'easy' ? 60 : difficulty === 'medium' ? 40 : 80);
+    let q, ans, format = 'fill';
+
+    if (subtemplateId === 'ha-to-sqm') {
+      q = `${n}公顷 = （　）平方米`;
+      ans = `${n * 10000}平方米`;
+    } else if (subtemplateId === 'sqkm-to-ha') {
+      q = `${n}平方千米 = （　）公顷`;
+      ans = `${n * 100}公顷`;
+    } else if (subtemplateId === 'sqm-to-ha') {
+      q = `${n * 10000}平方米 = （　）公顷`;
+      ans = `${n}公顷`;
+    } else if (subtemplateId === 'ha-to-sqkm') {
+      q = `${n * 100}公顷 = （　）平方千米`;
+      ans = `${n}平方千米`;
+    } else if (subtemplateId === 'area-unit-choice') {
+      const places = [
+        [`一个标准足球场的占地面积约是 ${ri(65, 75) * 100}（　）`, '平方米'],
+        [`某城市中心广场的面积约是 ${ri(20, 50)}（　）`, '公顷'],
+        [`我国某省份陆地面积约为 ${ri(10, 40)}万（　）`, '平方千米'],
+        [`某小学的占地面积约是 ${ri(2, 6)}（　）`, '公顷'],
+        [`某大型森林公园的占地面积约是 ${ri(50, 150)}（　）`, '公顷'],
+        [`某水库库区的水面面积约是 ${ri(5, 25)}（　）`, '平方千米'],
+        [`某生态农场的采摘果园面积约是 ${ri(10, 30)}（　）`, '公顷'],
+        [`某标准室内羽毛球场的占地面积约是 ${ri(100, 300)}（　）`, '平方米'],
+      ];
+      const pl = places[guard % places.length];
+      q = `在括号里填上合适的面积单位：${pl[0]}。`;
+      ans = pl[1];
+    } else if (subtemplateId === 'area-compare') {
+      const p = pick(pairs);
       const delta = ri(-2, 2) * p.k / 10;
       q = `在括号里填 >、< 或 =：${n}${p.big}（　）${n * p.k + delta}${p.small}。`;
       ans = delta === 0 ? '=' : delta > 0 ? '<' : '>';
+      format = 'compare';
+    } else if (subtemplateId === 'area-mixed-sum') {
+      const m = ri(1, 9) * 10;
+      q = `${n}平方千米 + ${m}公顷 = （　）公顷`;
+      ans = `${n * 100 + m}公顷`;
+    } else if (subtemplateId === 'land-planning-rect') {
+      const len = ri(2, 10) * 100;
+      const wid = ri(2, 8) * 50;
+      q = `一块长方形麦地长 ${len} 米，宽 ${wid} 米，这块麦地的面积是（　）公顷。`;
+      ans = `${(len * wid) / 10000}公顷`;
+    } else if (subtemplateId === 'crop-yield-area') {
+      const ha = ri(2, 20);
+      const perHa = ri(10, 30);
+      q = `一个果园占地 ${ha} 公顷，平均每公顷产苹果 ${perHa} 吨，这个果园一共能产苹果（　）吨。`;
+      ans = `${ha * perHa}吨`;
+    } else if (subtemplateId === 'area-speed-plow') {
+      const speed = ri(2, 8) * 50;
+      const width = ri(2, 6);
+      const hours = ri(1, 3);
+      q = `一台洒水车每分钟行驶 ${speed} 米，洒水宽度是 ${width} 米。工作 ${hours} 小时共洒水（　）公顷。`;
+      ans = `${(speed * 60 * hours * width) / 10000}公顷`;
     }
+
     if (seen.has(q)) continue;
     seen.add(q);
-    out.push({ question: q, answer: ans, subtype: 'unit-area', subtemplateId: ['area-big-to-small', 'area-small-to-big', 'area-compare'][mode], format: mode === 2 ? 'compare' : 'fill' });
+    out.push({ question: q, answer: ans, subtype: 'unit-area', subtemplateId, format });
   }
   return out;
 }

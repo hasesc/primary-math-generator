@@ -1,7 +1,7 @@
 // 自动生成文件（请勿手改）：由 node scripts/manage.mjs 生成
 export const PROJECT_STATUS = {
   "summary": {
-    "generatedAt": "2026/11/12 15:43:40",
+    "generatedAt": "2026/11/12 16:07:02",
     "totalUnits": 93,
     "dedicatedUnits": 92,
     "reviewUnits": 1,
@@ -10,8 +10,8 @@ export const PROJECT_STATUS = {
     "testsPassed": 8,
     "testsTotal": 8,
     "byGradient": {
-      "tiered-skills": 47,
-      "three-tier-range": 22,
+      "tiered-skills": 67,
+      "three-tier-range": 2,
       "two-tier-range": 0,
       "fixed-range": 24
     },
@@ -31,7 +31,7 @@ export const PROJECT_STATUS = {
       "name": "整卷生成冒烟测试 (6年级×3难度)",
       "file": "prototype/smoke-test.mjs",
       "passed": true,
-      "durationMs": 122,
+      "durationMs": 120,
       "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 1ms, 分布={\"application\":7,\"olympiad\":8,\"arithmetic\":15} | 结果: 18 通过 / 0 未达标"
     },
     {
@@ -39,15 +39,15 @@ export const PROJECT_STATUS = {
       "name": "93单元全量联动与756配置覆盖测试",
       "file": "prototype/coverage-test.mjs",
       "passed": true,
-      "durationMs": 192,
-      "summary": "总计 93 单元：联动通过 92，无专属出题映射（含整理与复习）1，不合格 0 | 已检查 756 种难度与题量组合。至少一组配置只有一个卷面分类的单元（分类数不等于考法数）共 81 个：1上 准备课、1上 位置、1上 1~5的认识和加减法、1上 认识图形（一）、1上 6~10的认识和加减法、1上 11~20各数的认识、1上 20以内的进位加法、1下 20以内的退位减法、1下 100以内数的认识、1下 100以内的加法和减法（一）、1下 认识图形（二）、1下 100以内的加法和减法（二）、1下 找规律、2上 100以内的加法和减法（二）、2上 角的初步认识、2上 表内乘法（一）、2上 观察物体（一）、2上 表内乘法（二）、2上 数学广角——搭配（一）、2下 数据收集整理、2下 表内除法（一）、2下 图形的运动（一）、2下 表内除法（二）、2下 混合运算、2下 有余数的除法、2下 万以内数的认识、2下 数学广角——推理、3上 万以内的加法和减法（一）、3上 万以内的加法和减法（二）、3上 倍的认识、3上 多位数乘一位数、3上 长方形和正方形、3上 分数的初步认识、3下 位置与方向（一）、3下 除数是一位数的除法、3下 复式统计表、3下 两位数乘两位数、3下 面积、3下 年月日、3下 小数的初步认识、3下 数学广角——搭配（二）、4上 大数的认识、4上 角的度量、4上 三位数乘两位数、4上 平行四边形和梯形、4上 除数是两位数的除法、4上 条形统计图、4上 数学广角——优化、4下 四则运算、4下 观察物体（二）、4下 运算定律、4下 小数的意义和性质、4下 三角形、4下 小数的加法和减法、4下 图形的运动（二）、4下 平均数与条形统计图、4下 数学广角——鸡兔同笼、5上 位置、5上 可能性、5上 简易方程、5上 多边形的面积、5上 数学广角——植树问题、5下 观察物体（三）、5下 因数与倍数、5下 长方体和正方体、5下 分数的意义和性质、5下 图形的运动（三）、5下 分数的加法和减法、5下 折线统计图、5下 数学广角——找次品、6上 位置与方向（二）、6上 分数除法、6上 比、6上 圆、6上 扇形统计图、6上 数学广角——数与形、6下 负数、6下 百分数（二）、6下 圆柱与圆锥、6下 比例、6下 数学广角——鸽巢问题"
+      "durationMs": 193,
+      "summary": "总计 93 单元：联动通过 92，无专属出题映射（含整理与复习）1，不合格 0 | 已检查 756 种难度与题量组合。至少一组配置只有一个卷面分类的单元（分类数不等于考法数）共 82 个：1上 准备课、1上 位置、1上 1~5的认识和加减法、1上 认识图形（一）、1上 6~10的认识和加减法、1上 11~20各数的认识、1上 20以内的进位加法、1下 20以内的退位减法、1下 100以内数的认识、1下 100以内的加法和减法（一）、1下 认识图形（二）、1下 100以内的加法和减法（二）、1下 找规律、2上 100以内的加法和减法（二）、2上 角的初步认识、2上 表内乘法（一）、2上 观察物体（一）、2上 表内乘法（二）、2上 数学广角——搭配（一）、2下 数据收集整理、2下 表内除法（一）、2下 图形的运动（一）、2下 表内除法（二）、2下 混合运算、2下 有余数的除法、2下 万以内数的认识、2下 数学广角——推理、3上 万以内的加法和减法（一）、3上 万以内的加法和减法（二）、3上 倍的认识、3上 多位数乘一位数、3上 长方形和正方形、3上 分数的初步认识、3下 位置与方向（一）、3下 除数是一位数的除法、3下 复式统计表、3下 两位数乘两位数、3下 面积、3下 年月日、3下 小数的初步认识、3下 数学广角——搭配（二）、4上 大数的认识、4上 公顷和平方千米、4上 角的度量、4上 三位数乘两位数、4上 平行四边形和梯形、4上 除数是两位数的除法、4上 条形统计图、4上 数学广角——优化、4下 四则运算、4下 观察物体（二）、4下 运算定律、4下 小数的意义和性质、4下 三角形、4下 小数的加法和减法、4下 图形的运动（二）、4下 平均数与条形统计图、4下 数学广角——鸡兔同笼、5上 位置、5上 可能性、5上 简易方程、5上 多边形的面积、5上 数学广角——植树问题、5下 观察物体（三）、5下 因数与倍数、5下 长方体和正方体、5下 分数的意义和性质、5下 图形的运动（三）、5下 分数的加法和减法、5下 折线统计图、5下 数学广角——找次品、6上 位置与方向（二）、6上 分数除法、6上 比、6上 圆、6上 扇形统计图、6上 数学广角——数与形、6下 负数、6下 百分数（二）、6下 圆柱与圆锥、6下 比例、6下 数学广角——鸽巢问题"
     },
     {
       "id": "correctness",
       "name": "数学答案独立逆向复算测试 (160轮)",
       "file": "prototype/correctness-test.mjs",
       "passed": true,
-      "durationMs": 86,
+      "durationMs": 89,
       "summary": "鸡兔同笼、植树、统计图并列和小数乘法的独立复算通过"
     },
     {
@@ -55,7 +55,7 @@ export const PROJECT_STATUS = {
       "name": "口算/竖式每日一练专项测试 (186配置)",
       "file": "prototype/daily-practice-test.mjs",
       "passed": true,
-      "durationMs": 60,
+      "durationMs": 63,
       "summary": "186 种每日一练配置通过，题量、去重、答案复算和年级限制正常"
     },
     {
@@ -71,7 +71,7 @@ export const PROJECT_STATUS = {
       "name": "同卷考法轮转相邻不重复测试 (93单元×3档×6轮)",
       "file": "prototype/rotation-test.mjs",
       "passed": true,
-      "durationMs": 269,
+      "durationMs": 259,
       "summary": "考法轮转（相邻 subtemplateId 不重复）测试通过"
     },
     {
@@ -79,7 +79,7 @@ export const PROJECT_STATUS = {
       "name": "题面有效性、唯一解与必备考点回归测试",
       "file": "prototype/regression-test.mjs",
       "passed": true,
-      "durationMs": 78,
+      "durationMs": 75,
       "summary": "题面有效性、动物题唯一解及缺失考点回归检查通过"
     },
     {
@@ -87,13 +87,18 @@ export const PROJECT_STATUS = {
       "name": "100分制单元测验卷全链路测试 (6年级×3难度)",
       "file": "prototype/exam-paper-test.mjs",
       "passed": true,
-      "durationMs": 116,
+      "durationMs": 119,
       "summary": "✅ 100分制单元测验卷验证通过: 18/18 组全部达标 (6年级×3难度覆盖)"
     }
   ],
   "git": {
     "initialized": true,
     "commits": [
+      {
+        "hash": "eda0d1d",
+        "date": "2026-11-12 15:43",
+        "message": "chore: update projectStatus看板数据"
+      },
       {
         "hash": "02a1446",
         "date": "2026-11-12 15:43",
@@ -163,14 +168,9 @@ export const PROJECT_STATUS = {
         "hash": "8638a4b",
         "date": "2026-11-11 16:18",
         "message": "feat: 前端UI界面全面精装升级 + 通用插件考法补全 (阶梯考法达42单元，v0.8.0)"
-      },
-      {
-        "hash": "8475fb3",
-        "date": "2026-11-11 15:42",
-        "message": "feat: 完成全部34个待升级单元的三档难度梯度改造（v0.7.0，两档待升级清零）"
       }
     ],
-    "dirtyFiles": 0
+    "dirtyFiles": 10
   },
   "roadmap": [
     {
@@ -234,6 +234,47 @@ export const PROJECT_STATUS = {
     }
   ],
   "changelog": [
+    {
+      "version": "v0.8.7",
+      "date": "2026-11-12",
+      "title": "推进完成第三阶段：全面完成 22 个几何、方格、图表及单位换算单元的真阶梯考法重构",
+      "bullets": [
+        "**模块一：几何与三视图专项重构 (prototype/geometryProblems.js)**：",
+        "对 7 个几何与视图单元实行真正的三档认知进阶分层（Easy 基础识图认读 / Medium 逆向推算与作图 / Hard 极值分割与综合拓展）：",
+        "geo-perimeter (3上 长方形正方形)：Easy (周长直算、描周长) → Medium (逆向反求长宽、靠墙围篱笆、拼拼图形周长) → Hard (小正方形拼长方形周长最值、裁角周长不变性辨析)。",
+        "geo-area (3下 面积)：Easy (数格子面积、公式直求) → Medium (逆向反求边长、周长求面积、单位辨析) → Hard (裁最大正方形面积、地砖铺满块数、环形走道面积)。",
+        "geo-quad (4上 平行四边形梯形)：Easy (辨析特征、描平行边、特征填空) → Medium (画高、邻角互补求度数、梯形种类) → Hard (梯形分割转化、拉动木框面积周长变化、剪切图形辨析)。",
+        "geo-triangle (4下 三角形)：Easy (分类辨析、画高、边角顶概念) → Medium (内角和反求角、等腰三角形底角顶角推导、直角锐角互余) → Hard (三边不等式法则、第三边取值范围、连比角度推算)。",
+        "geo-view-1 (2上 观察物体一)：Easy (直观小正方体计数、主视图基底识读、列数统计) → Medium (正面最高层、俯视图方格涂色) → Hard (含隐藏遮挡底层小正方体计数、三维多视角一致性辨析)。",
+        "geo-view-2 (4下 观察物体二)：Easy (立柱计数、主视图最高列、左列层数) → Medium (主视图细读、侧视图方格作图) → Hard (主俯推算最少小正方体数、不改视图盲区添块数)。",
+        "geo-view-3 (5下 观察物体三)：Easy (俯视图标数求总块数、俯视图推算主视列层) → Medium (俯视推侧视、搭建立体图参考) → Hard (三视图逆向还原总数、不改俯视图添放方案数)。",
+        "geo-circle 与 geo-composite 保持 6 考法全覆盖，并支持数值梯度与参数递进。",
+        "**模块二：方格与坐标作图专项重构 (prototype/gridProblems.js)**：",
+        "全部 6 个方格单元升级为独立阶梯考法，且每档均配备作图题参考答案 (answerDiagram)：",
+        "grid-motion-1 (2下 图形运动一)：Easy (翻折/平移直观辨析、画简单平移、数平移格数) → Medium (找对称轴条数、画轴对称图形) → Hard (画复杂轴对称、折纸剪裁对称轴条数、画精确平移)。",
+        "grid-motion-2 (4下 图形运动二)：Easy (画平移图形、多边形对称轴数) → Medium (画轴对称图形、对应点到对称轴距离相等性质) → Hard (平移转化求不规则面积、画关于虚线对称图形、多步平移后距离变化)。",
+        "grid-motion-3 (5下 图形运动三)：Easy (看图识旋转方向与90°、画顺时针旋转90°、钟面分针转角) → Medium (画顺时针旋转90°、逆时针90°对应点坐标格数、旋转两要素) → Hard (连续旋转90°闭环判断、画逆时针90°图形、旋转大小形状完全不变性)。",
+        "grid-direction (3下 位置与方向一)：Easy (正向四方向识读、相对方向对冲、标出目标点) → Medium (8个方向精确辨读、相反观测点推算、行走路线描述) → Hard (连续多段路线、指南针相对方位倒推、行程距离与方向综合计算)。",
+        "grid-pairs (5上 位置)：Easy (数对读取、在方格纸标出数对、行列含义认知) → Medium (点平移后数对变化、同走行/同行判断、三角形顶点平移) → Hard (平行四边形第四顶点数对推导、水平对称轴对称点数对、数对多边形方格面积)。",
+        "grid-bearing (6上 位置与方向二)：Easy (方向角读图、图上比例尺求实际距离、标出目标点) → Medium (正规方向与距离标图、互换观测点方向相反推算、往返总路程) → Hard (结合速度时间的行程耗时推算、连续多点方位推断、折返总路程综合题)。",
+        "**模块三：钟表与统计图表专项重构 (prototype/diagramProblems.js)**：",
+        "对 6 个统计图表单元实现每档至少 7 考法（扇形统计图 10 考法）的深度阶梯考法分层：",
+        "data-table (2下 数据收集整理) & bar-chart (4上 条形统计图)：Easy (直观读数、合计、最值) → Medium (合并两组、求差值、达到阈值统计) → Hard (目标差额、降序排名判定、极差比率)。",
+        "double-table (3下 复式统计表)：Easy (单格识读、单组两天合计、单天合计) → Medium (组间增长量、全天总增长量、跨天两组合计) → Hard (增长最多组筛选、达到目标差距、两日极差对比)。",
+        "bar-average (4下 平均数与条形统计图)：Easy (读数、总数、差值) → Medium (求平均数、高于平均数筛选、两组合并) → Hard (最值筛选、移多补少及目标平均数逆推所需增量)。",
+        "line-chart (5下 折线统计图)：Easy (点位读数、四天合计、最高最低点) → Medium (差值计算、上升区间统计) → Hard (增长最快相邻日期推断、下降区间统计、目标差距)。",
+        "pie-chart (6上 扇形统计图)：Easy (单项占比读数、最值判定、剩余占比) → Medium (两项占比合并、已知总数求分项量、占比差值) → Hard (已知分项量逆求总数、分项求分项、两项差量、占比超过1/4的类别筛选、倍比关系推算)。",
+        "**模块四：单位换算专项重构 (prototype/unitPlugins.js)**：",
+        "重构 unitAreaProblems (4上 公顷和平方千米)：",
+        "Easy: 基础名数直转 (ha-to-sqm, sqkm-to-ha, sqm-to-ha, ha-to-sqkm)，池深丰富支持 40 题不重复。",
+        "Medium: 实际地貌单位选择 (area-unit-choice 足球场/城市广场/省域/校园等)、跨单位比大小 (area-compare)、复名数相加 (area-mixed-sum)。",
+        "Hard: 长方形土地规划与公顷换算 (land-planning-rect)、公顷产量综合计算 (crop-yield-area)、机械化作业面积与效率 (area-speed-plow)。",
+        "**状态看板跃迁与质量保障**：",
+        "难度梯度分布由原先的 47 个阶梯考法跃升至 **67 个阶梯考法**，三档数值降至仅剩 2 个，课标定界 24 个。",
+        "全部 8 大自动化测试套件保持 **100% 满分通过**，考法轮转零重复，零回归。",
+        "前端资源版本号递增为 ?v=20261112e。"
+      ]
+    },
     {
       "version": "v0.8.6",
       "date": "2026-11-12",
@@ -4228,10 +4269,10 @@ export const PROJECT_STATUS = {
       "moduleKey": "geometry",
       "moduleLabel": "几何与视图专项 (geometryProblems)",
       "moduleFile": "prototype/geometryProblems.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
         "easy": 3,
         "medium": 3,
@@ -4243,18 +4284,18 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
-            "count-blocks",
+            "count-blocks-simple",
             "read-front",
-            "draw-top"
+            "count-blocks-columns"
           ],
           "formats": [
             "geometry"
           ],
           "samples": [
             {
-              "question": "图中的方块摆成竖直的柱，每个上层方块下面都垫满。标出的这堆一共有几个小正方体？",
+              "question": "图中的方块摆成竖直的柱。标出的这堆一共有几个小正方体？",
               "answer": "2",
-              "skill": "count-blocks",
+              "skill": "count-blocks-simple",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
@@ -4270,18 +4311,18 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "从上面看哪些格子有小正方体？在右侧空格中涂出来。右侧图上方对应物体的后方。",
-              "answer": "见参考图",
-              "skill": "draw-top",
+              "question": "图中的小正方体一共摆成了几列？",
+              "answer": "3",
+              "skill": "count-blocks-columns",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
-              "hasAnswerDiagram": true
+              "hasAnswerDiagram": false
             },
             {
-              "question": "图中的方块摆成竖直的柱，每个上层方块下面都垫满。标出的这堆一共有几个小正方体？",
+              "question": "图中的方块摆成竖直的柱。标出的这堆一共有几个小正方体？",
               "answer": "5",
-              "skill": "count-blocks",
+              "skill": "count-blocks-simple",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
@@ -4343,27 +4384,18 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
-            "count-blocks",
-            "read-front",
-            "draw-top"
+            "count-blocks-occluded",
+            "draw-top",
+            "view-diff-perspectives"
           ],
           "formats": [
             "geometry"
           ],
           "samples": [
             {
-              "question": "图中的方块摆成竖直的柱，每个上层方块下面都垫满。标出的这堆一共有几个小正方体？",
+              "question": "标出的这堆几何体（含被完全遮挡的底层方块）一共有几个小正方体？",
               "answer": "5",
-              "skill": "count-blocks",
-              "format": "geometry",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "从前面看，最下面一行能看到几个小正方形？",
-              "answer": "3",
-              "skill": "read-front",
+              "skill": "count-blocks-occluded",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
@@ -4379,9 +4411,18 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": true
             },
             {
-              "question": "图中的方块摆成竖直的柱，每个上层方块下面都垫满。标出的这堆一共有几个小正方体？",
+              "question": "从正面和上面看到的图形形状是否相同？（填“相同”或“不相同”）",
+              "answer": "不相同",
+              "skill": "view-diff-perspectives",
+              "format": "geometry",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "标出的这堆几何体（含被完全遮挡的底层方块）一共有几个小正方体？",
               "answer": "4",
-              "skill": "count-blocks",
+              "skill": "count-blocks-occluded",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
@@ -4947,10 +4988,10 @@ export const PROJECT_STATUS = {
       "moduleKey": "diagram",
       "moduleLabel": "钟表与统计图表 (diagramProblems)",
       "moduleFile": "prototype/diagramProblems.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
         "easy": 7,
         "medium": 7,
@@ -4963,12 +5004,12 @@ export const PROJECT_STATUS = {
           "targetCount": 20,
           "skills": [
             "read-value",
+            "read-value-alt",
             "combine-values",
             "compare-values",
             "find-extrema",
             "total",
-            "threshold",
-            "target"
+            "total-half"
           ],
           "formats": [
             "application"
@@ -4984,8 +5025,17 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
+              "question": "三组收集了多少张？",
+              "answer": "38",
+              "skill": "read-value-alt",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
               "question": "一组和三组合计收集了多少张？",
-              "answer": "43",
+              "answer": "20",
               "skill": "combine-values",
               "format": "application",
               "responseKind": null,
@@ -4994,17 +5044,8 @@ export const PROJECT_STATUS = {
             },
             {
               "question": "四组和三组收集的数量相差多少张？",
-              "answer": "26",
+              "answer": "11",
               "skill": "compare-values",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "收集最多和最少的分别是哪一项？如果并列，请都写出来。",
-              "answer": "一组最多，二组最少",
-              "skill": "find-extrema",
               "format": "application",
               "responseKind": null,
               "hasDiagram": true,
@@ -5070,30 +5111,21 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "read-value",
             "combine-values",
             "compare-values",
             "find-extrema",
             "total",
             "threshold",
-            "target"
+            "target",
+            "rank-values"
           ],
           "formats": [
             "application"
           ],
           "samples": [
             {
-              "question": "二组收集了多少张？",
-              "answer": "135",
-              "skill": "read-value",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
               "question": "一组和三组合计收集了多少张？",
-              "answer": "100",
+              "answer": "130",
               "skill": "combine-values",
               "format": "application",
               "responseKind": null,
@@ -5102,7 +5134,7 @@ export const PROJECT_STATUS = {
             },
             {
               "question": "四组和三组收集的数量相差多少张？",
-              "answer": "95",
+              "answer": "145",
               "skill": "compare-values",
               "format": "application",
               "responseKind": null,
@@ -5113,6 +5145,15 @@ export const PROJECT_STATUS = {
               "question": "收集最多和最少的分别是哪一项？如果并列，请都写出来。",
               "answer": "四组最多，二组最少",
               "skill": "find-extrema",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "四项合计收集了多少张卡片？",
+              "answer": "380",
+              "skill": "total",
               "format": "application",
               "responseKind": null,
               "hasDiagram": true,
@@ -5316,10 +5357,10 @@ export const PROJECT_STATUS = {
       "moduleKey": "grid",
       "moduleLabel": "方格与坐标作图 (gridProblems)",
       "moduleFile": "prototype/gridProblems.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
         "easy": 3,
         "medium": 3,
@@ -5331,18 +5372,18 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
-            "read-slide",
-            "draw-slide",
-            "distinguish-motion"
+            "motion-type-judge",
+            "draw-slide-simple",
+            "read-slide-simple"
           ],
           "formats": [
             "grid"
           ],
           "samples": [
             {
-              "question": "原图（实线）向右平移了几格，得到虚线图形？",
-              "answer": "2 格",
-              "skill": "read-slide",
+              "question": "实线三角形变成虚线三角形时，发生的是平移、旋转还是轴对称翻折？",
+              "answer": "轴对称翻折",
+              "skill": "motion-type-judge",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
@@ -5351,25 +5392,25 @@ export const PROJECT_STATUS = {
             {
               "question": "画出三角形向右平移 1 格后的图形。",
               "answer": "见参考图",
-              "skill": "draw-slide",
+              "skill": "draw-slide-simple",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": true
             },
             {
-              "question": "实线三角形变成虚线三角形时，发生的是平移、旋转还是轴对称翻折？",
-              "answer": "轴对称翻折",
-              "skill": "distinguish-motion",
+              "question": "原图（实线）向右平移了几格得到虚线图形？",
+              "answer": "1 格",
+              "skill": "read-slide-simple",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
             {
-              "question": "原图（实线）向右平移了几格，得到虚线图形？",
-              "answer": "2 格",
-              "skill": "read-slide",
+              "question": "实线三角形变成虚线三角形时，发生的是平移、旋转还是轴对称翻折？",
+              "answer": "轴对称翻折",
+              "skill": "motion-type-judge",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
@@ -5382,8 +5423,8 @@ export const PROJECT_STATUS = {
           "targetCount": 6,
           "skills": [
             "read-slide",
-            "draw-slide",
-            "distinguish-motion"
+            "count-axis",
+            "draw-reflection"
           ],
           "formats": [
             "grid"
@@ -5399,26 +5440,26 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "画出三角形向右平移 3 格后的图形。",
-              "answer": "见参考图",
-              "skill": "draw-slide",
-              "format": "grid",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": true
-            },
-            {
-              "question": "实线三角形变成虚线三角形时，发生的是平移、旋转还是轴对称翻折？",
-              "answer": "轴对称翻折",
-              "skill": "distinguish-motion",
+              "question": "等边三角形有（    ）条对称轴。",
+              "answer": "3 条",
+              "skill": "count-axis",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
             {
+              "question": "画出这个三角形关于虚线对称的轴对称图形。",
+              "answer": "见参考图",
+              "skill": "draw-reflection",
+              "format": "grid",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": true
+            },
+            {
               "question": "原图（实线）向右平移了几格，得到虚线图形？",
-              "answer": "2 格",
+              "answer": "1 格",
               "skill": "read-slide",
               "format": "grid",
               "responseKind": null,
@@ -5431,18 +5472,27 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
-            "read-slide",
-            "draw-slide",
-            "distinguish-motion"
+            "draw-symmetric-half",
+            "motion-cut-open",
+            "slide-draw-exact"
           ],
           "formats": [
             "grid"
           ],
           "samples": [
             {
-              "question": "原图（实线）向右平移了几格，得到虚线图形？",
-              "answer": "1 格",
-              "skill": "read-slide",
+              "question": "画出这个三角形关于虚线对称的轴对称图形。",
+              "answer": "见参考图",
+              "skill": "draw-symmetric-half",
+              "format": "grid",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": true
+            },
+            {
+              "question": "等腰梯形一共有（    ）条对称轴。",
+              "answer": "1 条",
+              "skill": "motion-cut-open",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
@@ -5451,29 +5501,20 @@ export const PROJECT_STATUS = {
             {
               "question": "画出三角形向右平移 3 格后的图形。",
               "answer": "见参考图",
-              "skill": "draw-slide",
+              "skill": "slide-draw-exact",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": true
             },
             {
-              "question": "实线三角形变成虚线三角形时，发生的是平移、旋转还是轴对称翻折？",
-              "answer": "轴对称翻折",
-              "skill": "distinguish-motion",
+              "question": "画出这个三角形关于虚线对称的轴对称图形。",
+              "answer": "见参考图",
+              "skill": "draw-symmetric-half",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "原图（实线）向右平移了几格，得到虚线图形？",
-              "answer": "2 格",
-              "skill": "read-slide",
-              "format": "grid",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
+              "hasAnswerDiagram": true
             }
           ]
         }
@@ -7660,10 +7701,10 @@ export const PROJECT_STATUS = {
       "moduleKey": "geometry",
       "moduleLabel": "几何与视图专项 (geometryProblems)",
       "moduleFile": "prototype/geometryProblems.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
         "easy": 3,
         "medium": 3,
@@ -7725,45 +7766,45 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
-            "rect-perimeter",
-            "square-perimeter",
-            "trace-perimeter"
+            "peri-reverse-calc",
+            "peri-fence-wall",
+            "rect-perimeter"
           ],
           "formats": [
             "geometry"
           ],
           "samples": [
             {
-              "question": "求图中长方形的周长。",
-              "answer": "22 厘米",
-              "skill": "rect-perimeter",
+              "question": "长方形周长为 22 厘米，长为 6 厘米，宽是多少厘米？",
+              "answer": "5 厘米",
+              "skill": "peri-reverse-calc",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
             {
-              "question": "沿正方形四周围一圈，需要多长的线？",
-              "answer": "8 厘米",
-              "skill": "square-perimeter",
+              "question": "一块长方形菜地长 9 米，宽 2 米，一边靠墙围篱笆，篱笆至少需要多少米？",
+              "answer": "13 米",
+              "skill": "peri-fence-wall",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
-            },
-            {
-              "question": "从图中的黑点出发，沿边描一圈，再回到黑点。",
-              "answer": "描出长方形四条边",
-              "skill": "trace-perimeter",
-              "format": "geometry",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": true
             },
             {
               "question": "求图中长方形的周长。",
               "answer": "24 厘米",
               "skill": "rect-perimeter",
+              "format": "geometry",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "长方形周长为 24 厘米，长为 10 厘米，宽是多少厘米？",
+              "answer": "2 厘米",
+              "skill": "peri-reverse-calc",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
@@ -7775,45 +7816,45 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
-            "rect-perimeter",
-            "square-perimeter",
-            "trace-perimeter"
+            "peri-splice-puzzle",
+            "peri-cut-corner",
+            "peri-reverse-calc"
           ],
           "formats": [
             "geometry"
           ],
           "samples": [
             {
-              "question": "求图中长方形的周长。",
-              "answer": "26 厘米",
-              "skill": "rect-perimeter",
+              "question": "用2个长 9 厘米、宽 4 厘米的长方形拼成一个大长方形，周长最长是多少厘米？",
+              "answer": "44 厘米",
+              "skill": "peri-splice-puzzle",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
             {
-              "question": "沿正方形四周围一圈，需要多长的线？",
-              "answer": "16 厘米",
-              "skill": "square-perimeter",
+              "question": "从边长为 10 厘米的正方形纸的一个角剪去一个边长为 4 厘米的小正方形，剩下图形的周长和原正方形相比（    ）。",
+              "answer": "不变",
+              "skill": "peri-cut-corner",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
             {
-              "question": "从图中的黑点出发，沿边描一圈，再回到黑点。",
-              "answer": "描出长方形四条边",
-              "skill": "trace-perimeter",
+              "question": "长方形周长为 18 厘米，长为 5 厘米，宽是多少厘米？",
+              "answer": "4 厘米",
+              "skill": "peri-reverse-calc",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
-              "hasAnswerDiagram": true
+              "hasAnswerDiagram": false
             },
             {
-              "question": "求图中长方形的周长。",
-              "answer": "50 厘米",
-              "skill": "rect-perimeter",
+              "question": "用2个长 16 厘米、宽 9 厘米的长方形拼成一个大长方形，周长最长是多少厘米？",
+              "answer": "82 厘米",
+              "skill": "peri-splice-puzzle",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
@@ -8017,10 +8058,10 @@ export const PROJECT_STATUS = {
       "moduleKey": "grid",
       "moduleLabel": "方格与坐标作图 (gridProblems)",
       "moduleFile": "prototype/gridProblems.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
         "easy": 3,
         "medium": 3,
@@ -8033,8 +8074,8 @@ export const PROJECT_STATUS = {
           "targetCount": 6,
           "skills": [
             "read-direction",
-            "plot-direction",
-            "reverse-direction"
+            "dir-opposite",
+            "plot-direction"
           ],
           "formats": [
             "grid"
@@ -8050,22 +8091,22 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "在 A 的东方向任意标出一点 C。",
-              "answer": "示例：C 在 A 的东方向",
+              "question": "与“东”相对的方向是（    ）。",
+              "answer": "西",
+              "skill": "dir-opposite",
+              "format": "grid",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "在 A 的西北方向标出一点 C。",
+              "answer": "示例：C 在 A 的西北方向",
               "skill": "plot-direction",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": true
-            },
-            {
-              "question": "如果从 B 看 A，A 在 B 的什么方向？",
-              "answer": "东南",
-              "skill": "reverse-direction",
-              "format": "grid",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
             },
             {
               "question": "B 在 A 的什么方向？",
@@ -8082,35 +8123,26 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
-            "read-direction",
-            "plot-direction",
-            "reverse-direction"
+            "read-eight-dir",
+            "reverse-direction",
+            "route-walk"
           ],
           "formats": [
             "grid"
           ],
           "samples": [
             {
-              "question": "B 在 A 的什么方向？",
+              "question": "看图判断：点 B 在点 A 的什么方向？（填8个方向之一）",
               "answer": "东",
-              "skill": "read-direction",
+              "skill": "read-eight-dir",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
             {
-              "question": "在 A 的西北方向任意标出一点 C。",
-              "answer": "示例：C 在 A 的西北方向",
-              "skill": "plot-direction",
-              "format": "grid",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": true
-            },
-            {
               "question": "如果从 B 看 A，A 在 B 的什么方向？",
-              "answer": "南",
+              "answer": "东南",
               "skill": "reverse-direction",
               "format": "grid",
               "responseKind": null,
@@ -8118,9 +8150,18 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "B 在 A 的什么方向？",
+              "question": "从点 A 出发在图上标出向北方向走 1 格到达的点 B。",
+              "answer": "标出点 B",
+              "skill": "route-walk",
+              "format": "grid",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": true
+            },
+            {
+              "question": "看图判断：点 B 在点 A 的什么方向？（填8个方向之一）",
               "answer": "西北",
-              "skill": "read-direction",
+              "skill": "read-eight-dir",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
@@ -8132,45 +8173,45 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
-            "read-direction",
-            "plot-direction",
-            "reverse-direction"
+            "multi-stop-tour",
+            "compass-relative",
+            "route-distance"
           ],
           "formats": [
             "grid"
           ],
           "samples": [
             {
-              "question": "B 在 A 的什么方向？",
-              "answer": "北",
-              "skill": "read-direction",
+              "question": "从 A 先向北走到 B，再从 B 原路回到 A，一共走了（    ）段路。",
+              "answer": "2 段",
+              "skill": "multi-stop-tour",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
             {
-              "question": "在 A 的南方向任意标出一点 C。",
-              "answer": "示例：C 在 A 的南方向",
-              "skill": "plot-direction",
+              "question": "指南针指针指向东面，则背对指针的方向是（    ）面。",
+              "answer": "西",
+              "skill": "compass-relative",
+              "format": "grid",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "小华从学校 A 出发向北走 4 格到达图书馆 B，请在图中标出 B。",
+              "answer": "标出点 B",
+              "skill": "route-distance",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": true
             },
             {
-              "question": "如果从 B 看 A，A 在 B 的什么方向？",
-              "answer": "西",
-              "skill": "reverse-direction",
-              "format": "grid",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "B 在 A 的什么方向？",
-              "answer": "西南",
-              "skill": "read-direction",
+              "question": "从 A 先向南走到 B，再从 B 原路回到 A，一共走了（    ）段路。",
+              "answer": "2 段",
+              "skill": "multi-stop-tour",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
@@ -8374,14 +8415,14 @@ export const PROJECT_STATUS = {
       "moduleKey": "diagram",
       "moduleLabel": "钟表与统计图表 (diagramProblems)",
       "moduleFile": "prototype/diagramProblems.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
-        "easy": 8,
+        "easy": 7,
         "medium": 8,
-        "hard": 8
+        "hard": 7
       },
       "hasDiagram": true,
       "byDifficulty": {
@@ -8390,13 +8431,12 @@ export const PROJECT_STATUS = {
           "targetCount": 20,
           "skills": [
             "read-cell",
+            "read-cell-day1",
             "group-total",
-            "group-change",
             "day-total",
-            "day-change",
-            "cross-day",
-            "greatest-change",
-            "missing-from-target"
+            "day-total-second",
+            "group-change",
+            "cross-day"
           ],
           "formats": [
             "application"
@@ -8412,18 +8452,18 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "三组两天一共收集了多少张？",
-              "answer": "39",
-              "skill": "group-total",
+              "question": "一组第一天收集了多少张？",
+              "answer": "9",
+              "skill": "read-cell-day1",
               "format": "application",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
             {
-              "question": "四组第二天比第一天多收集多少张？",
-              "answer": "1",
-              "skill": "group-change",
+              "question": "三组两天一共收集了多少张？",
+              "answer": "84",
+              "skill": "group-total",
               "format": "application",
               "responseKind": null,
               "hasDiagram": true,
@@ -8499,40 +8539,21 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "read-cell",
-            "group-total",
             "group-change",
-            "day-total",
             "day-change",
             "cross-day",
             "greatest-change",
-            "missing-from-target"
+            "missing-from-target",
+            "least-change",
+            "multi-group-compare"
           ],
           "formats": [
             "application"
           ],
           "samples": [
             {
-              "question": "二组第二天收集了多少张？",
-              "answer": "200",
-              "skill": "read-cell",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "三组两天一共收集了多少张？",
-              "answer": "311",
-              "skill": "group-total",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
               "question": "四组第二天比第一天多收集多少张？",
-              "answer": "4",
+              "answer": "5",
               "skill": "group-change",
               "format": "application",
               "responseKind": null,
@@ -8540,9 +8561,27 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "第一天四个小组一共收集了多少张？",
-              "answer": "425",
-              "skill": "day-total",
+              "question": "四个小组第二天合计比第一天多收集多少张？",
+              "answer": "17",
+              "skill": "day-change",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "一组第一天和四组第二天合计收集了多少张？",
+              "answer": "224",
+              "skill": "cross-day",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "哪个小组第二天增加得最多？如果并列，请都写出来。",
+              "answer": "二组、四组",
+              "skill": "greatest-change",
               "format": "application",
               "responseKind": null,
               "hasDiagram": true,
@@ -8746,10 +8785,10 @@ export const PROJECT_STATUS = {
       "moduleKey": "geometry",
       "moduleLabel": "几何与视图专项 (geometryProblems)",
       "moduleFile": "prototype/geometryProblems.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
         "easy": 3,
         "medium": 3,
@@ -8811,18 +8850,27 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
-            "count-area-units",
-            "rect-area",
-            "square-area"
+            "area-reverse-calc",
+            "area-perimeter-combo",
+            "rect-area"
           ],
           "formats": [
             "geometry"
           ],
           "samples": [
             {
-              "question": "每小格是 1 平方厘米。数一数，阴影的面积是多少？",
-              "answer": "36 平方厘米",
-              "skill": "count-area-units",
+              "question": "长方形面积为 36 平方厘米，长为 9 厘米，求宽。",
+              "answer": "4 厘米",
+              "skill": "area-reverse-calc",
+              "format": "geometry",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "正方形的周长是 20 厘米，它的面积是多少平方厘米？",
+              "answer": "25 平方厘米",
+              "skill": "area-perimeter-combo",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
@@ -8830,7 +8878,7 @@ export const PROJECT_STATUS = {
             },
             {
               "question": "按图中标注，求长方形的面积。",
-              "answer": "50 平方厘米",
+              "answer": "15 平方厘米",
               "skill": "rect-area",
               "format": "geometry",
               "responseKind": null,
@@ -8838,18 +8886,9 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "按图中标注，求正方形的面积。",
-              "answer": "9 平方厘米",
-              "skill": "square-area",
-              "format": "geometry",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "每小格是 1 平方厘米。数一数，阴影的面积是多少？",
-              "answer": "54 平方厘米",
-              "skill": "count-area-units",
+              "question": "长方形面积为 54 平方厘米，长为 9 厘米，求宽。",
+              "answer": "6 厘米",
+              "skill": "area-reverse-calc",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
@@ -8861,45 +8900,45 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
-            "count-area-units",
-            "rect-area",
-            "square-area"
+            "area-cut-max",
+            "area-pave-tiles",
+            "area-reverse-calc"
           ],
           "formats": [
             "geometry"
           ],
           "samples": [
             {
-              "question": "每小格是 1 平方厘米。数一数，阴影的面积是多少？",
+              "question": "在一张长 13 厘米、宽 2 厘米的长方形纸上剪下一个最大的正方形，剩下图形的面积是多少平方厘米？",
+              "answer": "22 平方厘米",
+              "skill": "area-cut-max",
+              "format": "geometry",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "一个长方形房间长 14 米，宽 10 米，用边长 1 米的正方形地砖铺满，至少需要多少块？",
+              "answer": "140 块",
+              "skill": "area-pave-tiles",
+              "format": "geometry",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "长方形面积为 180 平方厘米，长为 15 厘米，求宽。",
+              "answer": "12 厘米",
+              "skill": "area-reverse-calc",
+              "format": "geometry",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "在一张长 15 厘米、宽 2 厘米的长方形纸上剪下一个最大的正方形，剩下图形的面积是多少平方厘米？",
               "answer": "26 平方厘米",
-              "skill": "count-area-units",
-              "format": "geometry",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "按图中标注，求长方形的面积。",
-              "answer": "140 平方厘米",
-              "skill": "rect-area",
-              "format": "geometry",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "按图中标注，求正方形的面积。",
-              "answer": "144 平方厘米",
-              "skill": "square-area",
-              "format": "geometry",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "每小格是 1 平方厘米。数一数，阴影的面积是多少？",
-              "answer": "30 平方厘米",
-              "skill": "count-area-units",
+              "skill": "area-cut-max",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
@@ -9644,12 +9683,12 @@ export const PROJECT_STATUS = {
       "moduleKey": "unitPlugin",
       "moduleLabel": "通用单元插件 (unitPlugins)",
       "moduleFile": "prototype/unitPlugins.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
-        "easy": 3,
+        "easy": 4,
         "medium": 3,
         "hard": 3
       },
@@ -9659,46 +9698,46 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "area-compare",
-            "area-small-to-big",
-            "area-big-to-small"
+            "sqkm-to-ha",
+            "sqm-to-ha",
+            "ha-to-sqkm",
+            "ha-to-sqm"
           ],
           "formats": [
-            "compare",
             "fill"
           ],
           "samples": [
             {
-              "question": "在括号里填 >、< 或 =：7平方千米（　）720公顷。",
-              "answer": "<",
-              "skill": "area-compare",
-              "format": "compare",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "50000平方米 = （　）公顷",
-              "answer": "5公顷",
-              "skill": "area-small-to-big",
+              "question": "11平方千米 = （　）公顷",
+              "answer": "1100公顷",
+              "skill": "sqkm-to-ha",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "5平方千米 = （　）公顷",
-              "answer": "500公顷",
-              "skill": "area-big-to-small",
+              "question": "300000平方米 = （　）公顷",
+              "answer": "30公顷",
+              "skill": "sqm-to-ha",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "30000平方米 = （　）公顷",
-              "answer": "3公顷",
-              "skill": "area-small-to-big",
+              "question": "5200公顷 = （　）平方千米",
+              "answer": "52平方千米",
+              "skill": "ha-to-sqkm",
+              "format": "fill",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "45公顷 = （　）平方米",
+              "answer": "450000平方米",
+              "skill": "ha-to-sqm",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
@@ -9710,27 +9749,18 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "area-small-to-big",
             "area-compare",
-            "area-big-to-small"
+            "area-mixed-sum",
+            "area-unit-choice"
           ],
           "formats": [
-            "fill",
-            "compare"
+            "compare",
+            "fill"
           ],
           "samples": [
             {
-              "question": "30000平方米 = （　）公顷",
-              "answer": "3公顷",
-              "skill": "area-small-to-big",
-              "format": "fill",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "在括号里填 >、< 或 =：1平方千米（　）100公顷。",
-              "answer": "=",
+              "question": "在括号里填 >、< 或 =：8公顷（　）81000平方米。",
+              "answer": "<",
               "skill": "area-compare",
               "format": "compare",
               "responseKind": null,
@@ -9738,19 +9768,28 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "11平方千米 = （　）平方米",
-              "answer": "11000000平方米",
-              "skill": "area-big-to-small",
+              "question": "2平方千米 + 50公顷 = （　）公顷",
+              "answer": "250公顷",
+              "skill": "area-mixed-sum",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "400公顷 = （　）平方千米",
-              "answer": "4平方千米",
-              "skill": "area-small-to-big",
+              "question": "在括号里填上合适的面积单位：某小学的占地面积约是 5（　）。",
+              "answer": "公顷",
+              "skill": "area-unit-choice",
               "format": "fill",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "在括号里填 >、< 或 =：2平方千米（　）180公顷。",
+              "answer": ">",
+              "skill": "area-compare",
+              "format": "compare",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
@@ -9761,47 +9800,46 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "area-compare",
-            "area-big-to-small",
-            "area-small-to-big"
+            "crop-yield-area",
+            "area-speed-plow",
+            "land-planning-rect"
           ],
           "formats": [
-            "compare",
             "fill"
           ],
           "samples": [
             {
-              "question": "在括号里填 >、< 或 =：14平方千米（　）1380公顷。",
-              "answer": ">",
-              "skill": "area-compare",
-              "format": "compare",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "28公顷 = （　）平方米",
-              "answer": "280000平方米",
-              "skill": "area-big-to-small",
+              "question": "一个果园占地 16 公顷，平均每公顷产苹果 19 吨，这个果园一共能产苹果（　）吨。",
+              "answer": "304吨",
+              "skill": "crop-yield-area",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "380000平方米 = （　）公顷",
-              "answer": "38公顷",
-              "skill": "area-small-to-big",
+              "question": "一台洒水车每分钟行驶 150 米，洒水宽度是 2 米。工作 2 小时共洒水（　）公顷。",
+              "answer": "3.6公顷",
+              "skill": "area-speed-plow",
               "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "在括号里填 >、< 或 =：33公顷（　）331000平方米。",
-              "answer": "<",
-              "skill": "area-compare",
-              "format": "compare",
+              "question": "一块长方形麦地长 800 米，宽 100 米，这块麦地的面积是（　）公顷。",
+              "answer": "8公顷",
+              "skill": "land-planning-rect",
+              "format": "fill",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "一个果园占地 5 公顷，平均每公顷产苹果 30 吨，这个果园一共能产苹果（　）吨。",
+              "answer": "150吨",
+              "skill": "crop-yield-area",
+              "format": "fill",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
@@ -10181,10 +10219,10 @@ export const PROJECT_STATUS = {
       "moduleKey": "geometry",
       "moduleLabel": "几何与视图专项 (geometryProblems)",
       "moduleFile": "prototype/geometryProblems.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
         "easy": 3,
         "medium": 3,
@@ -10198,7 +10236,7 @@ export const PROJECT_STATUS = {
           "skills": [
             "classify-quad",
             "parallel-sides",
-            "draw-height"
+            "quad-names"
           ],
           "formats": [
             "geometry"
@@ -10223,13 +10261,13 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": true
             },
             {
-              "question": "从黑点向下方的底画一条高。",
-              "answer": "见参考图",
-              "skill": "draw-height",
+              "question": "平行四边形的两组对边分别（    ）。",
+              "answer": "平行且相等",
+              "skill": "quad-names",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
-              "hasAnswerDiagram": true
+              "hasAnswerDiagram": false
             },
             {
               "question": "图中是平行四边形还是梯形？",
@@ -10246,32 +10284,14 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
-            "classify-quad",
-            "parallel-sides",
-            "draw-height"
+            "draw-height",
+            "quad-angles",
+            "trap-kinds"
           ],
           "formats": [
             "geometry"
           ],
           "samples": [
-            {
-              "question": "图中是平行四边形还是梯形？",
-              "answer": "平行四边形",
-              "skill": "classify-quad",
-              "format": "geometry",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "用笔描出这个梯形中互相平行的一对边。",
-              "answer": "描出上底和下底",
-              "skill": "parallel-sides",
-              "format": "geometry",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": true
-            },
             {
               "question": "从黑点向下方的底画一条高。",
               "answer": "见参考图",
@@ -10282,13 +10302,31 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": true
             },
             {
-              "question": "图中是平行四边形还是梯形？",
-              "answer": "平行四边形",
-              "skill": "classify-quad",
+              "question": "平行四边形的一个内角是 70°，与它相邻的角是多少度？",
+              "answer": "110°",
+              "skill": "quad-angles",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
+            },
+            {
+              "question": "有一个角是直角的梯形叫做（    ）梯形。",
+              "answer": "直角",
+              "skill": "trap-kinds",
+              "format": "geometry",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "从黑点向下方的底画一条高。",
+              "answer": "见参考图",
+              "skill": "draw-height",
+              "format": "geometry",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": true
             }
           ]
         },
@@ -10296,49 +10334,49 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
-            "classify-quad",
-            "parallel-sides",
-            "draw-height"
+            "trap-split",
+            "quad-pull-nature",
+            "quad-cut-triangle"
           ],
           "formats": [
             "geometry"
           ],
           "samples": [
             {
-              "question": "图中是平行四边形还是梯形？",
-              "answer": "梯形",
-              "skill": "classify-quad",
-              "format": "geometry",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "用笔描出这个梯形中互相平行的一对边。",
-              "answer": "描出上底和下底",
-              "skill": "parallel-sides",
-              "format": "geometry",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": true
-            },
-            {
-              "question": "从黑点向下方的底画一条高。",
+              "question": "在梯形中画一条线段，把它分成一个平行四边形和一个三角形。",
               "answer": "见参考图",
-              "skill": "draw-height",
+              "skill": "trap-split",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": true
             },
             {
-              "question": "图中是平行四边形还是梯形？",
-              "answer": "平行四边形",
-              "skill": "classify-quad",
+              "question": "把一个长方形活动木框拉成平行四边形后，它的周长（    ），面积（    ）。",
+              "answer": "周长不变，面积变小",
+              "skill": "quad-pull-nature",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
+            },
+            {
+              "question": "一个梯形通过剪一刀最多可以分成两个（    ）。",
+              "answer": "梯形（或三角形）",
+              "skill": "quad-cut-triangle",
+              "format": "geometry",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "在梯形中画一条线段，把它分成一个平行四边形和一个三角形。",
+              "answer": "见参考图",
+              "skill": "trap-split",
+              "format": "geometry",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": true
             }
           ]
         }
@@ -10538,10 +10576,10 @@ export const PROJECT_STATUS = {
       "moduleKey": "diagram",
       "moduleLabel": "钟表与统计图表 (diagramProblems)",
       "moduleFile": "prototype/diagramProblems.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
         "easy": 7,
         "medium": 7,
@@ -10554,12 +10592,12 @@ export const PROJECT_STATUS = {
           "targetCount": 20,
           "skills": [
             "read-value",
+            "read-value-alt",
             "combine-values",
             "compare-values",
             "find-extrema",
             "total",
-            "threshold",
-            "target"
+            "total-half"
           ],
           "formats": [
             "application"
@@ -10575,8 +10613,17 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
+              "question": "三组收集了多少张？",
+              "answer": "37",
+              "skill": "read-value-alt",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
               "question": "一组和三组合计收集了多少张？",
-              "answer": "63",
+              "answer": "61",
               "skill": "combine-values",
               "format": "application",
               "responseKind": null,
@@ -10585,17 +10632,8 @@ export const PROJECT_STATUS = {
             },
             {
               "question": "四组和三组收集的数量相差多少张？",
-              "answer": "6",
+              "answer": "16",
               "skill": "compare-values",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "收集最多和最少的分别是哪一项？如果并列，请都写出来。",
-              "answer": "一组最多，二组最少",
-              "skill": "find-extrema",
               "format": "application",
               "responseKind": null,
               "hasDiagram": true,
@@ -10661,30 +10699,21 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "read-value",
             "combine-values",
             "compare-values",
             "find-extrema",
             "total",
             "threshold",
-            "target"
+            "target",
+            "rank-values"
           ],
           "formats": [
             "application"
           ],
           "samples": [
             {
-              "question": "二组收集了多少张？",
-              "answer": "15",
-              "skill": "read-value",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
               "question": "一组和三组合计收集了多少张？",
-              "answer": "215",
+              "answer": "200",
               "skill": "combine-values",
               "format": "application",
               "responseKind": null,
@@ -10693,7 +10722,7 @@ export const PROJECT_STATUS = {
             },
             {
               "question": "四组和三组收集的数量相差多少张？",
-              "answer": "55",
+              "answer": "35",
               "skill": "compare-values",
               "format": "application",
               "responseKind": null,
@@ -10702,8 +10731,17 @@ export const PROJECT_STATUS = {
             },
             {
               "question": "收集最多和最少的分别是哪一项？如果并列，请都写出来。",
-              "answer": "四组最多，一组最少",
+              "answer": "一组最多，二组最少",
               "skill": "find-extrema",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "四项合计收集了多少张卡片？",
+              "answer": "420",
+              "skill": "total",
               "format": "application",
               "responseKind": null,
               "hasDiagram": true,
@@ -11088,10 +11126,10 @@ export const PROJECT_STATUS = {
       "moduleKey": "geometry",
       "moduleLabel": "几何与视图专项 (geometryProblems)",
       "moduleFile": "prototype/geometryProblems.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
         "easy": 3,
         "medium": 3,
@@ -11105,14 +11143,14 @@ export const PROJECT_STATUS = {
           "skills": [
             "count-blocks",
             "read-front",
-            "draw-side"
+            "view-layer-count"
           ],
           "formats": [
             "geometry"
           ],
           "samples": [
             {
-              "question": "图中的方块摆成竖直的柱，每个上层方块下面都垫满。标出的这堆一共有几个小正方体？",
+              "question": "标出的这堆一共有几个小正方体？",
               "answer": "4",
               "skill": "count-blocks",
               "format": "geometry",
@@ -11130,16 +11168,16 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "从右面看是什么样子？在右侧方格里从最底下一行开始涂，左列对应物体的后排。",
-              "answer": "见参考图",
-              "skill": "draw-side",
+              "question": "从正面看，最左边一列有几层？",
+              "answer": "1",
+              "skill": "view-layer-count",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
-              "hasAnswerDiagram": true
+              "hasAnswerDiagram": false
             },
             {
-              "question": "图中的方块摆成竖直的柱，每个上层方块下面都垫满。标出的这堆一共有几个小正方体？",
+              "question": "标出的这堆一共有几个小正方体？",
               "answer": "5",
               "skill": "count-blocks",
               "format": "geometry",
@@ -11203,27 +11241,18 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
-            "count-blocks",
-            "read-front",
-            "draw-side"
+            "view-min-max-cubes",
+            "draw-side",
+            "view-blind-spot"
           ],
           "formats": [
             "geometry"
           ],
           "samples": [
             {
-              "question": "图中的方块摆成竖直的柱，每个上层方块下面都垫满。标出的这堆一共有几个小正方体？",
-              "answer": "7",
-              "skill": "count-blocks",
-              "format": "geometry",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "从前面看，最高的一列有几个小正方形？",
-              "answer": "3",
-              "skill": "read-front",
+              "question": "从前面看最高有 2 层，从上面看有 3 个小正方形，搭出这个立体图形最少需要（    ）个小正方体。",
+              "answer": "4 个",
+              "skill": "view-min-max-cubes",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
@@ -11239,9 +11268,18 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": true
             },
             {
-              "question": "图中的方块摆成竖直的柱，每个上层方块下面都垫满。标出的这堆一共有几个小正方体？",
-              "answer": "8",
-              "skill": "count-blocks",
+              "question": "在这个立体图形后面添上一个小正方体，从正面看形状不变，最多能添（    ）个。",
+              "answer": "1 个",
+              "skill": "view-blind-spot",
+              "format": "geometry",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "从前面看最高有 2 层，从上面看有 3 个小正方形，搭出这个立体图形最少需要（    ）个小正方体。",
+              "answer": "4 个",
+              "skill": "view-min-max-cubes",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
@@ -11625,10 +11663,10 @@ export const PROJECT_STATUS = {
       "moduleKey": "geometry",
       "moduleLabel": "几何与视图专项 (geometryProblems)",
       "moduleFile": "prototype/geometryProblems.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
         "easy": 3,
         "medium": 3,
@@ -11641,8 +11679,8 @@ export const PROJECT_STATUS = {
           "targetCount": 6,
           "skills": [
             "classify-triangle",
-            "triangle-angle-sum",
-            "triangle-height"
+            "triangle-height",
+            "triangle-elements"
           ],
           "formats": [
             "geometry"
@@ -11658,15 +11696,6 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "根据图中标出的两个角，求顶角 ∠A。",
-              "answer": "59°",
-              "skill": "triangle-angle-sum",
-              "format": "geometry",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
               "question": "从顶点 A 向下方的底画一条高。",
               "answer": "见参考图",
               "skill": "triangle-height",
@@ -11674,6 +11703,15 @@ export const PROJECT_STATUS = {
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": true
+            },
+            {
+              "question": "三角形有（    ）条边，（    ）个角，（    ）个顶点。",
+              "answer": "3条边，3个角，3个顶点",
+              "skill": "triangle-elements",
+              "format": "geometry",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
             },
             {
               "question": "看图判断，这是直角三角形还是锐角三角形？",
@@ -11690,26 +11728,17 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
-            "classify-triangle",
             "triangle-angle-sum",
-            "triangle-height"
+            "triangle-iso-angle",
+            "triangle-right-angle"
           ],
           "formats": [
             "geometry"
           ],
           "samples": [
             {
-              "question": "看图判断，这是直角三角形还是锐角三角形？",
-              "answer": "锐角三角形",
-              "skill": "classify-triangle",
-              "format": "geometry",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
               "question": "根据图中标出的两个角，求顶角 ∠A。",
-              "answer": "61°",
+              "answer": "63°",
               "skill": "triangle-angle-sum",
               "format": "geometry",
               "responseKind": null,
@@ -11717,18 +11746,27 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "从顶点 A 向下方的底画一条高。",
-              "answer": "见参考图",
-              "skill": "triangle-height",
+              "question": "等腰三角形的一个底角是 55°，它的顶角是（    ）度。",
+              "answer": "70°",
+              "skill": "triangle-iso-angle",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
-              "hasAnswerDiagram": true
+              "hasAnswerDiagram": false
             },
             {
-              "question": "看图判断，这是直角三角形还是锐角三角形？",
-              "answer": "直角三角形",
-              "skill": "classify-triangle",
+              "question": "直角三角形中，两个锐角的度数之和等于（    ）度。",
+              "answer": "90°",
+              "skill": "triangle-right-angle",
+              "format": "geometry",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "根据图中标出的两个角，求顶角 ∠A。",
+              "answer": "59°",
+              "skill": "triangle-angle-sum",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
@@ -11740,45 +11778,45 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
-            "classify-triangle",
-            "triangle-angle-sum",
-            "triangle-height"
+            "triangle-sides-rule",
+            "triangle-third-range",
+            "triangle-angle-ratio"
           ],
           "formats": [
             "geometry"
           ],
           "samples": [
             {
-              "question": "看图判断，这是直角三角形还是锐角三角形？",
-              "answer": "直角三角形",
-              "skill": "classify-triangle",
+              "question": "下列三组线段中，能围成三角形的一组是（    ）。A: 3,4,8  B: 2,5,7  C: 4,5,6",
+              "answer": "C",
+              "skill": "triangle-sides-rule",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
             {
-              "question": "根据图中标出的两个角，求顶角 ∠A。",
-              "answer": "79°",
-              "skill": "triangle-angle-sum",
+              "question": "已知三角形两边长分别为 15 厘米和 12 厘米，第三边最长是（    ）厘米（取整厘米数）。",
+              "answer": "26 厘米",
+              "skill": "triangle-third-range",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
             {
-              "question": "从顶点 A 向下方的底画一条高。",
-              "answer": "见参考图",
-              "skill": "triangle-height",
+              "question": "三角形三个内角度数的比是 1:2:3，这是一个（    ）三角形。",
+              "answer": "直角",
+              "skill": "triangle-angle-ratio",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
-              "hasAnswerDiagram": true
+              "hasAnswerDiagram": false
             },
             {
-              "question": "看图判断，这是直角三角形还是锐角三角形？",
-              "answer": "锐角三角形",
-              "skill": "classify-triangle",
+              "question": "下列三组线段中，能围成三角形的一组是（    ）。A: 3,4,8  B: 2,5,7  C: 4,5,6",
+              "answer": "C",
+              "skill": "triangle-sides-rule",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
@@ -11982,10 +12020,10 @@ export const PROJECT_STATUS = {
       "moduleKey": "grid",
       "moduleLabel": "方格与坐标作图 (gridProblems)",
       "moduleFile": "prototype/gridProblems.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
         "easy": 3,
         "medium": 3,
@@ -11997,18 +12035,77 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
-            "read-slide",
             "draw-slide",
-            "draw-reflection"
+            "count-axis",
+            "read-slide"
           ],
           "formats": [
             "grid"
           ],
           "samples": [
             {
+              "question": "画出三角形向右平移 2 格后的图形。",
+              "answer": "见参考图",
+              "skill": "draw-slide",
+              "format": "grid",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": true
+            },
+            {
+              "question": "等腰三角形有（    ）条对称轴。",
+              "answer": "1 条",
+              "skill": "count-axis",
+              "format": "grid",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
               "question": "原图（实线）向右平移了几格，得到虚线图形？",
-              "answer": "2 格",
+              "answer": "1 格",
               "skill": "read-slide",
+              "format": "grid",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "画出三角形向右平移 2 格后的图形。",
+              "answer": "见参考图",
+              "skill": "draw-slide",
+              "format": "grid",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": true
+            }
+          ]
+        },
+        "medium": {
+          "generatedCount": 6,
+          "targetCount": 6,
+          "skills": [
+            "draw-reflection",
+            "distance-to-axis",
+            "draw-slide"
+          ],
+          "formats": [
+            "grid"
+          ],
+          "samples": [
+            {
+              "question": "画出这个三角形关于虚线对称的轴对称图形。",
+              "answer": "见参考图",
+              "skill": "draw-reflection",
+              "format": "grid",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": true
+            },
+            {
+              "question": "点 A 到对称轴的距离是 2.5 格，它的对称点到对称轴的距离是（    ）格。",
+              "answer": "2.5 格",
+              "skill": "distance-to-axis",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
@@ -12024,72 +12121,13 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": true
             },
             {
-              "question": "以虚线为对称轴，画出这个三角形的轴对称图形。",
+              "question": "画出这个三角形关于虚线对称的轴对称图形。",
               "answer": "见参考图",
               "skill": "draw-reflection",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": true
-            },
-            {
-              "question": "原图（实线）向右平移了几格，得到虚线图形？",
-              "answer": "1 格",
-              "skill": "read-slide",
-              "format": "grid",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            }
-          ]
-        },
-        "medium": {
-          "generatedCount": 6,
-          "targetCount": 6,
-          "skills": [
-            "read-slide",
-            "draw-slide",
-            "draw-reflection"
-          ],
-          "formats": [
-            "grid"
-          ],
-          "samples": [
-            {
-              "question": "原图（实线）向右平移了几格，得到虚线图形？",
-              "answer": "2 格",
-              "skill": "read-slide",
-              "format": "grid",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "画出三角形向右平移 2 格后的图形。",
-              "answer": "见参考图",
-              "skill": "draw-slide",
-              "format": "grid",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": true
-            },
-            {
-              "question": "以虚线为对称轴，画出这个三角形的轴对称图形。",
-              "answer": "见参考图",
-              "skill": "draw-reflection",
-              "format": "grid",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": true
-            },
-            {
-              "question": "原图（实线）向右平移了几格，得到虚线图形？",
-              "answer": "3 格",
-              "skill": "read-slide",
-              "format": "grid",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
             }
           ]
         },
@@ -12097,45 +12135,45 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
-            "read-slide",
-            "draw-slide",
-            "draw-reflection"
+            "irregular-area-motion",
+            "dual-axis-reflect",
+            "multi-step-motion"
           ],
           "formats": [
             "grid"
           ],
           "samples": [
             {
-              "question": "原图（实线）向右平移了几格，得到虚线图形？",
-              "answer": "2 格",
-              "skill": "read-slide",
+              "question": "利用平移转化法，把不规则图形转化成规则图形，面积（    ）。",
+              "answer": "保持不变",
+              "skill": "irregular-area-motion",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
             {
-              "question": "画出三角形向右平移 3 格后的图形。",
+              "question": "画出这个三角形关于虚线对称的轴对称图形。",
               "answer": "见参考图",
-              "skill": "draw-slide",
+              "skill": "dual-axis-reflect",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": true
             },
             {
-              "question": "以虚线为对称轴，画出这个三角形的轴对称图形。",
-              "answer": "见参考图",
-              "skill": "draw-reflection",
+              "question": "三角形先向右平移 3 格，对应顶点到对称轴的距离（    ）。",
+              "answer": "发生改变",
+              "skill": "multi-step-motion",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
-              "hasAnswerDiagram": true
+              "hasAnswerDiagram": false
             },
             {
-              "question": "原图（实线）向右平移了几格，得到虚线图形？",
-              "answer": "3 格",
-              "skill": "read-slide",
+              "question": "利用平移转化法，把不规则图形转化成规则图形，面积（    ）。",
+              "answer": "保持不变",
+              "skill": "irregular-area-motion",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
@@ -12159,14 +12197,14 @@ export const PROJECT_STATUS = {
       "moduleKey": "diagram",
       "moduleLabel": "钟表与统计图表 (diagramProblems)",
       "moduleFile": "prototype/diagramProblems.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
-        "easy": 9,
+        "easy": 7,
         "medium": 9,
-        "hard": 9
+        "hard": 8
       },
       "hasDiagram": true,
       "byDifficulty": {
@@ -12175,14 +12213,12 @@ export const PROJECT_STATUS = {
           "targetCount": 20,
           "skills": [
             "read-value",
+            "read-value-alt",
             "combine-values",
             "compare-values",
             "find-extrema",
             "total",
-            "threshold",
-            "target",
-            "average",
-            "above-average"
+            "average"
           ],
           "formats": [
             "application"
@@ -12198,8 +12234,17 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
+              "question": "三组收集了多少张？",
+              "answer": "29",
+              "skill": "read-value-alt",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
               "question": "一组和三组合计收集了多少张？",
-              "answer": "61",
+              "answer": "16",
               "skill": "combine-values",
               "format": "application",
               "responseKind": null,
@@ -12208,17 +12253,8 @@ export const PROJECT_STATUS = {
             },
             {
               "question": "四组和三组收集的数量相差多少张？",
-              "answer": "35",
+              "answer": "4",
               "skill": "compare-values",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "收集最多和最少的分别是哪一项？如果并列，请都写出来。",
-              "answer": "一组最多，二组最少",
-              "skill": "find-extrema",
               "format": "application",
               "responseKind": null,
               "hasDiagram": true,
@@ -12286,32 +12322,22 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "read-value",
             "combine-values",
             "compare-values",
             "find-extrema",
             "total",
-            "threshold",
-            "target",
             "average",
-            "above-average"
+            "above-average",
+            "below-average",
+            "target-average"
           ],
           "formats": [
             "application"
           ],
           "samples": [
             {
-              "question": "二组收集了多少张？",
-              "answer": "80",
-              "skill": "read-value",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
               "question": "一组和三组合计收集了多少张？",
-              "answer": "60",
+              "answer": "205",
               "skill": "combine-values",
               "format": "application",
               "responseKind": null,
@@ -12320,7 +12346,7 @@ export const PROJECT_STATUS = {
             },
             {
               "question": "四组和三组收集的数量相差多少张？",
-              "answer": "65",
+              "answer": "122",
               "skill": "compare-values",
               "format": "application",
               "responseKind": null,
@@ -12329,8 +12355,17 @@ export const PROJECT_STATUS = {
             },
             {
               "question": "收集最多和最少的分别是哪一项？如果并列，请都写出来。",
-              "answer": "二组最多，三组最少",
+              "answer": "一组最多，四组最少",
               "skill": "find-extrema",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "四项合计收集了多少张卡片？",
+              "answer": "388",
+              "skill": "total",
               "format": "application",
               "responseKind": null,
               "hasDiagram": true,
@@ -12731,10 +12766,10 @@ export const PROJECT_STATUS = {
       "moduleKey": "grid",
       "moduleLabel": "方格与坐标作图 (gridProblems)",
       "moduleFile": "prototype/gridProblems.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
         "easy": 3,
         "medium": 3,
@@ -12748,7 +12783,7 @@ export const PROJECT_STATUS = {
           "skills": [
             "read-pair",
             "plot-pair",
-            "move-pair"
+            "pair-concept"
           ],
           "formats": [
             "grid"
@@ -12773,9 +12808,9 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": true
             },
             {
-              "question": "点 A 向右移动 2 格，新位置用数对怎样表示？",
-              "answer": "（6，4）",
-              "skill": "move-pair",
+              "question": "点 A（4，4） 在方格纸上表示第（    ）列第（    ）行。",
+              "answer": "第 4 列第 4 行",
+              "skill": "pair-concept",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
@@ -12796,49 +12831,49 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
-            "read-pair",
-            "plot-pair",
-            "move-pair"
+            "move-pair",
+            "line-pairs",
+            "triangle-vertex-pairs"
           ],
           "formats": [
             "grid"
           ],
           "samples": [
             {
-              "question": "用数对表示点 A 的位置。",
-              "answer": "（2，2）",
-              "skill": "read-pair",
-              "format": "grid",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "在图上标出点 B（5，2）。",
-              "answer": "B（5，2）",
-              "skill": "plot-pair",
+              "question": "在图上标出点 A（2，2） 向右移动 3 格后的点 A′。",
+              "answer": "A′（5，2）",
+              "skill": "move-pair",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": true
             },
             {
-              "question": "点 A 向右移动 2 格，新位置用数对怎样表示？",
-              "answer": "（6，2）",
-              "skill": "move-pair",
+              "question": "点 A（2，2） 和点 B（5，2） 在同一（    ）上。（填“行”或“列”）",
+              "answer": "行",
+              "skill": "line-pairs",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
             {
-              "question": "用数对表示点 A 的位置。",
-              "answer": "（2，4）",
-              "skill": "read-pair",
+              "question": "将三角形 ABC 向右平移 2 格，点 A（4，2） 对应的点 A′ 的数对是（    ）。",
+              "answer": "（6，2）",
+              "skill": "triangle-vertex-pairs",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
+            },
+            {
+              "question": "在图上标出点 A（2，4） 向右移动 3 格后的点 A′。",
+              "answer": "A′（5，4）",
+              "skill": "move-pair",
+              "format": "grid",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": true
             }
           ]
         },
@@ -12846,49 +12881,49 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
-            "read-pair",
-            "plot-pair",
-            "move-pair"
+            "quad-pairs",
+            "reverse-vertex",
+            "area-from-pairs"
           ],
           "formats": [
             "grid"
           ],
           "samples": [
             {
-              "question": "用数对表示点 A 的位置。",
-              "answer": "（2，5）",
-              "skill": "read-pair",
-              "format": "grid",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "在图上标出点 B（4，5）。",
-              "answer": "B（4，5）",
-              "skill": "plot-pair",
+              "question": "若 A（2，5）、B（5，5）、C（2，8） 和 D 构成一个平行四边形，顶点 D 的数对是（    ）。",
+              "answer": "（5，8）",
+              "skill": "quad-pairs",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": true
             },
             {
-              "question": "点 A 向右移动 4 格，新位置用数对怎样表示？",
-              "answer": "（8，4）",
-              "skill": "move-pair",
+              "question": "点 A（3，5） 关于水平对称线 y=5 对称的点 A′ 的数对是（    ）。",
+              "answer": "（3，5）",
+              "skill": "reverse-vertex",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
             {
-              "question": "用数对表示点 A 的位置。",
-              "answer": "（3，5）",
-              "skill": "read-pair",
+              "question": "以 A（4，4）、B（8，4）、D（8，8）、C（4，8） 为顶点的正方形面积是（    ）个小方格。",
+              "answer": "16 个",
+              "skill": "area-from-pairs",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
+            },
+            {
+              "question": "若 A（3，5）、B（6，5）、C（3，8） 和 D 构成一个平行四边形，顶点 D 的数对是（    ）。",
+              "answer": "（6，8）",
+              "skill": "quad-pairs",
+              "format": "grid",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": true
             }
           ]
         }
@@ -13813,10 +13848,10 @@ export const PROJECT_STATUS = {
       "moduleKey": "geometry",
       "moduleLabel": "几何与视图专项 (geometryProblems)",
       "moduleFile": "prototype/geometryProblems.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
         "easy": 3,
         "medium": 3,
@@ -13830,7 +13865,7 @@ export const PROJECT_STATUS = {
           "skills": [
             "interpret-plan",
             "plan-to-front",
-            "build-from-plan"
+            "plan-total-cubes"
           ],
           "formats": [
             "geometry"
@@ -13855,9 +13890,9 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": true
             },
             {
-              "question": "俯视图上方是后方，格内数字表示这一格叠了几个小正方体，空白格没有方块。 请用小正方体摆出这个图形。",
-              "answer": "搭法见参考图",
-              "skill": "build-from-plan",
+              "question": "俯视图上方是后方，格内数字表示这一格叠了几个小正方体，空白格没有方块。 从上面看，底面一共有几个小正方体？",
+              "answer": "3",
+              "skill": "plan-total-cubes",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
@@ -13928,27 +13963,18 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
-            "interpret-plan",
-            "plan-to-front",
-            "build-from-plan"
+            "reconstruct-three-views",
+            "build-from-plan",
+            "plan-min-max-cubes"
           ],
           "formats": [
             "geometry"
           ],
           "samples": [
             {
-              "question": "俯视图上方是后方，格内数字表示这一格叠了几个小正方体，空白格没有方块。 拼出这堆图形一共需要几个小正方体？",
+              "question": "俯视图上方是后方，格内数字表示这一格叠了几个小正方体，空白格没有方块。 根据三视图还原，这堆立体模型一共有多少个小正方体？",
               "answer": "4",
-              "skill": "interpret-plan",
-              "format": "geometry",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": true
-            },
-            {
-              "question": "俯视图上方是后方，格内数字表示这一格叠了几个小正方体，空白格没有方块。 从前面看，左右两列分别有几层？",
-              "answer": "左列 1 层，右列 1 层",
-              "skill": "plan-to-front",
+              "skill": "reconstruct-three-views",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
@@ -13964,9 +13990,18 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": true
             },
             {
-              "question": "俯视图上方是后方，格内数字表示这一格叠了几个小正方体，空白格没有方块。 拼出这堆图形一共需要几个小正方体？",
+              "question": "俯视图上方是后方，格内数字表示这一格叠了几个小正方体，空白格没有方块。 若要在这个立体图形上添放 1 个小正方体且俯视图不变，有（    ）种不同放法。",
+              "answer": "3 种",
+              "skill": "plan-min-max-cubes",
+              "format": "geometry",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": true
+            },
+            {
+              "question": "俯视图上方是后方，格内数字表示这一格叠了几个小正方体，空白格没有方块。 根据三视图还原，这堆立体模型一共有多少个小正方体？",
               "answer": "3",
-              "skill": "interpret-plan",
+              "skill": "reconstruct-three-views",
               "format": "geometry",
               "responseKind": null,
               "hasDiagram": true,
@@ -14527,10 +14562,10 @@ export const PROJECT_STATUS = {
       "moduleKey": "grid",
       "moduleLabel": "方格与坐标作图 (gridProblems)",
       "moduleFile": "prototype/gridProblems.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
         "easy": 3,
         "medium": 3,
@@ -14542,9 +14577,59 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
+            "read-rotation",
+            "rotate-point-direct",
+            "clock-hand-rotate"
+          ],
+          "formats": [
+            "grid"
+          ],
+          "samples": [
+            {
+              "question": "以 O 为旋转中心，原图（实线）怎样旋转得到虚线图形？",
+              "answer": "顺时针旋转 90°",
+              "skill": "read-rotation",
+              "format": "grid",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "画出三角形绕 O 点顺时针旋转 90° 后的图形。",
+              "answer": "见参考图",
+              "skill": "rotate-point-direct",
+              "format": "grid",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": true
+            },
+            {
+              "question": "钟面上分针从“12”旋转到“3”，顺时针旋转了（    ）度。",
+              "answer": "90°",
+              "skill": "clock-hand-rotate",
+              "format": "grid",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "以 O 为旋转中心，原图（实线）怎样旋转得到虚线图形？",
+              "answer": "顺时针旋转 90°",
+              "skill": "read-rotation",
+              "format": "grid",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            }
+          ]
+        },
+        "medium": {
+          "generatedCount": 6,
+          "targetCount": 6,
+          "skills": [
             "rotate-clockwise",
             "track-rotated-point",
-            "read-rotation"
+            "rotate-angle-detect"
           ],
           "formats": [
             "grid"
@@ -14569,59 +14654,9 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": true
             },
             {
-              "question": "以 O 为旋转中心，原图（实线）怎样旋转得到虚线图形？",
-              "answer": "顺时针旋转 90°",
-              "skill": "read-rotation",
-              "format": "grid",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "画出三角形绕 O 点顺时针旋转 90° 后的图形。",
-              "answer": "见参考图",
-              "skill": "rotate-clockwise",
-              "format": "grid",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": true
-            }
-          ]
-        },
-        "medium": {
-          "generatedCount": 6,
-          "targetCount": 6,
-          "skills": [
-            "rotate-clockwise",
-            "track-rotated-point",
-            "read-rotation"
-          ],
-          "formats": [
-            "grid"
-          ],
-          "samples": [
-            {
-              "question": "画出三角形绕 O 点顺时针旋转 90° 后的图形。",
-              "answer": "见参考图",
-              "skill": "rotate-clockwise",
-              "format": "grid",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": true
-            },
-            {
-              "question": "三角形绕 O 点逆时针旋转 90°，点 A 的对应点在 O 的哪一侧？离 O 几格？",
-              "answer": "左侧 1 格",
-              "skill": "track-rotated-point",
-              "format": "grid",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": true
-            },
-            {
-              "question": "以 O 为旋转中心，原图（实线）怎样旋转得到虚线图形？",
-              "answer": "顺时针旋转 90°",
-              "skill": "read-rotation",
+              "question": "图形绕 O 点旋转 180°，对应点与 O 点连线形成的角是（    ）度。",
+              "answer": "180°",
+              "skill": "rotate-angle-detect",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
@@ -14642,49 +14677,49 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
-            "rotate-clockwise",
-            "track-rotated-point",
-            "read-rotation"
+            "rotate-combo-pattern",
+            "rotate-counter-clockwise",
+            "rotate-area-trace"
           ],
           "formats": [
             "grid"
           ],
           "samples": [
             {
-              "question": "画出三角形绕 O 点顺时针旋转 90° 后的图形。",
-              "answer": "见参考图",
-              "skill": "rotate-clockwise",
-              "format": "grid",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": true
-            },
-            {
-              "question": "三角形绕 O 点逆时针旋转 90°，点 A 的对应点在 O 的哪一侧？离 O 几格？",
-              "answer": "上方 2 格",
-              "skill": "track-rotated-point",
-              "format": "grid",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": true
-            },
-            {
-              "question": "以 O 为旋转中心，原图（实线）怎样旋转得到虚线图形？",
-              "answer": "顺时针旋转 90°",
-              "skill": "read-rotation",
+              "question": "一个图形绕中心点连续旋转 4 次 90° 后，（    ）回到原位置。（填“能”或“不能”）",
+              "answer": "能",
+              "skill": "rotate-combo-pattern",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
             {
-              "question": "画出三角形绕 O 点顺时针旋转 90° 后的图形。",
+              "question": "画出三角形绕 O 点逆时针旋转 90° 后的图形。",
               "answer": "见参考图",
-              "skill": "rotate-clockwise",
+              "skill": "rotate-counter-clockwise",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": true
+            },
+            {
+              "question": "三角形旋转前后，它的形状和大小（    ）。",
+              "answer": "完全不变",
+              "skill": "rotate-area-trace",
+              "format": "grid",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "一个图形绕中心点连续旋转 4 次 90° 后，（    ）回到原位置。（填“能”或“不能”）",
+              "answer": "能",
+              "skill": "rotate-combo-pattern",
+              "format": "grid",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
             }
           ]
         }
@@ -14884,14 +14919,14 @@ export const PROJECT_STATUS = {
       "moduleKey": "diagram",
       "moduleLabel": "钟表与统计图表 (diagramProblems)",
       "moduleFile": "prototype/diagramProblems.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
-        "easy": 8,
+        "easy": 7,
         "medium": 8,
-        "hard": 8
+        "hard": 7
       },
       "hasDiagram": true,
       "byDifficulty": {
@@ -14900,12 +14935,11 @@ export const PROJECT_STATUS = {
           "targetCount": 20,
           "skills": [
             "read-value",
+            "read-value-alt",
             "combine-values",
             "compare-values",
             "find-extrema",
             "total",
-            "threshold",
-            "target",
             "rising-intervals"
           ],
           "formats": [
@@ -14922,8 +14956,17 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
+              "question": "周三收集了多少张？",
+              "answer": "17",
+              "skill": "read-value-alt",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
               "question": "周一和周三合计收集了多少张？",
-              "answer": "54",
+              "answer": "39",
               "skill": "combine-values",
               "format": "application",
               "responseKind": null,
@@ -14931,18 +14974,9 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "周四和周三收集的数量相差多少张？",
-              "answer": "21",
+              "question": "周四和周一收集的数量相差多少张？",
+              "answer": "24",
               "skill": "compare-values",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "收集最多和最少的分别是哪一项？如果并列，请都写出来。",
-              "answer": "周三最多，周一最少",
-              "skill": "find-extrema",
               "format": "application",
               "responseKind": null,
               "hasDiagram": true,
@@ -14986,8 +15020,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "周四和周三收集的数量相差多少张？",
-              "answer": "18",
+              "question": "周四和周一收集的数量相差多少张？",
+              "answer": "38",
               "skill": "compare-values",
               "format": "application",
               "responseKind": null,
@@ -14995,7 +15029,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "收集最多和最少的分别是哪一项？如果并列，请都写出来。",
+              "question": "收集最多和最少的分别是哪一天？如果并列，请都写出来。",
               "answer": "周二最多，周三最少",
               "skill": "find-extrema",
               "format": "application",
@@ -15009,31 +15043,21 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "read-value",
             "combine-values",
             "compare-values",
             "find-extrema",
             "total",
-            "threshold",
-            "target",
-            "rising-intervals"
+            "fastest-growth",
+            "declining-intervals",
+            "target"
           ],
           "formats": [
             "application"
           ],
           "samples": [
             {
-              "question": "周二收集了多少张？",
-              "answer": "60",
-              "skill": "read-value",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
               "question": "周一和周三合计收集了多少张？",
-              "answer": "125",
+              "answer": "145",
               "skill": "combine-values",
               "format": "application",
               "responseKind": null,
@@ -15041,8 +15065,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "周四和周三收集的数量相差多少张？",
-              "answer": "100",
+              "question": "周四和周一收集的数量相差多少张？",
+              "answer": "65",
               "skill": "compare-values",
               "format": "application",
               "responseKind": null,
@@ -15050,9 +15074,18 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "收集最多和最少的分别是哪一项？如果并列，请都写出来。",
-              "answer": "周二最多，周一最少",
+              "question": "收集最多和最少的分别是哪一天？如果并列，请都写出来。",
+              "answer": "周二最多，周四最少",
               "skill": "find-extrema",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "四天合计收集了多少张卡片？",
+              "answer": "365",
+              "skill": "total",
               "format": "application",
               "responseKind": null,
               "hasDiagram": true,
@@ -15436,10 +15469,10 @@ export const PROJECT_STATUS = {
       "moduleKey": "grid",
       "moduleLabel": "方格与坐标作图 (gridProblems)",
       "moduleFile": "prototype/gridProblems.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
         "easy": 3,
         "medium": 3,
@@ -15452,8 +15485,8 @@ export const PROJECT_STATUS = {
           "targetCount": 6,
           "skills": [
             "read-bearing",
-            "plot-bearing",
-            "return-distance"
+            "bearing-distance",
+            "plot-bearing"
           ],
           "formats": [
             "grid"
@@ -15469,22 +15502,22 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "B 在 A 的正北方向 100 米处。每小格边长代表 100 米，请用直尺在图上标出 B。",
-              "answer": "正北方向 100 米",
+              "question": "每小格边长代表 100 米，A 到 B 的图上距离代表实际距离（    ）米。",
+              "answer": "100 米",
+              "skill": "bearing-distance",
+              "format": "grid",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "B 在 A 的正北方向 200 米处。每小格边长代表 100 米，请在图上标出 B。",
+              "answer": "正北方向 200 米",
               "skill": "plot-bearing",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": true
-            },
-            {
-              "question": "沿图中线段从 A 到 B 后原路返回，一共走多少米？",
-              "answer": "400 米",
-              "skill": "return-distance",
-              "format": "grid",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
             },
             {
               "question": "从 A 看，B 在什么方向？斜向位置请以正东或正西为基准。",
@@ -15501,8 +15534,8 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
-            "read-bearing",
             "plot-bearing",
+            "reverse-bearing",
             "return-distance"
           ],
           "formats": [
@@ -15510,22 +15543,22 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "从 A 看，B 在什么方向？斜向位置请以正东或正西为基准。",
-              "answer": "正北",
-              "skill": "read-bearing",
-              "format": "grid",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "B 在 A 的西偏南45°方向 100 米处。每小格边长代表 100 米，请用直尺在图上标出 B。",
-              "answer": "西偏南45°方向 100 米",
+              "question": "B 在 A 的正北方向 300 米处。每小格边长代表 100 米，请用直尺在图上标出 B。",
+              "answer": "正北方向 300 米",
               "skill": "plot-bearing",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": true
+            },
+            {
+              "question": "如果以 B 为观测点，点 A 在点 B 的什么方向？",
+              "answer": "东北",
+              "skill": "reverse-bearing",
+              "format": "grid",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
             },
             {
               "question": "沿图中线段从 A 到 B 后原路返回，一共走多少米？",
@@ -15537,13 +15570,13 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "从 A 看，B 在什么方向？斜向位置请以正东或正西为基准。",
-              "answer": "西偏北45°",
-              "skill": "read-bearing",
+              "question": "B 在 A 的西偏北45°方向 200 米处。每小格边长代表 100 米，请用直尺在图上标出 B。",
+              "answer": "西偏北45°方向 200 米",
+              "skill": "plot-bearing",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
-              "hasAnswerDiagram": false
+              "hasAnswerDiagram": true
             }
           ]
         },
@@ -15551,45 +15584,45 @@ export const PROJECT_STATUS = {
           "generatedCount": 6,
           "targetCount": 6,
           "skills": [
-            "read-bearing",
-            "plot-bearing",
-            "return-distance"
+            "route-speed-time",
+            "multi-point-bearing",
+            "bearing-intercept"
           ],
           "formats": [
             "grid"
           ],
           "samples": [
             {
-              "question": "从 A 看，B 在什么方向？斜向位置请以正东或正西为基准。",
-              "answer": "正西",
-              "skill": "read-bearing",
+              "question": "小明以每分钟 50 米的速度从 A 走向 B，需要走（    ）分钟。",
+              "answer": "6 分钟",
+              "skill": "route-speed-time",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
             {
-              "question": "B 在 A 的正东方向 200 米处。每小格边长代表 100 米，请用直尺在图上标出 B。",
+              "question": "B 在 A 的正东方向 200 米处，请在图中标出点 B。",
               "answer": "正东方向 200 米",
-              "skill": "plot-bearing",
+              "skill": "multi-point-bearing",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": true
             },
             {
-              "question": "沿图中线段从 A 到 B 后原路返回，一共走多少米？",
+              "question": "由 A 出发经 B 处掉头返回 A，往返一共行驶了（    ）米。",
               "answer": "200 米",
-              "skill": "return-distance",
+              "skill": "bearing-intercept",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
               "hasAnswerDiagram": false
             },
             {
-              "question": "从 A 看，B 在什么方向？斜向位置请以正东或正西为基准。",
-              "answer": "西偏南45°",
-              "skill": "read-bearing",
+              "question": "小明以每分钟 50 米的速度从 A 走向 B，需要走（    ）分钟。",
+              "answer": "2 分钟",
+              "skill": "route-speed-time",
               "format": "grid",
               "responseKind": null,
               "hasDiagram": true,
@@ -16341,10 +16374,10 @@ export const PROJECT_STATUS = {
       "moduleKey": "diagram",
       "moduleLabel": "钟表与统计图表 (diagramProblems)",
       "moduleFile": "prototype/diagramProblems.js",
-      "gradientTier": "three-tier-range",
-      "gradientLabel": "三档数值",
-      "gradientBadge": "info",
-      "gradientNote": "基础/标准/提高三档采用独立递进的数值区间或图形步长",
+      "gradientTier": "tiered-skills",
+      "gradientLabel": "阶梯考法",
+      "gradientBadge": "success",
+      "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
         "easy": 10,
         "medium": 10,
@@ -16357,13 +16390,13 @@ export const PROJECT_STATUS = {
           "targetCount": 20,
           "skills": [
             "read-share",
+            "read-share-story",
             "combine-shares",
             "share-to-count",
             "rank-shares",
             "remaining-share",
             "compare-shares",
             "count-to-total",
-            "count-to-count",
             "count-difference",
             "share-threshold"
           ],
@@ -16381,8 +16414,17 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
+              "question": "故事书占借阅总数的百分之几？",
+              "answer": "10%",
+              "skill": "read-share-story",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
               "question": "故事书与历史书合计占借阅总数的百分之几？",
-              "answer": "30%",
+              "answer": "55%",
               "skill": "combine-shares",
               "format": "application",
               "responseKind": null,
@@ -16390,18 +16432,9 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "一共借出 380 本书，其中有多少本艺术书？",
-              "answer": "76 本",
+              "question": "一共借出 360 本书，其中有多少本艺术书？",
+              "answer": "72 本",
               "skill": "share-to-count",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "哪类书借得最多？如果并列，请都写出来。",
-              "answer": "科普",
-              "skill": "rank-shares",
               "format": "application",
               "responseKind": null,
               "hasDiagram": true,
@@ -16470,7 +16503,6 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "read-share",
             "combine-shares",
             "share-to-count",
             "rank-shares",
@@ -16479,24 +16511,16 @@ export const PROJECT_STATUS = {
             "count-to-total",
             "count-to-count",
             "count-difference",
-            "share-threshold"
+            "share-threshold",
+            "share-ratio-compare"
           ],
           "formats": [
             "application"
           ],
           "samples": [
             {
-              "question": "科普书占借阅总数的百分之几？",
-              "answer": "35%",
-              "skill": "read-share",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": true,
-              "hasAnswerDiagram": false
-            },
-            {
               "question": "故事书与历史书合计占借阅总数的百分之几？",
-              "answer": "45%",
+              "answer": "40%",
               "skill": "combine-shares",
               "format": "application",
               "responseKind": null,
@@ -16504,8 +16528,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "一共借出 200 本书，其中有多少本艺术书？",
-              "answer": "30 本",
+              "question": "一共借出 240 本书，其中有多少本艺术书？",
+              "answer": "24 本",
               "skill": "share-to-count",
               "format": "application",
               "responseKind": null,
@@ -16516,6 +16540,15 @@ export const PROJECT_STATUS = {
               "question": "哪类书借得最多？如果并列，请都写出来。",
               "answer": "历史",
               "skill": "rank-shares",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": true,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "除科普书外，其余图书合计占借阅总数的百分之几？",
+              "answer": "85%",
+              "skill": "remaining-share",
               "format": "application",
               "responseKind": null,
               "hasDiagram": true,

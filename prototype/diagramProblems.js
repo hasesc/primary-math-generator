@@ -282,16 +282,38 @@ export function statisticsProblems(difficulty, count, { plugin }) {
       const dayTwo = second.reduce((sum, n) => sum + n);
       const growth = second.map((n, i) => n - values[i]);
       const target = Math.ceil((values[1] + second[1]) / 10) * 10 + 10;
-      tasks = [
-        ['read-cell', '二组第二天收集了多少张？', second[1]],
-        ['group-total', '三组两天一共收集了多少张？', values[2] + second[2]],
-        ['group-change', '四组第二天比第一天多收集多少张？', growth[3]],
-        ['day-total', '第一天四个小组一共收集了多少张？', dayOne],
-        ['day-change', '四个小组第二天合计比第一天多收集多少张？', dayTwo - dayOne],
-        ['cross-day', '一组第一天和四组第二天合计收集了多少张？', values[0] + second[3]],
-        ['greatest-change', '哪个小组第二天增加得最多？如果并列，请都写出来。', labels.filter((_, i) => growth[i] === Math.max(...growth)).join('、')],
-        ['missing-from-target', `二组想在两天内收集 ${target} 张，还差多少张？`, target - values[1] - second[1]],
-      ];
+      if (difficulty === 'easy') {
+        tasks = [
+          ['read-cell', '二组第二天收集了多少张？', second[1]],
+          ['read-cell-day1', '一组第一天收集了多少张？', values[0]],
+          ['group-total', '三组两天一共收集了多少张？', values[2] + second[2]],
+          ['day-total', '第一天四个小组一共收集了多少张？', dayOne],
+          ['day-total-second', '第二天四个小组一共收集了多少张？', dayTwo],
+          ['group-change', '四组第二天比第一天多收集多少张？', growth[3]],
+          ['cross-day', '一组第一天和四组第二天合计收集了多少张？', values[0] + second[3]],
+        ];
+      } else if (difficulty === 'hard') {
+        tasks = [
+          ['group-change', '四组第二天比第一天多收集多少张？', growth[3]],
+          ['day-change', '四个小组第二天合计比第一天多收集多少张？', dayTwo - dayOne],
+          ['cross-day', '一组第一天和四组第二天合计收集了多少张？', values[0] + second[3]],
+          ['greatest-change', '哪个小组第二天增加得最多？如果并列，请都写出来。', labels.filter((_, i) => growth[i] === Math.max(...growth)).join('、')],
+          ['missing-from-target', `二组想在两天内收集 ${target} 张，还差多少张？`, target - values[1] - second[1]],
+          ['least-change', '哪个小组第二天增加得最少？如果并列，请都写出来。', labels.filter((_, i) => growth[i] === Math.min(...growth)).join('、')],
+          ['multi-group-compare', '第一天收集最多的组比第二天收集最少的组多多少张？', Math.max(...values) - Math.min(...second)],
+        ];
+      } else {
+        tasks = [
+          ['read-cell', '二组第二天收集了多少张？', second[1]],
+          ['group-total', '三组两天一共收集了多少张？', values[2] + second[2]],
+          ['group-change', '四组第二天比第一天多收集多少张？', growth[3]],
+          ['day-total', '第一天四个小组一共收集了多少张？', dayOne],
+          ['day-change', '四个小组第二天合计比第一天多收集多少张？', dayTwo - dayOne],
+          ['cross-day', '一组第一天和四组第二天合计收集了多少张？', values[0] + second[3]],
+          ['greatest-change', '哪个小组第二天增加得最多？如果并列，请都写出来。', labels.filter((_, i) => growth[i] === Math.max(...growth)).join('、')],
+          ['missing-from-target', `二组想在两天内收集 ${target} 张，还差多少张？`, target - values[1] - second[1]],
+        ];
+      }
     } else if (plugin === 'pie-chart') {
       const cuts = [randomInt(2, 7), randomInt(8, 12), randomInt(13, 18)];
       diagram.values = [cuts[0], cuts[1] - cuts[0], cuts[2] - cuts[1], 20 - cuts[2]].map(n => n * 5);
@@ -299,40 +321,158 @@ export function statisticsProblems(difficulty, count, { plugin }) {
       const [story, science, history, art] = diagram.values;
       const pct = n => `${n}%`;
       const bookCount = n => `${n} 本`;
-      tasks = [
-        ['read-share', '科普书占借阅总数的百分之几？', pct(science)],
-        ['combine-shares', '故事书与历史书合计占借阅总数的百分之几？', pct(story + history)],
-        ['share-to-count', `一共借出 ${total} 本书，其中有多少本艺术书？`, bookCount(total * art / 100)],
-        ['rank-shares', '哪类书借得最多？如果并列，请都写出来。', labels.filter((_, i) => diagram.values[i] === Math.max(...diagram.values)).join('、')],
-        ['remaining-share', '除科普书外，其余图书合计占借阅总数的百分之几？', pct(100 - science)],
-        ['compare-shares', '故事书和艺术书的占比相差多少个百分点？', `${Math.abs(story - art)} 个百分点`],
-        ['count-to-total', `科普书借出了 ${total * science / 100} 本。一共借出了多少本书？`, bookCount(total)],
-        ['count-to-count', `故事书借出了 ${total * story / 100} 本。历史书借出了多少本？`, bookCount(total * history / 100)],
-        ['count-difference', `一共借出 ${total} 本书。科普书与历史书的借阅量相差多少本？`, bookCount(total * Math.abs(science - history) / 100)],
-        ['share-threshold', '哪些类别的借阅量达到或超过总数的四分之一？', labels.filter((_, i) => diagram.values[i] >= 25).join('、')],
-      ];
+      if (difficulty === 'easy') {
+        tasks = [
+          ['read-share', '科普书占借阅总数的百分之几？', pct(science)],
+          ['read-share-story', '故事书占借阅总数的百分之几？', pct(story)],
+          ['combine-shares', '故事书与历史书合计占借阅总数的百分之几？', pct(story + history)],
+          ['share-to-count', `一共借出 ${total} 本书，其中有多少本艺术书？`, bookCount(total * art / 100)],
+          ['rank-shares', '哪类书借得最多？如果并列，请都写出来。', labels.filter((_, i) => diagram.values[i] === Math.max(...diagram.values)).join('、')],
+          ['remaining-share', '除科普书外，其余图书合计占借阅总数的百分之几？', pct(100 - science)],
+          ['compare-shares', '故事书和艺术书的占比相差多少个百分点？', `${Math.abs(story - art)} 个百分点`],
+          ['count-to-total', `科普书借出了 ${total * science / 100} 本。一共借出了多少本书？`, bookCount(total)],
+          ['count-difference', `一共借出 ${total} 本书。科普书与历史书的借阅量相差多少本？`, bookCount(total * Math.abs(science - history) / 100)],
+          ['share-threshold', '哪些类别的借阅量达到或超过总数的四分之一？', labels.filter((_, i) => diagram.values[i] >= 25).join('、')],
+        ];
+      } else if (difficulty === 'hard') {
+        tasks = [
+          ['combine-shares', '故事书与历史书合计占借阅总数的百分之几？', pct(story + history)],
+          ['share-to-count', `一共借出 ${total} 本书，其中有多少本艺术书？`, bookCount(total * art / 100)],
+          ['rank-shares', '哪类书借得最多？如果并列，请都写出来。', labels.filter((_, i) => diagram.values[i] === Math.max(...diagram.values)).join('、')],
+          ['remaining-share', '除科普书外，其余图书合计占借阅总数的百分之几？', pct(100 - science)],
+          ['compare-shares', '故事书和艺术书的占比相差多少个百分点？', `${Math.abs(story - art)} 个百分点`],
+          ['count-to-total', `科普书借出了 ${total * science / 100} 本。一共借出了多少本书？`, bookCount(total)],
+          ['count-to-count', `故事书借出了 ${total * story / 100} 本。历史书借出了多少本？`, bookCount(total * history / 100)],
+          ['count-difference', `一共借出 ${total} 本书。科普书与历史书的借阅量相差多少本？`, bookCount(total * Math.abs(science - history) / 100)],
+          ['share-threshold', '哪些类别的借阅量达到或超过总数的四分之一？', labels.filter((_, i) => diagram.values[i] >= 25).join('、')],
+          ['share-ratio-compare', `科普书借出量是艺术书借出量的几倍？（填小数或整数）`, Number((science / art).toFixed(2))],
+        ];
+      } else {
+        tasks = [
+          ['read-share', '科普书占借阅总数的百分之几？', pct(science)],
+          ['combine-shares', '故事书与历史书合计占借阅总数的百分之几？', pct(story + history)],
+          ['share-to-count', `一共借出 ${total} 本书，其中有多少本艺术书？`, bookCount(total * art / 100)],
+          ['rank-shares', '哪类书借得最多？如果并列，请都写出来。', labels.filter((_, i) => diagram.values[i] === Math.max(...diagram.values)).join('、')],
+          ['remaining-share', '除科普书外，其余图书合计占借阅总数的百分之几？', pct(100 - science)],
+          ['compare-shares', '故事书和艺术书的占比相差多少个百分点？', `${Math.abs(story - art)} 个百分点`],
+          ['count-to-total', `科普书借出了 ${total * science / 100} 本。一共借出了多少本书？`, bookCount(total)],
+          ['count-to-count', `故事书借出了 ${total * story / 100} 本。历史书借出了多少本？`, bookCount(total * history / 100)],
+          ['count-difference', `一共借出 ${total} 本书。科普书与历史书的借阅量相差多少本？`, bookCount(total * Math.abs(science - history) / 100)],
+          ['share-threshold', '哪些类别的借阅量达到或超过总数的四分之一？', labels.filter((_, i) => diagram.values[i] >= 25).join('、')],
+        ];
+      }
     } else {
       if (plugin === 'bar-average') values[3] += (4 - values.reduce((a, b) => a + b) % 4) % 4;
       const sum = values.reduce((total, n) => total + n);
       const max = Math.max(...values);
       const min = Math.min(...values);
       const threshold = 20 * scale;
-      tasks = [
-        ['read-value', `${labels[1]}收集了多少张？`, values[1]],
-        ['combine-values', `${labels[0]}和${labels[2]}合计收集了多少张？`, values[0] + values[2]],
-        ['compare-values', `${labels[3]}和${labels[2]}收集的数量相差多少张？`, Math.abs(values[3] - values[2])],
-        ['find-extrema', '收集最多和最少的分别是哪一项？如果并列，请都写出来。', `${labels.filter((_, i) => values[i] === max).join('、')}最多，${labels.filter((_, i) => values[i] === min).join('、')}最少`],
-        ['total', '四项合计收集了多少张卡片？', sum],
-        ['threshold', `哪些项目收集的卡片达到或超过 ${threshold} 张？`, labels.filter((_, i) => values[i] >= threshold).join('、')],
-        ['target', `目标是收集 ${Math.ceil(sum / 10) * 10 + 10} 张，还差多少张？`, Math.ceil(sum / 10) * 10 + 10 - sum],
-      ];
+      const changes = values.slice(1).map((n, i) => n - values[i]);
+
       if (plugin === 'bar-average') {
-        tasks.push(['average', '平均每组收集了多少张？', sum / 4]);
-        tasks.push(['above-average', '哪些小组收集的张数高于平均数？', labels.filter((_, i) => values[i] > sum / 4).join('、')]);
-      }
-      if (plugin === 'line-chart') {
-        const changes = values.slice(1).map((n, i) => n - values[i]);
-        tasks.push(['rising-intervals', '哪几个相邻日期之间，卡片数量增加了？如果没有，写“没有”。', changes.flatMap((n, i) => n > 0 ? [`${labels[i]}到${labels[i + 1]}`] : []).join('、') || '没有']);
+        if (difficulty === 'easy') {
+          tasks = [
+            ['read-value', `${labels[1]}收集了多少张？`, values[1]],
+            ['read-value-alt', `${labels[2]}收集了多少张？`, values[2]],
+            ['combine-values', `${labels[0]}和${labels[2]}合计收集了多少张？`, values[0] + values[2]],
+            ['compare-values', `${labels[3]}和${labels[2]}收集的数量相差多少张？`, Math.abs(values[3] - values[2])],
+            ['find-extrema', '收集最多和最少的分别是哪一项？如果并列，请都写出来。', `${labels.filter((_, i) => values[i] === max).join('、')}最多，${labels.filter((_, i) => values[i] === min).join('、')}最少`],
+            ['total', '四项合计收集了多少张卡片？', sum],
+            ['average', '平均每组收集了多少张？', sum / 4],
+          ];
+        } else if (difficulty === 'hard') {
+          tasks = [
+            ['combine-values', `${labels[0]}和${labels[2]}合计收集了多少张？`, values[0] + values[2]],
+            ['compare-values', `${labels[3]}和${labels[2]}收集的数量相差多少张？`, Math.abs(values[3] - values[2])],
+            ['find-extrema', '收集最多和最少的分别是哪一项？如果并列，请都写出来。', `${labels.filter((_, i) => values[i] === max).join('、')}最多，${labels.filter((_, i) => values[i] === min).join('、')}最少`],
+            ['total', '四项合计收集了多少张卡片？', sum],
+            ['average', '平均每组收集了多少张？', sum / 4],
+            ['above-average', '哪些小组收集的张数高于平均数？', labels.filter((_, i) => values[i] > sum / 4).join('、')],
+            ['below-average', '哪些小组收集的张数低于平均数？', labels.filter((_, i) => values[i] < sum / 4).join('、')],
+            ['target-average', `如果再加一个五组，要使五组的平均数达到 ${Math.ceil(sum / 4) + 5} 张，五组需要收集多少张？`, (Math.ceil(sum / 4) + 5) * 5 - sum],
+          ];
+        } else {
+          tasks = [
+            ['read-value', `${labels[1]}收集了多少张？`, values[1]],
+            ['combine-values', `${labels[0]}和${labels[2]}合计收集了多少张？`, values[0] + values[2]],
+            ['compare-values', `${labels[3]}和${labels[2]}收集的数量相差多少张？`, Math.abs(values[3] - values[2])],
+            ['find-extrema', '收集最多和最少的分别是哪一项？如果并列，请都写出来。', `${labels.filter((_, i) => values[i] === max).join('、')}最多，${labels.filter((_, i) => values[i] === min).join('、')}最少`],
+            ['total', '四项合计收集了多少张卡片？', sum],
+            ['threshold', `哪些项目收集的卡片达到或超过 ${threshold} 张？`, labels.filter((_, i) => values[i] >= threshold).join('、')],
+            ['target', `目标是收集 ${Math.ceil(sum / 10) * 10 + 10} 张，还差多少张？`, Math.ceil(sum / 10) * 10 + 10 - sum],
+            ['average', '平均每组收集了多少张？', sum / 4],
+            ['above-average', '哪些小组收集的张数高于平均数？', labels.filter((_, i) => values[i] > sum / 4).join('、')],
+          ];
+        }
+      } else if (plugin === 'line-chart') {
+        if (difficulty === 'easy') {
+          tasks = [
+            ['read-value', `${labels[1]}收集了多少张？`, values[1]],
+            ['read-value-alt', `${labels[2]}收集了多少张？`, values[2]],
+            ['combine-values', `${labels[0]}和${labels[2]}合计收集了多少张？`, values[0] + values[2]],
+            ['compare-values', `${labels[3]}和${labels[0]}收集的数量相差多少张？`, Math.abs(values[3] - values[0])],
+            ['find-extrema', '收集最多和最少的分别是哪一天？如果并列，请都写出来。', `${labels.filter((_, i) => values[i] === max).join('、')}最多，${labels.filter((_, i) => values[i] === min).join('、')}最少`],
+            ['total', '四天合计收集了多少张卡片？', sum],
+            ['rising-intervals', '哪几个相邻日期之间，卡片数量增加了？如果没有，写“没有”。', changes.flatMap((n, i) => n > 0 ? [`${labels[i]}到${labels[i + 1]}`] : []).join('、') || '没有'],
+          ];
+        } else if (difficulty === 'hard') {
+          const pos = changes.map((n, i) => ({ n, i })).filter(x => x.n > 0);
+          const maxG = pos.length ? Math.max(...pos.map(x => x.n)) : 0;
+          const fastest = pos.length ? pos.filter(x => x.n === maxG).map(x => `${labels[x.i]}到${labels[x.i + 1]}`).join('、') : '没有';
+          tasks = [
+            ['combine-values', `${labels[0]}和${labels[2]}合计收集了多少张？`, values[0] + values[2]],
+            ['compare-values', `${labels[3]}和${labels[0]}收集的数量相差多少张？`, Math.abs(values[3] - values[0])],
+            ['find-extrema', '收集最多和最少的分别是哪一天？如果并列，请都写出来。', `${labels.filter((_, i) => values[i] === max).join('、')}最多，${labels.filter((_, i) => values[i] === min).join('、')}最少`],
+            ['total', '四天合计收集了多少张卡片？', sum],
+            ['fastest-growth', '哪两个相邻日期之间增加得最多？如果没有增加，写“没有”。', fastest],
+            ['declining-intervals', '哪几个相邻日期之间，卡片数量减少了？如果没有，写“没有”。', changes.flatMap((n, i) => n < 0 ? [`${labels[i]}到${labels[i + 1]}`] : []).join('、') || '没有'],
+            ['target', `目标是收集 ${Math.ceil(sum / 10) * 10 + 10} 张，还差多少张？`, Math.ceil(sum / 10) * 10 + 10 - sum],
+          ];
+        } else {
+          tasks = [
+            ['read-value', `${labels[1]}收集了多少张？`, values[1]],
+            ['combine-values', `${labels[0]}和${labels[2]}合计收集了多少张？`, values[0] + values[2]],
+            ['compare-values', `${labels[3]}和${labels[0]}收集的数量相差多少张？`, Math.abs(values[3] - values[0])],
+            ['find-extrema', '收集最多和最少的分别是哪一天？如果并列，请都写出来。', `${labels.filter((_, i) => values[i] === max).join('、')}最多，${labels.filter((_, i) => values[i] === min).join('、')}最少`],
+            ['total', '四天合计收集了多少张卡片？', sum],
+            ['threshold', `哪些项目收集的卡片达到或超过 ${threshold} 张？`, labels.filter((_, i) => values[i] >= threshold).join('、')],
+            ['target', `目标是收集 ${Math.ceil(sum / 10) * 10 + 10} 张，还差多少张？`, Math.ceil(sum / 10) * 10 + 10 - sum],
+            ['rising-intervals', '哪几个相邻日期之间，卡片数量增加了？如果没有，写“没有”。', changes.flatMap((n, i) => n > 0 ? [`${labels[i]}到${labels[i + 1]}`] : []).join('、') || '没有'],
+          ];
+        }
+      } else {
+        // data-table, bar-chart
+        if (difficulty === 'easy') {
+          tasks = [
+            ['read-value', `${labels[1]}收集了多少张？`, values[1]],
+            ['read-value-alt', `${labels[2]}收集了多少张？`, values[2]],
+            ['combine-values', `${labels[0]}和${labels[2]}合计收集了多少张？`, values[0] + values[2]],
+            ['compare-values', `${labels[3]}和${labels[2]}收集的数量相差多少张？`, Math.abs(values[3] - values[2])],
+            ['find-extrema', '收集最多和最少的分别是哪一项？如果并列，请都写出来。', `${labels.filter((_, i) => values[i] === max).join('、')}最多，${labels.filter((_, i) => values[i] === min).join('、')}最少`],
+            ['total', '四项合计收集了多少张卡片？', sum],
+            ['total-half', `${labels[0]}和${labels[1]}两组一共收集了多少张？`, values[0] + values[1]],
+          ];
+        } else if (difficulty === 'hard') {
+          tasks = [
+            ['combine-values', `${labels[0]}和${labels[2]}合计收集了多少张？`, values[0] + values[2]],
+            ['compare-values', `${labels[3]}和${labels[2]}收集的数量相差多少张？`, Math.abs(values[3] - values[2])],
+            ['find-extrema', '收集最多和最少的分别是哪一项？如果并列，请都写出来。', `${labels.filter((_, i) => values[i] === max).join('、')}最多，${labels.filter((_, i) => values[i] === min).join('、')}最少`],
+            ['total', '四项合计收集了多少张卡片？', sum],
+            ['threshold', `哪些项目收集的卡片达到或超过 ${threshold} 张？`, labels.filter((_, i) => values[i] >= threshold).join('、')],
+            ['target', `目标是收集 ${Math.ceil(sum / 10) * 10 + 10} 张，还差多少张？`, Math.ceil(sum / 10) * 10 + 10 - sum],
+            ['rank-values', '按收集数量从多到少排序，排在第二位的是哪个项目？', labels.slice().sort((a, b) => values[labels.indexOf(b)] - values[labels.indexOf(a)])[1]],
+          ];
+        } else {
+          tasks = [
+            ['read-value', `${labels[1]}收集了多少张？`, values[1]],
+            ['combine-values', `${labels[0]}和${labels[2]}合计收集了多少张？`, values[0] + values[2]],
+            ['compare-values', `${labels[3]}和${labels[2]}收集的数量相差多少张？`, Math.abs(values[3] - values[2])],
+            ['find-extrema', '收集最多和最少的分别是哪一项？如果并列，请都写出来。', `${labels.filter((_, i) => values[i] === max).join('、')}最多，${labels.filter((_, i) => values[i] === min).join('、')}最少`],
+            ['total', '四项合计收集了多少张卡片？', sum],
+            ['threshold', `哪些项目收集的卡片达到或超过 ${threshold} 张？`, labels.filter((_, i) => values[i] >= threshold).join('、')],
+            ['target', `目标是收集 ${Math.ceil(sum / 10) * 10 + 10} 张，还差多少张？`, Math.ceil(sum / 10) * 10 + 10 - sum],
+          ];
+        }
       }
     }
     const [skill, question, answer] = tasks[items.length % tasks.length];
