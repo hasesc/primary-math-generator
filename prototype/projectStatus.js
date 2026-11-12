@@ -1,7 +1,7 @@
 // 自动生成文件（请勿手改）：由 node scripts/manage.mjs 生成
 export const PROJECT_STATUS = {
   "summary": {
-    "generatedAt": "2026/11/12 16:47:13",
+    "generatedAt": "2026/11/12 17:39:20",
     "totalUnits": 94,
     "dedicatedUnits": 93,
     "reviewUnits": 1,
@@ -31,15 +31,15 @@ export const PROJECT_STATUS = {
       "name": "整卷生成冒烟测试 (6年级×3难度)",
       "file": "prototype/smoke-test.mjs",
       "passed": true,
-      "durationMs": 90,
-      "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 0ms, 分布={\"application\":7,\"olympiad\":8,\"arithmetic\":15} | 结果: 18 通过 / 0 未达标"
+      "durationMs": 92,
+      "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 1ms, 分布={\"application\":7,\"olympiad\":8,\"arithmetic\":15} | 结果: 18 通过 / 0 未达标"
     },
     {
       "id": "coverage",
       "name": "94单元全量联动与762配置覆盖测试",
       "file": "prototype/coverage-test.mjs",
       "passed": true,
-      "durationMs": 158,
+      "durationMs": 160,
       "summary": "总计 94 单元：联动通过 93，无专属出题映射（含整理与复习）1，不合格 0 | 已检查 765 种难度与题量组合。至少一组配置只有一个卷面分类的单元（分类数不等于考法数）共 83 个：1上 准备课、1上 位置、1上 1~5的认识和加减法、1上 认识图形（一）、1上 6~10的认识和加减法、1上 11~20各数的认识、1上 20以内的进位加法、1下 20以内的退位减法、1下 100以内数的认识、1下 100以内的加法和减法（一）、1下 认识图形（二）、1下 认识人民币、1下 100以内的加法和减法（二）、1下 找规律、2上 100以内的加法和减法（二）、2上 角的初步认识、2上 表内乘法（一）、2上 观察物体（一）、2上 表内乘法（二）、2上 数学广角——搭配（一）、2下 数据收集整理、2下 表内除法（一）、2下 图形的运动（一）、2下 表内除法（二）、2下 混合运算、2下 有余数的除法、2下 万以内数的认识、2下 数学广角——推理、3上 万以内的加法和减法（一）、3上 万以内的加法和减法（二）、3上 倍的认识、3上 多位数乘一位数、3上 长方形和正方形、3上 分数的初步认识、3下 位置与方向（一）、3下 除数是一位数的除法、3下 复式统计表、3下 两位数乘两位数、3下 面积、3下 年月日、3下 小数的初步认识、3下 数学广角——搭配（二）、4上 大数的认识、4上 公顷和平方千米、4上 角的度量、4上 三位数乘两位数、4上 平行四边形和梯形、4上 除数是两位数的除法、4上 条形统计图、4上 数学广角——优化、4下 四则运算、4下 观察物体（二）、4下 运算定律、4下 小数的意义和性质、4下 三角形、4下 小数的加法和减法、4下 图形的运动（二）、4下 平均数与条形统计图、4下 数学广角——鸡兔同笼、5上 位置、5上 可能性、5上 简易方程、5上 多边形的面积、5上 数学广角——植树问题、5下 观察物体（三）、5下 因数与倍数、5下 长方体和正方体、5下 分数的意义和性质、5下 图形的运动（三）、5下 分数的加法和减法、5下 折线统计图、5下 数学广角——找次品、6上 位置与方向（二）、6上 分数除法、6上 比、6上 圆、6上 扇形统计图、6上 数学广角——数与形、6下 负数、6下 百分数（二）、6下 圆柱与圆锥、6下 比例、6下 数学广角——鸽巢问题"
     },
     {
@@ -47,7 +47,7 @@ export const PROJECT_STATUS = {
       "name": "数学答案独立逆向复算测试 (160轮)",
       "file": "prototype/correctness-test.mjs",
       "passed": true,
-      "durationMs": 83,
+      "durationMs": 81,
       "summary": "鸡兔同笼、植树、统计图并列和小数乘法的独立复算通过"
     },
     {
@@ -55,7 +55,7 @@ export const PROJECT_STATUS = {
       "name": "口算/竖式每日一练专项测试 (186配置)",
       "file": "prototype/daily-practice-test.mjs",
       "passed": true,
-      "durationMs": 56,
+      "durationMs": 57,
       "summary": "186 种每日一练配置通过，题量、去重、答案复算和年级限制正常"
     },
     {
@@ -63,7 +63,7 @@ export const PROJECT_STATUS = {
       "name": "三档难度阶梯考法与答案测试",
       "file": "prototype/difficulty-gradient-test.mjs",
       "passed": true,
-      "durationMs": 88,
+      "durationMs": 83,
       "summary": "✅ 33 个专项插件（18 个全独立三档考法 + 15 个进阶分支插件）的难度梯度、题量和提高题答案复算全部通过！"
     },
     {
@@ -71,7 +71,7 @@ export const PROJECT_STATUS = {
       "name": "同卷考法轮转相邻不重复测试 (94单元×3档×6轮)",
       "file": "prototype/rotation-test.mjs",
       "passed": true,
-      "durationMs": 232,
+      "durationMs": 236,
       "summary": "考法轮转（相邻 subtemplateId 不重复）测试通过"
     },
     {
@@ -79,7 +79,7 @@ export const PROJECT_STATUS = {
       "name": "题面有效性、唯一解与必备考点回归测试",
       "file": "prototype/regression-test.mjs",
       "passed": true,
-      "durationMs": 87,
+      "durationMs": 89,
       "summary": "题面有效性、动物题唯一解及缺失考点回归检查通过"
     },
     {
@@ -87,13 +87,18 @@ export const PROJECT_STATUS = {
       "name": "100分制单元测验卷全链路测试 (6年级×3难度)",
       "file": "prototype/exam-paper-test.mjs",
       "passed": true,
-      "durationMs": 88,
+      "durationMs": 84,
       "summary": "✅ 100分制单元测验卷验证通过: 18/18 组全部达标 (6年级×3难度覆盖)"
     }
   ],
   "git": {
     "initialized": true,
     "commits": [
+      {
+        "hash": "37ac198",
+        "date": "2026-11-12 16:47",
+        "message": "feat: support direct A4 vector PDF export without invoking printer dialog"
+      },
       {
         "hash": "83ba68d",
         "date": "2026-11-12 16:35",
@@ -163,14 +168,9 @@ export const PROJECT_STATUS = {
         "hash": "b71e1d1",
         "date": "2026-11-11 17:21",
         "message": "docs: 建立93单元考点验收表并明确首发内容缺口"
-      },
-      {
-        "hash": "96399e4",
-        "date": "2026-11-11 17:12",
-        "message": "fix: 修复题面与唯一解缺陷，补齐核心考点并恢复验证链路"
       }
     ],
-    "dirtyFiles": 9
+    "dirtyFiles": 8
   },
   "roadmap": [
     {
@@ -234,6 +234,25 @@ export const PROJECT_STATUS = {
     }
   ],
   "changelog": [
+    {
+      "version": "v0.8.10",
+      "date": "2026-11-12",
+      "title": "全面优化卷面作答书写空间：为解决问题配足作业本横线与答语区、上线脱式计算递等式留白与作图横线",
+      "bullets": [
+        "**模块一：解决问题与应用题规范作答空间 (prototype/app.js & prototype/style.css)**：",
+        "彻底解决题目下方无书写空间的痛点，为全部应用题、综合生活问题和大题智能自动挂载专属 .solve-workspace：",
+        "作答留白高度充足：屏幕显示 min-height: 96px，A4 打印时保持 26mm（支持 3~4 行工整列式与草稿推演）。",
+        "注入淡雅的小学作业本对齐格线（background-size: 100% 32px，打印为 28px），帮助学生书写端正整洁。",
+        "规范答题引导语行：统一标准 答：________________________________________________。，杜绝丢漏单位与答句。",
+        "页面防断裂保护：设置 break-inside: avoid !important;，确保单道题干与作答留白框始终位于同一页 A4 纸内，绝不跨页腰斩。",
+        "**模块二：多步脱式计算递等式作答留白 (prototype/app.js & prototype/style.css)**：",
+        "在 SECTION_DEFS 新增 mixed（脱式计算/递等式计算）板块，并在每道多步混合运算题下方智能渲染 3 行规范递进等号留白（＝ ________________________________），便于学生分步脱式演算。",
+        "**模块三：作图题与几何实践操作横线 (prototype/app.js & prototype/style.css)**：",
+        "在方格图与几何图下方预留 算式或结论：________________________________________________ 横线，方便学生记录推导过程。",
+        "**模块四：智能题型识别引擎升级 (prototype/app.js)**：",
+        "增强 getDisplayType 算法，从原本单一的 practice 粗粒度归类，精准识别多步混合运算 (mixed)、生活应用题 (application)、口算 (arithmetic)、比较 (compare)、填空 (fill)，使所有题型均获得最佳的排版间距与书写空间。"
+      ]
+    },
     {
       "version": "v0.8.9",
       "date": "2026-11-12",

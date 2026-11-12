@@ -272,6 +272,7 @@ $$('#count-options .count-chip').forEach((chip) => {
 const SECTION_DEFS = [
   { type: 'arithmetic', title: '直接写出得数', scoreText: '每题 1 分', grid: true },
   { type: 'vertical', title: '列竖式计算', scoreText: '每题 3 分', grid: false },
+  { type: 'mixed', title: '脱式计算（递等式计算）', scoreText: '能简算的要简算，每题 4 分', grid: false },
   { type: 'fill', title: '用心思考，正确填空', scoreText: '每空 1 分', grid: false },
   { type: 'judge', title: '火眼金睛，明辨是非（判断题）', scoreText: '对的打“√”，错的打“×”，每题 2 分', grid: false },
   { type: 'choice', title: '仔细推敲，精挑细选（选择题）', scoreText: '将正确选项填在括号内，每题 2 分', grid: false },
@@ -279,14 +280,14 @@ const SECTION_DEFS = [
   { type: 'draw', title: '动手操作与作图', scoreText: '每题 4 分', grid: false },
   { type: 'grid', title: '方格图作图与位置', scoreText: '每题 5 分', grid: false },
   { type: 'geometry', title: '图形观察与几何计算', scoreText: '每题 4 分', grid: false },
-  { type: 'practice', title: '专项综合练', scoreText: '每题 2 分', grid: false },
   { type: 'application', title: '走进生活，解决问题', scoreText: '每题 5 分', grid: false },
   { type: 'olympiad', title: '思维冲浪与培优拓展', scoreText: '每题 5 分', grid: false },
+  { type: 'practice', title: '专项综合练', scoreText: '每题 3 分', grid: false },
 ];
 
 const CN_NUM = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'];
 const responseLabels = {
-  calculation: '口算', written: '竖式', blank: '填空', comparison: '比较', word: '应用', short: '简答', judge: '判断', choice: '选择',
+  calculation: '口算', written: '竖式', blank: '填空', comparison: '比较', word: '应用', short: '简答', judge: '判断', choice: '选择', mixed: '脱式',
 };
 
 // 智能判定题目展示题型，将原本单调的 practice 细分至规范板块
@@ -299,6 +300,41 @@ function getDisplayType(p) {
   if (p.responseKind === 'word') return 'application';
   if (p.responseKind === 'judge' || p.type === 'judge') return 'judge';
   if (p.responseKind === 'choice' || p.type === 'choice') return 'choice';
+
+  const q = p.question || '';
+  if (Array.isArray(p.options) && p.options.length) return 'choice';
+  if (q.includes('对的打“√”') || q.includes('（√）') || q.includes('（×）')) return 'judge';
+  if (p.diagram) {
+    if (p.subtype?.startsWith('grid-')) return 'grid';
+    return 'geometry';
+  }
+  if (p.payload && Array.isArray(p.payload.operands)) return 'vertical';
+
+  // 多步四则混合运算 / 脱式计算
+  if (q.includes('=') && (q.includes('+') || q.includes('-')) && (q.includes('×') || q.includes('÷') || q.includes('('))) {
+    return 'mixed';
+  }
+
+  // 口算纯算式（较短且只有单步运算）
+  if (q.length < 24 && (q.includes('= （') || q.includes('= _____') || q.includes('= (')) && !q.includes('？') && !q.includes('多少')) {
+    return 'arithmetic';
+  }
+
+  // 比较大小
+  if (q.includes('填上“>”') || q.includes('比较大小') || (q.includes('○') && q.length < 25)) {
+    return 'compare';
+  }
+
+  // 解决问题 / 生活应用题（疑问句、情境词、长题干）
+  if (q.includes('？') || q.includes('?') || q.includes('求') || q.includes('多少') || q.includes('一共') || q.includes('还剩') || q.includes('现价') || q.includes('面积') || q.includes('周长') || q.includes('找回') || q.length > 22) {
+    return 'application';
+  }
+
+  // 填空题
+  if (q.includes('（') || q.includes('(') || q.includes('______')) {
+    return 'fill';
+  }
+
   return p.format || p.type || 'practice';
 }
 
@@ -445,8 +481,35 @@ function renderPaper() {
         if (sec.type === 'vertical' && Array.isArray(it.payload?.operands)) item.appendChild(renderVertical(it));
         if (it.diagram) item.appendChild(renderDiagram(it.diagram));
 
-        // 作答留白与解题工作区
-        if (sec.type === 'application' || sec.type === 'olympiad' || it.responseKind === 'word' || it.responseKind === 'written') {
+        // 题目下方专用作答与书写留白空间
+        // 1. 递等式 / 脱式计算作答留白（3行等号递进，给足分步运算空间）
+        if (sec.type === 'mixed' || it.format === 'mixed' || (it.question.includes('=') && (it.question.includes('×') || it.question.includes('÷')) && (it.question.includes('+') || it.question.includes('-')))) {
+          const ws = document.createElement('div');
+          ws.className = 'steps-workspace';
+          for (let i = 0; i < 3; i++) {
+            const line = document.createElement('div');
+            line.className = 'step-line';
+            line.innerHTML = '＝ <span class="step-rule"></span>';
+            ws.appendChild(line);
+          }
+          item.appendChild(ws);
+        }
+        // 2. 解决问题 / 生活应用题作答留白（作业本淡格线 + 列式算草区 + 规范答语行）
+        else if (
+          sec.type === 'application' ||
+          sec.type === 'olympiad' ||
+          it.responseKind === 'word' ||
+          it.format === 'application' ||
+          it.question.includes('？') ||
+          it.question.includes('?') ||
+          it.question.includes('多少') ||
+          it.question.includes('求') ||
+          it.question.includes('一共') ||
+          it.question.includes('还剩') ||
+          it.question.includes('现价') ||
+          it.question.includes('找回') ||
+          it.question.length > 22
+        ) {
           const ws = document.createElement('div');
           ws.className = 'solve-workspace';
           const space = document.createElement('div');
@@ -457,6 +520,13 @@ function renderPaper() {
           ws.appendChild(space);
           ws.appendChild(ansLine);
           item.appendChild(ws);
+        }
+        // 3. 作图题 / 几何题预留解题与结论横线
+        else if (it.diagram && !it.diagram.readonly) {
+          const drawLine = document.createElement('div');
+          drawLine.className = 'draw-answer-line';
+          drawLine.textContent = '算式或结论：________________________________________________';
+          item.appendChild(drawLine);
         }
         list.appendChild(item);
       });

@@ -972,23 +972,63 @@ body {
 }
 
 .solve-workspace {
-  margin: 10px 0 18px 24px;
+  margin: 12px 0 20px 24px;
   border: 1px dashed #cbd5e1;
   border-radius: 6px;
-  background: #fafcff;
-  padding: 12px 14px;
+  background: #f8fafc;
+  padding: 12px 16px;
+  break-inside: avoid;
 }
 
 .solve-space {
-  min-height: 84px;
+  min-height: 96px;
+  position: relative;
+  background-image: linear-gradient(to bottom, transparent 31px, #e2e8f0 32px);
+  background-size: 100% 32px;
 }
 
 .solve-answer-line {
-  border-top: 1px dashed #e2e8f0;
+  border-top: 1px dashed #cbd5e1;
+  margin-top: 8px;
   padding-top: 8px;
-  color: #475569;
+  color: #334155;
   font-weight: 500;
+  font-size: 14.5px;
+  letter-spacing: 0.5px;
+}
+
+/* 递等式 / 脱式计算三步作答留白 */
+.steps-workspace {
+  margin: 10px 0 18px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  break-inside: avoid;
+}
+
+.step-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: #475569;
+}
+
+.step-rule {
+  flex: 1;
+  max-width: 320px;
+  border-bottom: 1px dashed #cbd5e1;
+  height: 1px;
+  display: inline-block;
+}
+
+/* 作图与几何题作答横线 */
+.draw-answer-line {
+  margin: 10px 0 16px 20px;
+  color: #475569;
   font-size: 14px;
+  border-bottom: 1px dashed #e2e8f0;
+  padding-bottom: 6px;
 }
 
 .ans-exp {
@@ -1214,6 +1254,48 @@ body {
 
   .ans-diagrams .question-diagram {
     max-width: 210px;
+  }
+
+  .solve-workspace {
+    margin: 6mm 0 10mm 4mm !important;
+    border: 1px dashed #94a3b8 !important;
+    background: transparent !important;
+    padding: 8px 12px !important;
+    break-inside: avoid !important;
+    box-shadow: none !important;
+  }
+
+  .solve-space {
+    min-height: 26mm !important;
+    background-image: linear-gradient(to bottom, transparent 25px, #e2e8f0 26px) !important;
+    background-size: 100% 26px !important;
+  }
+
+  .solve-answer-line {
+    border-top: 1px dashed #94a3b8 !important;
+    color: #000000 !important;
+    padding-top: 6px !important;
+  }
+
+  .steps-workspace {
+    margin: 4mm 0 8mm 8mm !important;
+    gap: 6mm !important;
+    break-inside: avoid !important;
+  }
+
+  .step-line {
+    color: #000000 !important;
+  }
+
+  .step-rule {
+    border-bottom: 1px dashed #94a3b8 !important;
+    max-width: 280px !important;
+  }
+
+  .draw-answer-line {
+    margin: 4mm 0 8mm 4mm !important;
+    color: #000000 !important;
+    border-bottom: 1px dashed #94a3b8 !important;
   }
 }
 
