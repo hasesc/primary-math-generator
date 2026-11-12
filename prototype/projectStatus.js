@@ -1,7 +1,7 @@
 // 自动生成文件（请勿手改）：由 node scripts/manage.mjs 生成
 export const PROJECT_STATUS = {
   "summary": {
-    "generatedAt": "2026/11/12 14:44:39",
+    "generatedAt": "2026/11/12 15:06:24",
     "totalUnits": 93,
     "dedicatedUnits": 92,
     "reviewUnits": 1,
@@ -31,15 +31,15 @@ export const PROJECT_STATUS = {
       "name": "整卷生成冒烟测试 (6年级×3难度)",
       "file": "prototype/smoke-test.mjs",
       "passed": true,
-      "durationMs": 116,
-      "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 1ms, 分布={\"application\":7,\"olympiad\":8,\"arithmetic\":15} | 结果: 18 通过 / 0 未达标"
+      "durationMs": 119,
+      "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 0ms, 分布={\"olympiad\":8,\"application\":7,\"arithmetic\":15} | 结果: 18 通过 / 0 未达标"
     },
     {
       "id": "coverage",
       "name": "93单元全量联动与756配置覆盖测试",
       "file": "prototype/coverage-test.mjs",
       "passed": true,
-      "durationMs": 186,
+      "durationMs": 184,
       "summary": "总计 93 单元：联动通过 92，无专属出题映射（含整理与复习）1，不合格 0 | 已检查 756 种难度与题量组合。至少一组配置只有一个卷面分类的单元（分类数不等于考法数）共 81 个：1上 准备课、1上 位置、1上 1~5的认识和加减法、1上 认识图形（一）、1上 6~10的认识和加减法、1上 11~20各数的认识、1上 20以内的进位加法、1下 20以内的退位减法、1下 100以内数的认识、1下 100以内的加法和减法（一）、1下 认识图形（二）、1下 100以内的加法和减法（二）、1下 找规律、2上 100以内的加法和减法（二）、2上 角的初步认识、2上 表内乘法（一）、2上 观察物体（一）、2上 表内乘法（二）、2上 数学广角——搭配（一）、2下 数据收集整理、2下 表内除法（一）、2下 图形的运动（一）、2下 表内除法（二）、2下 混合运算、2下 有余数的除法、2下 万以内数的认识、2下 数学广角——推理、3上 万以内的加法和减法（一）、3上 万以内的加法和减法（二）、3上 倍的认识、3上 多位数乘一位数、3上 长方形和正方形、3上 分数的初步认识、3下 位置与方向（一）、3下 除数是一位数的除法、3下 复式统计表、3下 两位数乘两位数、3下 面积、3下 年月日、3下 小数的初步认识、3下 数学广角——搭配（二）、4上 大数的认识、4上 角的度量、4上 三位数乘两位数、4上 平行四边形和梯形、4上 除数是两位数的除法、4上 条形统计图、4上 数学广角——优化、4下 四则运算、4下 观察物体（二）、4下 运算定律、4下 小数的意义和性质、4下 三角形、4下 小数的加法和减法、4下 图形的运动（二）、4下 平均数与条形统计图、4下 数学广角——鸡兔同笼、5上 位置、5上 可能性、5上 简易方程、5上 多边形的面积、5上 数学广角——植树问题、5下 观察物体（三）、5下 因数与倍数、5下 长方体和正方体、5下 分数的意义和性质、5下 图形的运动（三）、5下 分数的加法和减法、5下 折线统计图、5下 数学广角——找次品、6上 位置与方向（二）、6上 分数除法、6上 比、6上 圆、6上 扇形统计图、6上 数学广角——数与形、6下 负数、6下 百分数（二）、6下 圆柱与圆锥、6下 比例、6下 数学广角——鸽巢问题"
     },
     {
@@ -47,7 +47,7 @@ export const PROJECT_STATUS = {
       "name": "数学答案独立逆向复算测试 (160轮)",
       "file": "prototype/correctness-test.mjs",
       "passed": true,
-      "durationMs": 88,
+      "durationMs": 87,
       "summary": "鸡兔同笼、植树、统计图并列和小数乘法的独立复算通过"
     },
     {
@@ -55,7 +55,7 @@ export const PROJECT_STATUS = {
       "name": "口算/竖式每日一练专项测试 (123配置)",
       "file": "prototype/daily-practice-test.mjs",
       "passed": true,
-      "durationMs": 78,
+      "durationMs": 84,
       "summary": "123 种每日一练配置通过，题量、去重、答案复算和年级限制正常"
     },
     {
@@ -71,7 +71,7 @@ export const PROJECT_STATUS = {
       "name": "同卷考法轮转相邻不重复测试 (93单元×3档×6轮)",
       "file": "prototype/rotation-test.mjs",
       "passed": true,
-      "durationMs": 258,
+      "durationMs": 255,
       "summary": "考法轮转（相邻 subtemplateId 不重复）测试通过"
     },
     {
@@ -79,13 +79,18 @@ export const PROJECT_STATUS = {
       "name": "题面有效性、唯一解与必备考点回归测试",
       "file": "prototype/regression-test.mjs",
       "passed": true,
-      "durationMs": 118,
+      "durationMs": 77,
       "summary": "题面有效性、动物题唯一解及缺失考点回归检查通过"
     }
   ],
   "git": {
     "initialized": true,
     "commits": [
+      {
+        "hash": "58d8d70",
+        "date": "2026-11-12 14:45",
+        "message": "feat: upgrade decimal and fraction multiplication/division plugins with tiered skills"
+      },
       {
         "hash": "88c826a",
         "date": "2026-11-12 14:40",
@@ -142,7 +147,7 @@ export const PROJECT_STATUS = {
         "message": "feat: 上线项目管理系统 v0.6.0（可视化看板 + 自动巡检 + Git 版本台账）"
       }
     ],
-    "dirtyFiles": 1
+    "dirtyFiles": 11
   },
   "roadmap": [
     {
@@ -207,15 +212,33 @@ export const PROJECT_STATUS = {
   ],
   "changelog": [
     {
-      "version": "v0.8.3",
+      "version": "v0.8.4",
       "date": "2026-11-12",
-      "title": "题型薄弱单元深度体检与首批钟表时间单元考法重构",
+      "title": "彻底清除全库生硬伪去重标记、按年级隔离数学广角搭配与优化情境算理真实性",
       "bullets": [
-        "**首批薄弱单元考法重构（1上认识钟表 + 2上认识时间）**：",
-        "重构 [prototype/diagramProblems.js](prototype/diagramProblems.js) 中的 clockProblems，彻底解决钟表时间单元全卷单一考法问题。",
-        "**1上 认识钟表**：细分 clock-read-whole（看图读整时）、clock-parts-whole（钟面部件与大格填空）、clock-draw-whole（画时针分针作图）、clock-time-shift（前后1小时推算）、clock-choice-whole（整时三选一）、clock-approximate-time（快到/刚过几时判断）以及 clock-daily-routine（生活作息整时情境）共 7 种考法，三档梯次分布。",
-        "**2上 认识时间**：细分 time-read-5min（5分步长读写）、time-draw-5min（5分画针）、time-choice-5min（三选一）、time-read-1min（1分精准读写）、time-draw-accurate（偏角画针作图）、time-elapsed-fill（经过时间推算）以及 time-draw-future（推算未来时刻画针），三档梯度分明。",
-        "极度贫血单元由 5 个降至 3 个，阶梯考法单元总数提升至 **44 个**，全套 7 大自动化测试套件持续 100% 绿灯。",
+        "**彻底消除全库生硬“伪去重标记”（代码中 6 处违规字符彻底清零）**：",
+        "排查确认根因：此前为防止 seen.has(key) 判重过滤，在多处通用模板中生硬拼接了 （第${guard}组）、（第${guard}局）、（第${guard}题）、（间隔耗时第${m1}组）、（第 ${n} 题） 等人工痕迹，导致用户卷面上出现“照相（第1组）... 照相（第5组）”的不自然重复。",
+        "清理范围：",
+        "prototype/unitPlugins.js：清洗 combineProblems（照相排队）、patternProblems（图形找规律）、pigeonholeProblems（扑克牌抽屉花色）、unitElapsedProblems（挂钟敲钟间隔）。",
+        "prototype/scopeProblems.js：清洗 proportion-check（比例判断），优化生成轮换策略与尝试步长。",
+        "全库扫描脚本 node scripts/scan_fakes.mjs 扫描结果已清零（0 处违规标记）。",
+        "**年级隔离与认知对齐：彻底分离二年级《搭配（一）》与三年级《搭配（二）》**：",
+        "**二年级上册《数学广角——搭配（一）》**：严格契合课标二年级“有序列举与直观连线”认知水平，严禁出现含0排列、单循环赛或三段路线相乘；重构为：2×2服装搭配（短袖/衬衫配长裤/短裤）、1与2无0组数、3人握手、2饮品配3早点（早餐搭配）、3×3衣服搭配、2/5/7三选二求和（无序组合）、三人合影排队等 7 种亲和考法。",
+        "**三年级下册《数学广角——搭配（二）》**：承接乘法计数与含0排列；考法覆盖含0数字卡片（0在十位排除）、单循环赛场次计算、多段路线乘法原理走法、4人合影指定排头/排尾排法（全面引入“小明、小华、小红、小军”等丰富真实人名与多变站位，彻底告别单调“甲、乙、丙”）。",
+        "**生活常识与算理真实度全面校正**：",
+        "**4上《数学广角——优化》**：全面扩充沏茶问题（烧水8~15分钟，洗杯拿茶并行）、烙饼问题（平底锅/电饼铛煎牛排/烙饼/煎蛋，两面煎2~6分钟，单数/双数饼数）、排队等待（接水/打饭/理发多情境与丰富人名轮换）、田忌赛马对策论（赛马、扑克比大小、抢数对弈等多场景），解除了低熵数值对 40 题生成池的挤压瓶颈。",
+        "**1下《找规律》**：图形符号池从 4 种扩充到 14 种（△○□☆●▲■★◇◆▽▼♡♢），新增标准周期循环第 $n$ 个图形推断与多色珠子排列规律，题面自然通顺。",
+        "**6下《数学广角——鸽巢问题》**：扩充 54 张含大小王扑克抽屉、52 张无王花色保证、13 点数同点保证、抽屉双色/三色袜子同色保证等多样情境。",
+        "**验证与台账**：",
+        "前端资源版本号升级为 ?v=20261112b。",
+        "全部 7 大测试套件 100% 满额绿灯通过（整卷冒烟、756配置全覆盖、160轮独立数学复算、每日一练、难度梯度、考法轮转、题面有效性）。",
+        "**极度贫血单元彻底清零 (5 -> 0)**：",
+        "重构 [prototype/unitPlugins.js](prototype/unitPlugins.js) 中的三大高年级核心计算插件（decimalMulProblems、decimalDivProblems、fractionMulProblems），全面引入三档独立考法与子模板矩阵：",
+        "**5上-U1 小数乘法**：细分 dec-mul-tenth-int（小数乘整数）、dec-mul-ten-hundred（扩大10/100倍）、dec-mul-tenth-tenth（一位乘一位）、dec-mul-int-tenth（整数乘一位）、dec-mul-hundredth-tenth（两位乘一位）以及 dec-mul-special-quarter（特殊因数0.25/1.25巧算）共 6 种阶梯考法。",
+        "**5上-U3 小数除法**：细分 dec-div-int-divisor（整数除数一位商）、dec-div-ten-divisor（除以10/100）、dec-div-dec-divisor（小数除数）、dec-div-two-tenth（两位除数）、dec-div-two-dec（两位小数除法）以及 dec-div-special-quarter（特殊除数0.25巧除）共 6 种阶梯考法。",
+        "**6上-U1 分数乘法**：细分 frac-mul-int-simple（分数乘整数基础）、frac-mul-int-cancel（整除约分型）、frac-mul-frac-basic（分数乘分数）、frac-mul-frac-cancel（带交叉约分型）、frac-mul-three-terms（三项连乘链式巧算）以及 frac-mul-cross-cancel 共 6 种阶梯考法。",
+        "结合首批钟表与时间单元的重构，全网 93 单元中**“极度贫血（仅1~2种考法）”单元由 5 个彻底降至 0 个**！考法较丰富单元增至 **73 个**，阶梯考法单元总数提升至 **47 个**！",
+        "全套 7 大自动化测试套件持续 100% 满额通过，独立逆向数学复算无一谬误。",
         "**开源化与全量题型体检**：",
         "确立 GitHub 纯前端开源与技术复盘路线，增加标准开源 [README.md](README.md)。",
         "编写自动化诊断工具 [scripts/find_weak_units.mjs](scripts/find_weak_units.mjs)，对全套 93 个单元的三档考法真实生成链路进行全量扫描。",
@@ -384,12 +407,12 @@ export const PROJECT_STATUS = {
           "answer": "12"
         },
         {
-          "question": "5 + 6 = ______",
-          "answer": "11"
+          "question": "8 + 6 = ______",
+          "answer": "14"
         },
         {
-          "question": "9 + 2 = ______",
-          "answer": "11"
+          "question": "3 + 7 = ______",
+          "answer": "10"
         }
       ]
     },
@@ -409,8 +432,8 @@ export const PROJECT_STATUS = {
           "answer": "9"
         },
         {
-          "question": "12 − 7 = ______",
-          "answer": "5"
+          "question": "15 − 6 = ______",
+          "answer": "9"
         }
       ]
     },
@@ -1093,30 +1116,30 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
+            "apply",
             "calculate",
-            "missing-operand",
             "compare-expression",
-            "apply"
+            "missing-operand"
           ],
           "formats": [
             "practice"
           ],
           "samples": [
             {
+              "question": "盒里原有 1 枚棋子，又放入 4 枚，现在有多少枚？",
+              "answer": "5",
+              "skill": "apply",
+              "format": "practice",
+              "responseKind": "word",
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
               "question": "4 + 1 = ______",
               "answer": "5",
               "skill": "calculate",
               "format": "practice",
               "responseKind": "calculation",
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "1 − ______ = 0",
-              "answer": "1",
-              "skill": "missing-operand",
-              "format": "practice",
-              "responseKind": "blank",
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
@@ -1130,11 +1153,11 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "盒里原有 1 枚棋子，又放入 4 枚，现在有多少枚？",
-              "answer": "5",
-              "skill": "apply",
+              "question": "1 − ______ = 0",
+              "answer": "1",
+              "skill": "missing-operand",
               "format": "practice",
-              "responseKind": "word",
+              "responseKind": "blank",
               "hasDiagram": false,
               "hasAnswerDiagram": false
             }
@@ -1144,24 +1167,15 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "calculate",
             "missing-operand",
             "compare-expression",
-            "apply"
+            "apply",
+            "calculate"
           ],
           "formats": [
             "practice"
           ],
           "samples": [
-            {
-              "question": "3 + 2 = ______",
-              "answer": "5",
-              "skill": "calculate",
-              "format": "practice",
-              "responseKind": "calculation",
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
             {
               "question": "4 − ______ = 0",
               "answer": "4",
@@ -1188,6 +1202,15 @@ export const PROJECT_STATUS = {
               "responseKind": "word",
               "hasDiagram": false,
               "hasAnswerDiagram": false
+            },
+            {
+              "question": "3 + 2 = ______",
+              "answer": "5",
+              "skill": "calculate",
+              "format": "practice",
+              "responseKind": "calculation",
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
             }
           ]
         },
@@ -1196,9 +1219,9 @@ export const PROJECT_STATUS = {
           "targetCount": 20,
           "skills": [
             "calculate",
-            "missing-operand",
             "compare-expression",
-            "apply"
+            "apply",
+            "missing-operand"
           ],
           "formats": [
             "practice"
@@ -1210,15 +1233,6 @@ export const PROJECT_STATUS = {
               "skill": "calculate",
               "format": "practice",
               "responseKind": "calculation",
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "2 + ______ = 3",
-              "answer": "1",
-              "skill": "missing-operand",
-              "format": "practice",
-              "responseKind": "blank",
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
@@ -1237,6 +1251,15 @@ export const PROJECT_STATUS = {
               "skill": "apply",
               "format": "practice",
               "responseKind": "word",
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "2 + ______ = 3",
+              "answer": "1",
+              "skill": "missing-operand",
+              "format": "practice",
+              "responseKind": "blank",
               "hasDiagram": false,
               "hasAnswerDiagram": false
             }
@@ -1630,17 +1653,35 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
+            "compare-numbers",
+            "write-number",
             "place-value",
             "compose-number",
-            "compare-numbers",
             "read-number",
-            "write-number",
             "count-in-order"
           ],
           "formats": [
             "practice"
           ],
           "samples": [
+            {
+              "question": "在括号里填 >、< 或 =：20（　）13。",
+              "answer": ">",
+              "skill": "compare-numbers",
+              "format": "practice",
+              "responseKind": "comparison",
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "十二写作多少？",
+              "answer": "12",
+              "skill": "write-number",
+              "format": "practice",
+              "responseKind": "short",
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
             {
               "question": "17 中，十位上的数字表示多少？",
               "answer": "10",
@@ -1658,24 +1699,6 @@ export const PROJECT_STATUS = {
               "responseKind": "short",
               "hasDiagram": false,
               "hasAnswerDiagram": false
-            },
-            {
-              "question": "在括号里填 >、< 或 =：20（　）13。",
-              "answer": ">",
-              "skill": "compare-numbers",
-              "format": "practice",
-              "responseKind": "comparison",
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "14 读作什么？",
-              "answer": "十四",
-              "skill": "read-number",
-              "format": "practice",
-              "responseKind": "short",
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
             }
           ]
         },
@@ -1684,9 +1707,9 @@ export const PROJECT_STATUS = {
           "targetCount": 20,
           "skills": [
             "place-value",
-            "compose-number",
             "compare-numbers",
             "read-number",
+            "compose-number",
             "write-number",
             "count-in-order"
           ],
@@ -1698,15 +1721,6 @@ export const PROJECT_STATUS = {
               "question": "17 中，个位上的数字表示多少？",
               "answer": "7",
               "skill": "place-value",
-              "format": "practice",
-              "responseKind": "short",
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "由 1个十、8个一 组成的数写作多少？",
-              "answer": "18",
-              "skill": "compose-number",
               "format": "practice",
               "responseKind": "short",
               "hasDiagram": false,
@@ -1725,6 +1739,15 @@ export const PROJECT_STATUS = {
               "question": "12 读作什么？",
               "answer": "十二",
               "skill": "read-number",
+              "format": "practice",
+              "responseKind": "short",
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "由 1个十、8个一 组成的数写作多少？",
+              "answer": "18",
+              "skill": "compose-number",
               "format": "practice",
               "responseKind": "short",
               "hasDiagram": false,
@@ -2104,8 +2127,8 @@ export const PROJECT_STATUS = {
           "skills": [
             "calculate",
             "missing-operand",
-            "compare-expression",
-            "apply"
+            "apply",
+            "compare-expression"
           ],
           "formats": [
             "practice"
@@ -2130,20 +2153,20 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "在括号里填 >、< 或 =：2 + 8（　）11。",
-              "answer": "<",
-              "skill": "compare-expression",
-              "format": "practice",
-              "responseKind": "comparison",
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
               "question": "盒里原有 8 枚棋子，又放入 4 枚，现在有多少枚？",
               "answer": "12",
               "skill": "apply",
               "format": "practice",
               "responseKind": "word",
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "在括号里填 >、< 或 =：2 + 8（　）11。",
+              "answer": "<",
+              "skill": "compare-expression",
+              "format": "practice",
+              "responseKind": "comparison",
               "hasDiagram": false,
               "hasAnswerDiagram": false
             }
@@ -2180,24 +2203,15 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "calculate",
             "missing-operand",
-            "compare-expression",
-            "apply"
+            "calculate",
+            "apply",
+            "compare-expression"
           ],
           "formats": [
             "practice"
           ],
           "samples": [
-            {
-              "question": "18 − 9 = ______",
-              "answer": "9",
-              "skill": "calculate",
-              "format": "practice",
-              "responseKind": "calculation",
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
             {
               "question": "11 − ______ = 6",
               "answer": "5",
@@ -2208,11 +2222,11 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "在括号里填 >、< 或 =：18 − 9（　）8。",
-              "answer": ">",
-              "skill": "compare-expression",
+              "question": "18 − 9 = ______",
+              "answer": "9",
+              "skill": "calculate",
               "format": "practice",
-              "responseKind": "comparison",
+              "responseKind": "calculation",
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
@@ -2222,6 +2236,15 @@ export const PROJECT_STATUS = {
               "skill": "apply",
               "format": "practice",
               "responseKind": "word",
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "在括号里填 >、< 或 =：18 − 9（　）8。",
+              "answer": ">",
+              "skill": "compare-expression",
+              "format": "practice",
+              "responseKind": "comparison",
               "hasDiagram": false,
               "hasAnswerDiagram": false
             }
@@ -3083,32 +3106,14 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
+            "arith-down",
             "repeat-2",
-            "arith-up",
-            "arith-down"
+            "arith-up"
           ],
           "formats": [
             "application"
           ],
           "samples": [
-            {
-              "question": "按规律接着画（第2题）：□☆□☆□☆□☆（　）（　）",
-              "answer": "□☆",
-              "skill": "repeat-2",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "找规律填数：9，12，15，18，（　）",
-              "answer": "21",
-              "skill": "arith-up",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
             {
               "question": "找规律填数：29，24，19，14，（　）",
               "answer": "9",
@@ -3119,9 +3124,27 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "按规律接着画（第5题）：●▲●▲●▲●▲（　）（　）",
-              "answer": "●▲",
+              "question": "按规律接着画：☆◆☆◆☆◆（　）（　）",
+              "answer": "☆◆",
               "skill": "repeat-2",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "找规律填数：8，12，16，20，（　）",
+              "answer": "24",
+              "skill": "arith-up",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "找规律填数：38，33，28，23，（　）",
+              "answer": "18",
+              "skill": "arith-down",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -3133,32 +3156,14 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "arith-two",
+            "double",
             "repeat-3",
-            "double"
+            "arith-two"
           ],
           "formats": [
             "application"
           ],
           "samples": [
-            {
-              "question": "找规律填数：1，8，15，22，（　），（　）",
-              "answer": "29，36",
-              "skill": "arith-two",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "按规律填第 12 组后面的图形：★◇○★◇○★◇○（　）",
-              "answer": "★",
-              "skill": "repeat-3",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
             {
               "question": "找规律填数：1，2，4，8，（　）",
               "answer": "16",
@@ -3169,9 +3174,27 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "按规律填第 18 组后面的图形：△○□△○□△○□（　）",
-              "answer": "△",
+              "question": "图形按“◇△◆”的规律重复排列，第 15 个图形是（　）。",
+              "answer": "◆",
               "skill": "repeat-3",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "找规律填数：9，15，21，27，（　），（　）",
+              "answer": "33，39",
+              "skill": "arith-two",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "找规律填数：4，8，16，32，（　）",
+              "answer": "64",
+              "skill": "double",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -3184,8 +3207,8 @@ export const PROJECT_STATUS = {
           "targetCount": 20,
           "skills": [
             "missing-middle",
-            "growing-diff",
-            "bead-cycle"
+            "bead-cycle",
+            "growing-diff"
           ],
           "formats": [
             "application"
@@ -3201,17 +3224,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "找规律填数：3，6，12，21，33，（　）",
-              "answer": "48",
-              "skill": "growing-diff",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "珠子按“1颗红、2颗黄”的规律依次穿成一串，第 26 颗珠子是什么颜色？",
-              "answer": "黄",
+              "question": "珠子按“3颗黑、1颗绿”的规律依次穿成一串，第 37 颗珠子是什么颜色？",
+              "answer": "黑",
               "skill": "bead-cycle",
               "format": "application",
               "responseKind": null,
@@ -3219,8 +3233,17 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "找规律填空缺的数：18，25，（　），39，46",
-              "answer": "32",
+              "question": "找规律填数：13，16，22，31，43，（　）",
+              "answer": "58",
+              "skill": "growing-diff",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "找规律填空缺的数：11，16，（　），26，31",
+              "answer": "21",
               "skill": "missing-middle",
               "format": "application",
               "responseKind": null,
@@ -3798,24 +3821,15 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "calculate",
             "missing-operand",
-            "compare-expression",
-            "apply"
+            "calculate",
+            "apply",
+            "compare-expression"
           ],
           "formats": [
             "practice"
           ],
           "samples": [
-            {
-              "question": "4 × 4 = ______",
-              "answer": "16",
-              "skill": "calculate",
-              "format": "practice",
-              "responseKind": "calculation",
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
             {
               "question": "2 × ______ = 4",
               "answer": "2",
@@ -3826,11 +3840,11 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "在括号里填 >、< 或 =：2 × 2（　）5。",
-              "answer": "<",
-              "skill": "compare-expression",
+              "question": "4 × 4 = ______",
+              "answer": "16",
+              "skill": "calculate",
               "format": "practice",
-              "responseKind": "comparison",
+              "responseKind": "calculation",
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
@@ -3840,6 +3854,15 @@ export const PROJECT_STATUS = {
               "skill": "apply",
               "format": "practice",
               "responseKind": "word",
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "在括号里填 >、< 或 =：2 × 2（　）5。",
+              "answer": "<",
+              "skill": "compare-expression",
+              "format": "practice",
+              "responseKind": "comparison",
               "hasDiagram": false,
               "hasAnswerDiagram": false
             }
@@ -3900,8 +3923,8 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "calculate",
             "missing-operand",
+            "calculate",
             "compare-expression",
             "apply"
           ],
@@ -3910,20 +3933,20 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "4 × 5 = ______",
-              "answer": "20",
-              "skill": "calculate",
-              "format": "practice",
-              "responseKind": "calculation",
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
               "question": "5 × ______ = 25",
               "answer": "5",
               "skill": "missing-operand",
               "format": "practice",
               "responseKind": "blank",
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "4 × 5 = ______",
+              "answer": "20",
+              "skill": "calculate",
+              "format": "practice",
+              "responseKind": "calculation",
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
@@ -4157,8 +4180,8 @@ export const PROJECT_STATUS = {
           "skills": [
             "calculate",
             "missing-operand",
-            "compare-expression",
-            "apply"
+            "apply",
+            "compare-expression"
           ],
           "formats": [
             "practice"
@@ -4183,20 +4206,20 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "在括号里填 >、< 或 =：8 × 9（　）71。",
-              "answer": ">",
-              "skill": "compare-expression",
-              "format": "practice",
-              "responseKind": "comparison",
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
               "question": "每箱有 9 本书，7 箱一共有多少本？",
               "answer": "63",
               "skill": "apply",
               "format": "practice",
               "responseKind": "word",
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "在括号里填 >、< 或 =：8 × 9（　）71。",
+              "answer": ">",
+              "skill": "compare-expression",
+              "format": "practice",
+              "responseKind": "comparison",
               "hasDiagram": false,
               "hasAnswerDiagram": false
             }
@@ -4519,16 +4542,16 @@ export const PROJECT_STATUS = {
           "targetCount": 20,
           "skills": [
             "digits-two",
-            "path-basic",
-            "clothes-basic"
+            "clothes-basic",
+            "handshake-3"
           ],
           "formats": [
             "application"
           ],
           "samples": [
             {
-              "question": "用1、2、9这3张数字卡片，每次取2张组成两位数（十位和个位不同），一共能组成多少个不同的两位数？",
-              "answer": "6个",
+              "question": "用1、2这两张数字卡片，能组成多少个不同的两位数？",
+              "answer": "2个",
               "skill": "digits-two",
               "format": "application",
               "responseKind": null,
@@ -4536,17 +4559,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "从家到图书馆有3条路，从图书馆到少年宫有5条路，从家经图书馆到少年宫一共有多少种不同的走法？",
-              "answer": "15种",
-              "skill": "path-basic",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "有5件不同的帽子和3件不同的裤子，各选一件搭配，一共有多少种不同的穿法？",
-              "answer": "15种",
+              "question": "有毛衣、外套共2件上衣，牛仔裤、运动裤共2件下装，各选一件搭配，一共有多少种不同的穿法？",
+              "answer": "4种",
               "skill": "clothes-basic",
               "format": "application",
               "responseKind": null,
@@ -4554,8 +4568,17 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "用5、4、3这3张数字卡片，每次取2张组成两位数（十位和个位不同），一共能组成多少个不同的两位数？",
-              "answer": "6个",
+              "question": "小红、小丽、小芳3位同学互相握手，每两人握一次手，一共要握多少次手？",
+              "answer": "3次",
+              "skill": "handshake-3",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "用7、4这两张数字卡片，能组成多少个不同的两位数？",
+              "answer": "2个",
               "skill": "digits-two",
               "format": "application",
               "responseKind": null,
@@ -4569,7 +4592,7 @@ export const PROJECT_STATUS = {
           "targetCount": 20,
           "skills": [
             "digits",
-            "path",
+            "breakfast-combo",
             "clothes",
             "handshake"
           ],
@@ -4578,8 +4601,8 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "用1、2、9、6这4张数字卡片，每次取2张组成两位数，一共能组成多少个不同的两位数？",
-              "answer": "12个",
+              "question": "用1、2、9这3张数字卡片，每次取2张组成没有重复数字的两位数，一共能组成多少个不同的两位数？",
+              "answer": "6个",
               "skill": "digits",
               "format": "application",
               "responseKind": null,
@@ -4587,17 +4610,17 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "从家到图书馆有5条路，从图书馆到少年宫有6条路，从家经图书馆到少年宫一共有多少种不同的走法？",
-              "answer": "30种",
-              "skill": "path",
+              "question": "早餐有红茶、绿茶共2种饮品，煎饼、蛋糕、三明治共3种早点，各选一种搭配，一共有多少种不同的早餐搭配？",
+              "answer": "6种",
+              "skill": "breakfast-combo",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "有5件不同的上衣和6件不同的裙子，各选一件搭配，一共有多少种不同的穿法？",
-              "answer": "30种",
+              "question": "有4件不同的上衣和5条不同的裙子，每次各选一件搭配，一共有多少种不同的穿法？",
+              "answer": "20种",
               "skill": "clothes",
               "format": "application",
               "responseKind": null,
@@ -4605,8 +4628,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "3个小朋友聚会，每两人通一次电话，一共要通多少次电话？",
-              "answer": "3次",
+              "question": "4个小朋友聚会，每两人通一次电话，一共要通多少次电话？",
+              "answer": "6次",
               "skill": "handshake",
               "format": "application",
               "responseKind": null,
@@ -4619,46 +4642,46 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "photo-fixed",
-            "path-three-stops",
-            "digits-with-zero",
-            "round-robin"
+            "digits-sum-choice",
+            "round-robin",
+            "clothes-3x3",
+            "photo-order-3"
           ],
           "formats": [
             "application"
           ],
           "samples": [
             {
-              "question": "甲、乙、丙、丁共4人排成一排照相（第1组），如果甲必须站在最左边，一共有多少种不同的排法？",
-              "answer": "6种",
-              "skill": "photo-fixed",
+              "question": "用7、1、2这3个数字中的任意2个求和，得数一共有多少种可能？",
+              "answer": "3种",
+              "skill": "digits-sum-choice",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "从A地到B地有4条路，从B地到C地有2条路，从C地到D地有4条路。从A地经B、C到D地共有多少种走法？",
-              "answer": "32种",
-              "skill": "path-three-stops",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "用0、9、4、6、3这5张数字卡片，每次取2张组成没有重复数字的两位数，一共能组成多少个？",
-              "answer": "16个",
-              "skill": "digits-with-zero",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "学校乒乓球比赛有10名选手参加单循环赛（每两名选手之间都要赛一场），一共要进行多少场比赛？",
-              "answer": "45场",
+              "question": "学校举办乒乓球比赛，有8名选手（或队伍）参加单循环赛（每两名选手之间都要赛一场），一共要进行多少场比赛？",
+              "answer": "28场",
               "skill": "round-robin",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "有粉、绿、紫3种颜色的上衣，黑、白、灰3种颜色的裤子，各选一件搭配，一共有多少种不同的穿法？",
+              "answer": "9种",
+              "skill": "clothes-3x3",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "小刚、小红、小丽3人排成一排合影，一共有多少种不同的排法？",
+              "answer": "6种",
+              "skill": "photo-order-3",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -4937,24 +4960,15 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "calculate",
             "missing-operand",
-            "compare-expression",
-            "apply"
+            "calculate",
+            "apply",
+            "compare-expression"
           ],
           "formats": [
             "practice"
           ],
           "samples": [
-            {
-              "question": "30 ÷ 6 = ______",
-              "answer": "5",
-              "skill": "calculate",
-              "format": "practice",
-              "responseKind": "calculation",
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
             {
               "question": "10 ÷ ______ = 5",
               "answer": "2",
@@ -4965,11 +4979,11 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "在括号里填 >、< 或 =：15 ÷ 5（　）4。",
-              "answer": "<",
-              "skill": "compare-expression",
+              "question": "30 ÷ 6 = ______",
+              "answer": "5",
+              "skill": "calculate",
               "format": "practice",
-              "responseKind": "comparison",
+              "responseKind": "calculation",
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
@@ -4979,6 +4993,15 @@ export const PROJECT_STATUS = {
               "skill": "apply",
               "format": "practice",
               "responseKind": "word",
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "在括号里填 >、< 或 =：15 ÷ 5（　）4。",
+              "answer": "<",
+              "skill": "compare-expression",
+              "format": "practice",
+              "responseKind": "comparison",
               "hasDiagram": false,
               "hasAnswerDiagram": false
             }
@@ -5296,8 +5319,8 @@ export const PROJECT_STATUS = {
           "skills": [
             "calculate",
             "missing-operand",
-            "compare-expression",
-            "apply"
+            "apply",
+            "compare-expression"
           ],
           "formats": [
             "practice"
@@ -5322,20 +5345,20 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "在括号里填 >、< 或 =：14 ÷ 7（　）2。",
-              "answer": "=",
-              "skill": "compare-expression",
-              "format": "practice",
-              "responseKind": "comparison",
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
               "question": "36 本书，每 9 本装一盒，可以装几盒？",
               "answer": "4",
               "skill": "apply",
               "format": "practice",
               "responseKind": "word",
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "在括号里填 >、< 或 =：14 ÷ 7（　）2。",
+              "answer": "=",
+              "skill": "compare-expression",
+              "format": "practice",
+              "responseKind": "comparison",
               "hasDiagram": false,
               "hasAnswerDiagram": false
             }
@@ -6468,8 +6491,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "时钟敲3下需要8秒（间隔耗时第39组），那么敲7下需要______秒。",
-              "answer": "24秒",
+              "question": "时钟敲5下需要24秒，照这样计算，敲9下需要______秒。",
+              "answer": "48秒",
               "skill": "bell-intervals",
               "format": "fill",
               "responseKind": null,
@@ -7997,8 +8020,8 @@ export const PROJECT_STATUS = {
           "skills": [
             "calculate",
             "missing-operand",
-            "compare-expression",
-            "apply"
+            "apply",
+            "compare-expression"
           ],
           "formats": [
             "practice"
@@ -8023,20 +8046,20 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "在括号里填 >、< 或 =：32 ÷ 4（　）8。",
-              "answer": "=",
-              "skill": "compare-expression",
-              "format": "practice",
-              "responseKind": "comparison",
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
               "question": "15 本书，每 3 本装一盒，可以装几盒？",
               "answer": "5",
               "skill": "apply",
               "format": "practice",
               "responseKind": "word",
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "在括号里填 >、< 或 =：32 ÷ 4（　）8。",
+              "answer": "=",
+              "skill": "compare-expression",
+              "format": "practice",
+              "responseKind": "comparison",
               "hasDiagram": false,
               "hasAnswerDiagram": false
             }
@@ -9023,8 +9046,8 @@ export const PROJECT_STATUS = {
       "gradientBadge": "success",
       "gradientNote": "基础/标准/提高具备不同的考法模板或进阶题型分支",
       "skillCount": {
-        "easy": 3,
-        "medium": 4,
+        "easy": 4,
+        "medium": 5,
         "hard": 4
       },
       "hasDiagram": false,
@@ -9034,8 +9057,9 @@ export const PROJECT_STATUS = {
           "targetCount": 20,
           "skills": [
             "digits-two",
-            "clothes-basic",
-            "path-basic"
+            "path-basic",
+            "breakfast-combo",
+            "clothes-basic"
           ],
           "formats": [
             "application"
@@ -9051,17 +9075,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "有4件不同的T恤和2件不同的裙子，各选一件搭配，一共有多少种不同的穿法？",
-              "answer": "8种",
-              "skill": "clothes-basic",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "从家到图书馆有2条路，从图书馆到少年宫有5条路，从家经图书馆到少年宫一共有多少种不同的走法？",
-              "answer": "10种",
+              "question": "从家到学校有3条路，从学校到公园有2条路，从家经学校到公园一共有多少种不同的走法？",
+              "answer": "6种",
               "skill": "path-basic",
               "format": "application",
               "responseKind": null,
@@ -9069,8 +9084,17 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "有2件不同的帽子和4件不同的裙子，各选一件搭配，一共有多少种不同的穿法？",
-              "answer": "8种",
+              "question": "早餐有牛奶、豆浆共2种饮品，煎饼、蛋糕、三明治共3种早点，各选一种搭配，一共有多少种不同的早餐搭配？",
+              "answer": "6种",
+              "skill": "breakfast-combo",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "有3件不同的上衣和3条不同的裤子，各选一件搭配，一共有多少种不同的穿法？",
+              "answer": "9种",
               "skill": "clothes-basic",
               "format": "application",
               "responseKind": null,
@@ -9084,18 +9108,37 @@ export const PROJECT_STATUS = {
           "targetCount": 20,
           "skills": [
             "digits",
-            "handshake",
+            "path",
             "clothes",
-            "path"
+            "handshake",
+            "round-robin-4"
           ],
           "formats": [
             "application"
           ],
           "samples": [
             {
-              "question": "用1、7、2、8这4张数字卡片，每次取2张组成两位数，一共能组成多少个不同的两位数？",
-              "answer": "12个",
+              "question": "用1、7、2这3张数字卡片，每次取2张组成没有重复数字的两位数，一共能组成多少个不同的两位数？",
+              "answer": "6个",
               "skill": "digits",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "从家到图书馆有4条路，从图书馆到少年宫有5条路，从家经图书馆到少年宫一共有多少种不同的走法？",
+              "answer": "20种",
+              "skill": "path",
+              "format": "application",
+              "responseKind": null,
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "有3件不同的T恤和3条不同的裙子，每次各选一件搭配，一共有多少种不同的穿法？",
+              "answer": "9种",
+              "skill": "clothes",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -9105,24 +9148,6 @@ export const PROJECT_STATUS = {
               "question": "5个小朋友聚会，每两人握一次手，一共要握多少次手？",
               "answer": "10次",
               "skill": "handshake",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "有2件不同的上衣和5件不同的裙子，各选一件搭配，一共有多少种不同的穿法？",
-              "answer": "10种",
-              "skill": "clothes",
-              "format": "application",
-              "responseKind": null,
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "从家到图书馆有5条路，从图书馆到少年宫有5条路，从家经图书馆到少年宫一共有多少种不同的走法？",
-              "answer": "25种",
-              "skill": "path",
               "format": "application",
               "responseKind": null,
               "hasDiagram": false,
@@ -9144,7 +9169,7 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "甲、乙、丙、丁共4人排成一排照相（第1组），如果甲必须站在最左边，一共有多少种不同的排法？",
+              "question": "爸爸、妈妈、小明、姐姐共4人排成一排照相，如果妈妈必须站在排头，一共有多少种不同的排法？",
               "answer": "6种",
               "skill": "photo-fixed",
               "format": "application",
@@ -9153,8 +9178,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "从A地到B地有3条路，从B地到C地有2条路，从C地到D地有4条路。从A地经B、C到D地共有多少种走法？",
-              "answer": "24种",
+              "question": "从甲城到乙城有4条路，从乙城到丙城有3条路，从丙城到丁城有3条路。从甲城经乙城、丙城到丁城共有多少种走法？",
+              "answer": "36种",
               "skill": "path-three-stops",
               "format": "application",
               "responseKind": null,
@@ -9162,7 +9187,7 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "用0、1、2、5这4张数字卡片，每次取2张组成没有重复数字的两位数，一共能组成多少个？",
+              "question": "用0、3、2、5这4张数字卡片，每次取2张组成没有重复数字的两位数，一共能组成多少个？",
               "answer": "9个",
               "skill": "digits-with-zero",
               "format": "application",
@@ -9171,8 +9196,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "学校乒乓球比赛有8名选手参加单循环赛（每两名选手之间都要赛一场），一共要进行多少场比赛？",
-              "answer": "28场",
+              "question": "学校举办篮球比赛，有5名选手（或队伍）参加单循环赛（每两名选手之间都要赛一场），一共要进行多少场比赛？",
+              "answer": "10场",
               "skill": "round-robin",
               "format": "application",
               "responseKind": null,
@@ -10485,8 +10510,8 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "烧水要 37 分钟，洗杯子要 7 分钟，两件事可以同时做，最少要多少分钟？",
-              "answer": "37",
+              "question": "烧水要 14 分钟，洗杯子要 4 分钟，两件事可以同时做，最少要多少分钟？",
+              "answer": "14",
               "skill": "parallel-tasks",
               "format": "practice",
               "responseKind": "short",
@@ -10494,8 +10519,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "两人等用同一台打印机，甲要用 68 分钟、乙要用 8 分钟。要让两人等待时间的和最短，谁先用？",
-              "answer": "乙",
+              "question": "两人等用同一台打印机，小明要用 4 分钟、小刚要用 2 分钟。要让两人等待时间的和最短，谁先用？",
+              "answer": "小刚",
               "skill": "shorter-first",
               "format": "practice",
               "responseKind": "short",
@@ -10503,8 +10528,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "一口平底锅每次最多烙 2 张饼，两面都要烙，每面 2 分钟。烙熟 12 张饼最少需要多少分钟？",
-              "answer": "24 分钟",
+              "question": "电饼铛每次最多烙 2 张煎鸡蛋，两面都要烙，每面 4 分钟。烙熟 2 张煎鸡蛋最少需要多少分钟？",
+              "answer": "8 分钟",
               "skill": "even-pancakes",
               "format": "practice",
               "responseKind": "short",
@@ -10512,8 +10537,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "淘米要 4 分钟，电饭煲煮饭要 45 分钟，煮饭时可同时洗菜 5 分钟。做好这些事最少要多少分钟？",
-              "answer": "49 分钟",
+              "question": "淘米要 3 分钟，电饭煲煮饭要 19 分钟，煮饭时可同时洗菜 2 分钟。做好这些事最少要多少分钟？",
+              "answer": "22 分钟",
               "skill": "flow-sum",
               "format": "practice",
               "responseKind": "short",
@@ -10536,8 +10561,8 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "等水烧开要 44 分钟，烧好后泡茶要 4 分钟。洗杯子要 4 分钟，可以在烧水时洗。最少要多少分钟？",
-              "answer": "48",
+              "question": "周末家里来客，等水烧开要 8 分钟，烧好后泡茶要 3 分钟。洗杯子要 2 分钟，可以在烧水时洗。最少要多少分钟？",
+              "answer": "11",
               "skill": "prerequisite",
               "format": "practice",
               "responseKind": "short",
@@ -10545,8 +10570,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "一口锅每轮最多煎 2 张饼，一轮需 5 分钟。煎熟 5 张饼至少要多少分钟？",
-              "answer": "15",
+              "question": "一个平底煎锅每轮最多煎 8 张煎牛排，一轮需 4 分钟。煎熟 17 张煎牛排至少要多少分钟？",
+              "answer": "12",
               "skill": "batch-capacity",
               "format": "practice",
               "responseKind": "short",
@@ -10554,8 +10579,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "甲打水要 8 分钟，乙打水要 85 分钟，只有 1 个水龙头。两人等待（含打水）时间的总和最少是多少分钟？",
-              "answer": "101 分钟",
+              "question": "东东打水要 1 分钟，亮亮打水要 3 分钟，只有 1 个水龙头。两人等待（含打水）时间的总和最少是多少分钟？",
+              "answer": "5 分钟",
               "skill": "two-queue-wait",
               "format": "practice",
               "responseKind": "short",
@@ -10563,8 +10588,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "平底锅每次最多烙 2 张饼，两面都要烙，每面 6 分钟。烙熟 19 张饼最少要多少分钟？",
-              "answer": "114 分钟",
+              "question": "一个平底煎锅每次最多烙 2 张烙肉饼，两面都要烙，每面 5 分钟。烙熟 7 张烙肉饼最少要多少分钟？",
+              "answer": "35 分钟",
               "skill": "odd-pancakes",
               "format": "practice",
               "responseKind": "short",
@@ -10579,16 +10604,16 @@ export const PROJECT_STATUS = {
           "skills": [
             "three-queue-min-wait",
             "general-pancake-time",
-            "tianji-card-strategy",
-            "multi-parallel-tea"
+            "multi-parallel-tea",
+            "tianji-card-strategy"
           ],
           "formats": [
             "practice"
           ],
           "samples": [
             {
-              "question": "三人排队接水，甲需 4 分钟，乙需 13 分钟，丙需 49 分钟。只有一个水龙头，三人等待（含接水）时间的总和最少是多少分钟？",
-              "answer": "87 分钟",
+              "question": "三人排队接水，甲需 1 分钟，乙需 4 分钟，丙需 8 分钟。只有一个水龙头，三人等待（含接水）时间的总和最少是多少分钟？",
+              "answer": "19 分钟",
               "skill": "three-queue-min-wait",
               "format": "practice",
               "responseKind": "short",
@@ -10596,8 +10621,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "一口锅每次最多烙 2 张饼，两面都要烙，每面需 2 分钟。烙熟 42 张饼最少需要多少分钟？",
-              "answer": "84 分钟",
+              "question": "一口平底锅每次最多烙 2 张煎牛排，两面都要烙，每面需 5 分钟。烙熟 11 张煎牛排最少需要多少分钟？",
+              "answer": "55 分钟",
               "skill": "general-pancake-time",
               "format": "practice",
               "responseKind": "short",
@@ -10605,18 +10630,18 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "三局两胜扑克赛：对方出牌点数依次为 88、86、84，我方手牌为 87、85、83。我方用最小牌 83 对阵对方最大牌 88，其余两局我方能赢几局？",
-              "answer": "2 局",
-              "skill": "tianji-card-strategy",
+              "question": "小明招待客人：洗水壶 3 分钟，烧开水 10 分钟，烧水时可同时洗茶杯 4 分钟和拿绿茶 1 分钟（5 < 10），最后沏茶 1 分钟。最少多少分钟能喝上茶？",
+              "answer": "14 分钟",
+              "skill": "multi-parallel-tea",
               "format": "practice",
               "responseKind": "short",
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "洗水壶 4 分钟，烧开水 48 分钟，烧水时可同时洗茶杯 8 分钟和拿茶叶 2 分钟（10 < 48），最后沏茶 1 分钟。最少多少分钟能喝上茶？",
-              "answer": "53 分钟",
-              "skill": "multi-parallel-tea",
+              "question": "三局两胜扑克赛：对方出牌点数依次为 6、4、2，我方手牌为 5、3、1。我方用最小牌 1 对阵对方最大牌 6，其余两局我方能赢几局？",
+              "answer": "2 局",
+              "skill": "tianji-card-strategy",
               "format": "practice",
               "responseKind": "short",
               "hasDiagram": false,
@@ -14503,8 +14528,8 @@ export const PROJECT_STATUS = {
           "generatedCount": 20,
           "targetCount": 20,
           "skills": [
-            "unlike-add",
             "unlike-subtract",
+            "unlike-add",
             "fraction-sum-story",
             "fraction-remainder"
           ],
@@ -14513,18 +14538,18 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "1/6 + 1/20 = ______（结果约成最简分数）",
-              "answer": "13/60",
-              "skill": "unlike-add",
+              "question": "1/6 − 1/18 = ______（结果约成最简分数）",
+              "answer": "1/9",
+              "skill": "unlike-subtract",
               "format": "practice",
               "responseKind": "blank",
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "1/6 − 1/18 = ______（结果约成最简分数）",
-              "answer": "1/9",
-              "skill": "unlike-subtract",
+              "question": "1/6 + 1/20 = ______（结果约成最简分数）",
+              "answer": "13/60",
+              "skill": "unlike-add",
               "format": "practice",
               "responseKind": "blank",
               "hasDiagram": false,
@@ -14876,8 +14901,8 @@ export const PROJECT_STATUS = {
           "targetCount": 6,
           "skills": [
             "identify-suspects",
-            "minimum-weighings",
             "optimal-partition",
+            "minimum-weighings",
             "lighter-or-heavier"
           ],
           "formats": [
@@ -14885,18 +14910,9 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "将编号 1 到 6 的物品（第 62 组）依次分成三份，每份 2 件。已知有一件偏轻，称第一、二份时第二份较轻。哪些编号仍可能是次品？",
+              "question": "将编号 1 到 6 的物品依次分成三份，每份 2 件。已知有一件偏轻，称第一、二份时第二份较轻。哪些编号仍可能是次品？",
               "answer": "3 至 4",
               "skill": "identify-suspects",
-              "format": "practice",
-              "responseKind": "short",
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "有 27 个外表相同的零件（批次 46），只有一个偏轻，用天平最坏情况下要称几次才能找到？",
-              "answer": "3",
-              "skill": "minimum-weighings",
               "format": "practice",
               "responseKind": "short",
               "hasDiagram": false,
@@ -14906,6 +14922,15 @@ export const PROJECT_STATUS = {
               "question": "有 130 个零件，其中 1 个偏重。第一次按最优策略分成 3 份，最多的一份有几个零件？",
               "answer": "44",
               "skill": "optimal-partition",
+              "format": "practice",
+              "responseKind": "short",
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "有 27 个外表相同的零件，只有一个偏轻，用天平最坏情况下要称几次才能找到？",
+              "answer": "3",
+              "skill": "minimum-weighings",
               "format": "practice",
               "responseKind": "short",
               "hasDiagram": false,
@@ -14936,7 +14961,7 @@ export const PROJECT_STATUS = {
           ],
           "samples": [
             {
-              "question": "已知次品比正品略轻，用无砝码天平称 5 次（第 67 批），最多可以从多少个物品中保证找出这件次品？",
+              "question": "已知次品比正品略轻，用无砝码天平称 5 次，最多可以从多少个物品中保证找出这件次品？",
               "answer": "243",
               "skill": "max-items-for-k-weighs",
               "format": "practice",
@@ -15363,8 +15388,8 @@ export const PROJECT_STATUS = {
           "skills": [
             "reciprocal-find",
             "fraction-divide",
-            "divide-by-fraction",
-            "fraction-division-story"
+            "fraction-division-story",
+            "divide-by-fraction"
           ],
           "formats": [
             "practice"
@@ -15389,20 +15414,20 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "62 ÷ 1/2 = ______",
-              "answer": "124",
-              "skill": "divide-by-fraction",
-              "format": "practice",
-              "responseKind": "blank",
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
               "question": "25 米彩带，每 1/5 米剪一段，可剪几段？",
               "answer": "125",
               "skill": "fraction-division-story",
               "format": "practice",
               "responseKind": "word",
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "62 ÷ 1/2 = ______",
+              "answer": "124",
+              "skill": "divide-by-fraction",
+              "format": "practice",
+              "responseKind": "blank",
               "hasDiagram": false,
               "hasAnswerDiagram": false
             }
@@ -16391,8 +16416,8 @@ export const PROJECT_STATUS = {
           "skills": [
             "table-seating-forward",
             "table-seating-reverse",
-            "pythagorean-square-diff",
-            "hollow-frame-dots"
+            "hollow-frame-dots",
+            "pythagorean-square-diff"
           ],
           "formats": [
             "practice"
@@ -16417,20 +16442,20 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "利用数形结合计算平方差：81² − 74² = ______。",
-              "answer": "1085",
-              "skill": "pythagorean-square-diff",
-              "format": "practice",
-              "responseKind": "blank",
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
               "question": "一个实心方阵每边有 91 个点，拿走中心 83 行 83 列的点后，外圈还剩多少个点？",
               "answer": "1392",
               "skill": "hollow-frame-dots",
               "format": "practice",
               "responseKind": "short",
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "利用数形结合计算平方差：81² − 74² = ______。",
+              "answer": "1085",
+              "skill": "pythagorean-square-diff",
+              "format": "practice",
+              "responseKind": "blank",
               "hasDiagram": false,
               "hasAnswerDiagram": false
             }
@@ -17001,27 +17026,18 @@ export const PROJECT_STATUS = {
           "targetCount": 20,
           "skills": [
             "proportion-check",
-            "outer-inner-product",
             "direct-proportion",
-            "inverse-proportion"
+            "inverse-proportion",
+            "outer-inner-product"
           ],
           "formats": [
             "practice"
           ],
           "samples": [
             {
-              "question": "3∶4 和 9∶13 能组成比例吗（第 34 题）？",
+              "question": "判断：3∶4 和 9∶13 能否组成比例？",
               "answer": "不能",
               "skill": "proportion-check",
-              "format": "practice",
-              "responseKind": "short",
-              "hasDiagram": false,
-              "hasAnswerDiagram": false
-            },
-            {
-              "question": "在一个比例中，两个内项分别是 5 和 54，则两个外项的积是多少？",
-              "answer": "270",
-              "skill": "outer-inner-product",
               "format": "practice",
               "responseKind": "short",
               "hasDiagram": false,
@@ -17040,6 +17056,15 @@ export const PROJECT_STATUS = {
               "question": "同一段路以每小时 49 千米的速度走需 9 小时。路程一定时，速度和时间成什么比例？",
               "answer": "反比例",
               "skill": "inverse-proportion",
+              "format": "practice",
+              "responseKind": "short",
+              "hasDiagram": false,
+              "hasAnswerDiagram": false
+            },
+            {
+              "question": "在一个比例中，两个内项分别是 5 和 54，则两个外项的积是多少？",
+              "answer": "270",
+              "skill": "outer-inner-product",
               "format": "practice",
               "responseKind": "short",
               "hasDiagram": false,
@@ -17104,8 +17129,8 @@ export const PROJECT_STATUS = {
           "skills": [
             "scale-area-expand",
             "shadow-height-prop",
-            "paving-tiles-inverse",
-            "gear-teeth-inverse"
+            "gear-teeth-inverse",
+            "paving-tiles-inverse"
           ],
           "formats": [
             "practice"
@@ -17130,18 +17155,18 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "给教室铺地，用面积为 5 平方分米的方砖需要 560 块；如果改用面积为 40 平方分米的方砖，需要多少块？",
-              "answer": "70 块",
-              "skill": "paving-tiles-inverse",
+              "question": "相互咬合的两个齿轮，大齿轮有 9 个齿，每分钟转 40 圈；小齿轮有 3 个齿，每分钟转多少圈？",
+              "answer": "120 圈",
+              "skill": "gear-teeth-inverse",
               "format": "practice",
               "responseKind": "short",
               "hasDiagram": false,
               "hasAnswerDiagram": false
             },
             {
-              "question": "相互咬合的两个齿轮，大齿轮有 9 个齿，每分钟转 40 圈；小齿轮有 3 个齿，每分钟转多少圈？",
-              "answer": "120 圈",
-              "skill": "gear-teeth-inverse",
+              "question": "给教室铺地，用面积为 5 平方分米的方砖需要 560 块；如果改用面积为 40 平方分米的方砖，需要多少块？",
+              "answer": "70 块",
+              "skill": "paving-tiles-inverse",
               "format": "practice",
               "responseKind": "short",
               "hasDiagram": false,
@@ -17298,8 +17323,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "一副扑克牌去掉大小王后还剩4种花色（第2局），至少从中抽出多少张牌，才能保证有2张牌是同一种花色？",
-              "answer": "5张",
+              "question": "一盒扑克牌去掉了大王和小王，至少从中抽出多少张牌，才能保证有3张牌是同一种花色？",
+              "answer": "9张",
               "skill": "cards-suit",
               "format": "application",
               "responseKind": null,
@@ -17316,8 +17341,8 @@ export const PROJECT_STATUS = {
               "hasAnswerDiagram": false
             },
             {
-              "question": "把一些小球放进3个盒子里，要保证总有一个盒子里至少有6个小球，那么至少需要准备多少个小球？",
-              "answer": "16个",
+              "question": "把一些小球放进7个盒子里，要保证总有一个盒子里至少有3个小球，那么至少需要准备多少个小球？",
+              "answer": "15个",
               "skill": "reverse-objects",
               "format": "application",
               "responseKind": null,

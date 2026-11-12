@@ -389,25 +389,61 @@ function conceptTasks(kind, difficulty) {
         ['divide-by-fraction', `${n} ÷ 1/${b} = ______`, n * b],
         ['fraction-division-story', `${n} 米彩带，每 1/${b} 米剪一段，可剪几段？`, n * b],
       ];
-    case 'optimize':
+    case 'optimize': {
+      // 优化题时间与参数严格符合生活常识，且具备丰富生活情景与大样本空间
+      const boil = int(8, 15);
+      const makeTea = int(2, 5);
+      const washCup = int(2, 4);
+      const teaLeaf = int(1, 2);
+      const washKettle = int(1, 3);
+      const panM = int(2, 6);
+      const panN = int(3, 15);
+      const rice = int(15, 25);
+      const oddK = pick([3, 5, 7, 9, 11]);
+      const evenK = pick([2, 4, 6, 8, 10, 12]);
+      const cookware = pick(['一口平底锅', '电饼铛', '一口铁锅', '一个平底煎锅']);
+      const food = pick(['烙饼', '煎牛排', '煎鸡蛋', '烙馅饼', '烙肉饼']);
+      const verb = food === '烤面包片' ? '烤' : '烙';
+
+      const trios = pick([
+        ['小明', '小华', '小军'],
+        ['小红', '小刚', '小丽'],
+        ['张师傅', '李师傅', '王师傅'],
+        ['甲', '乙', '丙'],
+        ['东东', '明明', '亮亮'],
+        ['小杰', '小强', '小敏'],
+      ]);
+      const waitA = int(1, 4);
+      const waitB = waitA + int(1, 4);
+      const waitC = waitB + int(2, 5);
+
+      const pairs = pick([['小明', '小刚'], ['小红', '小丽'], ['甲', '乙'], ['东东', '亮亮'], ['小华', '小强']]);
+      const duoWaitA = int(1, 4);
+      const duoWaitB = duoWaitA + int(1, 5);
+
+      const cardMax = int(6, 12);
+      const host = pick(['家里来客人了', '小明招待客人', '妈妈准备沏茶', '小华招待客人', '周末家里来客']);
+      const teaName = pick(['红茶', '绿茶', '花茶', '热茶']);
+
       if (difficulty === 'hard') return [
-        ['three-queue-min-wait', `三人排队接水，甲需 ${a} 分钟，乙需 ${a + b} 分钟，丙需 ${n} 分钟。只有一个水龙头，三人等待（含接水）时间的总和最少是多少分钟？`, `${3 * a + 2 * (a + b) + n} 分钟`],
-        ['general-pancake-time', `一口锅每次最多烙 2 张饼，两面都要烙，每面需 ${b} 分钟。烙熟 ${n} 张饼最少需要多少分钟？`, `${n * b} 分钟`],
-        ['tianji-card-strategy', `三局两胜扑克赛：对方出牌点数依次为 ${n}、${n - 2}、${n - 4}，我方手牌为 ${n - 1}、${n - 3}、${n - 5}。我方用最小牌 ${n - 5} 对阵对方最大牌 ${n}，其余两局我方能赢几局？`, '2 局'],
-        ['multi-parallel-tea', `洗水壶 ${a} 分钟，烧开水 ${n} 分钟，烧水时可同时洗茶杯 ${b} 分钟和拿茶叶 ${c} 分钟（${b + c} < ${n}），最后沏茶 1 分钟。最少多少分钟能喝上茶？`, `${a + n + 1} 分钟`],
+        ['three-queue-min-wait', `三人排队接水，${trios[0]}需 ${waitA} 分钟，${trios[1]}需 ${waitB} 分钟，${trios[2]}需 ${waitC} 分钟。只有一个水龙头，三人等待（含接水）时间的总和最少是多少分钟？`, `${3 * waitA + 2 * waitB + waitC} 分钟`],
+        ['general-pancake-time', `${cookware}每次最多${verb} 2 张${food}，两面都要${verb}，每面需 ${panM} 分钟。${verb}熟 ${panN} 张${food}最少需要多少分钟？`, `${panN * panM} 分钟`],
+        ['tianji-card-strategy', `三局两胜扑克赛：对方出牌点数依次为 ${cardMax}、${cardMax - 2}、${cardMax - 4}，我方手牌为 ${cardMax - 1}、${cardMax - 3}、${cardMax - 5}。我方用最小牌 ${cardMax - 5} 对阵对方最大牌 ${cardMax}，其余两局我方能赢几局？`, '2 局'],
+        ['multi-parallel-tea', `${host}：洗水壶 ${washKettle} 分钟，烧开水 ${boil} 分钟，烧水时可同时洗茶杯 ${washCup} 分钟和拿${teaName} ${teaLeaf} 分钟（${washCup + teaLeaf} < ${boil}），最后沏茶 1 分钟。最少多少分钟能喝上茶？`, `${washKettle + boil + 1} 分钟`],
       ];
       if (difficulty === 'medium') return [
-        ['prerequisite', `等水烧开要 ${n} 分钟，烧好后泡茶要 ${a} 分钟。洗杯子要 ${b} 分钟，可以在烧水时洗。最少要多少分钟？`, n + a],
-        ['batch-capacity', `一口锅每轮最多煎 ${a} 张饼，一轮需 ${b} 分钟。煎熟 ${a * 2 + 1} 张饼至少要多少分钟？`, 3 * b],
-        ['two-queue-wait', `甲打水要 ${a} 分钟，乙打水要 ${n} 分钟，只有 1 个水龙头。两人等待（含打水）时间的总和最少是多少分钟？`, `${2 * a + n} 分钟`],
-        ['odd-pancakes', `平底锅每次最多烙 2 张饼，两面都要烙，每面 ${b} 分钟。烙熟 ${2 * a + 1} 张饼最少要多少分钟？`, `${(2 * a + 1) * b} 分钟`],
+        ['prerequisite', `${host}，等水烧开要 ${boil} 分钟，烧好后泡茶要 ${makeTea} 分钟。洗杯子要 ${washCup} 分钟，可以在烧水时洗。最少要多少分钟？`, boil + makeTea],
+        ['batch-capacity', `${cookware}每轮最多煎 ${a} 张${food}，一轮需 ${panM} 分钟。煎熟 ${a * 2 + 1} 张${food}至少要多少分钟？`, 3 * panM],
+        ['two-queue-wait', `${pairs[0]}打水要 ${duoWaitA} 分钟，${pairs[1]}打水要 ${duoWaitB} 分钟，只有 1 个水龙头。两人等待（含打水）时间的总和最少是多少分钟？`, `${2 * duoWaitA + duoWaitB} 分钟`],
+        ['odd-pancakes', `${cookware}每次最多${verb} 2 张${food}，两面都要${verb}，每面 ${panM} 分钟。${verb}熟 ${oddK} 张${food}最少要多少分钟？`, `${oddK * panM} 分钟`],
       ];
       return [
-        ['parallel-tasks', `烧水要 ${n} 分钟，洗杯子要 ${b} 分钟，两件事可以同时做，最少要多少分钟？`, n],
-        ['shorter-first', `两人等用同一台打印机，甲要用 ${n} 分钟、乙要用 ${b} 分钟。要让两人等待时间的和最短，谁先用？`, '乙'],
-        ['even-pancakes', `一口平底锅每次最多烙 2 张饼，两面都要烙，每面 ${b} 分钟。烙熟 ${2 * a} 张饼最少需要多少分钟？`, `${2 * a * b} 分钟`],
-        ['flow-sum', `淘米要 ${a} 分钟，电饭煲煮饭要 ${n} 分钟，煮饭时可同时洗菜 ${b} 分钟。做好这些事最少要多少分钟？`, `${a + n} 分钟`],
+        ['parallel-tasks', `烧水要 ${boil} 分钟，洗杯子要 ${washCup} 分钟，两件事可以同时做，最少要多少分钟？`, boil],
+        ['shorter-first', `两人等用同一台打印机，${pairs[0]}要用 ${duoWaitB} 分钟、${pairs[1]}要用 ${duoWaitA} 分钟。要让两人等待时间的和最短，谁先用？`, pairs[1]],
+        ['even-pancakes', `${cookware}每次最多${verb} 2 张${food}，两面都要${verb}，每面 ${panM} 分钟。${verb}熟 ${evenK} 张${food}最少需要多少分钟？`, `${evenK * panM} 分钟`],
+        ['flow-sum', `淘米要 ${washKettle} 分钟，电饭煲煮饭要 ${rice} 分钟，煮饭时可同时洗菜 ${washCup} 分钟。做好这些事最少要多少分钟？`, `${washKettle + rice} 分钟`],
       ];
+    }
     case 'possibility': {
       const color = pick(['蓝', '绿', '黄', '黑']);
       if (difficulty === 'hard') return [
@@ -431,14 +467,14 @@ function conceptTasks(kind, difficulty) {
     }
     case 'counterfeit':
       if (difficulty === 'hard') return [
-        ['max-items-for-k-weighs', `已知次品比正品略轻，用无砝码天平称 ${(b % 4) + 2} 次（第 ${n} 批），最多可以从多少个物品中保证找出这件次品？`, 3 ** ((b % 4) + 2)],
+        ['max-items-for-k-weighs', `已知次品比正品略轻，用无砝码天平称 ${(b % 4) + 2} 次，最多可以从多少个物品中保证找出这件次品？`, 3 ** ((b % 4) + 2)],
         ['find-weighs-from-count', `有 ${10 + n} 个外观相同的零件，已知有 1 个次品偏轻，用天平至少称几次一定能找出次品？`, 10 + n <= 27 ? 3 : 10 + n <= 81 ? 4 : 5],
         ['first-weigh-remaining', `有 ${3 * n + 2} 个零件（1 个偏轻），第一次按（${n + 1}，${n + 1}，${n}）分成三组称前两组，若天平不平衡，接下来还在几个零件中继续找？`, n + 1],
         ['second-weigh-count', `有 ${3 * n + 1} 个零件（1 个偏重），第一次按（${n}，${n}，${n + 1}）称前两组且天平平衡；第二次把剩下的 ${n + 1} 个零件再最优分成三份，最多的一份有几个？`, Math.ceil((n + 1) / 3)],
       ];
       if (difficulty === 'medium') return [
-        ['identify-suspects', `将编号 1 到 ${3 * b} 的物品（第 ${n} 组）依次分成三份，每份 ${b} 件。已知有一件偏轻，称第一、二份时第二份较轻。哪些编号仍可能是次品？`, `${b + 1} 至 ${2 * b}`],
-        ['minimum-weighings', `有 ${3 ** Math.min(a, 3)} 个外表相同的零件（批次 ${n}），只有一个偏轻，用天平最坏情况下要称几次才能找到？`, Math.min(a, 3)],
+        ['identify-suspects', `将编号 1 到 ${3 * b} 的物品依次分成三份，每份 ${b} 件。已知有一件偏轻，称第一、二份时第二份较轻。哪些编号仍可能是次品？`, `${b + 1} 至 ${2 * b}`],
+        ['minimum-weighings', `有 ${3 ** Math.min(a, 3)} 个外表相同的零件，只有一个偏轻，用天平最坏情况下要称几次才能找到？`, Math.min(a, 3)],
         ['optimal-partition', `有 ${3 * n + 1} 个零件，其中 1 个偏重。第一次按最优策略分成 3 份，最多的一份有几个零件？`, n + 1],
         ['lighter-or-heavier', `天平左盘放 ${n} 号球，右盘放 ${n + 1} 号球，已知其中一个是偏重的次品。若左盘下沉，次品是几号球？`, n],
       ];
@@ -483,7 +519,7 @@ function conceptTasks(kind, difficulty) {
         ['scale-find-map', `实际距离是 ${a * b * 10} 米，画在比例尺是 1∶${b * 1000} 的地图上，图上距离是多少厘米？`, `${a} 厘米`],
       ];
       return [
-        ['proportion-check', `${a}∶${b} 和 ${a * c}∶${b * c + (a % 2)} 能组成比例吗（第 ${n} 题）？`, a % 2 ? '不能' : '能'],
+        ['proportion-check', `判断：${a}∶${b} 和 ${a * c}∶${b * c + (a % 2)} 能否组成比例？`, a % 2 ? '不能' : '能'],
         ['outer-inner-product', `在一个比例中，两个内项分别是 ${a} 和 ${n}，则两个外项的积是多少？`, a * n],
         ['direct-proportion', `每本练习本 ${n} 元。买 ${b} 本和买 ${c} 本时，总价与本数成正比例还是反比例？`, '正比例'],
         ['inverse-proportion', `同一段路以每小时 ${n} 千米的速度走需 ${b} 小时。路程一定时，速度和时间成什么比例？`, '反比例'],
@@ -535,7 +571,7 @@ function scopeProblems(difficulty, count, { plugin }) {
   const seen = new Set();
   for (let attempt = 0; items.length < count && attempt < count * 80; attempt++) {
     const tasks = tasksFor(plugin, difficulty);
-    const [skill, question, answer, kind] = tasks[items.length % tasks.length];
+    const [skill, question, answer, kind] = tasks[attempt % tasks.length];
     if (seen.has(question)) continue;
     seen.add(question);
     const responseKind = kind || (skill === 'apply' || skill.endsWith('-story') ? 'word'
