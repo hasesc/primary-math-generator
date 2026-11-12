@@ -4,14 +4,14 @@
 > 运行 `node scripts/manage.mjs` 可自动执行全套测试并刷新看板数据。
 
 ## 1. 当前版本与核心指标
-- **当前阶段**：M1/M2 原型与 UI 现代化精装升级完成（`v0.8.4`），阶梯考法单元达 **47 个**，全库彻底清除生硬伪去重标记，提供一键双击运行启动器，当前先完成教材版次确认与内容验收，再进入微信小程序迁移阶段
+- **当前阶段**：M1/M2 原型与 UI 现代化精装升级完成（`v0.8.5`），口算与竖式每日一练全学段 1~6 年级深度重构（24个专项范围+三档算理梯度），阶梯考法单元达 **47 个**，全库彻底清除生硬伪去重标记，当前先完成教材版次确认与内容验收，再进入微信小程序迁移阶段
 - **生成入口覆盖（非完整考点验收）**：人教版 1~6 年级上下册共 **93 个单元**（92 个专属插件/模板映射 + 1 个六下《整理与复习》全科综合卷；其中 **47 个单元具备阶梯考法**、**22 个单元具备三档数值梯度**、**24 个单元为课标定界范围**，“两档待升级”保持 0 个）
 - **UI 与卷面**：现代教育工作台、毛玻璃导航、单元搜索过滤、A4 练习卷排版与大题科学分栏（直接写得数、列竖式、填空比较、作图、解决问题）
 - **内置模块**：
   - **单元同步练**（主打，支持 3/6 题图形卷与 20/30/40 题标准卷）
-  - **口算每日一练**（7 个分级范围）
-  - **竖式每日一练**（10 个分级范围，含加减乘小数对齐与除法竖式框渲染）
-- **自动化防线**：7 大测试套件（`smoke-test`、`coverage-test`、`correctness-test`、`daily-practice-test`、`difficulty-gradient-test`、`rotation-test`、`regression-test`）+ 11 类 PDF 打印边界校验
+  - **口算每日一练**（14 个分级范围，覆盖 1~6 年级加减乘除、小数与百分数速算）
+  - **竖式每日一练**（10 个分级范围，覆盖 2~6 年级多位数加减乘除、小数对齐与圆周率竖式框渲染）
+- **自动化防线**：7 大测试套件（`smoke-test`、`coverage-test`、`correctness-test`、`daily-practice-test` 186配置、`difficulty-gradient-test`、`rotation-test`、`regression-test`）+ 11 类 PDF 打印边界校验
 
 ---
 
@@ -21,7 +21,7 @@
 |---|---|---|
 | **单元配置表** | [`prototype/units.js`](prototype/units.js) | 人教版 1~6 年级 93 个单元映射定义（`plugin` / `arithmeticPlugin` / `topics` / `maxCount`）及 `gradeDefaults` |
 | **组卷总入口** | [`prototype/paper.js`](prototype/paper.js) | `generatePaper(config)` 纯函数组卷入口，调度引擎策略与单元插件，无任何存储 |
-| **每日一练** | [`prototype/dailyPractice.js`](prototype/dailyPractice.js) | 17 个口算/竖式专项范围定义、去重生成与 `renderVertical` 竖式 DOM 渲染 |
+| **每日一练** | [`prototype/dailyPractice.js`](prototype/dailyPractice.js) | 24 个口算/竖式专项范围定义、独立算法生成器调度、去重生成与 `renderVertical` 竖式 DOM 渲染 |
 | **课标范围题库** | [`prototype/scopeProblems.js`](prototype/scopeProblems.js) | 39 个课标专项单元插件（数的认识、口算笔算分流、四则/混合运算、分数小数、因数倍数、倍的认识等） |
 | **通用单元插件** | [`prototype/unitPlugins.js`](prototype/unitPlugins.js) | 单元插件汇总表 `UNIT_PLUGINS` 及单位换算、方程、百分数、负数、搭配、推理、鸽巢等插件 |
 | **几何图形题** | [`prototype/geometryProblems.js`](prototype/geometryProblems.js) | 16 个几何与观察物体单元插件（立体/平面图形、角、三视图、周长面积、圆、圆柱圆锥等） |

@@ -141,7 +141,10 @@ function renderUnits(filterText = '') {
     // 单元特征标签
     let badgeHtml = '';
     if (state.mode !== 'unit') {
-      badgeHtml = `<span class="unit-mini-badge">${u.grade}年级起练</span>`;
+      const isCurrent = u.grade === Number(state.grade);
+      badgeHtml = isCurrent
+        ? `<span class="unit-mini-badge gradient">🎯 本年级精练</span><span class="unit-mini-badge">${u.grade}年级</span>`
+        : `<span class="unit-mini-badge">基础衔接 · ${u.grade}年级</span>`;
     } else if (u.maxCount) {
       badgeHtml = `<span class="unit-mini-badge diagram">📐 图形作图</span><span class="unit-mini-badge">限${u.maxCount}题</span>`;
     } else if (u.review) {

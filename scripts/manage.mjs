@@ -19,7 +19,7 @@ const TEST_SUITES = [
   { id: 'smoke', name: '整卷生成冒烟测试 (6年级×3难度)', file: 'prototype/smoke-test.mjs' },
   { id: 'coverage', name: '93单元全量联动与756配置覆盖测试', file: 'prototype/coverage-test.mjs' },
   { id: 'correctness', name: '数学答案独立逆向复算测试 (160轮)', file: 'prototype/correctness-test.mjs' },
-  { id: 'daily', name: '口算/竖式每日一练专项测试 (123配置)', file: 'prototype/daily-practice-test.mjs' },
+  { id: 'daily', name: '口算/竖式每日一练专项测试 (186配置)', file: 'prototype/daily-practice-test.mjs' },
   { id: 'gradient', name: '三档难度阶梯考法与答案测试', file: 'prototype/difficulty-gradient-test.mjs' },
   { id: 'rotation', name: '同卷考法轮转相邻不重复测试 (93单元×3档×6轮)', file: 'prototype/rotation-test.mjs' },
   { id: 'regression', name: '题面有效性、唯一解与必备考点回归测试', file: 'prototype/regression-test.mjs' },
@@ -344,9 +344,9 @@ function main() {
   }
   if (tests.some(t => !t.passed)) process.exitCode = 1;
 
-  console.log('📊 [2/4] 正在对 93 个教材单元与 17 个每日一练进行三档难度深度体检...');
   const units = auditUnits();
   const dailyRanges = auditDailyRanges();
+  console.log(`📊 [2/4] 正在对 ${units.length} 个教材单元与 ${dailyRanges.length} 个每日一练进行三档难度深度体检...`);
 
   const summary = {
     generatedAt: new Date().toLocaleString('zh-CN', { hour12: false }),

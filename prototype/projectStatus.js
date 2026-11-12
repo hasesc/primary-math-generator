@@ -1,12 +1,12 @@
 // 自动生成文件（请勿手改）：由 node scripts/manage.mjs 生成
 export const PROJECT_STATUS = {
   "summary": {
-    "generatedAt": "2026/11/12 15:06:47",
+    "generatedAt": "2026/11/12 15:20:58",
     "totalUnits": 93,
     "dedicatedUnits": 92,
     "reviewUnits": 1,
     "diagramUnits": 31,
-    "dailyCount": 17,
+    "dailyCount": 24,
     "testsPassed": 7,
     "testsTotal": 7,
     "byGradient": {
@@ -31,7 +31,7 @@ export const PROJECT_STATUS = {
       "name": "整卷生成冒烟测试 (6年级×3难度)",
       "file": "prototype/smoke-test.mjs",
       "passed": true,
-      "durationMs": 115,
+      "durationMs": 117,
       "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 1ms, 分布={\"olympiad\":8,\"application\":7,\"arithmetic\":15} | 结果: 18 通过 / 0 未达标"
     },
     {
@@ -39,7 +39,7 @@ export const PROJECT_STATUS = {
       "name": "93单元全量联动与756配置覆盖测试",
       "file": "prototype/coverage-test.mjs",
       "passed": true,
-      "durationMs": 186,
+      "durationMs": 185,
       "summary": "总计 93 单元：联动通过 92，无专属出题映射（含整理与复习）1，不合格 0 | 已检查 756 种难度与题量组合。至少一组配置只有一个卷面分类的单元（分类数不等于考法数）共 81 个：1上 准备课、1上 位置、1上 1~5的认识和加减法、1上 认识图形（一）、1上 6~10的认识和加减法、1上 11~20各数的认识、1上 20以内的进位加法、1下 20以内的退位减法、1下 100以内数的认识、1下 100以内的加法和减法（一）、1下 认识图形（二）、1下 100以内的加法和减法（二）、1下 找规律、2上 100以内的加法和减法（二）、2上 角的初步认识、2上 表内乘法（一）、2上 观察物体（一）、2上 表内乘法（二）、2上 数学广角——搭配（一）、2下 数据收集整理、2下 表内除法（一）、2下 图形的运动（一）、2下 表内除法（二）、2下 混合运算、2下 有余数的除法、2下 万以内数的认识、2下 数学广角——推理、3上 万以内的加法和减法（一）、3上 万以内的加法和减法（二）、3上 倍的认识、3上 多位数乘一位数、3上 长方形和正方形、3上 分数的初步认识、3下 位置与方向（一）、3下 除数是一位数的除法、3下 复式统计表、3下 两位数乘两位数、3下 面积、3下 年月日、3下 小数的初步认识、3下 数学广角——搭配（二）、4上 大数的认识、4上 角的度量、4上 三位数乘两位数、4上 平行四边形和梯形、4上 除数是两位数的除法、4上 条形统计图、4上 数学广角——优化、4下 四则运算、4下 观察物体（二）、4下 运算定律、4下 小数的意义和性质、4下 三角形、4下 小数的加法和减法、4下 图形的运动（二）、4下 平均数与条形统计图、4下 数学广角——鸡兔同笼、5上 位置、5上 可能性、5上 简易方程、5上 多边形的面积、5上 数学广角——植树问题、5下 观察物体（三）、5下 因数与倍数、5下 长方体和正方体、5下 分数的意义和性质、5下 图形的运动（三）、5下 分数的加法和减法、5下 折线统计图、5下 数学广角——找次品、6上 位置与方向（二）、6上 分数除法、6上 比、6上 圆、6上 扇形统计图、6上 数学广角——数与形、6下 负数、6下 百分数（二）、6下 圆柱与圆锥、6下 比例、6下 数学广角——鸽巢问题"
     },
     {
@@ -47,23 +47,23 @@ export const PROJECT_STATUS = {
       "name": "数学答案独立逆向复算测试 (160轮)",
       "file": "prototype/correctness-test.mjs",
       "passed": true,
-      "durationMs": 86,
+      "durationMs": 89,
       "summary": "鸡兔同笼、植树、统计图并列和小数乘法的独立复算通过"
     },
     {
       "id": "daily",
-      "name": "口算/竖式每日一练专项测试 (123配置)",
+      "name": "口算/竖式每日一练专项测试 (186配置)",
       "file": "prototype/daily-practice-test.mjs",
       "passed": true,
-      "durationMs": 74,
-      "summary": "123 种每日一练配置通过，题量、去重、答案复算和年级限制正常"
+      "durationMs": 57,
+      "summary": "186 种每日一练配置通过，题量、去重、答案复算和年级限制正常"
     },
     {
       "id": "gradient",
       "name": "三档难度阶梯考法与答案测试",
       "file": "prototype/difficulty-gradient-test.mjs",
       "passed": true,
-      "durationMs": 86,
+      "durationMs": 94,
       "summary": "✅ 33 个专项插件（18 个全独立三档考法 + 15 个进阶分支插件）的难度梯度、题量和提高题答案复算全部通过！"
     },
     {
@@ -71,7 +71,7 @@ export const PROJECT_STATUS = {
       "name": "同卷考法轮转相邻不重复测试 (93单元×3档×6轮)",
       "file": "prototype/rotation-test.mjs",
       "passed": true,
-      "durationMs": 262,
+      "durationMs": 257,
       "summary": "考法轮转（相邻 subtemplateId 不重复）测试通过"
     },
     {
@@ -79,13 +79,18 @@ export const PROJECT_STATUS = {
       "name": "题面有效性、唯一解与必备考点回归测试",
       "file": "prototype/regression-test.mjs",
       "passed": true,
-      "durationMs": 72,
+      "durationMs": 80,
       "summary": "题面有效性、动物题唯一解及缺失考点回归检查通过"
     }
   ],
   "git": {
     "initialized": true,
     "commits": [
+      {
+        "hash": "5465774",
+        "date": "2026-11-12 15:06",
+        "message": "chore: update projectStatus.js dashboard data"
+      },
       {
         "hash": "0cadfb7",
         "date": "2026-11-12 15:06",
@@ -152,7 +157,7 @@ export const PROJECT_STATUS = {
         "message": "feat: 上线项目管理系统 v0.6.0（可视化看板 + 自动巡检 + Git 版本台账）"
       }
     ],
-    "dirtyFiles": 0
+    "dirtyFiles": 8
   },
   "roadmap": [
     {
@@ -216,6 +221,47 @@ export const PROJECT_STATUS = {
     }
   ],
   "changelog": [
+    {
+      "version": "v0.8.5",
+      "date": "2026-11-12",
+      "title": "口算与竖式每日一练全学段深度重构与 1~6 年级难度梯度精准分级",
+      "bullets": [
+        "**口算与竖式每日一练全学段覆盖扩充（范围数由 17 增至 24 个）**：",
+        "彻底解决原先 3~6 年级口算专项为 0、6年级竖式专项为 0 的严重断层问题，实现 1~6 年级学段无缝衔接。",
+        "**口算新增 7 大进阶范围**：",
+        "三年级：round-times-div（整十整百数乘除法口算）、sum-10000-oral（万以内加减法口算）。",
+        "四年级：two-times-one-oral（两位数乘一位数与整百乘整十口算）、dec-addsub-oral（简单小数加减法口算）。",
+        "五年级：dec-muldiv-oral（小数乘除法口算与速算特训）。",
+        "六年级：percent-oral（百分数、分数与小数互化及速算）。",
+        "**竖式新增与深化 10 大规范笔算范围**：",
+        "六年级新增：pi-multiply（圆周率 $\\pi=3.14$ 常用倍数竖式笔算特训，全面覆盖 $3.14 \\times 1\\sim 9$、两位数及小数倍数）。",
+        "除法笔算彻底修复：重构 divide-one 与 divide-two，解除此前硬编码 result <= 18 与除数限制，全面支持标准三位数商、商中间有0、末尾有0及带余数试商。",
+        "**全范围 Easy / Medium / Hard 三档难度数学算理分级**：",
+        "**加减法口算与笔算**：",
+        "Easy：不进位、不退位，夯实基础算理与数位认知。",
+        "Medium：单次进位、单次退位，标准速算通关。",
+        "Hard：连续进位、连续退位、被减数中间有0（如 $800 - 356$）、跨数位加减。",
+        "**表内乘除法**：",
+        "Easy：1~5乘法口诀及对应除法。",
+        "Medium：4~9表内高频乘除法。",
+        "Hard：全乘法表混合逆运算与极限试除。",
+        "**多位数乘除笔算**：",
+        "Easy：基本一位数/两位数乘除，无进位或单次进位，整除商。",
+        "Medium：常规两位数乘法、三位数除以一位数、两位数试商，含规范余数。",
+        "Hard：因数中间有0（如 $308 \\times 4$）、因数末尾有0、商中间有0（如 $618 \\div 6 = 103$）、商末尾有0（如 $840 \\div 4 = 210$）、复杂调商。",
+        "**小数与百分数**：",
+        "Easy：纯一位小数加减、基础百分数互化（如 $25\\% = 0.25$）。",
+        "Medium：两位小数加减（需补位对齐）、小数乘一位数、常见百分数速算。",
+        "Hard：整数减小数（如 $10 - 2.45$）、末尾去0规约、小数除法补0、高频百分数分数互化。",
+        "**独立高熵实时生成引擎与零短缺保障**：",
+        "每日一练采用独立计算生成器调度映射（DAILY_GENERATORS），彻底摆脱此前通过大题插件过滤 subtemplateId === 'calculate' 导致 75% 题型被丢弃、易触发题量不足的缺陷。",
+        "针对 carry-20、borrow-20、table-times-2 等总算式数量有限的范围（36~81 道），引入“梯度加权概率采样”，确保三档难度均能在 20/30/40 题下 100% 满额出卷且零题面重复。",
+        "**前端交互与管理看板联动**：",
+        "app.js 每日一练列表新增“🎯 本年级精练”与“基础衔接”智能徽章。",
+        "资源缓存版本升级为 ?v=20261112c。",
+        "全部 7 大测试套件通过，daily-practice-test.mjs 测试配置由 123 组扩充至 186 组，100% 绿灯通过。"
+      ]
+    },
     {
       "version": "v0.8.4",
       "date": "2026-11-12",
@@ -387,16 +433,16 @@ export const PROJECT_STATUS = {
       "maxCount": 20,
       "samples": [
         {
-          "question": "6 + 1 = ______",
+          "question": "8 − 2 = ______",
+          "answer": "6"
+        },
+        {
+          "question": "8 − 1 = ______",
           "answer": "7"
         },
         {
-          "question": "3 − 3 = ______",
-          "answer": "0"
-        },
-        {
-          "question": "6 + 4 = ______",
-          "answer": "10"
+          "question": "5 − 4 = ______",
+          "answer": "1"
         }
       ]
     },
@@ -408,15 +454,15 @@ export const PROJECT_STATUS = {
       "maxCount": 20,
       "samples": [
         {
-          "question": "7 + 5 = ______",
+          "question": "6 + 6 = ______",
           "answer": "12"
         },
         {
-          "question": "8 + 6 = ______",
-          "answer": "14"
+          "question": "3 + 7 = ______",
+          "answer": "10"
         },
         {
-          "question": "3 + 7 = ______",
+          "question": "8 + 2 = ______",
           "answer": "10"
         }
       ]
@@ -429,16 +475,16 @@ export const PROJECT_STATUS = {
       "maxCount": 20,
       "samples": [
         {
-          "question": "16 − 7 = ______",
-          "answer": "9"
+          "question": "11 − 6 = ______",
+          "answer": "5"
         },
         {
           "question": "14 − 5 = ______",
           "answer": "9"
         },
         {
-          "question": "15 − 6 = ______",
-          "answer": "9"
+          "question": "12 − 5 = ______",
+          "answer": "7"
         }
       ]
     },
@@ -450,16 +496,16 @@ export const PROJECT_STATUS = {
       "maxCount": 40,
       "samples": [
         {
-          "question": "13 + 6 = ______",
-          "answer": "19"
+          "question": "19 − 8 = ______",
+          "answer": "11"
         },
         {
-          "question": "37 + 5 = ______",
-          "answer": "42"
+          "question": "54 + 3 = ______",
+          "answer": "57"
         },
         {
-          "question": "78 + 9 = ______",
-          "answer": "87"
+          "question": "33 − 1 = ______",
+          "answer": "32"
         }
       ]
     },
@@ -471,37 +517,16 @@ export const PROJECT_STATUS = {
       "maxCount": 40,
       "samples": [
         {
+          "question": "8 × 6 = ______",
+          "answer": "48"
+        },
+        {
+          "question": "8 × 7 = ______",
+          "answer": "56"
+        },
+        {
           "question": "8 × 9 = ______",
           "answer": "72"
-        },
-        {
-          "question": "2 × 8 = ______",
-          "answer": "16"
-        },
-        {
-          "question": "2 × 9 = ______",
-          "answer": "18"
-        }
-      ]
-    },
-    {
-      "id": "divide-table-2",
-      "name": "表内除法（7～9口诀）",
-      "grade": 2,
-      "mode": "oral",
-      "maxCount": 20,
-      "samples": [
-        {
-          "question": "63 ÷ 9 = ______",
-          "answer": "7"
-        },
-        {
-          "question": "54 ÷ 9 = ______",
-          "answer": "6"
-        },
-        {
-          "question": "45 ÷ 9 = ______",
-          "answer": "5"
         }
       ]
     },
@@ -513,15 +538,36 @@ export const PROJECT_STATUS = {
       "maxCount": 20,
       "samples": [
         {
-          "question": "20 ÷ 5 = ______",
-          "answer": "4"
+          "question": "25 ÷ 5 = ______",
+          "answer": "5"
+        },
+        {
+          "question": "18 ÷ 6 = ______",
+          "answer": "3"
         },
         {
           "question": "12 ÷ 4 = ______",
           "answer": "3"
+        }
+      ]
+    },
+    {
+      "id": "divide-table-2",
+      "name": "表内除法（7～9口诀）",
+      "grade": 2,
+      "mode": "oral",
+      "maxCount": 20,
+      "samples": [
+        {
+          "question": "54 ÷ 9 = ______",
+          "answer": "6"
         },
         {
-          "question": "24 ÷ 4 = ______",
+          "question": "45 ÷ 9 = ______",
+          "answer": "5"
+        },
+        {
+          "question": "42 ÷ 7 = ______",
           "answer": "6"
         }
       ]
@@ -534,16 +580,58 @@ export const PROJECT_STATUS = {
       "maxCount": 40,
       "samples": [
         {
-          "question": "33 + 54 = ______",
-          "answer": "87"
+          "question": "55 − 46 = ______",
+          "answer": "9"
         },
         {
-          "question": "73 − 41 = ______",
-          "answer": "32"
+          "question": "28 + 22 = ______",
+          "answer": "50"
         },
         {
-          "question": "45 − 45 = ______",
-          "answer": "0"
+          "question": "72 − 56 = ______",
+          "answer": "16"
+        }
+      ]
+    },
+    {
+      "id": "round-times-div",
+      "name": "整十整百数乘除法",
+      "grade": 3,
+      "mode": "oral",
+      "maxCount": 40,
+      "samples": [
+        {
+          "question": "120 ÷ 6 = ______",
+          "answer": "20"
+        },
+        {
+          "question": "560 ÷ 7 = ______",
+          "answer": "80"
+        },
+        {
+          "question": "180 ÷ 6 = ______",
+          "answer": "30"
+        }
+      ]
+    },
+    {
+      "id": "sum-10000-oral",
+      "name": "万以内加减法口算",
+      "grade": 3,
+      "mode": "oral",
+      "maxCount": 40,
+      "samples": [
+        {
+          "question": "4300 − 300 = ______",
+          "answer": "4000"
+        },
+        {
+          "question": "2400 + 600 = ______",
+          "answer": "3000"
+        },
+        {
+          "question": "3400 − 800 = ______",
+          "answer": "2600"
         }
       ]
     },
@@ -555,16 +643,16 @@ export const PROJECT_STATUS = {
       "maxCount": 40,
       "samples": [
         {
-          "question": "196 + 995 = ______",
-          "answer": "1191"
+          "question": "816 − 403 = ______",
+          "answer": "413"
         },
         {
-          "question": "895 − 571 = ______",
-          "answer": "324"
+          "question": "326 + 552 = ______",
+          "answer": "878"
         },
         {
-          "question": "364 − 155 = ______",
-          "answer": "209"
+          "question": "255 + 536 = ______",
+          "answer": "791"
         }
       ]
     },
@@ -576,16 +664,16 @@ export const PROJECT_STATUS = {
       "maxCount": 40,
       "samples": [
         {
-          "question": "44 × 9 = ______",
-          "answer": "396"
+          "question": "404 × 5 = ______",
+          "answer": "2020"
         },
         {
-          "question": "45 × 7 = ______",
-          "answer": "315"
+          "question": "346 × 5 = ______",
+          "answer": "1730"
         },
         {
-          "question": "43 × 4 = ______",
-          "answer": "172"
+          "question": "400 × 7 = ______",
+          "answer": "2800"
         }
       ]
     },
@@ -597,16 +685,16 @@ export const PROJECT_STATUS = {
       "maxCount": 40,
       "samples": [
         {
-          "question": "44 × 75 = ______",
-          "answer": "3300"
+          "question": "69 × 25 = ______",
+          "answer": "1725"
         },
         {
-          "question": "36 × 48 = ______",
-          "answer": "1728"
+          "question": "70 × 33 = ______",
+          "answer": "2310"
         },
         {
-          "question": "33 × 84 = ______",
-          "answer": "2772"
+          "question": "49 × 20 = ______",
+          "answer": "980"
         }
       ]
     },
@@ -618,16 +706,58 @@ export const PROJECT_STATUS = {
       "maxCount": 40,
       "samples": [
         {
-          "question": "88 ÷ 8 = ______",
-          "answer": "11"
+          "question": "630 ÷ 9 = ______",
+          "answer": "70"
         },
         {
-          "question": "25 ÷ 5 = ______",
+          "question": "474 ÷ 3 = ______",
+          "answer": "158"
+        },
+        {
+          "question": "392 ÷ 4 = ______",
+          "answer": "98"
+        }
+      ]
+    },
+    {
+      "id": "two-times-one-oral",
+      "name": "两位数乘一位数口算",
+      "grade": 4,
+      "mode": "oral",
+      "maxCount": 40,
+      "samples": [
+        {
+          "question": "400 ÷ 80 = ______",
           "answer": "5"
         },
         {
-          "question": "28 ÷ 4 = ______",
+          "question": "420 ÷ 70 = ______",
+          "answer": "6"
+        },
+        {
+          "question": "420 ÷ 60 = ______",
           "answer": "7"
+        }
+      ]
+    },
+    {
+      "id": "dec-addsub-oral",
+      "name": "小数加减法口算",
+      "grade": 4,
+      "mode": "oral",
+      "maxCount": 40,
+      "samples": [
+        {
+          "question": "7.2 − 1.6 = ______",
+          "answer": "5.6"
+        },
+        {
+          "question": "3.1 − 1.6 = ______",
+          "answer": "1.5"
+        },
+        {
+          "question": "3.8 + 4.5 = ______",
+          "answer": "8.3"
         }
       ]
     },
@@ -639,16 +769,16 @@ export const PROJECT_STATUS = {
       "maxCount": 40,
       "samples": [
         {
-          "question": "448 × 41 = ______",
-          "answer": "18368"
+          "question": "423 × 33 = ______",
+          "answer": "13959"
         },
         {
-          "question": "174 × 99 = ______",
-          "answer": "17226"
+          "question": "388 × 20 = ______",
+          "answer": "7760"
         },
         {
-          "question": "127 × 79 = ______",
-          "answer": "10033"
+          "question": "173 × 42 = ______",
+          "answer": "7266"
         }
       ]
     },
@@ -660,16 +790,16 @@ export const PROJECT_STATUS = {
       "maxCount": 40,
       "samples": [
         {
-          "question": "180 ÷ 45 = ______",
-          "answer": "4"
-        },
-        {
-          "question": "720 ÷ 48 = ______",
-          "answer": "15"
-        },
-        {
-          "question": "252 ÷ 42 = ______",
+          "question": "510 ÷ 85 = ______",
           "answer": "6"
+        },
+        {
+          "question": "115 ÷ 23 = ______",
+          "answer": "5"
+        },
+        {
+          "question": "304 ÷ 76 = ______",
+          "answer": "4"
         }
       ]
     },
@@ -681,16 +811,37 @@ export const PROJECT_STATUS = {
       "maxCount": 40,
       "samples": [
         {
-          "question": "9 + 9.8 = ______",
-          "answer": "18.8"
+          "question": "5.62 − 1.91 = ______",
+          "answer": "3.71"
         },
         {
-          "question": "8.9 − 8.4 = ______",
-          "answer": "0.5"
+          "question": "3.19 + 2.18 = ______",
+          "answer": "5.37"
         },
         {
-          "question": "7.7 − 6.6 = ______",
-          "answer": "1.1"
+          "question": "2.13 + 4.7 = ______",
+          "answer": "6.83"
+        }
+      ]
+    },
+    {
+      "id": "dec-muldiv-oral",
+      "name": "小数乘除法口算",
+      "grade": 5,
+      "mode": "oral",
+      "maxCount": 40,
+      "samples": [
+        {
+          "question": "0.1 ÷ 0.5 = ______",
+          "answer": "0.2"
+        },
+        {
+          "question": "0.12 ÷ 0.4 = ______",
+          "answer": "0.3"
+        },
+        {
+          "question": "0.48 ÷ 0.6 = ______",
+          "answer": "0.8"
         }
       ]
     },
@@ -702,16 +853,16 @@ export const PROJECT_STATUS = {
       "maxCount": 40,
       "samples": [
         {
-          "question": "12 × 4.1 = ______",
-          "answer": "49.2"
+          "question": "4.4 × 3.2 = ______",
+          "answer": "14.08"
         },
         {
-          "question": "2.7 × 1.1 = ______",
-          "answer": "2.97"
+          "question": "3.6 × 3 = ______",
+          "answer": "10.8"
         },
         {
-          "question": "7 × 3.8 = ______",
-          "answer": "26.6"
+          "question": "3.8 × 2.6 = ______",
+          "answer": "9.88"
         }
       ]
     },
@@ -723,16 +874,58 @@ export const PROJECT_STATUS = {
       "maxCount": 40,
       "samples": [
         {
-          "question": "16.8 ÷ 2.8 = ______",
-          "answer": "6"
+          "question": "285.6 ÷ 3.4 = ______",
+          "answer": "84"
         },
         {
-          "question": "1.36 ÷ 0.8 = ______",
-          "answer": "1.7"
+          "question": "348.3 ÷ 4.3 = ______",
+          "answer": "81"
         },
         {
-          "question": "10.4 ÷ 1.3 = ______",
-          "answer": "8"
+          "question": "171 ÷ 3.8 = ______",
+          "answer": "45"
+        }
+      ]
+    },
+    {
+      "id": "percent-oral",
+      "name": "百分数与小数速算",
+      "grade": 6,
+      "mode": "oral",
+      "maxCount": 40,
+      "samples": [
+        {
+          "question": "10.5 ÷ 0.5 = ______",
+          "answer": "21"
+        },
+        {
+          "question": "0.75 × 250 = ______",
+          "answer": "187.5"
+        },
+        {
+          "question": "14.6 ÷ 0.2 = ______",
+          "answer": "73"
+        }
+      ]
+    },
+    {
+      "id": "pi-multiply",
+      "name": "圆周率倍数竖式计算",
+      "grade": 6,
+      "mode": "vertical",
+      "maxCount": 40,
+      "samples": [
+        {
+          "question": "3.14 × 16 = ______",
+          "answer": "50.24"
+        },
+        {
+          "question": "3.14 × 15 = ______",
+          "answer": "47.1"
+        },
+        {
+          "question": "3.14 × 17 = ______",
+          "answer": "53.38"
         }
       ]
     }
