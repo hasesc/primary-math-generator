@@ -648,40 +648,121 @@ async function exportPdf(type = 'paper') {
     return;
   }
 
-  showToast('⏳ 正在生成高清 A4 矢量 PDF，请稍候...', 30000);
+  // 微信环境贴心指引
+  const isWeChat = /MicroMessenger/i.test(navigator.userAgent);
+  if (isWeChat) {
+    showToast('💡 提示：微信内限制直接下载文件。建议点击右上角【...】，选择【在浏览器中打开】即可直接下载 A4 PDF 文件！', 6000);
+  } else {
+    showToast('⏳ 正在为您生成 A4 练习卷 PDF，请稍候...', 20000);
+  }
 
+  // 1. 如果有本地 Node.js 后端服务，优先尝试后端 Chromium 极速矢量生成
   try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 1800); // 1.8秒探测超时
+
     const res = await fetch('/api/export-pdf', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ html, filename })
+      body: JSON.stringify({ html, filename }),
+      signal: controller.signal
     });
+    clearTimeout(timeoutId);
 
-    if (!res.ok) {
-      const err = await res.json().catch(() => ({}));
-      throw new Error(err.error || `HTTP ${res.status}`);
+    if (res.ok) {
+      const blob = await res.blob();
+      const downloadUrl = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = downloadUrl;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(downloadUrl), 8000);
+
+      showToast('✅ PDF 已生成并直接下载，请在“下载”文件夹查看！', 3500);
+      return;
     }
-
-    const blob = await res.blob();
-    const downloadUrl = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = downloadUrl;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    setTimeout(() => URL.revokeObjectURL(downloadUrl), 8000);
-
-    showToast('✅ PDF 已生成并直接下载，请在“下载”文件夹查看！', 3500);
-  } catch (err) {
-    console.warn('PDF export API unreachable, fallback to window.print():', err);
-    showToast('⚠️ 当前未运行后台服务（建议双击运行【双击启动出题器.bat】体验 1 秒直接下载 PDF）。现为您调起系统打印。', 5000);
-    if (type === 'answers' || type === 'both') {
-      state.showAnswers = true;
-      $('#answer-sheet')?.classList.remove('hidden');
-    }
-    window.print();
+  } catch (backendErr) {
+    // 静态部署环境（GitHub Pages / Cloudflare Pages 等），平滑降级至纯前端引擎
   }
+
+  // 2. 纯前端离线客户端生成 PDF（无需任何后端服务，任何浏览器直接下载）
+  try {
+    if (typeof window.html2pdf === 'function') {
+      showToast('⏳ 正在通过浏览器离线生成高清 A4 PDF 文件...', 18000);
+
+      const paperSheet = $('#paper-sheet');
+      const answerSheet = $('#answer-sheet');
+
+      const wrapper = document.createElement('div');
+      wrapper.style.position = 'fixed';
+      wrapper.style.left = '-9999px';
+      wrapper.style.top = '0';
+      wrapper.style.width = '794px';
+      wrapper.style.background = '#ffffff';
+      wrapper.style.color = '#000000';
+      wrapper.style.fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif';
+
+      if (type === 'paper' || type === 'both') {
+        const pClone = paperSheet.cloneNode(true);
+        pClone.classList.remove('hidden');
+        pClone.style.boxShadow = 'none';
+        pClone.style.margin = '0 auto';
+        pClone.style.width = '100%';
+        wrapper.appendChild(pClone);
+      }
+
+      if (type === 'both') {
+        const divider = document.createElement('div');
+        divider.className = 'html2pdf__page-break';
+        divider.style.height = '1px';
+        divider.style.pageBreakBefore = 'always';
+        wrapper.appendChild(divider);
+      }
+
+      if (type === 'answers' || type === 'both') {
+        const aClone = answerSheet.cloneNode(true);
+        aClone.classList.remove('hidden');
+        aClone.style.boxShadow = 'none';
+        aClone.style.margin = '0 auto';
+        aClone.style.width = '100%';
+        wrapper.appendChild(aClone);
+      }
+
+      document.body.appendChild(wrapper);
+
+      const opt = {
+        margin: [6, 6, 6, 6],
+        filename: filename,
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: {
+          scale: 2,
+          useCORS: true,
+          logging: false,
+          windowWidth: 794
+        },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { mode: ['css', 'legacy'] }
+      };
+
+      await window.html2pdf().set(opt).from(wrapper).save();
+      document.body.removeChild(wrapper);
+
+      showToast('✅ PDF 已生成并直接下载，请在“下载”文件夹查看！', 3500);
+      return;
+    }
+  } catch (clientErr) {
+    console.warn('html2pdf generation failed, falling back to window.print():', clientErr);
+  }
+
+  // 3. 终极兜底方案：调起系统打印（另存为 PDF）
+  showToast('📄 正在调起系统打印，请在打印面板中选择【另存为 PDF】', 4000);
+  if (type === 'answers' || type === 'both') {
+    state.showAnswers = true;
+    $('#answer-sheet')?.classList.remove('hidden');
+  }
+  window.print();
 }
 
 const mobileBtn = $('#btn-mobile-next');

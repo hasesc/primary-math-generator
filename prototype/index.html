@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>小学数学 · 单元同步练习生成器</title>
-<link rel="stylesheet" href="style.css?v=20261112j">
+<link rel="stylesheet" href="style.css?v=20261112k">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="manifest" href="manifest.json">
@@ -260,7 +260,9 @@
 <!-- 全局极速导出提示气泡 -->
 <div class="export-toast hidden" id="global-toast"></div>
 
-<script type="module" src="app.js?v=20261112j"></script>
+<!-- 离线客户端 PDF 生成引擎 -->
+<script src="vendor/html2pdf.bundle.min.js?v=20261112k"></script>
+<script type="module" src="app.js?v=20261112k"></script>
 <script>
   setTimeout(function() {
     if (!window.__APP_INITIALIZED__) {
