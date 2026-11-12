@@ -511,7 +511,8 @@
               <tr><td class="mono">prototype/gridProblems.js</td><td>6 个方格纸作图与方向位置插件（含答案参考图 answerDiagram）</td></tr>
               <tr><td class="mono">prototype/diagramProblems.js</td><td>7 个钟表与统计图表插件（条形/折线/扇形/复式表）</td></tr>
               <tr><td class="mono">prototype/renderDiagram.js</td><td>高分辨率打印级 SVG 图形渲染器</td></tr>
-              <tr><td class="mono">prototype/dailyPractice.js</td><td>17 个口算/竖式每日一练生成器与竖式 DOM 渲染</td></tr>
+              <tr><td class="mono">prototype/dailyPractice.js</td><td>24 个口算/竖式每日一练生成器与竖式 DOM 渲染</td></tr>
+              <tr><td class="mono">prototype/conceptProblems.js</td><td>概念辨析题引擎（判断题与选择题算法生成与解析点拨）</td></tr>
               <tr><td class="mono">scripts/manage.mjs</td><td>全链路自动测试、93单元难度体检、看板生成与 Git 快照 CLI</td></tr>
             </tbody>
           </table>
@@ -522,7 +523,7 @@
         <div class="list-block" style="font-size:13px">
           <h4 style="margin-top:0">一、每次修改代码后的强制三步曲</h4>
           <ol>
-            <li>运行 <code>node scripts/manage.mjs snapshot "改动说明"</code>：自动跑通 5 大测试套件、更新本看板数据并提交 Git 快照。</li>
+            <li>运行 <code>node scripts/manage.mjs snapshot "改动说明"</code>：自动跑通 8 大测试套件、更新本看板数据并提交 Git 快照。</li>
             <li>在 <code>CHANGELOG.md</code> 记录本次新增或修改的单元考法，同步更新 <code>PROJECT_STATUS.md</code> 待办勾选。</li>
             <li>若修改了前端 JS/CSS，递增 <code>index.html</code> / <code>admin.html</code> 中的 <code>?v=</code> 版本号防缓存。</li>
           </ol>
@@ -538,6 +539,6 @@
   </section>
 </div>
 
-<script type="module" src="admin.js?v=20261112b"></script>
+<script type="module" src="admin.js?v=20261112c"></script>
 </body>
 </html>

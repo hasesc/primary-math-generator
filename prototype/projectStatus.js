@@ -1,14 +1,14 @@
 // 自动生成文件（请勿手改）：由 node scripts/manage.mjs 生成
 export const PROJECT_STATUS = {
   "summary": {
-    "generatedAt": "2026/11/12 15:21:34",
+    "generatedAt": "2026/11/12 15:42:28",
     "totalUnits": 93,
     "dedicatedUnits": 92,
     "reviewUnits": 1,
     "diagramUnits": 31,
     "dailyCount": 24,
-    "testsPassed": 7,
-    "testsTotal": 7,
+    "testsPassed": 8,
+    "testsTotal": 8,
     "byGradient": {
       "tiered-skills": 47,
       "three-tier-range": 22,
@@ -32,14 +32,14 @@ export const PROJECT_STATUS = {
       "file": "prototype/smoke-test.mjs",
       "passed": true,
       "durationMs": 120,
-      "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 1ms, 分布={\"application\":7,\"olympiad\":8,\"arithmetic\":15} | 结果: 18 通过 / 0 未达标"
+      "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 0ms, 分布={\"olympiad\":8,\"application\":7,\"arithmetic\":15} | 结果: 18 通过 / 0 未达标"
     },
     {
       "id": "coverage",
       "name": "93单元全量联动与756配置覆盖测试",
       "file": "prototype/coverage-test.mjs",
       "passed": true,
-      "durationMs": 184,
+      "durationMs": 186,
       "summary": "总计 93 单元：联动通过 92，无专属出题映射（含整理与复习）1，不合格 0 | 已检查 756 种难度与题量组合。至少一组配置只有一个卷面分类的单元（分类数不等于考法数）共 81 个：1上 准备课、1上 位置、1上 1~5的认识和加减法、1上 认识图形（一）、1上 6~10的认识和加减法、1上 11~20各数的认识、1上 20以内的进位加法、1下 20以内的退位减法、1下 100以内数的认识、1下 100以内的加法和减法（一）、1下 认识图形（二）、1下 100以内的加法和减法（二）、1下 找规律、2上 100以内的加法和减法（二）、2上 角的初步认识、2上 表内乘法（一）、2上 观察物体（一）、2上 表内乘法（二）、2上 数学广角——搭配（一）、2下 数据收集整理、2下 表内除法（一）、2下 图形的运动（一）、2下 表内除法（二）、2下 混合运算、2下 有余数的除法、2下 万以内数的认识、2下 数学广角——推理、3上 万以内的加法和减法（一）、3上 万以内的加法和减法（二）、3上 倍的认识、3上 多位数乘一位数、3上 长方形和正方形、3上 分数的初步认识、3下 位置与方向（一）、3下 除数是一位数的除法、3下 复式统计表、3下 两位数乘两位数、3下 面积、3下 年月日、3下 小数的初步认识、3下 数学广角——搭配（二）、4上 大数的认识、4上 角的度量、4上 三位数乘两位数、4上 平行四边形和梯形、4上 除数是两位数的除法、4上 条形统计图、4上 数学广角——优化、4下 四则运算、4下 观察物体（二）、4下 运算定律、4下 小数的意义和性质、4下 三角形、4下 小数的加法和减法、4下 图形的运动（二）、4下 平均数与条形统计图、4下 数学广角——鸡兔同笼、5上 位置、5上 可能性、5上 简易方程、5上 多边形的面积、5上 数学广角——植树问题、5下 观察物体（三）、5下 因数与倍数、5下 长方体和正方体、5下 分数的意义和性质、5下 图形的运动（三）、5下 分数的加法和减法、5下 折线统计图、5下 数学广角——找次品、6上 位置与方向（二）、6上 分数除法、6上 比、6上 圆、6上 扇形统计图、6上 数学广角——数与形、6下 负数、6下 百分数（二）、6下 圆柱与圆锥、6下 比例、6下 数学广角——鸽巢问题"
     },
     {
@@ -47,7 +47,7 @@ export const PROJECT_STATUS = {
       "name": "数学答案独立逆向复算测试 (160轮)",
       "file": "prototype/correctness-test.mjs",
       "passed": true,
-      "durationMs": 86,
+      "durationMs": 82,
       "summary": "鸡兔同笼、植树、统计图并列和小数乘法的独立复算通过"
     },
     {
@@ -55,7 +55,7 @@ export const PROJECT_STATUS = {
       "name": "口算/竖式每日一练专项测试 (186配置)",
       "file": "prototype/daily-practice-test.mjs",
       "passed": true,
-      "durationMs": 61,
+      "durationMs": 59,
       "summary": "186 种每日一练配置通过，题量、去重、答案复算和年级限制正常"
     },
     {
@@ -63,7 +63,7 @@ export const PROJECT_STATUS = {
       "name": "三档难度阶梯考法与答案测试",
       "file": "prototype/difficulty-gradient-test.mjs",
       "passed": true,
-      "durationMs": 115,
+      "durationMs": 88,
       "summary": "✅ 33 个专项插件（18 个全独立三档考法 + 15 个进阶分支插件）的难度梯度、题量和提高题答案复算全部通过！"
     },
     {
@@ -71,7 +71,7 @@ export const PROJECT_STATUS = {
       "name": "同卷考法轮转相邻不重复测试 (93单元×3档×6轮)",
       "file": "prototype/rotation-test.mjs",
       "passed": true,
-      "durationMs": 257,
+      "durationMs": 267,
       "summary": "考法轮转（相邻 subtemplateId 不重复）测试通过"
     },
     {
@@ -79,13 +79,26 @@ export const PROJECT_STATUS = {
       "name": "题面有效性、唯一解与必备考点回归测试",
       "file": "prototype/regression-test.mjs",
       "passed": true,
-      "durationMs": 77,
+      "durationMs": 79,
       "summary": "题面有效性、动物题唯一解及缺失考点回归检查通过"
+    },
+    {
+      "id": "exam",
+      "name": "100分制单元测验卷全链路测试 (6年级×3难度)",
+      "file": "prototype/exam-paper-test.mjs",
+      "passed": true,
+      "durationMs": 113,
+      "summary": "✅ 100分制单元测验卷验证通过: 18/18 组全部达标 (6年级×3难度覆盖)"
     }
   ],
   "git": {
     "initialized": true,
     "commits": [
+      {
+        "hash": "1050276",
+        "date": "2026-11-12 15:21",
+        "message": "chore: update projectStatus看板数据"
+      },
       {
         "hash": "584ef0a",
         "date": "2026-11-12 15:21",
@@ -155,14 +168,9 @@ export const PROJECT_STATUS = {
         "hash": "fbcb3f1",
         "date": "2026-11-11 15:03",
         "message": "chore: 同步看板最新 Git 快照状态并保持工作区干净"
-      },
-      {
-        "hash": "64c8a25",
-        "date": "2026-11-11 15:01",
-        "message": "feat: 上线项目管理系统 v0.6.0（可视化看板 + 自动巡检 + Git 版本台账）"
       }
     ],
-    "dirtyFiles": 0
+    "dirtyFiles": 13
   },
   "roadmap": [
     {
@@ -226,6 +234,37 @@ export const PROJECT_STATUS = {
     }
   ],
   "changelog": [
+    {
+      "version": "v0.8.6",
+      "date": "2026-11-12",
+      "title": "制定六大升级工程技术规范、上线“💯 单元测验卷”全真100分模拟考与手机移动端深度适配",
+      "bullets": [
+        "**确立六大升级工程总体施工图纸**：",
+        "输出 [SIX_CORE_UPGRADES_SPEC.md](SIX_CORE_UPGRADES_SPEC.md)，统一题型结构、产品模式、卷面排版、答案体验、终端适配与题库弹药的架构规范。",
+        "**模块一：题型结构升级 —— 新增判断题与单项选择题独立算法引擎**：",
+        "新增 [prototype/conceptProblems.js](prototype/conceptProblems.js)，纯算法实时生成，覆盖人教版 1~6 年级概念混淆点与易错陷阱：",
+        "**判断题（True/False，√/×）**：0的除法性质、因数倍数、小数性质、质数合数、三角形内角和、平行四边形不稳定性、圆周率常数、百分数意义等，自动配齐反例剖析。",
+        "**单项选择题（Multiple Choice，A/B/C/D）**：植树两端问题、长方形拉动周长面积变化、三角形三边构成法则、单位换算进率错位陷阱、圆柱圆锥削切体积比等，带高仿真干扰项（Distractors）。",
+        "**模块二：产品模式升级 —— 正式上线“💯 单元测验卷”第四种独立模式**：",
+        "新增 generateExamPaper 纯算法组卷入口，严格对齐小学期中期末卷 100 分制大题排版与标准分值分配：",
+        "一、用心思考，正确填空（20分，10小题）",
+        "二、火眼金睛，明辨是非（判断题，10分，5小题）",
+        "三、仔细推敲，精挑细选（选择题，10分，5小题）",
+        "四、神机妙算，细心计算（30分：口算8分 + 竖式12分 + 脱式/简算10分）",
+        "五、动手动脑，实践操作（10分：作图/几何/统计）",
+        "六、走进生活，解决问题（20分：4道综合生活应用题）",
+        "卷面规范抬头：考试时间 60 分钟、满分 100 分、班级、姓名、学号、得分栏。",
+        "**模块三与四：卷面作答留白与参考答案【思路点拨 / 解析】**：",
+        "解决问题大题自动生成 .solve-workspace 规范作答框（留白高度充足 + 答：________________），彻底避免学生字迹拥挤。",
+        "参考答案页针对判断题、选择题与复杂应用题自动附带 <div class=\"ans-exp\">【解析 / 思路点拨】...</div>，极大降低家长辅导门槛。",
+        "**模块五：手机移动端深度适配 (Mobile-First)**：",
+        "针对手机窄屏（$\\le 768$px）新增底部常驻大拇指吸底操作栏（.mobile-action-bar），实现选级→选单元→定题量→一键出卷单手盲操。",
+        "手机端试卷卡片自适应，选择题 4 选项自动响应式排版，防止大屏 A4 纸横向溢出。",
+        "**自动化测试防线升级（7 → 8 大套件全绿）**：",
+        "新增 [prototype/exam-paper-test.mjs](prototype/exam-paper-test.mjs)，对 1~6 年级×3 档难度的全真测验卷进行自动化全项验收，18 组配置 100% 满分通过。",
+        "前端资源版本号升级为 ?v=20261112d。"
+      ]
+    },
     {
       "version": "v0.8.5",
       "date": "2026-11-12",

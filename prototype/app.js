@@ -85,9 +85,11 @@ function renderSemesters() {
 function refreshStep1() {
   const btnNext = $('#btn-next-1');
   if (!btnNext) return;
-  const isReady = Boolean(state.grade && (state.mode !== 'unit' || state.semester));
+  const isUnitOrExam = state.mode === 'unit' || state.mode === 'exam';
+  const isReady = Boolean(state.grade && (!isUnitOrExam || state.semester));
   btnNext.disabled = !isReady;
-  btnNext.textContent = state.mode === 'unit' ? '下一步：选单元范围 →' : '下一步：选练习范围 →';
+  btnNext.textContent = isUnitOrExam ? '下一步：选单元范围 →' : '下一步：选练习范围 →';
+  updateMobileBar(1);
 }
 
 // 模式切换
@@ -101,8 +103,9 @@ $$('#mode-options .mode-card').forEach((card) => {
       c.classList.toggle('selected', c === card);
       c.setAttribute('aria-pressed', String(c === card));
     });
-    $('#textbook-field').hidden = state.mode !== 'unit';
-    $('#semester-field').hidden = state.mode !== 'unit';
+    const isUnitOrExam = state.mode === 'unit' || state.mode === 'exam';
+    $('#textbook-field').hidden = !isUnitOrExam;
+    $('#semester-field').hidden = !isUnitOrExam;
     refreshStep1();
   };
 });
@@ -111,11 +114,12 @@ $$('#mode-options .mode-card').forEach((card) => {
 function renderUnits(filterText = '') {
   const list = $('#unit-list');
   if (!list) return;
-  const units = state.mode === 'unit'
+  const isUnitOrExam = state.mode === 'unit' || state.mode === 'exam';
+  const units = isUnitOrExam
     ? (UNITS[state.grade]?.[state.semester] || [])
     : DAILY_RANGES.filter((r) => r.mode === state.mode && r.grade <= Number(state.grade));
 
-  $('#range-heading').innerHTML = `<span>②</span> ${state.mode === 'unit' ? '选择单元' : '选择练习范围'}`;
+  $('#range-heading').innerHTML = `<span>②</span> ${isUnitOrExam ? '选择单元' : '选择练习范围'}`;
   list.innerHTML = '';
 
   const q = String(filterText || '').trim().toLowerCase();
@@ -136,11 +140,13 @@ function renderUnits(filterText = '') {
     d.className = 'unit-item' + (state.unitIndex === i ? ' selected' : '');
 
     const synced = u.calc || u.topics || u.plugin || u.calcType || u.arithmeticPlugin;
-    d.disabled = state.mode === 'unit' && !(synced || u.review);
+    d.disabled = isUnitOrExam && !(synced || u.review);
 
     // 单元特征标签
     let badgeHtml = '';
-    if (state.mode !== 'unit') {
+    if (state.mode === 'exam') {
+      badgeHtml = `<span class="unit-mini-badge" style="background:#fef3c7;color:#b45309">💯 100分测验</span><span class="unit-mini-badge">全真模拟</span>`;
+    } else if (state.mode !== 'unit') {
       const isCurrent = u.grade === Number(state.grade);
       badgeHtml = isCurrent
         ? `<span class="unit-mini-badge gradient">🎯 本年级精练</span><span class="unit-mini-badge">${u.grade}年级</span>`
@@ -153,7 +159,7 @@ function renderUnits(filterText = '') {
       badgeHtml = `<span class="unit-mini-badge gradient">✨ 阶梯考法</span><span class="unit-mini-badge">推荐30题</span>`;
     }
 
-    const idxText = state.mode === 'unit' ? `Unit ${String(i + 1).padStart(2, '0')}` : `Range ${String(i + 1).padStart(2, '0')}`;
+    const idxText = isUnitOrExam ? `Unit ${String(i + 1).padStart(2, '0')}` : `Range ${String(i + 1).padStart(2, '0')}`;
 
     d.innerHTML = `
       <div class="unit-header-meta">
@@ -168,9 +174,13 @@ function renderUnits(filterText = '') {
       state.unitIndex = i;
       state.unitName = u.name;
       state.unit = u;
-      if (state.mode !== 'unit' && state.count < 20) state.count = 20;
+      if (state.mode === 'exam') {
+        state.count = 40;
+      } else if (state.mode !== 'unit' && state.count < 20) {
+        state.count = 20;
+      }
       if (u.maxCount && state.count > u.maxCount) state.count = u.maxCount;
-      if (!u.maxCount && state.count < 20) state.count = 30;
+      if (!u.maxCount && state.count < 20 && state.mode === 'unit') state.count = 30;
       renderUnits($('#unit-search')?.value || '');
       showPanel(3);
     };
@@ -193,6 +203,7 @@ function showPanel(n) {
   $$('.panel').forEach((p) => p.classList.add('hidden'));
   $(`#panel-${n}`)?.classList.remove('hidden');
   $$('.step').forEach((s) => s.classList.toggle('active', s.dataset.step === String(n)));
+  updateMobileBar(n);
 
   if (n === 2) {
     if ($('#unit-search')) $('#unit-search').value = '';
@@ -200,9 +211,14 @@ function showPanel(n) {
   }
   if (n === 3) {
     $('#btn-generate').disabled = false;
-    const badgeText = state.mode === 'unit'
-      ? `已选：人教版 ${state.grade}年级${state.semester}册 · 第 ${(state.unitIndex ?? 0) + 1} 单元《${state.unitName}》`
-      : `已选专项：${state.unitName}（${state.unit?.grade}年级起）`;
+    let badgeText = '';
+    if (state.mode === 'exam') {
+      badgeText = `已选测验：人教版 ${state.grade}年级${state.semester}册 · 《${state.unitName}》【100分全真模拟考】`;
+    } else if (state.mode === 'unit') {
+      badgeText = `已选：人教版 ${state.grade}年级${state.semester}册 · 第 ${(state.unitIndex ?? 0) + 1} 单元《${state.unitName}》`;
+    } else {
+      badgeText = `已选专项：${state.unitName}（${state.unit?.grade}年级起）`;
+    }
     if ($('#selected-unit-badge')) $('#selected-unit-badge').textContent = badgeText;
 
     $$('#difficulty-options .diff-card').forEach((o) => {
@@ -213,10 +229,16 @@ function showPanel(n) {
     $$('#count-options .count-chip').forEach((o) => {
       const count = Number(o.dataset.v);
       const isMaxRestricted = state.unit?.maxCount;
-      if (state.mode !== 'unit') {
-        o.hidden = count < 20 || count > (state.unit?.maxCount || 40);
+      if (state.mode === 'exam') {
+        o.hidden = count !== 40;
+        if (count === 40) o.textContent = '100 分制（全真考卷 6 大题）';
       } else {
-        o.hidden = isMaxRestricted ? count > state.unit.maxCount : count < 20;
+        if (count === 40) o.textContent = '40 题（综合练习卷）';
+        if (state.mode !== 'unit') {
+          o.hidden = count < 20 || count > (state.unit?.maxCount || 40);
+        } else {
+          o.hidden = isMaxRestricted ? count > state.unit.maxCount : count < 20;
+        }
       }
       o.classList.toggle('selected', count === state.count);
     });
@@ -250,20 +272,21 @@ $$('#count-options .count-chip').forEach((chip) => {
 const SECTION_DEFS = [
   { type: 'arithmetic', title: '直接写出得数', scoreText: '每题 1 分', grid: true },
   { type: 'vertical', title: '列竖式计算', scoreText: '每题 3 分', grid: false },
-  { type: 'fill', title: '填空题', scoreText: '每空 1 分', grid: false },
-  { type: 'choice', title: '精心挑选', scoreText: '每题 2 分', grid: false },
+  { type: 'fill', title: '用心思考，正确填空', scoreText: '每空 1 分', grid: false },
+  { type: 'judge', title: '火眼金睛，明辨是非（判断题）', scoreText: '对的打“√”，错的打“×”，每题 2 分', grid: false },
+  { type: 'choice', title: '仔细推敲，精挑细选（选择题）', scoreText: '将正确选项填在括号内，每题 2 分', grid: false },
   { type: 'compare', title: '在括号里填上“>”、“<”或“=”', scoreText: '每题 1 分', grid: false },
   { type: 'draw', title: '动手操作与作图', scoreText: '每题 4 分', grid: false },
   { type: 'grid', title: '方格图作图与位置', scoreText: '每题 5 分', grid: false },
   { type: 'geometry', title: '图形观察与几何计算', scoreText: '每题 4 分', grid: false },
   { type: 'practice', title: '专项综合练', scoreText: '每题 2 分', grid: false },
-  { type: 'application', title: '走进生活，解决问题', scoreText: '每题 4 分', grid: false },
+  { type: 'application', title: '走进生活，解决问题', scoreText: '每题 5 分', grid: false },
   { type: 'olympiad', title: '思维冲浪与培优拓展', scoreText: '每题 5 分', grid: false },
 ];
 
-const CN_NUM = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一'];
+const CN_NUM = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'];
 const responseLabels = {
-  calculation: '口算', written: '竖式', blank: '填空', comparison: '比较', word: '应用', short: '简答',
+  calculation: '口算', written: '竖式', blank: '填空', comparison: '比较', word: '应用', short: '简答', judge: '判断', choice: '选择',
 };
 
 // 智能判定题目展示题型，将原本单调的 practice 细分至规范板块
@@ -274,6 +297,8 @@ function getDisplayType(p) {
   if (p.responseKind === 'comparison') return 'compare';
   if (p.responseKind === 'blank') return 'fill';
   if (p.responseKind === 'word') return 'application';
+  if (p.responseKind === 'judge' || p.type === 'judge') return 'judge';
+  if (p.responseKind === 'choice' || p.type === 'choice') return 'choice';
   return p.format || p.type || 'practice';
 }
 
@@ -288,6 +313,7 @@ function doGenerate(previousConfig) {
     semester: state.semester,
     difficulty: state.difficulty,
     unitName: state.unitName,
+    unit,
     knowledgePoints: [],
     answerMode: 'hidden',
     questionTypes: ['arithmetic', 'application', 'olympiad'],
@@ -307,7 +333,8 @@ function doGenerate(previousConfig) {
   pendingGeneration = setTimeout(() => {
     const t0 = performance.now();
     try {
-      const { paper, shortfall } = config.mode === 'unit' ? generatePaper(config) : generateDailyPractice(config);
+      const isUnitOrExam = config.mode === 'unit' || config.mode === 'exam';
+      const { paper, shortfall } = isUnitOrExam ? generatePaper(config) : generateDailyPractice(config);
       const ms = Math.round(performance.now() - t0);
       if (!paper.length) {
         if (status) status.textContent = '生成失败：当前配置未产出题目，请调整年级或题量。';
@@ -335,12 +362,28 @@ function doGenerate(previousConfig) {
 function renderPaper() {
   const paper = state.paper;
   const { grade, semester, unitName, difficulty, mode } = state.paperConfig;
-  const modeName = { unit: '单元同步练', oral: '口算每日一练', vertical: '竖式每日一练' }[mode];
+  const modeName = { unit: '单元同步练', exam: '单元测验卷', oral: '口算每日一练', vertical: '竖式每日一练' }[mode] || '单元同步练';
   const diffLabel = { easy: '基础巩固', medium: '标准通关', hard: '培优挑战' }[difficulty];
 
-  $('#p-title').textContent = `${grade} 年级数学 · ${modeName}`;
-  $('#p-sub').textContent = `${mode === 'unit' ? `人教版 · ${semester}册 · ` : ''}${unitName} · 考评等级：${diffLabel}`;
-  $('#a-sub').textContent = $('#p-sub').textContent;
+  if (mode === 'exam') {
+    $('#p-title').textContent = `${grade} 年级数学 · 单元测验卷（全真模拟考）`;
+    $('#p-sub').innerHTML = `
+      <div style="font-weight:600;margin-bottom:6px">人教版 · ${semester}册 · 《${unitName}》 · 考评等级：${diffLabel}</div>
+      <div class="exam-meta-bar">
+        <span>⏱️ 考试时间：60 分钟</span>
+        <span>💯 满分：100 分</span>
+        <span>班级：________</span>
+        <span>姓名：________</span>
+        <span>学号：____</span>
+        <span>得分：____</span>
+      </div>
+    `;
+    $('#a-sub').textContent = `人教版 · ${grade}年级${semester}册 · 《${unitName}》 参考答案与评分标准`;
+  } else {
+    $('#p-title').textContent = `${grade} 年级数学 · ${modeName}`;
+    $('#p-sub').textContent = `${mode === 'unit' ? `人教版 · ${semester}册 · ` : ''}${unitName} · 考评等级：${diffLabel}`;
+    $('#a-sub').textContent = $('#p-sub').textContent;
+  }
 
   const sectionsBox = $('#paper-sections');
   const answersBox = $('#answer-sections');
@@ -385,13 +428,34 @@ function renderPaper() {
 
         const item = document.createElement('div');
         item.appendChild(q);
+
+        // 选择题选项网格
+        if (Array.isArray(it.options) && it.options.length) {
+          const optBox = document.createElement('div');
+          optBox.className = 'choice-options-grid';
+          it.options.forEach((opt) => {
+            const optSpan = document.createElement('div');
+            optSpan.className = 'opt-item';
+            optSpan.textContent = opt;
+            optBox.appendChild(optSpan);
+          });
+          item.appendChild(optBox);
+        }
+
         if (sec.type === 'vertical' && Array.isArray(it.payload?.operands)) item.appendChild(renderVertical(it));
         if (it.diagram) item.appendChild(renderDiagram(it.diagram));
 
-        // 作答留白
+        // 作答留白与解题工作区
         if (sec.type === 'application' || sec.type === 'olympiad' || it.responseKind === 'word' || it.responseKind === 'written') {
           const ws = document.createElement('div');
-          ws.className = 'write-space' + (sec.type === 'olympiad' ? ' tall' : '');
+          ws.className = 'solve-workspace';
+          const space = document.createElement('div');
+          space.className = 'solve-space';
+          const ansLine = document.createElement('div');
+          ansLine.className = 'solve-answer-line';
+          ansLine.textContent = '答：________________________________________________。';
+          ws.appendChild(space);
+          ws.appendChild(ansLine);
           item.appendChild(ws);
         }
         list.appendChild(item);
@@ -410,14 +474,63 @@ function renderPaper() {
     items.forEach((it) => {
       const a = document.createElement('div');
       a.className = 'ans-item';
-      a.textContent = `${qNumAns}. ${it.answer}`;
+      a.innerHTML = `<span style="font-weight:700">${qNumAns}.</span> ${it.answer}`;
       if (it.answerDiagram) a.appendChild(renderDiagram(it.answerDiagram));
+      if (it.explanation) {
+        const exp = document.createElement('div');
+        exp.className = 'ans-exp';
+        const tag = (it.format === 'judge' || it.format === 'choice') ? '【解析】' : '【思路点拨】';
+        exp.innerHTML = `<span class="exp-badge">${tag}</span>${it.explanation}`;
+        a.appendChild(exp);
+      }
       qNumAns++;
       ansList.appendChild(a);
     });
     ansDiv.appendChild(ansList);
     answersBox.appendChild(ansDiv);
   });
+  updateMobileBar(4);
+}
+
+/* ── 手机端快捷吸底条状态控制 ── */
+let currentStep = 1;
+function updateMobileBar(step) {
+  currentStep = step;
+  const statusEl = $('#mobile-status-text');
+  const btnEl = $('#btn-mobile-next');
+  if (!statusEl || !btnEl) return;
+
+  if (step === 1) {
+    const isUnitOrExam = state.mode === 'unit' || state.mode === 'exam';
+    const isReady = Boolean(state.grade && (!isUnitOrExam || state.semester));
+    statusEl.textContent = state.grade
+      ? `${state.grade}年级${state.semester || ''} · ${state.mode === 'exam' ? '测验卷' : (state.mode === 'unit' ? '单元练' : '每日一练')}`
+      : '请选择年级与学期';
+    btnEl.textContent = '选单元 →';
+    btnEl.disabled = !isReady;
+  } else if (step === 2) {
+    statusEl.textContent = state.unitName ? `已选：${state.unitName}` : '请点击选择单元';
+    btnEl.textContent = '定题量 →';
+    btnEl.disabled = !state.unit;
+  } else if (step === 3) {
+    statusEl.textContent = state.mode === 'exam' ? '100分全真模拟考卷' : `${state.count}题 · ${state.difficulty === 'easy' ? '基础' : (state.difficulty === 'hard' ? '培优' : '标准')}`;
+    btnEl.textContent = '⚡ 立即出卷';
+    btnEl.disabled = false;
+  } else if (step === 4) {
+    statusEl.textContent = `卷面已生成（共 ${state.paper?.length || 0} 题）`;
+    btnEl.textContent = '🖨️ 打印/导出';
+    btnEl.disabled = false;
+  }
+}
+
+const mobileBtn = $('#btn-mobile-next');
+if (mobileBtn) {
+  mobileBtn.onclick = () => {
+    if (currentStep === 1) showPanel(2);
+    else if (currentStep === 2 && state.unit) showPanel(3);
+    else if (currentStep === 3) doGenerate();
+    else if (currentStep === 4) window.print();
+  };
 }
 
 /* ── 事件绑定 ── */
@@ -455,14 +568,15 @@ if (params.get('grade')) {
   const qUnit = params.get('unit');
   const qDiff = params.get('difficulty') || 'medium';
 
-  if (['unit', 'oral', 'vertical'].includes(qMode)) {
+  if (['unit', 'exam', 'oral', 'vertical'].includes(qMode)) {
     state.mode = qMode;
     $$('#mode-options .mode-card').forEach((b) => {
       b.classList.toggle('selected', b.dataset.mode === qMode);
       b.setAttribute('aria-pressed', String(b.dataset.mode === qMode));
     });
-    $('#textbook-field').hidden = qMode !== 'unit';
-    $('#semester-field').hidden = qMode !== 'unit';
+    const isUnitOrExam = qMode === 'unit' || qMode === 'exam';
+    $('#textbook-field').hidden = !isUnitOrExam;
+    $('#semester-field').hidden = !isUnitOrExam;
   }
   state.grade = String(qGrade);
   if (qSem) state.semester = qSem;

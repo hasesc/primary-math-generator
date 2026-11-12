@@ -76,6 +76,13 @@
           </div>
           <div class="mode-desc">紧扣教材 93 单元进度，支持基础/标准/提高三档难度与图形作图卷</div>
         </button>
+        <button type="button" aria-label="单元测验卷" aria-pressed="false" class="mode-card" data-mode="exam">
+          <div class="mode-title">
+            <span>💯 单元测验卷</span>
+            <span class="badge-tag" style="background:#fef3c7;color:#b45309">100分模拟考</span>
+          </div>
+          <div class="mode-desc">标准 100 分制期中期末规范考卷：填空+判断+选择+计算+作图+应用题，带答题留白与解析点拨</div>
+        </button>
         <button type="button" aria-label="口算每日一练" aria-pressed="false" class="mode-card" data-mode="oral">
           <div class="mode-title">
             <span>⚡ 口算每日一练</span>
@@ -234,7 +241,13 @@
   </article>
 </section>
 
-<script type="module" src="app.js?v=20261112c"></script>
+<!-- 手机端触控吸底快捷操作栏 -->
+<div class="mobile-action-bar" id="mobile-action-bar">
+  <div class="mobile-status-text" id="mobile-status-text">请先选择年级与学期</div>
+  <button type="button" class="btn primary btn-mobile-next" id="btn-mobile-next" disabled>选单元 →</button>
+</div>
+
+<script type="module" src="app.js?v=20261112d"></script>
 <script>
   setTimeout(function() {
     if (!window.__APP_INITIALIZED__) {

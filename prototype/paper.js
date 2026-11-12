@@ -8,6 +8,9 @@ import {
 } from './engine/problemTemplates/diversity.js';
 import { levelToBand } from './engine/problemTemplates/helpers.js';
 import { UNIT_PLUGINS } from './unitPlugins.js';
+import { generateJudgeProblems, generateChoiceProblems } from './conceptProblems.js';
+import { generateDailyPractice } from './dailyPractice.js';
+import { gradeDefaults } from './units.js';
 
 const ARITH_DEFAULT_PROBLEM_TYPE = 'result';
 
@@ -51,6 +54,9 @@ function generateOneLive(type, config) {
  *   plugin string —— 应用题段插件 key（其应用题全部由插件生成）
  */
 export function generatePaper(config) {
+  if (config.mode === 'exam') {
+    return generateExamPaper(config);
+  }
   // 1. 单元 calcOverride 合并
   const cfg = { ...config };
   if (cfg.calcOverride) {
@@ -259,4 +265,211 @@ export function spreadSubtemplates(list) {
     out.push(rest.splice(best < 0 ? 0 : best, 1)[0]);
   }
   return out;
+}
+
+/**
+ * 💯 100分制单元达标测验卷生成器 (全真模拟考试卷)
+ * 严格按照小学期中期末卷标准大题结构与分值配置：
+ * 一、用心思考，正确填空（20分）
+ * 二、火眼金睛，明辨是非（判断题 10分）
+ * 三、仔细推敲，精挑细选（选择题 10分）
+ * 四、神机妙算，细心计算（30分：口算8分 + 竖式12分 + 脱式/简算10分）
+ * 五、动手动脑，实践操作（10分：作图/几何/统计）
+ * 六、走进生活，解决问题（20分：4道综合生活应用题）
+ */
+export function generateExamPaper(config) {
+  const g = Number(config.grade) || 3;
+  const sem = config.semester || '上';
+  const diff = config.difficulty || 'medium';
+
+  // 1. 生成单元专属基础题目池（抽取 35 题供各板块提炼）
+  const defaults = gradeDefaults(g, sem, 35);
+  const unitRaw = generatePaper({
+    ...defaults,
+    ...config,
+    ...(config.unit || {}),
+    mode: 'unit',
+    problemCount: 35,
+  });
+  const unitPool = unitRaw.paper || [];
+
+  // 2. 一、用心思考，正确填空（共 10 小题，每题 2 分，共 20 分）
+  const fillCandidates = unitPool.filter(p =>
+    p.format === 'fill' ||
+    p.responseKind === 'blank' ||
+    p.question.includes('（  ）') ||
+    p.question.includes('______') ||
+    p.question.includes('（    ）')
+  );
+  let sec1Items = fillCandidates.slice(0, 10);
+  if (sec1Items.length < 10) {
+    const extra = unitPool.filter(p => !p.diagram && p.type !== 'olympiad' && !sec1Items.includes(p)).slice(0, 10 - sec1Items.length);
+    sec1Items = [...sec1Items, ...extra];
+  }
+  const sec1 = sec1Items.map(p => ({
+    ...p,
+    examSection: 1,
+    sectionTitle: '用心思考，正确填空',
+    score: 2,
+    format: 'fill',
+  }));
+
+  // 3. 二、火眼金睛，明辨是非（共 5 小题，每题 2 分，共 10 分）
+  const judges = generateJudgeProblems({ grade: g, count: 5 }).map(p => ({
+    ...p,
+    examSection: 2,
+    sectionTitle: '火眼金睛，明辨是非',
+    score: 2,
+    format: 'judge',
+  }));
+
+  // 4. 三、仔细推敲，精挑细选（共 5 小题，每题 2 分，共 10 分）
+  const choices = generateChoiceProblems({ grade: g, count: 5 }).map(p => ({
+    ...p,
+    examSection: 3,
+    sectionTitle: '仔细推敲，精挑细选',
+    score: 2,
+    format: 'choice',
+  }));
+
+  // 5. 四、神机妙算，细心计算（共 30 分）
+  // 5.1 直接写出得数（8 题，每题 1 分 = 8 分）
+  let oralRange = 'round-times-div';
+  if (g === 1) oralRange = 'carry-20';
+  else if (g === 2) oralRange = 'table-times-2';
+  else if (g === 3) oralRange = 'round-times-div';
+  else if (g === 4) oralRange = 'two-times-one-oral';
+  else if (g === 5) oralRange = 'dec-muldiv-oral';
+  else if (g === 6) oralRange = 'percent-oral';
+
+  const orals = generateDailyPractice({
+    mode: 'oral',
+    grade: g,
+    rangeId: oralRange,
+    difficulty: diff,
+    problemCount: 20,
+  }).paper.slice(0, 8).map(p => ({
+    ...p,
+    examSection: 4,
+    calcGroup: 1,
+    calcGroupName: '直接写出得数',
+    calcGroupScoreText: '每题 1 分，共 8 分',
+    score: 1,
+    format: 'arithmetic',
+  }));
+
+  // 5.2 列竖式计算（4 题，每题 3 分 = 12 分）
+  let vertRange = 'divide-one';
+  if (g === 1) vertRange = 'sum-100-oral';
+  else if (g === 2) vertRange = 'sum-100-column';
+  else if (g === 3) vertRange = 'multi-times-one';
+  else if (g === 4) vertRange = 'divide-two';
+  else if (g === 5) vertRange = 'dec-mul';
+  else if (g === 6) vertRange = 'pi-multiply';
+
+  const verticals = (g === 1
+    ? generateDailyPractice({ mode: 'oral', grade: 1, rangeId: 'carry-20', difficulty: diff, problemCount: 20 }).paper
+    : generateDailyPractice({ mode: 'vertical', grade: g, rangeId: vertRange, difficulty: diff, problemCount: 20 }).paper
+  ).slice(0, 4).map((p, idx) => ({
+    ...p,
+    examSection: 4,
+    calcGroup: 2,
+    calcGroupName: '列竖式计算' + (idx === 0 ? '（带★的要验算）' : ''),
+    calcGroupScoreText: '每题 3 分，共 12 分',
+    score: 3,
+    format: g === 1 ? 'arithmetic' : 'vertical',
+  }));
+
+  // 5.3 脱式计算 / 简便运算（2 题，每题 5 分 = 10 分）
+  const mixedPool = unitPool.filter(p => p.type === 'arithmetic' && p.question.includes('+') && (p.question.includes('×') || p.question.includes('÷')));
+  let mixedItems = mixedPool.slice(0, 2);
+  if (mixedItems.length < 2) {
+    const a = (g <= 2 ? 8 : (g <= 4 ? 24 : 125));
+    const b = (g <= 2 ? 3 : (g <= 4 ? 6 : 8));
+    const c = (g <= 2 ? 15 : (g <= 4 ? 45 : 37));
+    mixedItems = [
+      {
+        question: `${a} × ${b} + ${c} = ______`,
+        answer: String(a * b + c),
+        explanation: `运算顺序：先算乘法 ${a} × ${b} = ${a * b}，再算加法 ${a * b} + ${c} = ${a * b + c}。`,
+      },
+      {
+        question: `${a * b + c} - ${a} × ${b} = ______`,
+        answer: String(c),
+        explanation: `运算顺序：先算乘法 ${a} × ${b} = ${a * b}，再算减法 ${a * b + c} - ${a * b} = ${c}。`,
+      }
+    ];
+  }
+  const calcMixed = mixedItems.map(p => ({
+    ...p,
+    examSection: 4,
+    calcGroup: 3,
+    calcGroupName: g >= 4 ? '脱式计算（能简便的要简便）' : '脱式计算',
+    calcGroupScoreText: '每题 5 分，共 10 分',
+    score: 5,
+    format: 'arithmetic',
+  }));
+
+  // 6. 五、动手动脑，实践操作（2 题，每题 5 分，共 10 分）
+  let diagramPool = unitPool.filter(p => p.diagram || p.format === 'draw' || p.format === 'grid' || p.format === 'geometry');
+  let sec5Items = diagramPool.slice(0, 2);
+  if (sec5Items.length < 2) {
+    const geoFallbackKeys = {
+      1: 'clock',
+      2: 'geo-view-1',
+      3: 'clock',
+      4: 'geo-angle-measure',
+      5: 'grid-pairs',
+      6: 'grid-bearing',
+    };
+    const key = geoFallbackKeys[g] || 'clock';
+    if (UNIT_PLUGINS[key]) {
+      const generated = UNIT_PLUGINS[key](diff, 2, { plugin: key, grade: g, difficulty: diff }) || [];
+      sec5Items = [...sec5Items, ...generated.slice(0, 2 - sec5Items.length)];
+    }
+  }
+  const sec5 = sec5Items.map(p => ({
+    ...p,
+    examSection: 5,
+    sectionTitle: '动手动脑，实践操作',
+    score: 5,
+    format: p.diagram ? 'draw' : (p.format || 'practice'),
+  }));
+
+  // 7. 六、走进生活，解决问题（4 题，每题 5 分，共 20 分）
+  const wordPool = unitPool.filter(p =>
+    (p.type === 'application' || p.responseKind === 'word' || p.question.length > 20) &&
+    !sec1.includes(p) && !sec5.includes(p)
+  );
+  let sec6Items = wordPool.slice(0, 4);
+  if (sec6Items.length < 4) {
+    const backup = unitPool.filter(p => !sec1.includes(p) && !sec5.includes(p)).slice(0, 4 - sec6Items.length);
+    sec6Items = [...sec6Items, ...backup];
+  }
+  const sec6 = sec6Items.map(p => ({
+    ...p,
+    examSection: 6,
+    sectionTitle: '走进生活，解决问题',
+    score: 5,
+    format: 'application',
+    responseKind: 'word',
+  }));
+
+  const allProblems = [
+    ...sec1,
+    ...judges,
+    ...choices,
+    ...orals,
+    ...verticals,
+    ...calcMixed,
+    ...sec5,
+    ...sec6,
+  ];
+
+  return {
+    paper: allProblems,
+    isExam: true,
+    totalScore: 100,
+    shortfall: {},
+  };
 }

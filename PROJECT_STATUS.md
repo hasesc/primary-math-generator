@@ -4,14 +4,15 @@
 > 运行 `node scripts/manage.mjs` 可自动执行全套测试并刷新看板数据。
 
 ## 1. 当前版本与核心指标
-- **当前阶段**：M1/M2 原型与 UI 现代化精装升级完成（`v0.8.5`），口算与竖式每日一练全学段 1~6 年级深度重构（24个专项范围+三档算理梯度），阶梯考法单元达 **47 个**，全库彻底清除生硬伪去重标记，当前先完成教材版次确认与内容验收，再进入微信小程序迁移阶段
+- **当前阶段**：六大核心升级第一阶段与第二阶段完成（`v0.8.6`），上线“💯 单元测验卷”全真100分模拟考模式，新增判断题与选择题算法引擎、规范答题留白与答案思路点拨，手机移动端触控吸底栏与响应式适配上线，自动化测试扩至 8 大套件全绿
 - **生成入口覆盖（非完整考点验收）**：人教版 1~6 年级上下册共 **93 个单元**（92 个专属插件/模板映射 + 1 个六下《整理与复习》全科综合卷；其中 **47 个单元具备阶梯考法**、**22 个单元具备三档数值梯度**、**24 个单元为课标定界范围**，“两档待升级”保持 0 个）
-- **UI 与卷面**：现代教育工作台、毛玻璃导航、单元搜索过滤、A4 练习卷排版与大题科学分栏（直接写得数、列竖式、填空比较、作图、解决问题）
+- **UI 与卷面**：现代教育工作台、毛玻璃导航、单元搜索过滤、A4 练习卷排版与大题科学分栏（直接写得数、列竖式、填空比较、作图、解决问题），支持手机移动端原生触控吸底栏与题卡自适应
 - **内置模块**：
   - **单元同步练**（主打，支持 3/6 题图形卷与 20/30/40 题标准卷）
+  - **单元测验卷**（旗舰新增，标准 100 分制 6 大板块模拟考，含答题留白与思路点拨）
   - **口算每日一练**（14 个分级范围，覆盖 1~6 年级加减乘除、小数与百分数速算）
   - **竖式每日一练**（10 个分级范围，覆盖 2~6 年级多位数加减乘除、小数对齐与圆周率竖式框渲染）
-- **自动化防线**：7 大测试套件（`smoke-test`、`coverage-test`、`correctness-test`、`daily-practice-test` 186配置、`difficulty-gradient-test`、`rotation-test`、`regression-test`）+ 11 类 PDF 打印边界校验
+- **自动化防线**：8 大测试套件（`smoke-test`、`coverage-test`、`correctness-test`、`daily-practice-test` 186配置、`difficulty-gradient-test`、`rotation-test`、`regression-test`、`exam-paper-test` 18配置）+ 11 类 PDF 打印边界校验
 
 ---
 
@@ -19,8 +20,10 @@
 
 | 模块/目录 | 核心文件 | 职责说明 |
 |---|---|---|
+| **工程规范蓝图** | [`SIX_CORE_UPGRADES_SPEC.md`](SIX_CORE_UPGRADES_SPEC.md) | 六大核心升级工程技术规范（题型、模式、排版、答案解析、手机适配、题库深度） |
 | **单元配置表** | [`prototype/units.js`](prototype/units.js) | 人教版 1~6 年级 93 个单元映射定义（`plugin` / `arithmeticPlugin` / `topics` / `maxCount`）及 `gradeDefaults` |
-| **组卷总入口** | [`prototype/paper.js`](prototype/paper.js) | `generatePaper(config)` 纯函数组卷入口，调度引擎策略与单元插件，无任何存储 |
+| **组卷总入口** | [`prototype/paper.js`](prototype/paper.js) | `generatePaper(config)` 纯函数组卷入口与 `generateExamPaper` 100分制测验卷引擎，调度引擎策略与单元插件，无任何存储 |
+| **概念辨析题** | [`prototype/conceptProblems.js`](prototype/conceptProblems.js) | 小学数学判断题（√/×）与单项选择题（A/B/C/D）算法生成引擎，带高仿真干扰项与解析点拨 |
 | **每日一练** | [`prototype/dailyPractice.js`](prototype/dailyPractice.js) | 24 个口算/竖式专项范围定义、独立算法生成器调度、去重生成与 `renderVertical` 竖式 DOM 渲染 |
 | **课标范围题库** | [`prototype/scopeProblems.js`](prototype/scopeProblems.js) | 39 个课标专项单元插件（数的认识、口算笔算分流、四则/混合运算、分数小数、因数倍数、倍的认识等） |
 | **通用单元插件** | [`prototype/unitPlugins.js`](prototype/unitPlugins.js) | 单元插件汇总表 `UNIT_PLUGINS` 及单位换算、方程、百分数、负数、搭配、推理、鸽巢等插件 |

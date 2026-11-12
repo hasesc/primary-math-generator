@@ -23,6 +23,7 @@ const TEST_SUITES = [
   { id: 'gradient', name: '三档难度阶梯考法与答案测试', file: 'prototype/difficulty-gradient-test.mjs' },
   { id: 'rotation', name: '同卷考法轮转相邻不重复测试 (93单元×3档×6轮)', file: 'prototype/rotation-test.mjs' },
   { id: 'regression', name: '题面有效性、唯一解与必备考点回归测试', file: 'prototype/regression-test.mjs' },
+  { id: 'exam', name: '100分制单元测验卷全链路测试 (6年级×3难度)', file: 'prototype/exam-paper-test.mjs' },
 ];
 
 // 各插件的难度梯度实现分类（基于源码静态+动态双重核验）
