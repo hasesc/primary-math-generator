@@ -1,7 +1,7 @@
 // 自动生成文件（请勿手改）：由 node scripts/manage.mjs 生成
 export const PROJECT_STATUS = {
   "summary": {
-    "generatedAt": "2026/11/12 21:13:12",
+    "generatedAt": "2026/11/13 15:30:31",
     "totalUnits": 94,
     "dedicatedUnits": 93,
     "reviewUnits": 1,
@@ -31,15 +31,15 @@ export const PROJECT_STATUS = {
       "name": "整卷生成冒烟测试 (6年级×3难度)",
       "file": "prototype/smoke-test.mjs",
       "passed": true,
-      "durationMs": 98,
-      "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 0ms, 分布={\"olympiad\":8,\"application\":7,\"arithmetic\":15} | 结果: 18 通过 / 0 未达标"
+      "durationMs": 121,
+      "summary": "✅ 6年级/hard: 30/30 题, 去重后 30, 0ms, 分布={\"application\":7,\"olympiad\":8,\"arithmetic\":15} | 结果: 18 通过 / 0 未达标"
     },
     {
       "id": "coverage",
       "name": "94单元全量联动与762配置覆盖测试",
       "file": "prototype/coverage-test.mjs",
       "passed": true,
-      "durationMs": 161,
+      "durationMs": 189,
       "summary": "总计 94 单元：联动通过 93，无专属出题映射（含整理与复习）1，不合格 0 | 已检查 765 种难度与题量组合。至少一组配置只有一个卷面分类的单元（分类数不等于考法数）共 83 个：1上 准备课、1上 位置、1上 1~5的认识和加减法、1上 认识图形（一）、1上 6~10的认识和加减法、1上 11~20各数的认识、1上 20以内的进位加法、1下 20以内的退位减法、1下 100以内数的认识、1下 100以内的加法和减法（一）、1下 认识图形（二）、1下 认识人民币、1下 100以内的加法和减法（二）、1下 找规律、2上 100以内的加法和减法（二）、2上 角的初步认识、2上 表内乘法（一）、2上 观察物体（一）、2上 表内乘法（二）、2上 数学广角——搭配（一）、2下 数据收集整理、2下 表内除法（一）、2下 图形的运动（一）、2下 表内除法（二）、2下 混合运算、2下 有余数的除法、2下 万以内数的认识、2下 数学广角——推理、3上 万以内的加法和减法（一）、3上 万以内的加法和减法（二）、3上 倍的认识、3上 多位数乘一位数、3上 长方形和正方形、3上 分数的初步认识、3下 位置与方向（一）、3下 除数是一位数的除法、3下 复式统计表、3下 两位数乘两位数、3下 面积、3下 年月日、3下 小数的初步认识、3下 数学广角——搭配（二）、4上 大数的认识、4上 公顷和平方千米、4上 角的度量、4上 三位数乘两位数、4上 平行四边形和梯形、4上 除数是两位数的除法、4上 条形统计图、4上 数学广角——优化、4下 四则运算、4下 观察物体（二）、4下 运算定律、4下 小数的意义和性质、4下 三角形、4下 小数的加法和减法、4下 图形的运动（二）、4下 平均数与条形统计图、4下 数学广角——鸡兔同笼、5上 位置、5上 可能性、5上 简易方程、5上 多边形的面积、5上 数学广角——植树问题、5下 观察物体（三）、5下 因数与倍数、5下 长方体和正方体、5下 分数的意义和性质、5下 图形的运动（三）、5下 分数的加法和减法、5下 折线统计图、5下 数学广角——找次品、6上 位置与方向（二）、6上 分数除法、6上 比、6上 圆、6上 扇形统计图、6上 数学广角——数与形、6下 负数、6下 百分数（二）、6下 圆柱与圆锥、6下 比例、6下 数学广角——鸽巢问题"
     },
     {
@@ -47,7 +47,7 @@ export const PROJECT_STATUS = {
       "name": "数学答案独立逆向复算测试 (160轮)",
       "file": "prototype/correctness-test.mjs",
       "passed": true,
-      "durationMs": 80,
+      "durationMs": 95,
       "summary": "鸡兔同笼、植树、统计图并列和小数乘法的独立复算通过"
     },
     {
@@ -55,7 +55,7 @@ export const PROJECT_STATUS = {
       "name": "口算/竖式每日一练专项测试 (186配置)",
       "file": "prototype/daily-practice-test.mjs",
       "passed": true,
-      "durationMs": 57,
+      "durationMs": 66,
       "summary": "186 种每日一练配置通过，题量、去重、答案复算和年级限制正常"
     },
     {
@@ -63,7 +63,7 @@ export const PROJECT_STATUS = {
       "name": "三档难度阶梯考法与答案测试",
       "file": "prototype/difficulty-gradient-test.mjs",
       "passed": true,
-      "durationMs": 86,
+      "durationMs": 92,
       "summary": "✅ 33 个专项插件（18 个全独立三档考法 + 15 个进阶分支插件）的难度梯度、题量和提高题答案复算全部通过！"
     },
     {
@@ -71,7 +71,7 @@ export const PROJECT_STATUS = {
       "name": "同卷考法轮转相邻不重复测试 (94单元×3档×6轮)",
       "file": "prototype/rotation-test.mjs",
       "passed": true,
-      "durationMs": 231,
+      "durationMs": 270,
       "summary": "考法轮转（相邻 subtemplateId 不重复）测试通过"
     },
     {
@@ -79,7 +79,7 @@ export const PROJECT_STATUS = {
       "name": "题面有效性、唯一解与必备考点回归测试",
       "file": "prototype/regression-test.mjs",
       "passed": true,
-      "durationMs": 77,
+      "durationMs": 108,
       "summary": "题面有效性、动物题唯一解及缺失考点回归检查通过"
     },
     {
@@ -87,7 +87,7 @@ export const PROJECT_STATUS = {
       "name": "100分制单元测验卷全链路测试 (6年级×3难度)",
       "file": "prototype/exam-paper-test.mjs",
       "passed": true,
-      "durationMs": 89,
+      "durationMs": 113,
       "summary": "✅ 100分制单元测验卷验证通过: 18/18 组全部达标 (6年级×3难度覆盖)"
     },
     {
@@ -95,13 +95,18 @@ export const PROJECT_STATUS = {
       "name": "微信小程序引擎全链路与SVG测试",
       "file": "prototype/miniprogram-engine-test.mjs",
       "passed": true,
-      "durationMs": 89,
-      "summary": "ℹ todo 0 | ℹ duration_ms 8.1347"
+      "durationMs": 120,
+      "summary": "ℹ todo 0 | ℹ duration_ms 8.4865"
     }
   ],
   "git": {
     "initialized": true,
     "commits": [
+      {
+        "hash": "4910e70",
+        "date": "2026-11-12 21:13",
+        "message": "fix: resolve blank PDF export by targeting in-DOM paper container directly"
+      },
       {
         "hash": "ae6a642",
         "date": "2026-11-12 20:44",
@@ -171,14 +176,9 @@ export const PROJECT_STATUS = {
         "hash": "83ba68d",
         "date": "2026-11-12 16:35",
         "message": "feat: complete P0 fixes - add RMB unit, overhaul percent-two, fix discount & stack bugs"
-      },
-      {
-        "hash": "586f552",
-        "date": "2026-11-12 16:07",
-        "message": "chore: update projectStatus.js after manage check"
       }
     ],
-    "dirtyFiles": 4
+    "dirtyFiles": 11
   },
   "roadmap": [
     {
@@ -250,6 +250,16 @@ export const PROJECT_STATUS = {
     }
   ],
   "changelog": [
+    {
+      "version": "v0.9.2",
+      "date": "2026-11-13",
+      "title": "界面优化：彻底清除 file 协议提示弹窗与倒计时检测，全端界面清爽秒开",
+      "bullets": [
+        "**移动端与全端界面净化 (prototype/index.html)**：",
+        "彻底删除已无必要的本地 file:// 协议黄色提示卡片（#file-protocol-alert）及底部的 600ms 定时器误报触发逻辑，根除移动端在网络加载稍慢时误弹警告的问题。",
+        "递增前端静态资源缓存版本号至 ?v=20261113a，确保手机浏览器与微信内即刻获取最新纯净界面。"
+      ]
+    },
     {
       "version": "v0.9.1",
       "date": "2026-11-12",

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>小学数学 · 单元同步练习生成器</title>
-<link rel="stylesheet" href="style.css?v=20261112k">
+<link rel="stylesheet" href="style.css?v=20261113a">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="manifest" href="manifest.json">
@@ -49,23 +49,6 @@
 </header>
 
 <main class="container no-print">
-  <!-- 本地文件 file:// 协议安全限制提示（仅当直接双击 html 导致浏览器 CORS 拦截时自动显示） -->
-  <div class="hidden" id="file-protocol-alert" style="background:#fffbeb;border:2px solid #f59e0b;border-radius:12px;padding:18px 22px;margin-bottom:24px;box-shadow:0 4px 14px rgba(245,158,11,0.15)">
-    <div style="display:flex;align-items:flex-start;gap:14px">
-      <div style="font-size:30px;line-height:1">⚠️</div>
-      <div style="flex:1">
-        <h3 style="font-size:16px;font-weight:700;color:#92400e;margin-bottom:6px">检测到您当前通过本地文件（file:// 协议）直接打开了网页</h3>
-        <p style="font-size:13.5px;color:#b45309;line-height:1.6;margin-bottom:10px">
-          现代主流浏览器（Chrome、Edge 等）的安全策略禁止在 <code>file://</code> 协议下加载 JavaScript 模块，因此导致<strong>点击按钮没有任何反应</strong>。
-        </p>
-        <div style="background:#fef3c7;border-radius:8px;padding:10px 14px;font-size:13px;color:#78350f;line-height:1.6">
-          <strong>💡 解决方法超简单（只需 1 步）：</strong><br>
-          请回到本项目的文件夹中，直接双击运行 <strong><code>双击启动出题器.bat</code></strong>，系统将自动秒级唤起浏览器进入全功能出卷工作台！
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- 第一步：练习方式 + 教材版本 + 年级 + 学期 -->
   <section class="panel" id="panel-1">
     <div class="panel-header">
@@ -263,17 +246,7 @@
 <div class="export-toast hidden" id="global-toast"></div>
 
 <!-- 离线客户端 PDF 生成引擎 -->
-<script src="vendor/html2pdf.bundle.min.js?v=20261112k"></script>
-<script type="module" src="app.js?v=20261112k"></script>
-<script>
-  setTimeout(function() {
-    if (!window.__APP_INITIALIZED__) {
-      var alertBox = document.getElementById('file-protocol-alert');
-      if (alertBox) {
-        alertBox.classList.remove('hidden');
-      }
-    }
-  }, 600);
-</script>
+<script src="vendor/html2pdf.bundle.min.js?v=20261113a"></script>
+<script type="module" src="app.js?v=20261113a"></script>
 </body>
 </html>
